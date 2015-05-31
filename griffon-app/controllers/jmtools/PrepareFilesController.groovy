@@ -269,41 +269,6 @@ class PrepareFilesController extends AbstractJMToolsController {
 	}
 	
 	/*
-	// TODO Move to services
-	void autoSetAlbumDirs(String artist, Collection<Album> albums, Collection albumFileEntries) {
-		String artistLower = artist.toLowerCase()
-		final sortedAlbums = albums.findAll { it.name != artist }
-		sortedAlbums.sort { a, b -> b.name.length() <=> a.name.length() }
-		final selfTitled = albums.find { it.name == artist }
-		if (selfTitled) sortedAlbums << selfTitled
-		for (afe in albumFileEntries) {
-			String afeName = afe.name.toLowerCase()
-			List<Album> albumMatches = []
-			for (album in sortedAlbums) {
-				String pattern = toSearchPattern(album.name)
-				println "pattern=$pattern"
-				if (afeName =~ pattern) {
-					albumMatches << album
-				}
-			}
-			if (albumMatches.size() >= 1) {
-				afe.albumDir = "${albumMatches[0].year} - ${albumMatches[0].name}"
-			}
-		}
-//		if (afeName.startsWith(artistLower)) {
-//			afeName = afeName.replaceFirst(artistLower, "")
-//		}
-	}
-	 */
-	
-//	@CompileStatic
-//	String toSearchPattern(String albumName) {
-//		final ret = albumName.replaceAll(/[ -\.][ -\.]*/, /\.\.*/)
-//		.replaceAll(/['!]/, /\.*/)
-//		.toLowerCase()
-//		return ret
-//	}
-	/*
 	private static Exception lastCaughtException
 	@Synchronized
 	@CompileStatic

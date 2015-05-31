@@ -9,6 +9,7 @@ import javax.swing.event.ListSelectionListener;
 
 import org.apache.commons.io.FileUtils;
 import org.veggeberg.jmtools.Global;
+import org.veggeberg.jmtools.MyFileUtils;
 import org.veggeberg.jmtools.domain.Album;
 import org.veggeberg.jmtools.domain.TagInfo;
 
@@ -52,7 +53,7 @@ class WorkAreaController extends AbstractJMToolsController {
 		int numOfItemsMoved = 0
 		try {
 			app.event(Global.EVENT_PROGRESS_BAR_ACTIVATE, ["Moving data to Collection Dir..."])
-			final selRows = getMinOneSelectedRows(model.workDirAlbumTable,
+			final selRows = getMinOneSelectedRows(view.workDirAlbumTable,
 				"Please select at least 1 row from the work dir table")
 			final toDir = model.collectionDirPath
 			if ( ! toDir.exists() ) {
@@ -169,6 +170,7 @@ class WorkAreaController extends AbstractJMToolsController {
 			app.event(Global.EVENT_PROGRESS_BAR_ACTIVATE, ["Renaming..."])
 			int nren = 0
 			final selRows = getSelectedRows(view.workDirAlbumTable)
+			app.log.info "model.workDirAlbums=${model.workDirAlbums}"
 			if (selRows.collect { model.workDirAlbums[it].albumDir }.contains(null)) {
 				JOptionPane.showMessageDialog(null, "All entries for renaming must have AlbumDir set")
 				return
@@ -221,7 +223,7 @@ class WorkAreaController extends AbstractJMToolsController {
 
 	void setAlbumDir(Album album) {
 		if (album) {
-			model.albumDir = "${album.year} - ${album.name}"
+			model.albumDir = MyFileUtils.sanitize("${album.year} - ${album.name}")
 			File ad = new File(model.albumDir)
 			model.tags.clear()
 			if (ad.exists() && ad.isDirectory()) {

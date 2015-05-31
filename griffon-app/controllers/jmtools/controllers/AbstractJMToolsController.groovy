@@ -47,6 +47,7 @@ abstract class AbstractJMToolsController extends AbstractGriffonController {
 	
 	static void doRefreshDir(File dir, List<Map<String,?>> list) {
 		list.clear()
+		println "dir = $dir"
 		if (dir?.exists()) {
 			dir.eachFile { File file ->
 				def z = file.length()

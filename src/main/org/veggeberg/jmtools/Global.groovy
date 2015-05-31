@@ -21,5 +21,6 @@ class Global {
 	// MVC Groups
 	static final String MVC_COLLECTION_MANAGER = 'collectionManager'
 	static final String MVC_FIND_FILES = 'findFiles'
+	static final String MVC_PREPARE_FILES = 'prepareFiles'
 	static final String MVC_WORK_AREA = 'workArea'
 }

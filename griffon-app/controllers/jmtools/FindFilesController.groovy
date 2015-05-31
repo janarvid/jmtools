@@ -16,6 +16,7 @@ class FindFilesController extends AbstractJMToolsController {
     FindFilesModel model
     FindFilesView view
 	JmtoolsConfigService jmtoolsConfigService
+	CollectionService collectionService
 
     void mvcGroupInit(Map args) {
         
@@ -40,9 +41,11 @@ class FindFilesController extends AbstractJMToolsController {
 	}
 	
 	void doRefreshWorkDirs() {
-		println "Info doRefreshWorkDirs()"
-		doRefreshDir(new File(model.workDirPath), model.workDirAlbums)
-		autoSetAlbumDirs(model.currentArtist.name, model.albums, model.workDirAlbums)
+		app.log.info("Info doRefreshWorkDirs()")
+		edt {
+			doRefreshDir(new File(model.workDirPath), model.workDirAlbums)
+		}
+		collectionService.autoSetAlbumDirs(model.currentArtist.name, model.albums, model.workDirAlbums)
 		((JTable)view.workDirAlbumTable).model.fireTableDataChanged()
 	}
 	
@@ -140,40 +143,5 @@ class FindFilesController extends AbstractJMToolsController {
 		finally {
 			app.event(Global.EVENT_PROGRESS_BAR_DEACTIVATE, [])
 		}
-	}
-	
-	// TODO Move to services
-	@CompileStatic
-	static void autoSetAlbumDirs(String artist, Collection<Album> albums, Collection<Map<String,?>> albumFileEntries) {
-		String artistLower = artist.toLowerCase()
-		final sortedAlbums = albums.findAll { Album it -> it.name != artist }
-		sortedAlbums.sort { Album a, Album b -> b.name.length() <=> a.name.length() }
-		final selfTitled = albums.find { Album it -> it.name == artist }
-		if (selfTitled) sortedAlbums << selfTitled
-		for (Map<String,?> afe in albumFileEntries) {
-			String afeName = ((String)afe['name']).toLowerCase()
-			List<Album> albumMatches = []
-			for (album in sortedAlbums) {
-				String pattern = toSearchPattern(album.name)
-				println "pattern=$pattern"
-				if (afeName =~ pattern) {
-					albumMatches << album
-				}
-			}
-			if (albumMatches.size() >= 1) {
-				afe.albumDir = "${albumMatches[0].year} - ${albumMatches[0].name}"
-			}
-		}
-//		if (afeName.startsWith(artistLower)) {
-//			afeName = afeName.replaceFirst(artistLower, "")
-//		}
-	}
-	
-	@CompileStatic
-	static String toSearchPattern(String albumName) {
-		final ret = albumName.replaceAll(/[ -\.][ -\.]*/, /\.\.*/)
-		.replaceAll(/['!]/, /\.*/)
-		.toLowerCase()
-		return ret
 	}
 }

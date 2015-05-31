@@ -23,6 +23,10 @@ class WorkAreaModel extends AbstractJMToolsModel {
 		return findFilesModel.workDirAlbums
 	}
 	
+	File getCollectionDirPath() {
+		return getPrepareFilesModel().getCollectionDirPath()
+	}
+	
 	String getWorkDirPath() {
 		return "${jmtoolsConfigService.workAreaTopDir}${File.separator}${collectionManagerModel.currentArtistDir}"
 	}

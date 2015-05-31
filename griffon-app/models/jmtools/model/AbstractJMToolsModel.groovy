@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import jmtools.CollectionManagerModel;
 import jmtools.FindFilesModel;
+import jmtools.PrepareFilesModel;
 import griffon.core.MVCGroup;
 import groovy.transform.CompileStatic;
 
@@ -22,6 +23,11 @@ class AbstractJMToolsModel extends AbstractGriffonModel implements Appendable {
 	CollectionManagerModel getCollectionManagerModel() {
 		MVCGroup mvc = findExistingGroup(Global.MVC_COLLECTION_MANAGER)
 		return (CollectionManagerModel)mvc.model
+	}
+	
+	PrepareFilesModel getPrepareFilesModel() {
+		MVCGroup mvc = findExistingGroup(Global.MVC_PREPARE_FILES)
+		return (PrepareFilesModel)mvc.model
 	}
 	
 	Artist getCurrentArtist() {

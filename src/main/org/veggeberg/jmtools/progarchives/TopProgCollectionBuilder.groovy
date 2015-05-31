@@ -138,8 +138,9 @@ class TopProgCollectionBuilder extends AbstractCollectionBuilder
 		]
 		
 		excludeArtists = [
+			'dave kerzner': ['new world (deluxe edition)'], // Can't find
+		    'gevende': ['sen balik degilsin ki'],  // Can't find
 		    'harmonium': ["si on avait besoin d'une cinquieme saison"], // Too slow
-			'gevende': ['sen balik degilsin ki'],  // Can't find
 			'hail spirit noir': ['oi magoi'],  // Can't find
 		    'jean louis':[], // Can't find
 			'jet black sea': ['the path of least existence'], // Can't find

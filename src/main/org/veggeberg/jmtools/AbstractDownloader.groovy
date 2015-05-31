@@ -1,4 +1,4 @@
-package org.veggeberg.jmtools.progarchives
+package org.veggeberg.jmtools
 
 import groovy.transform.CompileStatic;
 
@@ -6,11 +6,12 @@ import java.io.File;
 import java.net.URL;
 
 @CompileStatic
-abstract class AbstractDownloader {
-	final static String DIR = "test/resources/progarchives"
-
+public abstract class AbstractDownloader {
+	public File directory = File.createTempFile("data", "");
+	
 	public AbstractDownloader() {
-		// TODO Auto-generated constructor stub
+		directory.delete()
+		assert directory.mkdir()
 	}
 	
 	void download(URL url, File file) {
