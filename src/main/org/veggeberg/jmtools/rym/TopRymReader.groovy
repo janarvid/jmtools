@@ -10,10 +10,7 @@ import groovy.transform.TypeCheckingMode;
 
 @CompileStatic
 class TopRymReader {
-
-	public TopRymReader() {
-		// TODO Auto-generated constructor stub
-	}
+	private static final URL_PREFIX = "http://rateyourmusic.com"
 	
 	@CompileStatic(TypeCheckingMode.SKIP)
 	def findDataTable(def html) {
@@ -29,77 +26,46 @@ class TopRymReader {
 	}
 	
 	@CompileStatic(TypeCheckingMode.SKIP)
-	def getHeader(def tr) {
-		def header = [];
-		def replaceMap = ['covers':'cover']
-		tr.TD.each {
-			def attr = it.toString().toLowerCase().replaceAll(' ','')
-			attr = (replaceMap.get(attr)) ? replaceMap.get(attr) : attr
-			header << attr
-		}
-		return header;
-	}
-	
-	@CompileStatic(TypeCheckingMode.SKIP)
 	static TopProgAlbum getData(List header, def tr) {
-		final data = new TopProgAlbum()
-		def i = 0;
-		def map = [:]
-		def items = tr.'**'
-			.findAll { it.attributes().keySet().contains('class') }
-			.collectEntries { [(it."@class"): it.text()] } 
-		println "items = $items"
-		tr.TD.each {
-			println "td = $it"
-			/*
-			def attr = header[i++];
-			switch (attr) {
-			case "cover":
-				data.cover = it.IMG.@src
-				break;
-			case "titleartist":
-				def title = it.A.STRONG.toString().trim()
-				data.title = title
-				String aText = it.A.text().trim()
-				data.artist = aText[title.length()..aText.length()-1].trim()
-				data.albumUrl = 'http://www.progarchives.com/' + it.A[0].@href
-				data.artistUrl = 'http://www.progarchives.com/' + it.A[1].@href
-				break;
-			case "ratings":
-				def text = it.text().trim()
-				//println "ratings text = ${text}"
-				def indq = text.indexOf('QWR = ')
-				//assert (indq > 0)
-				indq += 6
-				def indGen = text.indexOf("generateQuickRatingStarbox")
-				//assert (indGen > 0)
-				data.qwr = text.substring(indq, indGen-1).trim()
-				//println "qwr = '${data.qwr}'"
-				break;
-			case "genre(recordtype)":
-				//println it.text()
-				def genre = it.STRONG.toString()
-				data.genre = genre
-				def indComma = it.toString().indexOf(',')
-				def year = Integer.valueOf(it.toString().substring(indComma+1).trim());
-				data.year = year
-				data.albumType = it.toString().replaceAll(genre, '').trim()
-				break;
-			case "buy":
-				break // Just ignore this one
-			case "rank":
-				data.rank = it.toString().toInteger()
-				break
-			default:
-				data."$attr" = it.toString().trim()
+		final trString = tr.toString()
+		if ( ! trString.contains("Avg rating:")) return null
+		
+		final map = [:]
+		tr.'**'.findAll { it.attributes().keySet().contains('class') }.each {
+			final k = it."@class".toString()
+			final v = it.text().toString()
+			if (k == "genre") {
+				map.get('genres', []) << v
 			}
-			*/
+			else {
+				map[k.toString()] = v
+			}
+			if (k == 'artist') map.artistUrl = URL_PREFIX + it.@href.toString()
+			if (k == 'album') map.albumUrl = URL_PREFIX + it.@href.toString()
 		}
+//		println "map = ${map}"
+		TopProgAlbum data = new TopProgAlbum()	
+		data.artist = map.artist;
+		data.title = map.album;
+		data.year = map.mediumg.substring(1, 5).toInteger()
+		data.genre = map.genres[0]
+		data.qwr = extractField(trString, "^.*Avg rating:").toFloat()
+		data.artistUrl = map.artistUrl
+		data.albumUrl = map.albumUrl
+		//data.nofRatings = extractField(trString, "^.*Ratings:").replaceAll(',','').toFloat()
+		//data.nofReviews = extractField(trString, "^.*Reviews.*:").replaceAll(',','').toFloat()
+//		println "data = $data"
 		return data
 	}
 	
+	static String extractField(String str, String pattern) {
+		final s = str.replaceFirst(pattern, "")
+		final ind = s.indexOf("|")
+		return s.substring(0, ind-1)
+	}
+	
 	@CompileStatic(TypeCheckingMode.SKIP)
-	List<?> getAlbums(String url)
+	List<TopProgAlbum> getAlbums(String url)
 	{
 		//println "url = $url"
 		SAXParser parser = new SAXParser()
@@ -114,26 +80,17 @@ class TopRymReader {
 		def albums = []
 		for (i in 0..table.TR.size()-1) {
 			def tr = table.TR[i]
-			println "tr = $tr"
-//			if (i == 0) {
-//				header = getHeader(tr)
-//				//println "header = $header"
-//			}
-//			else {
-				def data = getData(header, tr)
-				//println "data = $data"
-//                if (data.album_type != 'DVD / Video' && data.rating >= 3.5) {
-//                	albums << data;
-//                }
-				albums << data;
-//			}
-				if (i > 3) break
+//			println "tr = $tr"
+			final data = getData(header, tr)
+			if (data == null) break
+			albums << data;
+//			if (i > 3) break
 		}
 		return albums
 	}
 	
 	@CompileStatic(TypeCheckingMode.SKIP)
-	List<?> getAlbums(List<String> urls)
+	List<TopProgAlbum> getAlbums(List<String> urls)
 	{
 		final List<?> ret = []
 		for (url in urls) {
@@ -150,7 +107,7 @@ class TopRymReader {
 		return ret
 	}
 	
-	List<?> getAlbums() {
+	List<TopProgAlbum> getAlbums() {
 		final urls = []
 		println System.getProperty("user.dir")
 		def dir = new File("data/RateYourMusic")
@@ -173,8 +130,9 @@ class TopRymReader {
 		}
 		final genres = albums*.genre.unique().sort()
 		println genres
+		println "${genres.size()} unique genres"
 		final artists = albums*.artist.unique().sort()
-		println "${artists.size()} artists"
+		println "${artists.size()} unique artists"
 	}
 
 }
