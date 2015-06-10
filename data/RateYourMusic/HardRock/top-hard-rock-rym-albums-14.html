@@ -1,0 +1,2333 @@
+ 
+
+   <!DOCTYPE html>
+
+<html class="theme_">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Custom chart - Rate Your Music</title> 
+
+   <link rel="stylesheet" href="https://eedcaf578e7d885badc9-0c1519f9f8b9246bced82ab9b996aa5e.ssl.cf1.rackcdn.com/min25.css" type="text/css"/>
+   <link rel="shortcut icon" href="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/favicon.ico" type="image/x-icon"/>
+    <style type="text/css">
+         h4 { font-weight:bold; }
+
+         span.contributors a {
+            text-decoration:none;
+            font-size:0.9em !important;
+            color:#333  !important;
+         }
+         span.contributors span.userd {
+            text-decoration:none;
+            font-size:0.9em !important;
+            color:#999  !important;            
+         }
+#wiki_content_text {
+padding-left: 2em !important;
+padding-right: 2em !important;
+padding-bottom: 25px !important;
+width:auto !important;
+box-sizing: content-box;
+}
+
+      </style>
+   
+      <meta name="apple-mobile-web-app-capable" content="yes" />   
+  
+   <meta name="description" content="Rate Your Music is an online community of people who love music.  Catalog, rate, tag, and review your music.  List and review the concerts you've attended, and track upcoming shows.   When you rate your music, the site's music/social recommender can recommend similar music and users with similar music taste. " />
+   <meta name="keywords" content="rate your music, rate music, rate albums, music catalog, music catalogue, social software, album reviews, music lists, community, music recommendations, concert listings, record labels, venues, shows" /><script type="text/javascript" src="/web_ads/advertisement.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="/images/rym.min.4.js"></script>
+<script type="text/javascript">rym.session.init(0, '0', '');</script>
+
+<script type="text/javascript">
+
+/* google analytics */ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-59057-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+
+<body>
+<div id="wrapper">
+
+
+	<div id="navtop"><div class="mobile_header_btn" onClick="$('#navlist').fadeToggle(100);">rym <i class="fa fa-caret-down"></i></div><ul id="navlist">
+		<li><a style="padding-top:3px;padding-bottom:4px;" title="Front Page"  href="/" >
+         <span class="hide-for-small"><img id="rstar" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/rstar.gif" alt="" /><span id="logotext">rym</span></span>
+         <span class="show-for-small">front page</span>
+         </a></a></li>
+		<li><a title="Find Music"   href="/find/" >find</a></li>
+		<li><a title="Read and make lists"  href="/lists/" >lists</a></li>
+		<li><a title="View top charts by year, location, genre and more!"  href="/customchart" >charts</a></li>
+
+		<li><a title="Message Boards and Member Directory"    href="/community/" >community</a></li>
+
+		<li><a  href="/account/login"  >log in / sign up</a></li>		
+	</ul>
+
+
+  <div class="helplink"><a href="/help">help</a></div>
+
+  <div class="main_searchbar">
+   <form id="mainsearch" action="/search">
+      <input type="hidden" name="searchtype" id="searchtype" value="a" />
+      <input tabindex="1" name="searchterm" 
+           value=""
+            style="background:none;border:none;outline:none;width:110px;padding:3px;" 
+            placeholder="Search...">
+      <div tabindex="3" id="mainsearch_submit" onKeyDown="if (event.keyCode == 13 || event.keyCode == 20) { $('#mainsearch')[0].submit();}"  onClick="$('#mainsearch')[0].submit();" style="cursor:pointer;float:right;color:#777;font-size: 0.8em;line-height: 22px;margin-left:3px;padding-left:8px;padding-right:5px;background:#E6E6E6">
+         ▶
+      </div>
+      <div tabindex="2" class="search_options_frame" onMouseOver="$('#search_options').show()" onMouseOut="$('#search_options').hide();"
+      onFocus="$('#search_options').show()" onBlur="$('#search_options').hide();" onKeyDown="cycleSearchType(event);">
+         <span id="searchtype_selected">Artists</span> ▾
+
+         <div id="search_options" class="search_options" >
+            <div class="search_option_header">Music</div>
+               <div onClick="selectSearchType('a');" id="searchtype_a" class="searchtype_option current">Artists</div>
+               <div onClick="selectSearchType('l');" id="searchtype_l" class="searchtype_option">All releases</div>
+               <div onClick="selectSearchType('y');" id="searchtype_y" class="searchtype_option">V/A releases</div>
+               <div onClick="selectSearchType('b');" id="searchtype_b" class="searchtype_option">Label</div>
+               <div onClick="selectSearchType('j');" id="searchtype_j" class="searchtype_option">Catalog No.</div>
+               <div onClick="selectSearchType('r');" id="searchtype_r" class="searchtype_option">Classical work</div>
+               <div onClick="selectSearchType('v');" id="searchtype_v" class="searchtype_option">Review</div>
+               <div onClick="selectSearchType('g');" id="searchtype_g" class="searchtype_option">Genre</div>
+
+            <div class="search_option_header">Film</div>
+
+               <div onClick="selectSearchType('F');" id="searchtype_F" class="searchtype_option">Film title</div>
+               <div onClick="selectSearchType('A');" id="searchtype_A" class="searchtype_option">Film cast/crew</div>
+            
+            <div class="search_option_header">Site</div>
+
+               <div onClick="selectSearchType('u');" id="searchtype_u" class="searchtype_option">User</div>
+               <div onClick="selectSearchType('p');" id="searchtype_p" class="searchtype_option">Boards</div>
+               <div onClick="selectSearchType('s');" id="searchtype_s" class="searchtype_option">List</div>
+
+         </div>
+      </div>
+   </form>
+  </div>
+  <script>
+      function cycleSearchType(event) {
+
+         var searchTypes = new Array('a', 'l', 'y', 'b', 'j', 'r', 'v', 'g', 'F', 'A', 'u', 'p', 's');
+         var len = searchTypes.length;
+         var currentVal = $('#searchtype').val();
+         var currentIndex = searchTypes.indexOf(currentVal);
+         var nextIndex = currentIndex+1;
+         var prevIndex = currentIndex-1;
+         if ( nextIndex == len ) {
+            nextIndex = 0;
+         }
+         if ( prevIndex < 0 ) {
+            prevIndex = len-1;
+         }
+
+         var nextType = searchTypes[nextIndex];
+         var prevType = searchTypes[prevIndex];
+
+
+         switch (event.keyCode) {
+            case 40: 
+               selectSearchType(nextType);
+               event.preventDefault();
+            break;
+
+            case 38:
+               selectSearchType(prevType);
+               event.preventDefault();
+            break;
+
+            case 13:
+               $('#mainsearch')[0].submit();
+               event.preventDefault();
+            break;
+            default: 
+               
+            break;
+         }
+
+        
+         return false;
+
+      }
+      function selectSearchType(type) {
+         $('#searchtype').val(type);
+         $('#searchtype_selected').text($('#searchtype_' + type).text());
+         $('#search_options').hide();
+      }
+      selectSearchType('a')
+  </script>
+
+
+</div>
+
+<!-- trick --><div style="clear:both;"></div>
+
+
+ 
+ <!-- ~~~~~~~~ begin content! ~~~~~~~~~~~~~~~ -->
+ <div id="content" style="border-top:none;"><script type="text/javascript" src="https://aa51943acdd0baa94a6e-d133dbbbd17c5adb5c698e6074ced43d.ssl.cf1.rackcdn.com/jquery-appear-b1.js"></script><div id="breadcrumb"><ul> <li class="lnk"><a href="/charts/">Charts <b>&gt;</b></a></li><li class="current">Custom chart</li></ul></div>
+<!-- Running 128 for 4 -->
+<script language="javascript"><!--
+document.write('<scr'+'ipt language="javascript1.1" src="https://adserver.adtechus.com/addyn/3.0/9926.1/3568176/0/225/ADTECH;loc=100;target=_blank;key=key1+key2+key3+key4;grp=[group];misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="https://adserver.adtechus.com/adlink/3.0/9926.1/3568176/0/225/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" target="_blank"><img src="https://adserver.adtechus.com/adserv/3.0/9926.1/3568176/0/225/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" border="0" width="728" height="90"></a></noscript> 
+
+    <script type="text/javascript">
+      function goPage(page)
+      {
+        document.getElementById('page').value = page;
+        document.getElementById('chartForm').submit();
+      }
+    </script>
+    
+    
+    <div id="searchsuggestions" style="visibility:hidden;position:absolute;" ></div>
+  <script type="text/javascript" src="https://aa51943acdd0baa94a6e-d133dbbbd17c5adb5c698e6074ced43d.ssl.cf1.rackcdn.com/basereq-min.js"></script>
+    <script type="text/javascript" src="/sourced/autosuggest.js?pre=descriptor&type=h&context=p"></script>
+<script type="text/javascript" src="/sourced/autosuggest.js?pre=country"></script>
+
+    <style type="text/css">
+ 
+a.genre { font-weight:bold; } 
+a.gray { color: gray; } 
+div.genrea { padding:5px; margin: 5px; background: #cfc; border:#282 2px solid; } 
+div.genred { padding:5px; margin: 5px;  background: #ddd; border:#666 2px solid; color:#555; } 
+
+</style>
+    <div style="background:#eee;font-size:small;margin:10px;padding:10px;"><form id="chartForm">
+<input type="hidden" id="page" name="page" value="1" />
+
+<select name="chart_type">
+ <option selected  value="top">Top</option>
+ <option  value="esoteric">Esoteric</option>
+ <option  value="bottom">Bottom</option>
+</select>
+<select name="type">
+ <option selected  value="album" >albums</option>
+ <option   value="ep">EPs</option>
+ <option   value="single">singles</option>
+ <option   value="mixtape">mixtapes</option>
+ <option   value="djmix">DJ mixes</option>
+ <option   value="comp">compilations</option>
+ <option   value="video">videos</option>
+ <option   value="unauth">bootlegs</option>
+ <option   value="everything">everything</option>
+</select>
+
+  from <select name="year"/>
+ <option value="alltime">all-time</option>
+ <option  value="2010s">2010s</option>
+ <option  value="2000s">2000s</option>
+ <option  value="1990s">1990s</option>
+ <option  value="1980s">1980s</option>
+ <option  value="1970s">1970s</option>
+ <option  value="1960s">1960s</option>
+ <option  value="1950s">1950s</option>
+ <option  value="1940s">1940s</option>
+ <option  value="1930s">1930s</option>
+ <option  value="1920s">1920s</option>
+ <option  value="1910s">1910s</option>
+ <option  value="1900s">1900s</option>
+ 
+ <option  value="2015">2015</option><option  value="2014">2014</option><option  value="2013">2013</option><option  value="2012">2012</option><option  value="2011">2011</option><option  value="2010">2010</option><option  value="2009">2009</option><option  value="2008">2008</option><option  value="2007">2007</option><option  value="2006">2006</option><option  value="2005">2005</option><option  value="2004">2004</option><option  value="2003">2003</option><option  value="2002">2002</option><option  value="2001">2001</option><option  value="2000">2000</option><option  value="1999">1999</option><option  value="1998">1998</option><option  value="1997">1997</option><option  value="1996">1996</option><option  value="1995">1995</option><option  value="1994">1994</option><option  value="1993">1993</option><option  value="1992">1992</option><option  value="1991">1991</option><option  value="1990">1990</option><option  value="1989">1989</option><option  value="1988">1988</option><option  value="1987">1987</option><option  value="1986">1986</option><option  value="1985">1985</option><option  value="1984">1984</option><option  value="1983">1983</option><option  value="1982">1982</option><option  value="1981">1981</option><option  value="1980">1980</option><option  value="1979">1979</option><option  value="1978">1978</option><option  value="1977">1977</option><option  value="1976">1976</option><option  value="1975">1975</option><option  value="1974">1974</option><option  value="1973">1973</option><option  value="1972">1972</option><option  value="1971">1971</option><option  value="1970">1970</option><option  value="1969">1969</option><option  value="1968">1968</option><option  value="1967">1967</option><option  value="1966">1966</option><option  value="1965">1965</option><option  value="1964">1964</option><option  value="1963">1963</option><option  value="1962">1962</option><option  value="1961">1961</option><option  value="1960">1960</option><option  value="1959">1959</option><option  value="1958">1958</option><option  value="1957">1957</option><option  value="1956">1956</option><option  value="1955">1955</option><option  value="1954">1954</option><option  value="1953">1953</option><option  value="1952">1952</option><option  value="1951">1951</option><option  value="1950">1950</option><option  value="1949">1949</option><option  value="1948">1948</option><option  value="1947">1947</option><option  value="1946">1946</option><option  value="1945">1945</option><option  value="1944">1944</option><option  value="1943">1943</option><option  value="1942">1942</option><option  value="1941">1941</option><option  value="1940">1940</option><option  value="1939">1939</option><option  value="1938">1938</option><option  value="1937">1937</option><option  value="1936">1936</option><option  value="1935">1935</option><option  value="1934">1934</option><option  value="1933">1933</option><option  value="1932">1932</option><option  value="1931">1931</option><option  value="1930">1930</option><option  value="1929">1929</option><option  value="1928">1928</option><option  value="1927">1927</option><option  value="1926">1926</option><option  value="1925">1925</option><option  value="1924">1924</option><option  value="1923">1923</option><option  value="1922">1922</option><option  value="1921">1921</option><option  value="1920">1920</option><option  value="1919">1919</option><option  value="1918">1918</option><option  value="1917">1917</option><option  value="1916">1916</option><option  value="1915">1915</option><option  value="1914">1914</option><option  value="1913">1913</option><option  value="1912">1912</option><option  value="1911">1911</option><option  value="1910">1910</option><option  value="1909">1909</option><option  value="1908">1908</option><option  value="1907">1907</option><option  value="1906">1906</option><option  value="1905">1905</option><option  value="1904">1904</option><option  value="1903">1903</option><option  value="1902">1902</option><option  value="1901">1901</option><option  value="1900">1900</option>
+</select>
+<br /><br />
+
+<select name="genre_include">
+ <option value="1">Only include genres:</option>
+ <option value="0" >Include all genres except:</option>
+</select> | 
+<input type="hidden" name="include_child_genres" id="include_child_genres" value="1" />
+<input type="text" size="40" name="genres" id="genres" value="hard rock" onFocus="descriptorattachSuggest(this.id);" /> | <label for="include_child_genres_chk"><input type="checkbox" checked="checked" id="include_child_genres_chk" name="include_child_genres_chk" value="1" onChange="$('#include_child_genres').val($(this).is(':checked')?1:0)"/> + sub-genres</label>
+
+<br />
+<br />
+
+
+<select id="include" name="include">
+  <option value="both" selected="selected">Include</option>
+  <option value="only" >Show exclusively</option>
+<br />
+</select>
+|     
+<label for="include_archival">
+<input type="checkbox"  id="include_archival" name="include_archival" value="t" /> archival
+</label>
+<label for="include_live">
+<input type="checkbox"  id="include_live" name="include_live" value="t" /> live
+</label>
+<br /><br />
+<label for="limit_origin_country">
+Limit to artists who were born in (or are currently located in) the following countries:
+<input name=origin_countries id="origin_countries" value="" onFocus="countryattachSuggest(this.id)"  size="15">
+</label>
+<br />
+
+
+<br />
+<br />
+
+
+<label for="limit_none"><input type="radio" name="limit" checked="checked" value="none"> As rated by all RYM users </input> </label>
+<br />
+<label for="limit_country">
+<input type="radio" name="limit"   value="country">
+As rated by members in the following countries: 
+<input name=countries id="countries" onFocus="countryattachSuggest(this.id)"  value="" size="15">
+</label>
+<br />
+<!-- 
+<label for="limit_city">
+<input type="radio" name="limit"   value="country">
+As rated by members within  
+<input type="numeric" size="3" name="km"> km of 
+<div style="float:left;width:8em;font-size:x-small;">
+<input type="text" style="width:100%;" name="city" id="city"/>
+<br />(City)</div> 
+<div style="float:left;width:15em;font-size:x-small;">
+<input type="text" style="width:100%;" name="region" id="region"/>
+<br />(Region/State/Province)</div> 
+<div style="float:left;width:40em;font-size:x-small;">
+ <select name="country" id="country"><option value=""> 
+<option value="AF" >Afghanistan<br>
+<option value="AL" >Albania<br>
+<option value="DZ" >Algeria<br>
+<option value="AS" >American Samoa<br>
+<option value="AD" >Andorra<br>
+<option value="AO" >Angola<br>
+<option value="AI" >Anguilla<br>
+<option value="AQ" >Antarctica<br>
+<option value="AG" >Antigua and Barbuda<br>
+<option value="AR" >Argentina<br>
+<option value="AM" >Armenia<br>
+<option value="AW" >Aruba<br>
+<option value="AU" >Australia<br>
+<option value="AT" >Austria<br>
+<option value="AZ" >Azerbaijan<br>
+<option value="BS" >Bahamas<br>
+<option value="BH" >Bahrain<br>
+<option value="BD" >Bangladesh<br>
+<option value="BB" >Barbados<br>
+<option value="BY" >Belarus<br>
+<option value="BE" >Belgium<br>
+<option value="BZ" >Belize<br>
+<option value="BJ" >Benin<br>
+<option value="BM" >Bermuda<br>
+<option value="BT" >Bhutan<br>
+<option value="BO" >Bolivia<br>
+<option value="BQ" >Bonaire, Sint Eustatius, and Saba<br>
+<option value="BA" >Bosnia-Herzegovina<br>
+<option value="BW" >Botswana<br>
+<option value="BV" >Bouvet Island<br>
+<option value="BR" >Brazil<br>
+<option value="IO" >British Indian Ocean Territory<br>
+<option value="VG" >British Virgin Islands<br>
+<option value="BN" >Brunei Darussalam<br>
+<option value="BG" >Bulgaria<br>
+<option value="BF" >Burkina Faso<br>
+<option value="BU" >Burma<br>
+<option value="BI" >Burundi<br>
+<option value="KH" >Cambodia<br>
+<option value="CM" >Cameroon<br>
+<option value="CA" >Canada<br>
+<option value="CI" >Canary Islands<br>
+<option value="CV" >Cape Verde<br>
+<option value="KY" >Cayman Islands<br>
+<option value="CF" >Central African Republic<br>
+<option value="TD" >Chad<br>
+<option value="CL" >Chile<br>
+<option value="CN" >China<br>
+<option value="CX" >Christmas Island<br>
+<option value="CC" >Cocos Island<br>
+<option value="CO" >Colombia<br>
+<option value="KM" >Comoros<br>
+<option value="CG" >Congo<br>
+<option value="CK" >Cook Islands<br>
+<option value="CR" >Costa Rica<br>
+<option value="HR" >Croatia<br>
+<option value="CU" >Cuba<br>
+<option value="CW" >Curaçao<br>
+<option value="CY" >Cyprus<br>
+<option value="CS" >Czechoslovakia (Former)<br>
+<option value="CZ" >Czech Republic<br>
+<option value="CD" >Democratic Republic of Congo<br>
+<option value="DK" >Denmark<br>
+<option value="DJ" >Djibouti<br>
+<option value="DM" >Dominica<br>
+<option value="DO" >Dominican Republic<br>
+<option value="TP" >East Timor<br>
+<option value="EC" >Ecuador<br>
+<option value="EG" >Egypt<br>
+<option value="SV" >El Salvador<br>
+<option value="GQ" >Equatorial Guinea<br>
+<option value="ER" >Eritrea<br>
+<option value="EE" >Estonia<br>
+<option value="ET" >Ethiopia<br>
+<option value="FK" >Falkland Islands<br>
+<option value="FO" >Faroe Islands<br>
+<option value="FJ" >Fiji<br>
+<option value="FI" >Finland<br>
+<option value="FR" >France<br>
+<option value="GF" >French Guiana<br>
+<option value="TF" >French Southern Territories<br>
+<option value="MK" >FYRO Macedonia<br>
+<option value="GA" >Gabon<br>
+<option value="GM" >Gambia<br>
+<option value="GE" >Georgia<br>
+<option value="GS" >Georgia & Sandwich Islands<br>
+<option value="DE" >Germany<br>
+<option value="GH" >Ghana<br>
+<option value="GI" >Gibraltar<br>
+<option value="GR" >Greece<br>
+<option value="GL" >Greenland<br>
+<option value="GD" >Grenada<br>
+<option value="GP" >Guadeloupe<br>
+<option value="GU" >Guam<br>
+<option value="GT" >Guatemala<br>
+<option value="GG" >Guernsey<br>
+<option value="GN" >Guinea<br>
+<option value="GW" >Guinea-Bissau<br>
+<option value="GY" >Guyana<br>
+<option value="HT" >Haiti<br>
+<option value="HM" >Heard Island and McDonald Islands<br>
+<option value="HN" >Honduras<br>
+<option value="HK" >Hong Kong<br>
+<option value="HU" >Hungary<br>
+<option value="IS" >Iceland<br>
+<option value="IN" >India<br>
+<option value="ID" >Indonesia<br>
+<option value="IR" >Iran<br>
+<option value="IQ" >Iraq<br>
+<option value="IE" >Ireland<br>
+<option value="IM" >Isle of Man<br>
+<option value="IL" >Israel<br>
+<option value="IT" >Italy<br>
+<option value="IC" >Ivory Coast<br>
+<option value="JM" >Jamaica<br>
+<option value="JP" >Japan<br>
+<option value="JE" >Jersey<br>
+<option value="JO" >Jordan<br>
+<option value="KZ" >Kazakhstan<br>
+<option value="KE" >Kenya<br>
+<option value="KI" >Kiribati<br>
+<option value="XK" >Kosovo<br>
+<option value="KW" >Kuwait<br>
+<option value="KG" >Kyrgyzstan<br>
+<option value="LA" >Laos<br>
+<option value="LV" >Latvia<br>
+<option value="LB" >Lebanon<br>
+<option value="LS" >Lesotho<br>
+<option value="LR" >Liberia<br>
+<option value="LY" >Libya<br>
+<option value="LI" >Liechtenstein<br>
+<option value="LT" >Lithuania<br>
+<option value="LU" >Luxembourg<br>
+<option value="MO" >Macau<br>
+<option value="MG" >Madagascar<br>
+<option value="MW" >Malawi<br>
+<option value="MY" >Malaysia<br>
+<option value="MV" >Maldives<br>
+<option value="ML" >Mali<br>
+<option value="MT" >Malta<br>
+<option value="MH" >Marshall Islands<br>
+<option value="MQ" >Martinique<br>
+<option value="MR" >Mauritania<br>
+<option value="MU" >Mauritius<br>
+<option value="YT" >Mayotte<br>
+<option value="MX" >Mexico<br>
+<option value="FM" >Micronesia<br>
+<option value="MD" >Moldova<br>
+<option value="MC" >Monaco<br>
+<option value="MN" >Mongolia<br>
+<option value="ME" >Montenegro<br>
+<option value="MS" >Montserrat<br>
+<option value="MA" >Morocco<br>
+<option value="MZ" >Mozambique<br>
+<option value="MM" >Myanmar (Former Burma)<br>
+<option value="NA" >Namibia<br>
+<option value="NR" >Nauru<br>
+<option value="NP" >Nepal<br>
+<option value="NL" >Netherlands<br>
+<option value="AN" >Netherlands Antilles<br>
+<option value="NC" >New Caledonia<br>
+<option value="NZ" >New Zealand<br>
+<option value="NI" >Nicaragua<br>
+<option value="NE" >Niger<br>
+<option value="NG" >Nigeria<br>
+<option value="NU" >Niue<br>
+<option value="NF" >Norfolk Island<br>
+<option value="MP" >Northern Marianas<br>
+<option value="KP" >North Korea<br>
+<option value="NO" >Norway<br>
+<option value="OM" >Oman<br>
+<option value="PK" >Pakistan<br>
+<option value="PW" >Palau<br>
+<option value="PS" >Palestine National Authority<br>
+<option value="PA" >Panama<br>
+<option value="PG" >Papua New Guinea<br>
+<option value="PY" >Paraguay<br>
+<option value="PE" >Peru<br>
+<option value="PH" >Philippines<br>
+<option value="PN" >Pitcairn Islands<br>
+<option value="PL" >Poland<br>
+<option value="PF" >Polynesia<br>
+<option value="PT" >Portugal<br>
+<option value="PR" >Puerto Rico<br>
+<option value="QA" >Qatar<br>
+<option value="RE" >Reunion<br>
+<option value="RO" >Romania<br>
+<option value="RU" >Russian Federation<br>
+<option value="RW" >Rwanda<br>
+<option value="BL" >Saint Barthélemy<br>
+<option value="KN" >Saint Kitts and Nevis<br>
+<option value="LC" >Saint Lucia<br>
+<option value="MF" >Saint Martin (French)<br>
+<option value="VC" >Saint Vincent and the Grenadines<br>
+<option value="WS" >Samoa<br>
+<option value="SM" >San Marino<br>
+<option value="ST" >Sao Tome<br>
+<option value="SA" >Saudi Arabia<br>
+<option value="SN" >Senegal<br>
+<option value="RS" >Serbia<br>
+<option value="YU" >Serbia and Montenegro (obsolete)<br>
+<option value="SC" >Seychelles<br>
+<option value="SL" >Sierra Leone<br>
+<option value="SG" >Singapore<br>
+<option value="SX" >Sint Maarten (Dutch part)<br>
+<option value="SK" >Slovakia<br>
+<option value="SI" >Slovenia<br>
+<option value="SB" >Solomon Islands<br>
+<option value="SO" >Somalia<br>
+<option value="ZA" >South Africa<br>
+<option value="KR" >South Korea<br>
+<option value="SS" >South Sudan<br>
+<option value="ES" >Spain<br>
+<option value="LK" >Sri Lanka<br>
+<option value="SH" >St. Helena<br>
+<option value="PM" >St Pierre And Miquelon<br>
+<option value="SD" >Sudan<br>
+<option value="SR" >Suriname<br>
+<option value="SJ" >Svalbard And Jan Mayen<br>
+<option value="SZ" >Swaziland<br>
+<option value="SE" >Sweden<br>
+<option value="CH" >Switzerland<br>
+<option value="SY" >Syria<br>
+<option value="TJ" >Tadjikistan<br>
+<option value="TW" >Taiwan<br>
+<option value="TZ" >Tanzania<br>
+<option value="TH" >Thailand<br>
+<option value="TL" >Timor-Leste<br>
+<option value="TG" >Togo<br>
+<option value="TK" >Tokelau<br>
+<option value="TO" >Tonga<br>
+<option value="TT" >Trinidad and Tobago<br>
+<option value="TN" >Tunisia<br>
+<option value="TR" >Turkey<br>
+<option value="TM" >Turkmenistan<br>
+<option value="TC" >Turks And Caicos Islands<br>
+<option value="TV" >Tuvalu<br>
+<option value="UG" >Uganda<br>
+<option value="UA" >Ukraine<br>
+<option value="AE" >United Arab Emirates<br>
+<option value="GB" >United Kingdom<br>
+<option value="US" >United States<br>
+<option value="UY" >Uruguay<br>
+<option value="UM" >US Minor Outlying Islands<br>
+<option value="EH" >US-Western Sahara<br>
+<option value="UZ" >Uzbekistan<br>
+<option value="VU" >Vanuatu<br>
+<option value="VA" >Vatican City State<br>
+<option value="VE" >Venezuela<br>
+<option value="VN" >Vietnam<br>
+<option value="VI" >Virgin Islands<br>
+<option value="WF" >Wallis And Futuna Islands<br>
+<option value="YE" >Yemen<br>
+<option value="ZM" >Zambia<br>
+<option value="ZW" >Zimbabwe<br>
+</select>
+<br />(Country)
+</div>
+
+
+</label> 
+<br />-->
+
+<label for="limit_friends"><input id="limit_friends" type="radio" name="limit"   value="friends"> As rated by my friends </input> </label>
+<br />
+
+<br /><input type="button" onClick="document.getElementById('page').value=1;this.form.submit();" value="Show chart &gt;" /> 
+
+
+
+</form></div><div class="clear"> </div><div style="text-align:right;font-size:x-small;padding:10px;border:#888 1px solid; background:#eee; color:#888;">Want to know more about how charts are calculated?  Read the <a href="/wiki/RYM:Charts FAQ" target="blank" title="Click to view documentation" class="wiki_link">charts FAQ</a></div><div class="clear"> </div><div class="clear"> </div><div style="padding:10px;font-size:small;text-align:center;font-weight:bold;background:#eee;border:#888 1px solid;"><a href="javascript:goPage(1);">1 - 100</a> | <a href="javascript:goPage(2);">101 - 200</a> | <a href="javascript:goPage(3);">201 - 300</a> | <a href="javascript:goPage(4);">301 - 400</a> | <a href="javascript:goPage(5);">401 - 500</a> | <a href="javascript:goPage(6);">501 - 600</a> | <a href="javascript:goPage(7);">601 - 700</a> | <a href="javascript:goPage(8);">701 - 800</a> | <a href="javascript:goPage(9);">801 - 900</a> | <a href="javascript:goPage(10);">901 - 1000</a> </div><div class="clear"> </div><table class="mbgen" style="width:100%"><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1301</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/spiritual_beggars/earth_blues/"><img  width="150" id="img_l_4384334"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/dfe4eb814a147622840cc1d785c9a341/4656970.jpg"  alt="Earth Blues" title="Earth Blues" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist4257]"  href="/artist/spiritual_beggars" class="artist">Spiritual Beggars</a> <br /><a title="[Album4384334]" href="/release/album/spiritual_beggars/earth_blues/" class="album">Earth Blues</a></span>
+         <span class="mediumg">(2013)</span><br /><br /><a title="[Genre327]" class="genre" href="/genre/Stoner+Rock/">Stoner Rock</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/spiritual_beggars/earth_blues/">Avg rating: <b>3.46</b> | Ratings: <b>256</b> | Reviews (total): <b>14</b></a> | <a href="/release/album/spiritual_beggars/earth_blues/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1302</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/house_of_lords/house_of_lords/"><img  width="150" id="img_l_20563"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/5438528787a94bb05e4596c1b3a5f392/1214751.jpg"  alt="House of Lords" title="House of Lords" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist6117]"  href="/artist/house_of_lords" class="artist">House of Lords</a> <br /><a title="[Album20563]" href="/release/album/house_of_lords/house_of_lords/" class="album">House of Lords</a></span>
+         <span class="mediumg">(1988)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre29101]" class="genre" href="/genre/AOR/">AOR</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/house_of_lords/house_of_lords/">Avg rating: <b>3.49</b> | Ratings: <b>205</b> | Reviews (total): <b>17</b></a> | <a href="/release/album/house_of_lords/house_of_lords/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1303</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/pearl_jam/pearl_jam/"><img  width="150" id="img_l_522383"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3aee5fb26f58ceb72689e2d5d61d8e49/2029585.jpg"  alt="Pearl Jam" title="Pearl Jam" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist40]"  href="/artist/pearl_jam" class="artist">Pearl Jam</a> <br /><a title="[Album522383]" href="/release/album/pearl_jam/pearl_jam/" class="album">Pearl Jam</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre116]" class="genre" href="/genre/Alternative+Rock/">Alternative Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/pearl_jam/pearl_jam/">Avg rating: <b>3.34</b> | Ratings: <b>2,706</b> | Reviews (total): <b>134</b></a> | <a href="/release/album/pearl_jam/pearl_jam/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1304</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/victory/culture_killed_the_native/"><img  width="150" id="img_l_104256"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/329b101db4dce7e2289fb8c4afe30570/2352210.jpg"  alt="Culture Killed the Native" title="Culture Killed the Native" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1685]"  href="/artist/victory" class="artist">Victory</a> <br /><a title="[Album104256]" href="/release/album/victory/culture_killed_the_native/" class="album">Culture Killed the Native</a></span>
+         <span class="mediumg">(1989)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/victory/culture_killed_the_native/">Avg rating: <b>3.52</b> | Ratings: <b>86</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/victory/culture_killed_the_native/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1305</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/wig_wam/non_stop_rocknroll/"><img  width="150" id="img_l_2610830"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/962d9b268ec7929892c558bb843c156d/2995819.jpg"  alt="Non Stop Rock&#39;n&#39;Roll" title="Non Stop Rock&#39;n&#39;Roll" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist33146]"  href="/artist/wig_wam" class="artist">Wig Wam</a> <br /><a title="[Album2610830]" href="/release/album/wig_wam/non_stop_rocknroll/" class="album">Non Stop Rock&#39;n&#39;Roll</a></span>
+         <span class="mediumg">(2010)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre439]" class="genre" href="/genre/Glam+Metal/">Glam Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/wig_wam/non_stop_rocknroll/">Avg rating: <b>3.52</b> | Ratings: <b>95</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/wig_wam/non_stop_rocknroll/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1306</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/bad_english/bad_english/"><img  width="150" id="img_l_5785"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/fd8a0caf514d3fe88fbdc462b3de2720/1734245.jpg"  alt="Bad English" title="Bad English" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1754]"  href="/artist/bad_english" class="artist">Bad English</a> <br /><a title="[Album5785]" href="/release/album/bad_english/bad_english/" class="album">Bad English</a></span>
+         <span class="mediumg">(1989)</span><br /><br /><a title="[Genre29101]" class="genre" href="/genre/AOR/">AOR</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/bad_english/bad_english/">Avg rating: <b>3.43</b> | Ratings: <b>320</b> | Reviews (total): <b>19</b></a> | <a href="/release/album/bad_english/bad_english/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1307</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/the_four_horsemen/gettin_pretty_good____at_barely_gettin_by___/"><img  height="150" id="img_l_83385"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/86df75885944a81c61e9f928670a244d/1236201.jpg"  alt="Gettin&#39; Pretty Good... At Barely Gettin&#39; By..." title="Gettin&#39; Pretty Good... At Barely Gettin&#39; By..." src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist5140]"  href="/artist/the_four_horsemen" class="artist">The Four Horsemen</a> <br /><a title="[Album83385]" href="/release/album/the_four_horsemen/gettin_pretty_good____at_barely_gettin_by___/" class="album">Gettin&#39; Pretty Good... At Barely Gettin&#39; By...</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre10283]" class="genre" href="/genre/Boogie+Rock/">Boogie Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/the_four_horsemen/gettin_pretty_good____at_barely_gettin_by___/">Avg rating: <b>3.59</b> | Ratings: <b>80</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/the_four_horsemen/gettin_pretty_good____at_barely_gettin_by___/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1308</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/paul_gilbert/fuzz_universe/"><img  width="150" id="img_l_2975718"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e09d3f412cb5a00e9814b1597d22b3e6/3194307.jpg"  alt="Fuzz Universe" title="Fuzz Universe" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist28235]"  href="/artist/paul_gilbert" class="artist">Paul Gilbert</a> <br /><a title="[Album2975718]" href="/release/album/paul_gilbert/fuzz_universe/" class="album">Fuzz Universe</a></span>
+         <span class="mediumg">(2010)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre95]" class="genre" href="/genre/Progressive+Metal/">Progressive Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/paul_gilbert/fuzz_universe/">Avg rating: <b>3.55</b> | Ratings: <b>113</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/paul_gilbert/fuzz_universe/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1309</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/king_kobra/ready_to_strike/"><img  width="150" id="img_l_34555"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/8df33597a2ccafb79ed7274929b190e4/2377914.jpg"  alt="Ready to Strike" title="Ready to Strike" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9983]"  href="/artist/king_kobra" class="artist">King Kobra</a> <br /><a title="[Album34555]" href="/release/album/king_kobra/ready_to_strike/" class="album">Ready to Strike</a></span>
+         <span class="mediumg">(1985)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre439]" class="genre" href="/genre/Glam+Metal/">Glam Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/king_kobra/ready_to_strike/">Avg rating: <b>3.48</b> | Ratings: <b>167</b> | Reviews (total): <b>11</b></a> | <a href="/release/album/king_kobra/ready_to_strike/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1310</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/sons_of_otis/temple_ball/"><img  width="150" id="img_l_102986"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/52d86e28165592eeb5b56c6e451dd6b1/1259754.jpg"  alt="Temple Ball" title="Temple Ball" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist24588]"  href="/artist/sons_of_otis" class="artist">Sons of Otis</a> <br /><a title="[Album102986]" href="/release/album/sons_of_otis/temple_ball/" class="album">Temple Ball</a></span>
+         <span class="mediumg">(1999)</span><br /><br /><a title="[Genre436]" class="genre" href="/genre/Stoner+Metal/">Stoner Metal</a>, <a title="[Genre327]" class="genre" href="/genre/Stoner+Rock/">Stoner Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/sons_of_otis/temple_ball/">Avg rating: <b>3.51</b> | Ratings: <b>111</b> | Reviews (total): <b>8</b></a> | <a href="/release/album/sons_of_otis/temple_ball/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1311</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/ozzy_osbourne/the_ultimate_sin/"><img  width="150" id="img_l_7662"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/7ee114e89b8c45ed15874352c7a73ed2/1924642.jpg"  alt="The Ultimate Sin" title="The Ultimate Sin" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1345]"  href="/artist/ozzy_osbourne" class="artist">Ozzy Osbourne</a> <br /><a title="[Album7662]" href="/release/album/ozzy_osbourne/the_ultimate_sin/" class="album">The Ultimate Sin</a></span>
+         <span class="mediumg">(1986)</span><br /><br /><a title="[Genre472]" class="genre" href="/genre/Heavy+Metal/">Heavy Metal</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/ozzy_osbourne/the_ultimate_sin/">Avg rating: <b>3.37</b> | Ratings: <b>1,447</b> | Reviews (total): <b>88</b></a> | <a href="/release/album/ozzy_osbourne/the_ultimate_sin/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1312</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/admiral_sir_cloudesley_shovell/checkem_before_you_wreckem/"><img  width="150" id="img_l_5211962"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/2359968de5e1ddc88cf3030ab7c42f39/5105287.jpg"  alt="Check&#39;Em Before You Wreck&#39;Em" title="Check&#39;Em Before You Wreck&#39;Em" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist490061]"  href="/artist/admiral_sir_cloudesley_shovell" class="artist">Admiral Sir Cloudesley Shovell</a> <br /><a title="[Album5211962]" href="/release/album/admiral_sir_cloudesley_shovell/checkem_before_you_wreckem/" class="album">Check&#39;Em Before You Wreck&#39;Em</a></span>
+         <span class="mediumg">(2014)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/admiral_sir_cloudesley_shovell/checkem_before_you_wreckem/">Avg rating: <b>3.55</b> | Ratings: <b>91</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/admiral_sir_cloudesley_shovell/checkem_before_you_wreckem/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1313</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/young_flowers/dr_sessions/"><img  width="150" id="img_l_183377"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/da2c75ae539e498f8b2ea82a47a2ba08/1811804.jpg"  alt="DR Sessions" title="DR Sessions" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist43223]"  href="/artist/young_flowers" class="artist">Young Flowers</a> <br /><a title="[Album183377]" href="/release/album/young_flowers/dr_sessions/" class="album">DR Sessions</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre156]" class="genre" href="/genre/Blues+Rock/">Blues Rock</a>, <a title="[Genre10282]" class="genre" href="/genre/Heavy+Psych/">Heavy Psych</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/young_flowers/dr_sessions/">Avg rating: <b>3.95</b> | Ratings: <b>28</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/young_flowers/dr_sessions/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1314</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stan_bush/dream_the_dream/"><img  width="150" id="img_l_2966347"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/41af5fe8895a7685aae211ca588f3b89/3341220.jpg"  alt="Dream the Dream" title="Dream the Dream" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist13379]"  href="/artist/stan_bush" class="artist">Stan Bush</a> <br /><a title="[Album2966347]" href="/release/album/stan_bush/dream_the_dream/" class="album">Dream the Dream</a></span>
+         <span class="mediumg">(2010)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre29101]" class="genre" href="/genre/AOR/">AOR</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stan_bush/dream_the_dream/">Avg rating: <b>3.63</b> | Ratings: <b>62</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/stan_bush/dream_the_dream/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1315</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/gluecifer/tender_is_the_savage/"><img  width="150" id="img_l_32392"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/69d0af9a170304edc6fb41152f683c56/4036327.jpg"  alt="Tender Is the Savage" title="Tender Is the Savage" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist8078]"  href="/artist/gluecifer" class="artist">Gluecifer</a> <br /><a title="[Album32392]" href="/release/album/gluecifer/tender_is_the_savage/" class="album">Tender Is the Savage</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/gluecifer/tender_is_the_savage/">Avg rating: <b>3.56</b> | Ratings: <b>116</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/gluecifer/tender_is_the_savage/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1316</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/foghat/energized/"><img  width="150" id="img_l_26655"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c24346ce87ae1ece80e187d2547761fd/1228434.jpg"  alt="Energized" title="Energized" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist3239]"  href="/artist/foghat" class="artist">Foghat</a> <br /><a title="[Album26655]" href="/release/album/foghat/energized/" class="album">Energized</a></span>
+         <span class="mediumg">(1974)</span><br /><br /><a title="[Genre156]" class="genre" href="/genre/Blues+Rock/">Blues Rock</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre10283]" class="genre" href="/genre/Boogie+Rock/">Boogie Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/foghat/energized/">Avg rating: <b>3.49</b> | Ratings: <b>255</b> | Reviews (total): <b>18</b></a> | <a href="/release/album/foghat/energized/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1317</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stone_axe_f1/stone_axe/"><img  width="150" id="img_l_2217004"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/56d853a7e7c673f47bb7b5c01d13b3b1/2624884.jpg"  alt="Stone Axe" title="Stone Axe" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist421937]"  href="/artist/stone_axe_f1" class="artist">Stone Axe</a> <br /><a title="[Album2217004]" href="/release/album/stone_axe_f1/stone_axe/" class="album">Stone Axe</a></span>
+         <span class="mediumg">(2009)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stone_axe_f1/stone_axe/">Avg rating: <b>3.59</b> | Ratings: <b>86</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/stone_axe_f1/stone_axe/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1318</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/egypt_f2/egypt/"><img  width="150" id="img_l_556014"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/f97482d6d5aecc873cb6e333012b091a/4450506.png"  alt="Egypt" title="Egypt" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist130976]"  href="/artist/egypt_f2" class="artist">Egypt</a> <br /><a title="[Album556014]" href="/release/album/egypt_f2/egypt/" class="album">Egypt</a></span>
+         <span class="mediumg">(2005)</span><br /><br /><a title="[Genre327]" class="genre" href="/genre/Stoner+Rock/">Stoner Rock</a>, <a title="[Genre10282]" class="genre" href="/genre/Heavy+Psych/">Heavy Psych</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/egypt_f2/egypt/">Avg rating: <b>3.58</b> | Ratings: <b>114</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/egypt_f2/egypt/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1319</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/great_white/___twice_shy/"><img  width="150" id="img_l_20556"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/dca02f113f140f7385350ebf0ec84f34/1214569.jpg"  alt="...Twice Shy" title="...Twice Shy" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist4711]"  href="/artist/great_white" class="artist">Great White</a> <br /><a title="[Album20556]" href="/release/album/great_white/___twice_shy/" class="album">...Twice Shy</a></span>
+         <span class="mediumg">(1989)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/great_white/___twice_shy/">Avg rating: <b>3.46</b> | Ratings: <b>296</b> | Reviews (total): <b>17</b></a> | <a href="/release/album/great_white/___twice_shy/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1320</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/xyz/xyz/"><img  width="150" id="img_l_32555"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/6b8288ad9cb9f8ebcc1bda898641d8e5/2353413.jpg"  alt="XYZ" title="XYZ" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9395]"  href="/artist/xyz" class="artist">XYZ</a> <br /><a title="[Album32555]" href="/release/album/xyz/xyz/" class="album">XYZ</a></span>
+         <span class="mediumg">(1989)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre439]" class="genre" href="/genre/Glam+Metal/">Glam Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/xyz/xyz/">Avg rating: <b>3.51</b> | Ratings: <b>141</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/xyz/xyz/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1321</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/pretty_maids/sin_decade/"><img  width="150" id="img_l_135630"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/f1ee295016bfa636496b0de2c7228696/3415618.jpg"  alt="Sin-Decade" title="Sin-Decade" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9369]"  href="/artist/pretty_maids" class="artist">Pretty Maids</a> <br /><a title="[Album135630]" href="/release/album/pretty_maids/sin_decade/" class="album">Sin-Decade</a></span>
+         <span class="mediumg">(1992)</span><br /><br /><a title="[Genre472]" class="genre" href="/genre/Heavy+Metal/">Heavy Metal</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/pretty_maids/sin_decade/">Avg rating: <b>3.53</b> | Ratings: <b>140</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/pretty_maids/sin_decade/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1322</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/titanic/titanic/"><img  height="150" id="img_l_84099"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/954cdc541ee76d431970cd2ee3fe7cfa/2277374.jpg"  alt="Titanic" title="Titanic" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist21334]"  href="/artist/titanic" class="artist">Titanic</a> <br /><a title="[Album84099]" href="/release/album/titanic/titanic/" class="album">Titanic</a></span>
+         <span class="mediumg">(1970)</span><br /><br /><a title="[Genre97]" class="genre" href="/genre/Progressive+Rock/">Progressive Rock</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/titanic/titanic/">Avg rating: <b>3.54</b> | Ratings: <b>149</b> | Reviews (total): <b>4</b></a> | <a href="/release/album/titanic/titanic/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1323</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/manic_street_preachers/gold_against_the_soul/"><img  width="150" id="img_l_387"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/133bbb8feda0d82d65530049aa3ea3ca/1610559.jpg"  alt="Gold Against the Soul" title="Gold Against the Soul" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist97]"  href="/artist/manic_street_preachers" class="artist">Manic Street Preachers</a> <br /><a title="[Album387]" href="/release/album/manic_street_preachers/gold_against_the_soul/" class="album">Gold Against the Soul</a></span>
+         <span class="mediumg">(1993)</span><br /><br /><a title="[Genre116]" class="genre" href="/genre/Alternative+Rock/">Alternative Rock</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/manic_street_preachers/gold_against_the_soul/">Avg rating: <b>3.39</b> | Ratings: <b>1,287</b> | Reviews (total): <b>81</b></a> | <a href="/release/album/manic_street_preachers/gold_against_the_soul/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1324</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/the_almighty/powertrippin/"><img  width="150" id="img_l_11452"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c18c4f1efa508f863a4a7c9d378589b5/1321170.jpg"  alt="Powertrippin&#39;" title="Powertrippin&#39;" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist3147]"  href="/artist/the_almighty" class="artist">The Almighty</a> <br /><a title="[Album11452]" href="/release/album/the_almighty/powertrippin/" class="album">Powertrippin&#39;</a></span>
+         <span class="mediumg">(1993)</span><br /><br /><a title="[Genre47]" class="genre" href="/genre/Grunge/">Grunge</a>, <a title="[Genre472]" class="genre" href="/genre/Heavy+Metal/">Heavy Metal</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/the_almighty/powertrippin/">Avg rating: <b>3.55</b> | Ratings: <b>140</b> | Reviews (total): <b>11</b></a> | <a href="/release/album/the_almighty/powertrippin/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1325</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/golden_earring/switch/"><img  height="150" id="img_l_5880"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/81b8878febfb41276469c56ba482d109/1448932.jpg"  alt="Switch" title="Switch" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1759]"  href="/artist/golden_earring" class="artist">Golden Earring</a> <br /><a title="[Album5880]" href="/release/album/golden_earring/switch/" class="album">Switch</a></span>
+         <span class="mediumg">(1975)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre5]" class="genre" href="/genre/Rock/">Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/golden_earring/switch/">Avg rating: <b>3.48</b> | Ratings: <b>247</b> | Reviews (total): <b>14</b></a> | <a href="/release/album/golden_earring/switch/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1326</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/steelhouse_lane/metallic_blue/"><img  width="150" id="img_l_333139"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d600a80c4b682a96503efd38b55fd7ae/2953956.jpg"  alt="Metallic Blue" title="Metallic Blue" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9557]"  href="/artist/steelhouse_lane" class="artist">Steelhouse Lane</a> <br /><a title="[Album333139]" href="/release/album/steelhouse_lane/metallic_blue/" class="album">Metallic Blue</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre29101]" class="genre" href="/genre/AOR/">AOR</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/steelhouse_lane/metallic_blue/">Avg rating: <b>3.78</b> | Ratings: <b>42</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/steelhouse_lane/metallic_blue/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1327</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/murasaki/murasaki/"><img  width="150" id="img_l_123510"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/90e95830b3118a64db157cf7b0b5c819/1546307.jpg"  alt="Murasaki" title="Murasaki" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist29851]"  href="/artist/murasaki" class="artist">Murasaki</a> <br /><a title="[Album123510]" href="/release/album/murasaki/murasaki/" class="album">Murasaki</a></span>
+         <span class="mediumg">(1975)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/murasaki/murasaki/">Avg rating: <b>3.62</b> | Ratings: <b>59</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/murasaki/murasaki/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1328</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/foghat/foghat/"><img  width="150" id="img_l_11813"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/cb736a3ee779e013d000ae5ffc8ec85e/1228433.jpg"  alt="Foghat" title="Foghat" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist3239]"  href="/artist/foghat" class="artist">Foghat</a> <br /><a title="[Album11813]" href="/release/album/foghat/foghat/" class="album">Foghat</a></span>
+         <span class="mediumg">(1972)</span><br /><br /><a title="[Genre156]" class="genre" href="/genre/Blues+Rock/">Blues Rock</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/foghat/foghat/">Avg rating: <b>3.47</b> | Ratings: <b>321</b> | Reviews (total): <b>18</b></a> | <a href="/release/album/foghat/foghat/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1329</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/them/them_in_reality/"><img  width="150" id="img_l_391328"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d9418605b1313c7390591a79ef32116f/4102479.jpg"  alt="Them in Reality" title="Them in Reality" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist3415]"  href="/artist/them" class="artist">Them</a> <br /><a title="[Album391328]" href="/release/album/them/them_in_reality/" class="album">Them in Reality</a></span>
+         <span class="mediumg">(1971)</span><br /><br /><a title="[Genre361]" class="genre" href="/genre/Psychedelic+Rock/">Psychedelic Rock</a>, <a title="[Genre10282]" class="genre" href="/genre/Heavy+Psych/">Heavy Psych</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/them/them_in_reality/">Avg rating: <b>3.71</b> | Ratings: <b>57</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/them/them_in_reality/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1330</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/sons_of_otis/spacejumbofudge_f1/"><img  width="150" id="img_l_1269472"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/72b84248b1a6968ccbaefa962a5664fa/2146879.jpg"  alt="SpaceJumboFudge" title="SpaceJumboFudge" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist24588]"  href="/artist/sons_of_otis" class="artist">Sons of Otis</a> <br /><a title="[Album1269472]" href="/release/album/sons_of_otis/spacejumbofudge_f1/" class="album">SpaceJumboFudge</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre436]" class="genre" href="/genre/Stoner+Metal/">Stoner Metal</a>, <a title="[Genre81]" class="genre" href="/genre/Space+Rock/">Space Rock</a>, <a title="[Genre327]" class="genre" href="/genre/Stoner+Rock/">Stoner Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/sons_of_otis/spacejumbofudge_f1/">Avg rating: <b>3.55</b> | Ratings: <b>100</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/sons_of_otis/spacejumbofudge_f1/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1331</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/admiral_sir_cloudesley_shovell/dont_hear_it___fear_it_/"><img  width="150" id="img_l_4073558"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/dd7031f2c574223cb54be978f07b1581/4348471.jpg"  alt="Don&#39;t Hear It...Fear It!" title="Don&#39;t Hear It...Fear It!" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist490061]"  href="/artist/admiral_sir_cloudesley_shovell" class="artist">Admiral Sir Cloudesley Shovell</a> <br /><a title="[Album4073558]" href="/release/album/admiral_sir_cloudesley_shovell/dont_hear_it___fear_it_/" class="album">Don&#39;t Hear It...Fear It!</a></span>
+         <span class="mediumg">(2012)</span><br /><br /><a title="[Genre10282]" class="genre" href="/genre/Heavy+Psych/">Heavy Psych</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/admiral_sir_cloudesley_shovell/dont_hear_it___fear_it_/">Avg rating: <b>3.54</b> | Ratings: <b>111</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/admiral_sir_cloudesley_shovell/dont_hear_it___fear_it_/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1332</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/whitesnake/forevermore/"><img  width="150" id="img_l_3258706"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0fd2829453935a305a0c2517e9fe0c8a/3479556.jpg"  alt="Forevermore" title="Forevermore" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1349]"  href="/artist/whitesnake" class="artist">Whitesnake</a> <br /><a title="[Album3258706]" href="/release/album/whitesnake/forevermore/" class="album">Forevermore</a></span>
+         <span class="mediumg">(2011)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/whitesnake/forevermore/">Avg rating: <b>3.42</b> | Ratings: <b>417</b> | Reviews (total): <b>26</b></a> | <a href="/release/album/whitesnake/forevermore/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1333</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/soundgarden/louder_than_love/"><img  width="150" id="img_l_6109"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/17a77717365125404530f13da81988d2/1232681.jpg"  alt="Louder Than Love" title="Louder Than Love" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist236]"  href="/artist/soundgarden" class="artist">Soundgarden</a> <br /><a title="[Album6109]" href="/release/album/soundgarden/louder_than_love/" class="album">Louder Than Love</a></span>
+         <span class="mediumg">(1989)</span><br /><br /><a title="[Genre47]" class="genre" href="/genre/Grunge/">Grunge</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre491]" class="genre" href="/genre/Alternative+Metal/">Alternative Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/soundgarden/louder_than_love/">Avg rating: <b>3.37</b> | Ratings: <b>1,893</b> | Reviews (total): <b>93</b></a> | <a href="/release/album/soundgarden/louder_than_love/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1334</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/ian_gillan/gillans_inn/"><img  width="150" id="img_l_558152"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/b36848368b3ddcc79435af487bcc27f8/1607112.jpg"  alt="Gillan&#39;s Inn" title="Gillan&#39;s Inn" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist17119]"  href="/artist/ian_gillan" class="artist">Ian Gillan</a> <br /><a title="[Album558152]" href="/release/album/ian_gillan/gillans_inn/" class="album">Gillan&#39;s Inn</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/ian_gillan/gillans_inn/">Avg rating: <b>3.54</b> | Ratings: <b>106</b> | Reviews (total): <b>13</b></a> | <a href="/release/album/ian_gillan/gillans_inn/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1335</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/i_drive/i_drive/"><img  width="150" id="img_l_488706"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c9fccb160a0d8c3a7cefad64e9400562/2300782.jpg"  alt="I Drive" title="I Drive" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist113955]"  href="/artist/i_drive" class="artist">I Drive</a> <br /><a title="[Album488706]" href="/release/album/i_drive/i_drive/" class="album">I Drive</a></span>
+         <span class="mediumg">(1972)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre58]" class="genre" href="/genre/Krautrock/">Krautrock</a>, <a title="[Genre10282]" class="genre" href="/genre/Heavy+Psych/">Heavy Psych</a>, <a title="[Genre97]" class="genre" href="/genre/Progressive+Rock/">Progressive Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/i_drive/i_drive/">Avg rating: <b>3.58</b> | Ratings: <b>102</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/i_drive/i_drive/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1336</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/primevil/smokin_bats_at_camptons/"><img  height="150" id="img_l_343547"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ea22fd96c9e408d17693804a60cddd42/3842488.jpg"  alt="Smokin&#39; Bats at Campton&#39;s" title="Smokin&#39; Bats at Campton&#39;s" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist78289]"  href="/artist/primevil" class="artist">Primevil</a> <br /><a title="[Album343547]" href="/release/album/primevil/smokin_bats_at_camptons/" class="album">Smokin&#39; Bats at Campton&#39;s</a></span>
+         <span class="mediumg">(1974)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre10282]" class="genre" href="/genre/Heavy+Psych/">Heavy Psych</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/primevil/smokin_bats_at_camptons/">Avg rating: <b>3.54</b> | Ratings: <b>127</b> | Reviews (total): <b>10</b></a> | <a href="/release/album/primevil/smokin_bats_at_camptons/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1337</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/patto/roll_em_smoke_em_put_another_line_out/"><img  width="150" id="img_l_51937"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/2727c1c8b69ad86496502ae4c6d7d2b1/2539046.jpg"  alt="Roll &#39;Em Smoke &#39;Em Put Another Line Out" title="Roll &#39;Em Smoke &#39;Em Put Another Line Out" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist10498]"  href="/artist/patto" class="artist">Patto</a> <br /><a title="[Album51937]" href="/release/album/patto/roll_em_smoke_em_put_another_line_out/" class="album">Roll &#39;Em Smoke &#39;Em Put Another Line Out</a></span>
+         <span class="mediumg">(1972)</span><br /><br /><a title="[Genre156]" class="genre" href="/genre/Blues+Rock/">Blues Rock</a>, <a title="[Genre10282]" class="genre" href="/genre/Heavy+Psych/">Heavy Psych</a>, <a title="[Genre97]" class="genre" href="/genre/Progressive+Rock/">Progressive Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/patto/roll_em_smoke_em_put_another_line_out/">Avg rating: <b>3.56</b> | Ratings: <b>99</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/patto/roll_em_smoke_em_put_another_line_out/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1338</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/uzzhuaia/destino_perdicion/"><img  width="150" id="img_l_1587623"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/01553bba2ce5588ba510dc91262706d6/2309893.jpg"  alt="Destino Perdición" title="Destino Perdición" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist161913]"  href="/artist/uzzhuaia" class="artist">Uzzhuaïa</a> <br /><a title="[Album1587623]" href="/release/album/uzzhuaia/destino_perdicion/" class="album">Destino Perdición</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/uzzhuaia/destino_perdicion/">Avg rating: <b>3.74</b> | Ratings: <b>38</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/uzzhuaia/destino_perdicion/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1339</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/glenn_hughes/building_the_machine/"><img  width="150" id="img_l_3869"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e929eba1242f43a9eaa127ff467a819f/2219657.jpg"  alt="Building The Machine" title="Building The Machine" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1242]"  href="/artist/glenn_hughes" class="artist">Glenn Hughes</a> <br /><a title="[Album3869]" href="/release/album/glenn_hughes/building_the_machine/" class="album">Building The Machine</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/glenn_hughes/building_the_machine/">Avg rating: <b>3.57</b> | Ratings: <b>91</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/glenn_hughes/building_the_machine/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1340</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/bonafide/somethings_dripping/"><img  width="150" id="img_l_2466502"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c0ff561a26019ba6fbc604963e5a06ef/3325595.jpg"  alt="Something&#39;s Dripping" title="Something&#39;s Dripping" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist250954]"  href="/artist/bonafide" class="artist">Bonafide</a> <br /><a title="[Album2466502]" href="/release/album/bonafide/somethings_dripping/" class="album">Something&#39;s Dripping</a></span>
+         <span class="mediumg">(2009)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/bonafide/somethings_dripping/">Avg rating: <b>3.77</b> | Ratings: <b>42</b> | Reviews (total): <b>4</b></a> | <a href="/release/album/bonafide/somethings_dripping/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1341</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/foghat/rock_and_roll_outlaws/"><img  width="150" id="img_l_26656"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/feaf86a52eac25d83944a11de33cbadc/1878534.jpg"  alt="Rock and Roll Outlaws" title="Rock and Roll Outlaws" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist3239]"  href="/artist/foghat" class="artist">Foghat</a> <br /><a title="[Album26656]" href="/release/album/foghat/rock_and_roll_outlaws/" class="album">Rock and Roll Outlaws</a></span>
+         <span class="mediumg">(1974)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre156]" class="genre" href="/genre/Blues+Rock/">Blues Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/foghat/rock_and_roll_outlaws/">Avg rating: <b>3.49</b> | Ratings: <b>209</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/foghat/rock_and_roll_outlaws/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1342</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/moxy/ridin_high/"><img  width="150" id="img_l_113215"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/eeb3da53aa970e8a6d7901410470a436/5007933.jpg"  alt="Ridin&#39; High" title="Ridin&#39; High" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist27521]"  href="/artist/moxy" class="artist">Moxy</a> <br /><a title="[Album113215]" href="/release/album/moxy/ridin_high/" class="album">Ridin&#39; High</a></span>
+         <span class="mediumg">(1977)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/moxy/ridin_high/">Avg rating: <b>3.57</b> | Ratings: <b>89</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/moxy/ridin_high/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1343</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/tobruk/wild_on_the_run/"><img  width="150" id="img_l_224037"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/6bbdda0d69831b7a67df609b26645c0d/2378883.jpg"  alt="Wild on the Run" title="Wild on the Run" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist53181]"  href="/artist/tobruk" class="artist">Tobruk</a> <br /><a title="[Album224037]" href="/release/album/tobruk/wild_on_the_run/" class="album">Wild on the Run</a></span>
+         <span class="mediumg">(1985)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre29101]" class="genre" href="/genre/AOR/">AOR</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/tobruk/wild_on_the_run/">Avg rating: <b>3.75</b> | Ratings: <b>51</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/tobruk/wild_on_the_run/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1344</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/praying_mantis/forever_in_time/"><img  width="150" id="img_l_34258"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d1f07555d53ce00c032658e47c15a118/2223954.jpg"  alt="Forever in Time" title="Forever in Time" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist3483]"  href="/artist/praying_mantis" class="artist">Praying Mantis</a> <br /><a title="[Album34258]" href="/release/album/praying_mantis/forever_in_time/" class="album">Forever in Time</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre472]" class="genre" href="/genre/Heavy+Metal/">Heavy Metal</a>, <a title="[Genre29101]" class="genre" href="/genre/AOR/">AOR</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/praying_mantis/forever_in_time/">Avg rating: <b>3.58</b> | Ratings: <b>67</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/praying_mantis/forever_in_time/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1345</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/the_joe_perry_project/let_the_music_do_the_talking/"><img  width="150" id="img_l_50141"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ee9ada43e1680057c878f90b56b3078b/4456036.jpg"  alt="Let the Music Do the Talking" title="Let the Music Do the Talking" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist14022]"  href="/artist/the_joe_perry_project" class="artist">The Joe Perry Project</a> <br /><a title="[Album50141]" href="/release/album/the_joe_perry_project/let_the_music_do_the_talking/" class="album">Let the Music Do the Talking</a></span>
+         <span class="mediumg">(1980)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/the_joe_perry_project/let_the_music_do_the_talking/">Avg rating: <b>3.54</b> | Ratings: <b>130</b> | Reviews (total): <b>10</b></a> | <a href="/release/album/the_joe_perry_project/let_the_music_do_the_talking/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1346</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/ghost_f5/infestissumam/"><img  width="150" id="img_l_4324407"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/fd56066550932b8d4854d94b28aaee4e/4730257.jpg"  alt="Infestissumam" title="Infestissumam" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist606863]"  href="/artist/ghost_f5" class="artist">Ghost</a> <br /><a title="[Album4324407]" href="/release/album/ghost_f5/infestissumam/" class="album">Infestissumam</a></span>
+         <span class="mediumg">(2013)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/ghost_f5/infestissumam/">Avg rating: <b>3.36</b> | Ratings: <b>1,192</b> | Reviews (total): <b>58</b></a> | <a href="/release/album/ghost_f5/infestissumam/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1347</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/the_eric_burdon_band/sun_secrets/"><img  height="150" id="img_l_62171"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3272782c16a942691195ad1099261372/1324498.jpg"  alt="Sun Secrets" title="Sun Secrets" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist286434]"  href="/artist/the_eric_burdon_band" class="artist">The Eric Burdon Band</a> <br /><a title="[Album62171]" href="/release/album/the_eric_burdon_band/sun_secrets/" class="album">Sun Secrets</a></span>
+         <span class="mediumg">(1974)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/the_eric_burdon_band/sun_secrets/">Avg rating: <b>3.55</b> | Ratings: <b>107</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/the_eric_burdon_band/sun_secrets/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1348</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/blood_of_the_sun/death_ride/"><img  width="150" id="img_l_1503983"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e7cb8b307de75fee6c6eecdbf79c72ed/2304234.jpg"  alt="Death Ride" title="Death Ride" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist92004]"  href="/artist/blood_of_the_sun" class="artist">Blood of the Sun</a> <br /><a title="[Album1503983]" href="/release/album/blood_of_the_sun/death_ride/" class="album">Death Ride</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre327]" class="genre" href="/genre/Stoner+Rock/">Stoner Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/blood_of_the_sun/death_ride/">Avg rating: <b>3.66</b> | Ratings: <b>61</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/blood_of_the_sun/death_ride/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1349</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/the_black_crowes/warpaint/"><img  width="150" id="img_l_1177783"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/702701e7c86598fda484beb383665a9c/2168489.jpg"  alt="Warpaint" title="Warpaint" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1530]"  href="/artist/the_black_crowes" class="artist">The Black Crowes</a> <br /><a title="[Album1177783]" href="/release/album/the_black_crowes/warpaint/" class="album">Warpaint</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre345]" class="genre" href="/genre/Southern+Rock/">Southern Rock</a>, <a title="[Genre10283]" class="genre" href="/genre/Boogie+Rock/">Boogie Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/the_black_crowes/warpaint/">Avg rating: <b>3.45</b> | Ratings: <b>452</b> | Reviews (total): <b>27</b></a> | <a href="/release/album/the_black_crowes/warpaint/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1350</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/jorn/out_to_every_nation/"><img  width="150" id="img_l_161380"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/9f7d625e7f2ae45076c831ed5579ed05/2213552.jpg"  alt="Out to Every Nation" title="Out to Every Nation" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9528]"  href="/artist/jorn" class="artist">Jorn</a> <br /><a title="[Album161380]" href="/release/album/jorn/out_to_every_nation/" class="album">Out to Every Nation</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre472]" class="genre" href="/genre/Heavy+Metal/">Heavy Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/jorn/out_to_every_nation/">Avg rating: <b>3.52</b> | Ratings: <b>180</b> | Reviews (total): <b>8</b></a> | <a href="/release/album/jorn/out_to_every_nation/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1351</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/the_poodles/sweet_trade/"><img  width="150" id="img_l_991168"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/83ae40ab3ea9ebc56229b289958aab8c/2661119.jpg"  alt="Sweet Trade" title="Sweet Trade" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist139765]"  href="/artist/the_poodles" class="artist">The Poodles</a> <br /><a title="[Album991168]" href="/release/album/the_poodles/sweet_trade/" class="album">Sweet Trade</a></span>
+         <span class="mediumg">(2007)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/the_poodles/sweet_trade/">Avg rating: <b>3.57</b> | Ratings: <b>83</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/the_poodles/sweet_trade/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1352</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/fair_warning/rainmaker/"><img  width="150" id="img_l_317832"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d8902efc85d71694357a075c5646b030/1729233.jpg"  alt="Rainmaker" title="Rainmaker" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist15710]"  href="/artist/fair_warning" class="artist">Fair Warning</a> <br /><a title="[Album317832]" href="/release/album/fair_warning/rainmaker/" class="album">Rainmaker</a></span>
+         <span class="mediumg">(1995)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre29101]" class="genre" href="/genre/AOR/">AOR</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/fair_warning/rainmaker/">Avg rating: <b>3.61</b> | Ratings: <b>62</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/fair_warning/rainmaker/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1353</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/abramis_brama/nar_tystnaden_lagt_sig___/"><img  height="150" id="img_l_269351"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/76be07f50c88f9a605fe1a6ab1e8c89c/1931940.jpg"  alt="När tystnaden lagt sig..." title="När tystnaden lagt sig..." src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist30896]"  href="/artist/abramis_brama" class="artist">Abramis Brama</a> <br /><a title="[Album269351]" href="/release/album/abramis_brama/nar_tystnaden_lagt_sig___/" class="album">När tystnaden lagt sig...</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre327]" class="genre" href="/genre/Stoner+Rock/">Stoner Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/abramis_brama/nar_tystnaden_lagt_sig___/">Avg rating: <b>3.80</b> | Ratings: <b>42</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/abramis_brama/nar_tystnaden_lagt_sig___/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1354</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/enuff_znuff/strength/"><img  width="150" id="img_l_31978"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/609c1aad9764b0f07b35527bafd0153c/1214683.jpg"  alt="Strength" title="Strength" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9134]"  href="/artist/enuff_znuff" class="artist">Enuff Z&#39;Nuff</a> <br /><a title="[Album31978]" href="/release/album/enuff_znuff/strength/" class="album">Strength</a></span>
+         <span class="mediumg">(1991)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre439]" class="genre" href="/genre/Glam+Metal/">Glam Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/enuff_znuff/strength/">Avg rating: <b>3.47</b> | Ratings: <b>172</b> | Reviews (total): <b>16</b></a> | <a href="/release/album/enuff_znuff/strength/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1355</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/whitesnake/slip_of_the_tongue/"><img  width="150" id="img_l_26000"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/05006a016f2eafb64738a5f2aaf42491/2700797.jpg"  alt="Slip of the Tongue" title="Slip of the Tongue" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1349]"  href="/artist/whitesnake" class="artist">Whitesnake</a> <br /><a title="[Album26000]" href="/release/album/whitesnake/slip_of_the_tongue/" class="album">Slip of the Tongue</a></span>
+         <span class="mediumg">(1989)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/whitesnake/slip_of_the_tongue/">Avg rating: <b>3.38</b> | Ratings: <b>871</b> | Reviews (total): <b>54</b></a> | <a href="/release/album/whitesnake/slip_of_the_tongue/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1356</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/mott_the_hoople/mott_the_hoople/"><img  width="150" id="img_l_11863"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3c23902e613fb9dae86e7ed06f75813b/1907230.jpg"  alt="Mott the Hoople" title="Mott the Hoople" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1923]"  href="/artist/mott_the_hoople" class="artist">Mott the Hoople</a> <br /><a title="[Album11863]" href="/release/album/mott_the_hoople/mott_the_hoople/" class="album">Mott the Hoople</a></span>
+         <span class="mediumg">(1969)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre5]" class="genre" href="/genre/Rock/">Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/mott_the_hoople/mott_the_hoople/">Avg rating: <b>3.45</b> | Ratings: <b>344</b> | Reviews (total): <b>24</b></a> | <a href="/release/album/mott_the_hoople/mott_the_hoople/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1357</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/detroit/detroit/"><img  height="150" id="img_l_21128"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d42feb3b8c4862ecd01ebef271a526cf/1439911.jpg"  alt="Detroit" title="Detroit" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist6280]"  href="/artist/detroit" class="artist">Detroit</a> <br /><a title="[Album21128]" href="/release/album/detroit/detroit/" class="album">Detroit</a></span>
+         <span class="mediumg">(1971)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/detroit/detroit/">Avg rating: <b>3.59</b> | Ratings: <b>77</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/detroit/detroit/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1358</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/frantic/conception/"><img  width="150" id="img_l_207008"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/141d0f929bdcd72e708e78a22ae39036/1384257.jpg"  alt="Conception" title="Conception" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist48584]"  href="/artist/frantic" class="artist">Frantic</a> <br /><a title="[Album207008]" href="/release/album/frantic/conception/" class="album">Conception</a></span>
+         <span class="mediumg">(1971)</span><br /><br /><a title="[Genre10282]" class="genre" href="/genre/Heavy+Psych/">Heavy Psych</a>, <a title="[Genre401]" class="genre" href="/genre/Garage+Rock/">Garage Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/frantic/conception/">Avg rating: <b>3.57</b> | Ratings: <b>85</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/frantic/conception/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1359</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/y_and_t/unearthed_vol__1/"><img  height="150" id="img_l_118611"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/17faf8384843eac97cec8b51d2dc1a02/4427369.jpg"  alt="UnEarthed Vol. 1" title="UnEarthed Vol. 1" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist7703]"  href="/artist/y_and_t" class="artist">Y &amp; T</a> <br /><a title="[Album118611]" href="/release/album/y_and_t/unearthed_vol__1/" class="album">UnEarthed Vol. 1</a></span>
+         <span class="mediumg">(2003)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/y_and_t/unearthed_vol__1/">Avg rating: <b>3.68</b> | Ratings: <b>43</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/y_and_t/unearthed_vol__1/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1360</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/gary_hughes/once_and_future_king__part_i/"><img  width="150" id="img_l_82259"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d2b229117eacce2fcc7046a9303826cd/1281471.jpg"  alt="Once and Future King: Part I" title="Once and Future King: Part I" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist20863]"  href="/artist/gary_hughes" class="artist">Gary Hughes</a> <br /><a title="[Album82259]" href="/release/album/gary_hughes/once_and_future_king__part_i/" class="album">Once and Future King: Part I</a></span>
+         <span class="mediumg">(2003)</span><br /><br /><a title="[Genre10324]" class="genre" href="/genre/Rock+Opera/">Rock Opera</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/gary_hughes/once_and_future_king__part_i/">Avg rating: <b>3.56</b> | Ratings: <b>80</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/gary_hughes/once_and_future_king__part_i/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1361</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/streetwalkers/downtown_flyers/"><img  height="150" id="img_l_271374"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/285c1e300128dcc94b5c0aa061580080/1787310.jpg"  alt="Downtown Flyers" title="Downtown Flyers" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist5384]"  href="/artist/streetwalkers" class="artist">Streetwalkers</a> <br /><a title="[Album271374]" href="/release/album/streetwalkers/downtown_flyers/" class="album">Downtown Flyers</a></span>
+         <span class="mediumg">(1975)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre5]" class="genre" href="/genre/Rock/">Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/streetwalkers/downtown_flyers/">Avg rating: <b>3.59</b> | Ratings: <b>90</b> | Reviews (total): <b>4</b></a> | <a href="/release/album/streetwalkers/downtown_flyers/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1362</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/rush/rush/"><img  width="150" id="img_l_3385"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/8abe06ddac59c6fe01f10f5f8f38da7f/3930457.jpg"  alt="Rush" title="Rush" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1095]"  href="/artist/rush" class="artist">Rush</a> <br /><a title="[Album3385]" href="/release/album/rush/rush/" class="album">Rush</a></span>
+         <span class="mediumg">(1974)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/rush/rush/">Avg rating: <b>3.33</b> | Ratings: <b>2,456</b> | Reviews (total): <b>146</b></a> | <a href="/release/album/rush/rush/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1363</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/baker_gurvitz_army/elysian_encounter/"><img  width="150" id="img_l_28992"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c48e51172c503768e68140798a223dde/2595711.jpg"  alt="Elysian Encounter" title="Elysian Encounter" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist8292]"  href="/artist/baker_gurvitz_army" class="artist">Baker Gurvitz Army</a> <br /><a title="[Album28992]" href="/release/album/baker_gurvitz_army/elysian_encounter/" class="album">Elysian Encounter</a></span>
+         <span class="mediumg">(1975)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/baker_gurvitz_army/elysian_encounter/">Avg rating: <b>3.49</b> | Ratings: <b>217</b> | Reviews (total): <b>16</b></a> | <a href="/release/album/baker_gurvitz_army/elysian_encounter/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1364</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/the_big_f/the_big_f/"><img  width="150" id="img_l_42319"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e459128eefe0562a4e231f249cc9c923/1376724.jpg"  alt="The Big F" title="The Big F" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist11851]"  href="/artist/the_big_f" class="artist">The Big F</a> <br /><a title="[Album42319]" href="/release/album/the_big_f/the_big_f/" class="album">The Big F</a></span>
+         <span class="mediumg">(1989)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/the_big_f/the_big_f/">Avg rating: <b>3.59</b> | Ratings: <b>70</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/the_big_f/the_big_f/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1365</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/gamma/1/"><img  width="150" id="img_l_60623"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e17520bfafd5b943e56a2e2e5109c350/1902859.jpg"  alt="1" title="1" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist13668]"  href="/artist/gamma" class="artist">Gamma</a> <br /><a title="[Album60623]" href="/release/album/gamma/1/" class="album">1</a></span>
+         <span class="mediumg">(1979)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/gamma/1/">Avg rating: <b>3.49</b> | Ratings: <b>157</b> | Reviews (total): <b>13</b></a> | <a href="/release/album/gamma/1/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1366</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/leverage/tides/"><img  width="150" id="img_l_613785"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/946ec01d2a6f347fc43b06d571611c62/2663502.jpg"  alt="Tides" title="Tides" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist146485]"  href="/artist/leverage" class="artist">Leverage</a> <br /><a title="[Album613785]" href="/release/album/leverage/tides/" class="album">Tides</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre472]" class="genre" href="/genre/Heavy+Metal/">Heavy Metal</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/leverage/tides/">Avg rating: <b>3.56</b> | Ratings: <b>98</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/leverage/tides/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1367</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/bob_seger/seven/"><img  width="150" id="img_l_44401"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/cbf8b52ddc8d3086df11aec58803d8d8/1231988.jpg"  alt="Seven" title="Seven" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist7900]"  href="/artist/bob_seger" class="artist">Bob Seger</a> <br /><a title="[Album44401]" href="/release/album/bob_seger/seven/" class="album">Seven</a></span>
+         <span class="mediumg">(1974)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre55]" class="genre" href="/genre/Rock+%26+Roll/">Rock & Roll</a>, <a title="[Genre33106]" class="genre" href="/genre/Heartland+Rock/">Heartland Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/bob_seger/seven/">Avg rating: <b>3.51</b> | Ratings: <b>158</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/bob_seger/seven/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1368</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/the_kings_of_frog_island/the_kings_of_frog_island/"><img  width="150" id="img_l_556046"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/4f02929d15306a2a1da18d8c01f963a5/1605245.jpg"  alt="The Kings of Frog Island" title="The Kings of Frog Island" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist130984]"  href="/artist/the_kings_of_frog_island" class="artist">The Kings of Frog Island</a> <br /><a title="[Album556046]" href="/release/album/the_kings_of_frog_island/the_kings_of_frog_island/" class="album">The Kings of Frog Island</a></span>
+         <span class="mediumg">(2005)</span><br /><br /><a title="[Genre327]" class="genre" href="/genre/Stoner+Rock/">Stoner Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/the_kings_of_frog_island/the_kings_of_frog_island/">Avg rating: <b>3.64</b> | Ratings: <b>78</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/the_kings_of_frog_island/the_kings_of_frog_island/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1369</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/sungrazer/sungrazer/"><img  width="150" id="img_l_2775713"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/dc81e90475e7e01f3a879fb9f77eafef/3312103.jpg"  alt="Sungrazer" title="Sungrazer" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist498365]"  href="/artist/sungrazer" class="artist">Sungrazer</a> <br /><a title="[Album2775713]" href="/release/album/sungrazer/sungrazer/" class="album">Sungrazer</a></span>
+         <span class="mediumg">(2010)</span><br /><br /><a title="[Genre327]" class="genre" href="/genre/Stoner+Rock/">Stoner Rock</a>, <a title="[Genre361]" class="genre" href="/genre/Psychedelic+Rock/">Psychedelic Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/sungrazer/sungrazer/">Avg rating: <b>3.51</b> | Ratings: <b>155</b> | Reviews (total): <b>4</b></a> | <a href="/release/album/sungrazer/sungrazer/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1370</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/black_math_horseman/wyllt/"><img  width="150" id="img_l_2100567"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/409c93e4c9ac0dd8a916e4580bf3eb5b/4030264.png"  alt="Wyllt" title="Wyllt" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist404126]"  href="/artist/black_math_horseman" class="artist">Black Math Horseman</a> <br /><a title="[Album2100567]" href="/release/album/black_math_horseman/wyllt/" class="album">Wyllt</a></span>
+         <span class="mediumg">(2009)</span><br /><br /><a title="[Genre327]" class="genre" href="/genre/Stoner+Rock/">Stoner Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/black_math_horseman/wyllt/">Avg rating: <b>3.40</b> | Ratings: <b>299</b> | Reviews (total): <b>15</b></a> | <a href="/release/album/black_math_horseman/wyllt/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1371</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/shark_island/law_of_the_order/"><img  width="150" id="img_l_32524"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/592d0227bec9acafaec238e0e0288c0c/2975077.jpg"  alt="Law of the Order" title="Law of the Order" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9381]"  href="/artist/shark_island" class="artist">Shark Island</a> <br /><a title="[Album32524]" href="/release/album/shark_island/law_of_the_order/" class="album">Law of the Order</a></span>
+         <span class="mediumg">(1989)</span><br /><br /><a title="[Genre439]" class="genre" href="/genre/Glam+Metal/">Glam Metal</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/shark_island/law_of_the_order/">Avg rating: <b>3.61</b> | Ratings: <b>78</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/shark_island/law_of_the_order/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1372</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/divididos/narigon_del_siglo/"><img  width="150" id="img_l_254903"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c049172ded2ed0fc576e36cf3d6d13a8/2196818.jpg"  alt="Narigón del siglo" title="Narigón del siglo" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist59743]"  href="/artist/divididos" class="artist">Divididos</a> <br /><a title="[Album254903]" href="/release/album/divididos/narigon_del_siglo/" class="album">Narigón del siglo</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre116]" class="genre" href="/genre/Alternative+Rock/">Alternative Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/divididos/narigon_del_siglo/">Avg rating: <b>3.69</b> | Ratings: <b>62</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/divididos/narigon_del_siglo/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1373</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/status_quo/whatever_you_want/"><img  width="150" id="img_l_24975"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/b4db118838e43936a0871a2f4bef7df4/1520606.jpg"  alt="Whatever You Want" title="Whatever You Want" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist3338]"  href="/artist/status_quo" class="artist">Status Quo</a> <br /><a title="[Album24975]" href="/release/album/status_quo/whatever_you_want/" class="album">Whatever You Want</a></span>
+         <span class="mediumg">(1979)</span><br /><br /><a title="[Genre10283]" class="genre" href="/genre/Boogie+Rock/">Boogie Rock</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre630]" class="genre" href="/genre/Pop+Rock/">Pop Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/status_quo/whatever_you_want/">Avg rating: <b>3.47</b> | Ratings: <b>198</b> | Reviews (total): <b>16</b></a> | <a href="/release/album/status_quo/whatever_you_want/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1374</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/fields_f1/fields/"><img  height="150" id="img_l_90473"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e734099df1ff5854dbf30581561d59b4/2334124.jpg"  alt="Fields" title="Fields" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist71091]"  href="/artist/fields_f1" class="artist">Fields</a> <br /><a title="[Album90473]" href="/release/album/fields_f1/fields/" class="album">Fields</a></span>
+         <span class="mediumg">(1969)</span><br /><br /><a title="[Genre10282]" class="genre" href="/genre/Heavy+Psych/">Heavy Psych</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/fields_f1/fields/">Avg rating: <b>3.53</b> | Ratings: <b>124</b> | Reviews (total): <b>13</b></a> | <a href="/release/album/fields_f1/fields/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1375</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/red_dirt/red_dirt/"><img  width="150" id="img_l_147775"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c29cb6d55a85a8e0e412b047aa44eb1f/3268322.jpg"  alt="Red Dirt" title="Red Dirt" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist35597]"  href="/artist/red_dirt" class="artist">Red Dirt</a> <br /><a title="[Album147775]" href="/release/album/red_dirt/red_dirt/" class="album">Red Dirt</a></span>
+         <span class="mediumg">(1970)</span><br /><br /><a title="[Genre156]" class="genre" href="/genre/Blues+Rock/">Blues Rock</a>, <a title="[Genre10282]" class="genre" href="/genre/Heavy+Psych/">Heavy Psych</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/red_dirt/red_dirt/">Avg rating: <b>3.53</b> | Ratings: <b>128</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/red_dirt/red_dirt/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1376</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/odyssey_f2/setting_forth/"><img  width="150" id="img_l_365409"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/921a2408fea0f0418c7cc1f1fbe3209b/1910697.jpg"  alt="Setting Forth" title="Setting Forth" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist83199]"  href="/artist/odyssey_f2" class="artist">Odyssey</a> <br /><a title="[Album365409]" href="/release/album/odyssey_f2/setting_forth/" class="album">Setting Forth</a></span>
+         <span class="mediumg">(1971)</span><br /><br /><a title="[Genre10282]" class="genre" href="/genre/Heavy+Psych/">Heavy Psych</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/odyssey_f2/setting_forth/">Avg rating: <b>3.58</b> | Ratings: <b>88</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/odyssey_f2/setting_forth/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1377</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/popol_vuh/popol_vuh/"><img  height="150" id="img_l_54494"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/31156fc4b8ef2ac0aa4e2657eca8422d/1320562.jpg"  alt="Popol Vuh" title="Popol Vuh" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist15069]"  href="/artist/popol_ace" class="artist">Popol Vuh</a> <br /><a title="[Album54494]" href="/release/album/popol_vuh/popol_vuh/" class="album">Popol Vuh</a></span>
+         <span class="mediumg">(1972)</span><br /><br /><a title="[Genre97]" class="genre" href="/genre/Progressive+Rock/">Progressive Rock</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/popol_vuh/popol_vuh/">Avg rating: <b>3.57</b> | Ratings: <b>96</b> | Reviews (total): <b>8</b></a> | <a href="/release/album/popol_vuh/popol_vuh/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1378</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/max_webster/a_million_vacations/"><img  width="150" id="img_l_18985"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/24bea462b5ca06c63fa14dd56d8acd16/1994159.jpg"  alt="A Million Vacations" title="A Million Vacations" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist5567]"  href="/artist/max_webster" class="artist">Max Webster</a> <br /><a title="[Album18985]" href="/release/album/max_webster/a_million_vacations/" class="album">A Million Vacations</a></span>
+         <span class="mediumg">(1979)</span><br /><br /><a title="[Genre97]" class="genre" href="/genre/Progressive+Rock/">Progressive Rock</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre29101]" class="genre" href="/genre/AOR/">AOR</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/max_webster/a_million_vacations/">Avg rating: <b>3.60</b> | Ratings: <b>92</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/max_webster/a_million_vacations/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1379</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/fu_manchu/daredevil/"><img  width="150" id="img_l_28799"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/73b181465faae8266bd81011a11e0ad5/5343122.jpg"  alt="Daredevil" title="Daredevil" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist935]"  href="/artist/fu_manchu" class="artist">Fu Manchu</a> <br /><a title="[Album28799]" href="/release/album/fu_manchu/daredevil/" class="album">Daredevil</a></span>
+         <span class="mediumg">(1995)</span><br /><br /><a title="[Genre327]" class="genre" href="/genre/Stoner+Rock/">Stoner Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/fu_manchu/daredevil/">Avg rating: <b>3.49</b> | Ratings: <b>237</b> | Reviews (total): <b>10</b></a> | <a href="/release/album/fu_manchu/daredevil/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1380</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/hail_the_villain/population__declining/"><img  width="150" id="img_l_980036"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/8527b787d0a4e263cd6936cc4566bedc/2007367.jpg"  alt="Population: Declining" title="Population: Declining" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist239303]"  href="/artist/hail_the_villain" class="artist">Hail the Villain</a> <br /><a title="[Album980036]" href="/release/album/hail_the_villain/population__declining/" class="album">Population: Declining</a></span>
+         <span class="mediumg">(2007)</span><br /><br /><a title="[Genre491]" class="genre" href="/genre/Alternative+Metal/">Alternative Metal</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/hail_the_villain/population__declining/">Avg rating: <b>3.70</b> | Ratings: <b>47</b> | Reviews (total): <b>4</b></a> | <a href="/release/album/hail_the_villain/population__declining/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1381</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/gillan/toolbox/"><img  width="150" id="img_l_42401"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/833f3a5011d7b95df1f427968be38ba9/1295527.jpg"  alt="Toolbox" title="Toolbox" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist4516]"  href="/artist/gillan" class="artist">Gillan</a> <br /><a title="[Album42401]" href="/release/album/gillan/toolbox/" class="album">Toolbox</a></span>
+         <span class="mediumg">(1991)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/gillan/toolbox/">Avg rating: <b>3.57</b> | Ratings: <b>104</b> | Reviews (total): <b>12</b></a> | <a href="/release/album/gillan/toolbox/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1382</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/gillan/magic_f5/"><img  width="150" id="img_l_64365"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/cc491e0e8249b67f14491dfb90ac883d/2011606.jpg"  alt="Magic" title="Magic" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist4516]"  href="/artist/gillan" class="artist">Gillan</a> <br /><a title="[Album64365]" href="/release/album/gillan/magic_f5/" class="album">Magic</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/gillan/magic_f5/">Avg rating: <b>3.51</b> | Ratings: <b>166</b> | Reviews (total): <b>12</b></a> | <a href="/release/album/gillan/magic_f5/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1383</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/blue_cheer/what_doesnt_kill_you___/"><img  width="150" id="img_l_978717"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/81586165c0e92691aa4b7fb55652229b/2251195.jpg"  alt="What Doesn&#39;t Kill You..." title="What Doesn&#39;t Kill You..." src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist3250]"  href="/artist/blue_cheer" class="artist">Blue Cheer</a> <br /><a title="[Album978717]" href="/release/album/blue_cheer/what_doesnt_kill_you___/" class="album">What Doesn&#39;t Kill You...</a></span>
+         <span class="mediumg">(2007)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre472]" class="genre" href="/genre/Heavy+Metal/">Heavy Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/blue_cheer/what_doesnt_kill_you___/">Avg rating: <b>3.53</b> | Ratings: <b>125</b> | Reviews (total): <b>10</b></a> | <a href="/release/album/blue_cheer/what_doesnt_kill_you___/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1384</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/slade/well_bring_the_house_down/"><img  width="150" id="img_l_37991"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/2e04022ab6ed0db2d5a71d75dd7238d5/1236978.jpg"  alt="We&#39;ll Bring the House Down" title="We&#39;ll Bring the House Down" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1042]"  href="/artist/slade" class="artist">Slade</a> <br /><a title="[Album37991]" href="/release/album/slade/well_bring_the_house_down/" class="album">We&#39;ll Bring the House Down</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/slade/well_bring_the_house_down/">Avg rating: <b>3.52</b> | Ratings: <b>140</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/slade/well_bring_the_house_down/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1385</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/gillan/gillan/"><img  width="150" id="img_l_113702"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d91d6b865626b95746ccb1327de074be/2701605.jpg"  alt="Gillan" title="Gillan" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist4516]"  href="/artist/gillan" class="artist">Gillan</a> <br /><a title="[Album113702]" href="/release/album/gillan/gillan/" class="album">Gillan</a></span>
+         <span class="mediumg">(1978)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/gillan/gillan/">Avg rating: <b>3.66</b> | Ratings: <b>57</b> | Reviews (total): <b>4</b></a> | <a href="/release/album/gillan/gillan/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1386</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/zeno/zeno/"><img  width="150" id="img_l_37795"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c5c595b12942079dac86c453c40adba5/1739406.jpg"  alt="Zeno" title="Zeno" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist10853]"  href="/artist/zeno" class="artist">Zeno</a> <br /><a title="[Album37795]" href="/release/album/zeno/zeno/" class="album">Zeno</a></span>
+         <span class="mediumg">(1986)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre29101]" class="genre" href="/genre/AOR/">AOR</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/zeno/zeno/">Avg rating: <b>3.57</b> | Ratings: <b>90</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/zeno/zeno/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1387</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/demon/the_plague/"><img  width="150" id="img_l_161386"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/2e15c1b5050147223fd89a6ef593c392/1313812.jpg"  alt="The Plague" title="The Plague" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist4007]"  href="/artist/demon" class="artist">Demon</a> <br /><a title="[Album161386]" href="/release/album/demon/the_plague/" class="album">The Plague</a></span>
+         <span class="mediumg">(1983)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre97]" class="genre" href="/genre/Progressive+Rock/">Progressive Rock</a>, <a title="[Genre473]" class="genre" href="/genre/NWOBHM/">NWOBHM</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/demon/the_plague/">Avg rating: <b>3.49</b> | Ratings: <b>160</b> | Reviews (total): <b>10</b></a> | <a href="/release/album/demon/the_plague/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1388</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/magnum/the_eleventh_hour__f1/"><img  width="150" id="img_l_5214"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/b3a2729c0dbfcd222afc85d8f195c8e7/1953596.jpg"  alt="The Eleventh Hour!" title="The Eleventh Hour!" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1604]"  href="/artist/magnum" class="artist">Magnum</a> <br /><a title="[Album5214]" href="/release/album/magnum/the_eleventh_hour__f1/" class="album">The Eleventh Hour!</a></span>
+         <span class="mediumg">(1983)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/magnum/the_eleventh_hour__f1/">Avg rating: <b>3.49</b> | Ratings: <b>173</b> | Reviews (total): <b>14</b></a> | <a href="/release/album/magnum/the_eleventh_hour__f1/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1389</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/skagarack/hungry_for_a_game/"><img  width="150" id="img_l_497950"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a1d06ee374240448fc05fed633da57ec/1562660.jpg"  alt="Hungry for a Game" title="Hungry for a Game" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist54862]"  href="/artist/skagarack" class="artist">Skagarack</a> <br /><a title="[Album497950]" href="/release/album/skagarack/hungry_for_a_game/" class="album">Hungry for a Game</a></span>
+         <span class="mediumg">(1988)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre29101]" class="genre" href="/genre/AOR/">AOR</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/skagarack/hungry_for_a_game/">Avg rating: <b>3.60</b> | Ratings: <b>65</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/skagarack/hungry_for_a_game/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1390</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/nazareth/close_enough_for_rock_n_roll/"><img  width="150" id="img_l_35890"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/5362f3375ad26a6a5f5b50f91e84ab2f/2734360.jpg"  alt="Close Enough for Rock &#39;n&#39; Roll" title="Close Enough for Rock &#39;n&#39; Roll" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1888]"  href="/artist/nazareth" class="artist">Nazareth</a> <br /><a title="[Album35890]" href="/release/album/nazareth/close_enough_for_rock_n_roll/" class="album">Close Enough for Rock &#39;n&#39; Roll</a></span>
+         <span class="mediumg">(1976)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/nazareth/close_enough_for_rock_n_roll/">Avg rating: <b>3.44</b> | Ratings: <b>354</b> | Reviews (total): <b>21</b></a> | <a href="/release/album/nazareth/close_enough_for_rock_n_roll/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1391</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/nebula/atomic_ritual/"><img  width="150" id="img_l_84220"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/cb39d10eec030bbdd13588ab00a75cc8/4206730.jpg"  alt="Atomic Ritual" title="Atomic Ritual" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1418]"  href="/artist/nebula" class="artist">Nebula</a> <br /><a title="[Album84220]" href="/release/album/nebula/atomic_ritual/" class="album">Atomic Ritual</a></span>
+         <span class="mediumg">(2003)</span><br /><br /><a title="[Genre327]" class="genre" href="/genre/Stoner+Rock/">Stoner Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/nebula/atomic_ritual/">Avg rating: <b>3.50</b> | Ratings: <b>198</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/nebula/atomic_ritual/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1392</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/tempest_f2/living_in_fear/"><img  width="150" id="img_l_37551"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/32263ad7fd97a8c1b72f6edeea30525e/1810842.jpg"  alt="Living in Fear" title="Living in Fear" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist10795]"  href="/artist/tempest_f2" class="artist">Tempest</a> <br /><a title="[Album37551]" href="/release/album/tempest_f2/living_in_fear/" class="album">Living in Fear</a></span>
+         <span class="mediumg">(1974)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/tempest_f2/living_in_fear/">Avg rating: <b>3.51</b> | Ratings: <b>157</b> | Reviews (total): <b>12</b></a> | <a href="/release/album/tempest_f2/living_in_fear/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1393</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/storm_f1/the_storm/"><img  width="150" id="img_l_52283"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/f174f23c0e2a037012555aeba29bae87/1831461.jpg"  alt="The Storm" title="The Storm" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist14555]"  href="/artist/storm_f1" class="artist">Storm</a> <br /><a title="[Album52283]" href="/release/album/storm_f1/the_storm/" class="album">The Storm</a></span>
+         <span class="mediumg">(1974)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/storm_f1/the_storm/">Avg rating: <b>3.57</b> | Ratings: <b>101</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/storm_f1/the_storm/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1394</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/the_night_flight_orchestra/internal_affairs/"><img  width="150" id="img_l_4008131"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3c5041237dc8b328a4e770e85ded7581/4230874.jpg"  alt="Internal Affairs" title="Internal Affairs" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist823423]"  href="/artist/the_night_flight_orchestra" class="artist">The Night Flight Orchestra</a> <br /><a title="[Album4008131]" href="/release/album/the_night_flight_orchestra/internal_affairs/" class="album">Internal Affairs</a></span>
+         <span class="mediumg">(2012)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/the_night_flight_orchestra/internal_affairs/">Avg rating: <b>3.63</b> | Ratings: <b>56</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/the_night_flight_orchestra/internal_affairs/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1395</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/house_of_lords/demons_down/"><img  width="150" id="img_l_20565"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/217f85e5a63246b0e789e9dd5f70c4f8/2474197.jpg"  alt="Demons Down" title="Demons Down" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist6117]"  href="/artist/house_of_lords" class="artist">House of Lords</a> <br /><a title="[Album20565]" href="/release/album/house_of_lords/demons_down/" class="album">Demons Down</a></span>
+         <span class="mediumg">(1992)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre29101]" class="genre" href="/genre/AOR/">AOR</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/house_of_lords/demons_down/">Avg rating: <b>3.57</b> | Ratings: <b>113</b> | Reviews (total): <b>8</b></a> | <a href="/release/album/house_of_lords/demons_down/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1396</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/freak_kitchen/freak_kitchen/"><img  width="150" id="img_l_112909"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/859dabdaf01c234d43d60211dde2f7ea/1385592.jpg"  alt="Freak Kitchen" title="Freak Kitchen" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist27441]"  href="/artist/freak_kitchen" class="artist">Freak Kitchen</a> <br /><a title="[Album112909]" href="/release/album/freak_kitchen/freak_kitchen/" class="album">Freak Kitchen</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre95]" class="genre" href="/genre/Progressive+Metal/">Progressive Metal</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre472]" class="genre" href="/genre/Heavy+Metal/">Heavy Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/freak_kitchen/freak_kitchen/">Avg rating: <b>3.52</b> | Ratings: <b>114</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/freak_kitchen/freak_kitchen/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1397</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/firehouse/hold_your_fire/"><img  width="150" id="img_l_31984"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/54487463d45947a0ea6fb6bd4da6252e/1461543.jpg"  alt="Hold Your Fire" title="Hold Your Fire" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9135]"  href="/artist/firehouse" class="artist">Firehouse</a> <br /><a title="[Album31984]" href="/release/album/firehouse/hold_your_fire/" class="album">Hold Your Fire</a></span>
+         <span class="mediumg">(1992)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre29101]" class="genre" href="/genre/AOR/">AOR</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/firehouse/hold_your_fire/">Avg rating: <b>3.47</b> | Ratings: <b>221</b> | Reviews (total): <b>11</b></a> | <a href="/release/album/firehouse/hold_your_fire/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1398</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/lonely_kamel/dust_devil/"><img  width="150" id="img_l_3620869"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/89f1b4d0ff157745a064b2f2bede87aa/3884808.jpg"  alt="Dust Devil" title="Dust Devil" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist355799]"  href="/artist/lonely_kamel" class="artist">Lonely Kamel</a> <br /><a title="[Album3620869]" href="/release/album/lonely_kamel/dust_devil/" class="album">Dust Devil</a></span>
+         <span class="mediumg">(2011)</span><br /><br /><a title="[Genre327]" class="genre" href="/genre/Stoner+Rock/">Stoner Rock</a>, <a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/lonely_kamel/dust_devil/">Avg rating: <b>3.63</b> | Ratings: <b>68</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/lonely_kamel/dust_devil/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1399</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/burning_brides/fall_of_the_plastic_empire/"><img  width="150" id="img_l_39901"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e8ee37e5dbda4f1b6eb7b3d9de65e267/4332000.jpeg"  alt="Fall of the Plastic Empire" title="Fall of the Plastic Empire" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist11309]"  href="/artist/burning_brides" class="artist">Burning Brides</a> <br /><a title="[Album39901]" href="/release/album/burning_brides/fall_of_the_plastic_empire/" class="album">Fall of the Plastic Empire</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre67]" class="genre" href="/genre/Hard+Rock/">Hard Rock</a>, <a title="[Genre103]" class="genre" href="/genre/Indie+Rock/">Indie Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/burning_brides/fall_of_the_plastic_empire/">Avg rating: <b>3.51</b> | Ratings: <b>137</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/burning_brides/fall_of_the_plastic_empire/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1400</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/edens_children/sure_looks_real/"><img  width="150" id="img_l_206184"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a70fda0af1cc6c6f226a06642f68522c/1441169.jpg"  alt="Sure Looks Real" title="Sure Looks Real" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist48403]"  href="/artist/edens_children" class="artist">Eden&#39;s Children</a> <br /><a title="[Album206184]" href="/release/album/edens_children/sure_looks_real/" class="album">Sure Looks Real</a></span>
+         <span class="mediumg">(1968)</span><br /><br /><a title="[Genre10282]" class="genre" href="/genre/Heavy+Psych/">Heavy Psych</a>, <a title="[Genre361]" class="genre" href="/genre/Psychedelic+Rock/">Psychedelic Rock</a>, <a title="[Genre182]" class="genre" href="/genre/Jazz%2dRock/">Jazz-Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/edens_children/sure_looks_real/">Avg rating: <b>3.57</b> | Ratings: <b>82</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/edens_children/sure_looks_real/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr style="background:white;"><td></td><td colspan=2>
+<!-- Running 52 for 34 -->
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7116019216064530";
+/* Charts: bottom */
+google_ad_slot = "6276780850";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr></table><div class="clear"> </div><div style="padding:10px;font-size:small;text-align:center;font-weight:bold;background:#eee;border:#888 1px solid;"><a href="javascript:goPage(1);">1 - 100</a> | <a href="javascript:goPage(2);">101 - 200</a> | <a href="javascript:goPage(3);">201 - 300</a> | <a href="javascript:goPage(4);">301 - 400</a> | <a href="javascript:goPage(5);">401 - 500</a> | <a href="javascript:goPage(6);">501 - 600</a> | <a href="javascript:goPage(7);">601 - 700</a> | <a href="javascript:goPage(8);">701 - 800</a> | <a href="javascript:goPage(9);">801 - 900</a> | <a href="javascript:goPage(10);">901 - 1000</a> </div><div class="clear"> </div>
+     <script type="text/javascript">
+      var delayLoadImgCount = 0
+      $('.delayloadimg').appear(function() { delayLoadImgCount++ ; $(this).attr('src', $(this).attr('data-delayloadurl')); } , { extendheight:400 } );
+     </script>
+  
+
+<!-- ~~~~~~~~ end content ~~~~~~~~~~~~~~~ -->
+<div id="myModal" class="reveal-modal">
+  <div id="modal_content">
+  </div>
+     <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<!--trick--><div style="clear:both;"></div>
+</div>
+<div id="navbottom">
+    <ul>
+      <li><a href="/listen/all">RYM Artists</a></li>
+      <li><a href="/wiki/RYM:FAQ">FAQ</a></li>
+      <li><a href="/tos">Terms of Service</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/suggestions">Website Feedback</a></li>
+      <li><a href="/help/">Help</a></li>
+   </ul>
+  
+   <script> function areAdsBlocked() { return ($('#ad_1').length == 0) } 
+   function politeAdRequest() {
+      var xx = '<div class=abpmessage>RYM relies on advertising income to support the site.  Please consider adding an exception to adblock for rateyourmusic.com, or <a href=/subscribe>subscribing</a> to help with bandwidth/server costs.</div>' 
+      $('#content').prepend(xx)
+   }
+
+   </script>
+ 
+      <script>if(areAdsBlocked()) { politeAdRequest() }</script>
+   
+
+<table><tr><td style="width:100%;text-align:center;"><address>&copy; 2000 - 2015 Sonemic, Inc. &nbsp; &nbsp; &nbsp; </td></tr></table> 
+
+</div>
+</div>		
+</script>
+</body>
+</html>
+ 
+ 

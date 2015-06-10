@@ -1,0 +1,2340 @@
+ 
+
+   <!DOCTYPE html>
+
+<html class="theme_">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Custom chart - Rate Your Music</title> 
+
+   <link rel="stylesheet" href="https://eedcaf578e7d885badc9-0c1519f9f8b9246bced82ab9b996aa5e.ssl.cf1.rackcdn.com/min25.css" type="text/css"/>
+   <link rel="shortcut icon" href="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/favicon.ico" type="image/x-icon"/>
+    <style type="text/css">
+         h4 { font-weight:bold; }
+
+         span.contributors a {
+            text-decoration:none;
+            font-size:0.9em !important;
+            color:#333  !important;
+         }
+         span.contributors span.userd {
+            text-decoration:none;
+            font-size:0.9em !important;
+            color:#999  !important;            
+         }
+#wiki_content_text {
+padding-left: 2em !important;
+padding-right: 2em !important;
+padding-bottom: 25px !important;
+width:auto !important;
+box-sizing: content-box;
+}
+
+      </style>
+   
+      <meta name="apple-mobile-web-app-capable" content="yes" />   
+  
+   <meta name="description" content="Rate Your Music is an online community of people who love music.  Catalog, rate, tag, and review your music.  List and review the concerts you've attended, and track upcoming shows.   When you rate your music, the site's music/social recommender can recommend similar music and users with similar music taste. " />
+   <meta name="keywords" content="rate your music, rate music, rate albums, music catalog, music catalogue, social software, album reviews, music lists, community, music recommendations, concert listings, record labels, venues, shows" /><script type="text/javascript" src="/web_ads/advertisement.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="/images/rym.min.4.js"></script>
+<script type="text/javascript">rym.session.init(0, '0', '');</script>
+
+<script type="text/javascript">
+
+/* google analytics */ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-59057-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+
+<body>
+<div id="wrapper">
+
+
+	<div id="navtop"><div class="mobile_header_btn" onClick="$('#navlist').fadeToggle(100);">rym <i class="fa fa-caret-down"></i></div><ul id="navlist">
+		<li><a style="padding-top:3px;padding-bottom:4px;" title="Front Page"  href="/" >
+         <span class="hide-for-small"><img id="rstar" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/rstar.gif" alt="" /><span id="logotext">rym</span></span>
+         <span class="show-for-small">front page</span>
+         </a></a></li>
+		<li><a title="Find Music"   href="/find/" >find</a></li>
+		<li><a title="Read and make lists"  href="/lists/" >lists</a></li>
+		<li><a title="View top charts by year, location, genre and more!"  href="/customchart" >charts</a></li>
+
+		<li><a title="Message Boards and Member Directory"    href="/community/" >community</a></li>
+
+		<li><a  href="/account/login"  >log in / sign up</a></li>		
+	</ul>
+
+
+  <div class="helplink"><a href="/help">help</a></div>
+
+  <div class="main_searchbar">
+   <form id="mainsearch" action="/search">
+      <input type="hidden" name="searchtype" id="searchtype" value="a" />
+      <input tabindex="1" name="searchterm" 
+           value=""
+            style="background:none;border:none;outline:none;width:110px;padding:3px;" 
+            placeholder="Search...">
+      <div tabindex="3" id="mainsearch_submit" onKeyDown="if (event.keyCode == 13 || event.keyCode == 20) { $('#mainsearch')[0].submit();}"  onClick="$('#mainsearch')[0].submit();" style="cursor:pointer;float:right;color:#777;font-size: 0.8em;line-height: 22px;margin-left:3px;padding-left:8px;padding-right:5px;background:#E6E6E6">
+         ▶
+      </div>
+      <div tabindex="2" class="search_options_frame" onMouseOver="$('#search_options').show()" onMouseOut="$('#search_options').hide();"
+      onFocus="$('#search_options').show()" onBlur="$('#search_options').hide();" onKeyDown="cycleSearchType(event);">
+         <span id="searchtype_selected">Artists</span> ▾
+
+         <div id="search_options" class="search_options" >
+            <div class="search_option_header">Music</div>
+               <div onClick="selectSearchType('a');" id="searchtype_a" class="searchtype_option current">Artists</div>
+               <div onClick="selectSearchType('l');" id="searchtype_l" class="searchtype_option">All releases</div>
+               <div onClick="selectSearchType('y');" id="searchtype_y" class="searchtype_option">V/A releases</div>
+               <div onClick="selectSearchType('b');" id="searchtype_b" class="searchtype_option">Label</div>
+               <div onClick="selectSearchType('j');" id="searchtype_j" class="searchtype_option">Catalog No.</div>
+               <div onClick="selectSearchType('r');" id="searchtype_r" class="searchtype_option">Classical work</div>
+               <div onClick="selectSearchType('v');" id="searchtype_v" class="searchtype_option">Review</div>
+               <div onClick="selectSearchType('g');" id="searchtype_g" class="searchtype_option">Genre</div>
+
+            <div class="search_option_header">Film</div>
+
+               <div onClick="selectSearchType('F');" id="searchtype_F" class="searchtype_option">Film title</div>
+               <div onClick="selectSearchType('A');" id="searchtype_A" class="searchtype_option">Film cast/crew</div>
+            
+            <div class="search_option_header">Site</div>
+
+               <div onClick="selectSearchType('u');" id="searchtype_u" class="searchtype_option">User</div>
+               <div onClick="selectSearchType('p');" id="searchtype_p" class="searchtype_option">Boards</div>
+               <div onClick="selectSearchType('s');" id="searchtype_s" class="searchtype_option">List</div>
+
+         </div>
+      </div>
+   </form>
+  </div>
+  <script>
+      function cycleSearchType(event) {
+
+         var searchTypes = new Array('a', 'l', 'y', 'b', 'j', 'r', 'v', 'g', 'F', 'A', 'u', 'p', 's');
+         var len = searchTypes.length;
+         var currentVal = $('#searchtype').val();
+         var currentIndex = searchTypes.indexOf(currentVal);
+         var nextIndex = currentIndex+1;
+         var prevIndex = currentIndex-1;
+         if ( nextIndex == len ) {
+            nextIndex = 0;
+         }
+         if ( prevIndex < 0 ) {
+            prevIndex = len-1;
+         }
+
+         var nextType = searchTypes[nextIndex];
+         var prevType = searchTypes[prevIndex];
+
+
+         switch (event.keyCode) {
+            case 40: 
+               selectSearchType(nextType);
+               event.preventDefault();
+            break;
+
+            case 38:
+               selectSearchType(prevType);
+               event.preventDefault();
+            break;
+
+            case 13:
+               $('#mainsearch')[0].submit();
+               event.preventDefault();
+            break;
+            default: 
+               
+            break;
+         }
+
+        
+         return false;
+
+      }
+      function selectSearchType(type) {
+         $('#searchtype').val(type);
+         $('#searchtype_selected').text($('#searchtype_' + type).text());
+         $('#search_options').hide();
+      }
+      selectSearchType('a')
+  </script>
+
+
+</div>
+
+<!-- trick --><div style="clear:both;"></div>
+
+
+ 
+ <!-- ~~~~~~~~ begin content! ~~~~~~~~~~~~~~~ -->
+ <div id="content" style="border-top:none;"><script type="text/javascript" src="https://aa51943acdd0baa94a6e-d133dbbbd17c5adb5c698e6074ced43d.ssl.cf1.rackcdn.com/jquery-appear-b1.js"></script><div id="breadcrumb"><ul> <li class="lnk"><a href="/charts/">Charts <b>&gt;</b></a></li><li class="current">Custom chart</li></ul></div>
+<!-- Running 60 for 4 -->
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7116019216064530";
+/* Charts: top 720 */
+google_ad_slot = "9966460452";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+
+    <script type="text/javascript">
+      function goPage(page)
+      {
+        document.getElementById('page').value = page;
+        document.getElementById('chartForm').submit();
+      }
+    </script>
+    
+    
+    <div id="searchsuggestions" style="visibility:hidden;position:absolute;" ></div>
+  <script type="text/javascript" src="https://aa51943acdd0baa94a6e-d133dbbbd17c5adb5c698e6074ced43d.ssl.cf1.rackcdn.com/basereq-min.js"></script>
+    <script type="text/javascript" src="/sourced/autosuggest.js?pre=descriptor&type=h&context=p"></script>
+<script type="text/javascript" src="/sourced/autosuggest.js?pre=country"></script>
+
+    <style type="text/css">
+ 
+a.genre { font-weight:bold; } 
+a.gray { color: gray; } 
+div.genrea { padding:5px; margin: 5px; background: #cfc; border:#282 2px solid; } 
+div.genred { padding:5px; margin: 5px;  background: #ddd; border:#666 2px solid; color:#555; } 
+
+</style>
+    <div style="background:#eee;font-size:small;margin:10px;padding:10px;"><form id="chartForm">
+<input type="hidden" id="page" name="page" value="1" />
+
+<select name="chart_type">
+ <option selected  value="top">Top</option>
+ <option  value="esoteric">Esoteric</option>
+ <option  value="bottom">Bottom</option>
+</select>
+<select name="type">
+ <option selected  value="album" >albums</option>
+ <option   value="ep">EPs</option>
+ <option   value="single">singles</option>
+ <option   value="mixtape">mixtapes</option>
+ <option   value="djmix">DJ mixes</option>
+ <option   value="comp">compilations</option>
+ <option   value="video">videos</option>
+ <option   value="unauth">bootlegs</option>
+ <option   value="everything">everything</option>
+</select>
+
+  from <select name="year"/>
+ <option value="alltime">all-time</option>
+ <option  value="2010s">2010s</option>
+ <option  value="2000s">2000s</option>
+ <option  value="1990s">1990s</option>
+ <option  value="1980s">1980s</option>
+ <option  value="1970s">1970s</option>
+ <option  value="1960s">1960s</option>
+ <option  value="1950s">1950s</option>
+ <option  value="1940s">1940s</option>
+ <option  value="1930s">1930s</option>
+ <option  value="1920s">1920s</option>
+ <option  value="1910s">1910s</option>
+ <option  value="1900s">1900s</option>
+ 
+ <option  value="2015">2015</option><option  value="2014">2014</option><option  value="2013">2013</option><option  value="2012">2012</option><option  value="2011">2011</option><option  value="2010">2010</option><option  value="2009">2009</option><option  value="2008">2008</option><option  value="2007">2007</option><option  value="2006">2006</option><option  value="2005">2005</option><option  value="2004">2004</option><option  value="2003">2003</option><option  value="2002">2002</option><option  value="2001">2001</option><option  value="2000">2000</option><option  value="1999">1999</option><option  value="1998">1998</option><option  value="1997">1997</option><option  value="1996">1996</option><option  value="1995">1995</option><option  value="1994">1994</option><option  value="1993">1993</option><option  value="1992">1992</option><option  value="1991">1991</option><option  value="1990">1990</option><option  value="1989">1989</option><option  value="1988">1988</option><option  value="1987">1987</option><option  value="1986">1986</option><option  value="1985">1985</option><option  value="1984">1984</option><option  value="1983">1983</option><option  value="1982">1982</option><option  value="1981">1981</option><option  value="1980">1980</option><option  value="1979">1979</option><option  value="1978">1978</option><option  value="1977">1977</option><option  value="1976">1976</option><option  value="1975">1975</option><option  value="1974">1974</option><option  value="1973">1973</option><option  value="1972">1972</option><option  value="1971">1971</option><option  value="1970">1970</option><option  value="1969">1969</option><option  value="1968">1968</option><option  value="1967">1967</option><option  value="1966">1966</option><option  value="1965">1965</option><option  value="1964">1964</option><option  value="1963">1963</option><option  value="1962">1962</option><option  value="1961">1961</option><option  value="1960">1960</option><option  value="1959">1959</option><option  value="1958">1958</option><option  value="1957">1957</option><option  value="1956">1956</option><option  value="1955">1955</option><option  value="1954">1954</option><option  value="1953">1953</option><option  value="1952">1952</option><option  value="1951">1951</option><option  value="1950">1950</option><option  value="1949">1949</option><option  value="1948">1948</option><option  value="1947">1947</option><option  value="1946">1946</option><option  value="1945">1945</option><option  value="1944">1944</option><option  value="1943">1943</option><option  value="1942">1942</option><option  value="1941">1941</option><option  value="1940">1940</option><option  value="1939">1939</option><option  value="1938">1938</option><option  value="1937">1937</option><option  value="1936">1936</option><option  value="1935">1935</option><option  value="1934">1934</option><option  value="1933">1933</option><option  value="1932">1932</option><option  value="1931">1931</option><option  value="1930">1930</option><option  value="1929">1929</option><option  value="1928">1928</option><option  value="1927">1927</option><option  value="1926">1926</option><option  value="1925">1925</option><option  value="1924">1924</option><option  value="1923">1923</option><option  value="1922">1922</option><option  value="1921">1921</option><option  value="1920">1920</option><option  value="1919">1919</option><option  value="1918">1918</option><option  value="1917">1917</option><option  value="1916">1916</option><option  value="1915">1915</option><option  value="1914">1914</option><option  value="1913">1913</option><option  value="1912">1912</option><option  value="1911">1911</option><option  value="1910">1910</option><option  value="1909">1909</option><option  value="1908">1908</option><option  value="1907">1907</option><option  value="1906">1906</option><option  value="1905">1905</option><option  value="1904">1904</option><option  value="1903">1903</option><option  value="1902">1902</option><option  value="1901">1901</option><option  value="1900">1900</option>
+</select>
+<br /><br />
+
+<select name="genre_include">
+ <option value="1">Only include genres:</option>
+ <option value="0" >Include all genres except:</option>
+</select> | 
+<input type="hidden" name="include_child_genres" id="include_child_genres" value="1" />
+<input type="text" size="40" name="genres" id="genres" value="neue deutsche welle" onFocus="descriptorattachSuggest(this.id);" /> | <label for="include_child_genres_chk"><input type="checkbox" checked="checked" id="include_child_genres_chk" name="include_child_genres_chk" value="1" onChange="$('#include_child_genres').val($(this).is(':checked')?1:0)"/> + sub-genres</label>
+
+<br />
+<br />
+
+
+<select id="include" name="include">
+  <option value="both" selected="selected">Include</option>
+  <option value="only" >Show exclusively</option>
+<br />
+</select>
+|     
+<label for="include_archival">
+<input type="checkbox"  id="include_archival" name="include_archival" value="t" /> archival
+</label>
+<label for="include_live">
+<input type="checkbox"  id="include_live" name="include_live" value="t" /> live
+</label>
+<br /><br />
+<label for="limit_origin_country">
+Limit to artists who were born in (or are currently located in) the following countries:
+<input name=origin_countries id="origin_countries" value="" onFocus="countryattachSuggest(this.id)"  size="15">
+</label>
+<br />
+
+
+<br />
+<br />
+
+
+<label for="limit_none"><input type="radio" name="limit" checked="checked" value="none"> As rated by all RYM users </input> </label>
+<br />
+<label for="limit_country">
+<input type="radio" name="limit"   value="country">
+As rated by members in the following countries: 
+<input name=countries id="countries" onFocus="countryattachSuggest(this.id)"  value="" size="15">
+</label>
+<br />
+<!-- 
+<label for="limit_city">
+<input type="radio" name="limit"   value="country">
+As rated by members within  
+<input type="numeric" size="3" name="km"> km of 
+<div style="float:left;width:8em;font-size:x-small;">
+<input type="text" style="width:100%;" name="city" id="city"/>
+<br />(City)</div> 
+<div style="float:left;width:15em;font-size:x-small;">
+<input type="text" style="width:100%;" name="region" id="region"/>
+<br />(Region/State/Province)</div> 
+<div style="float:left;width:40em;font-size:x-small;">
+ <select name="country" id="country"><option value=""> 
+<option value="AF" >Afghanistan<br>
+<option value="AL" >Albania<br>
+<option value="DZ" >Algeria<br>
+<option value="AS" >American Samoa<br>
+<option value="AD" >Andorra<br>
+<option value="AO" >Angola<br>
+<option value="AI" >Anguilla<br>
+<option value="AQ" >Antarctica<br>
+<option value="AG" >Antigua and Barbuda<br>
+<option value="AR" >Argentina<br>
+<option value="AM" >Armenia<br>
+<option value="AW" >Aruba<br>
+<option value="AU" >Australia<br>
+<option value="AT" >Austria<br>
+<option value="AZ" >Azerbaijan<br>
+<option value="BS" >Bahamas<br>
+<option value="BH" >Bahrain<br>
+<option value="BD" >Bangladesh<br>
+<option value="BB" >Barbados<br>
+<option value="BY" >Belarus<br>
+<option value="BE" >Belgium<br>
+<option value="BZ" >Belize<br>
+<option value="BJ" >Benin<br>
+<option value="BM" >Bermuda<br>
+<option value="BT" >Bhutan<br>
+<option value="BO" >Bolivia<br>
+<option value="BQ" >Bonaire, Sint Eustatius, and Saba<br>
+<option value="BA" >Bosnia-Herzegovina<br>
+<option value="BW" >Botswana<br>
+<option value="BV" >Bouvet Island<br>
+<option value="BR" >Brazil<br>
+<option value="IO" >British Indian Ocean Territory<br>
+<option value="VG" >British Virgin Islands<br>
+<option value="BN" >Brunei Darussalam<br>
+<option value="BG" >Bulgaria<br>
+<option value="BF" >Burkina Faso<br>
+<option value="BU" >Burma<br>
+<option value="BI" >Burundi<br>
+<option value="KH" >Cambodia<br>
+<option value="CM" >Cameroon<br>
+<option value="CA" >Canada<br>
+<option value="CI" >Canary Islands<br>
+<option value="CV" >Cape Verde<br>
+<option value="KY" >Cayman Islands<br>
+<option value="CF" >Central African Republic<br>
+<option value="TD" >Chad<br>
+<option value="CL" >Chile<br>
+<option value="CN" >China<br>
+<option value="CX" >Christmas Island<br>
+<option value="CC" >Cocos Island<br>
+<option value="CO" >Colombia<br>
+<option value="KM" >Comoros<br>
+<option value="CG" >Congo<br>
+<option value="CK" >Cook Islands<br>
+<option value="CR" >Costa Rica<br>
+<option value="HR" >Croatia<br>
+<option value="CU" >Cuba<br>
+<option value="CW" >Curaçao<br>
+<option value="CY" >Cyprus<br>
+<option value="CS" >Czechoslovakia (Former)<br>
+<option value="CZ" >Czech Republic<br>
+<option value="CD" >Democratic Republic of Congo<br>
+<option value="DK" >Denmark<br>
+<option value="DJ" >Djibouti<br>
+<option value="DM" >Dominica<br>
+<option value="DO" >Dominican Republic<br>
+<option value="TP" >East Timor<br>
+<option value="EC" >Ecuador<br>
+<option value="EG" >Egypt<br>
+<option value="SV" >El Salvador<br>
+<option value="GQ" >Equatorial Guinea<br>
+<option value="ER" >Eritrea<br>
+<option value="EE" >Estonia<br>
+<option value="ET" >Ethiopia<br>
+<option value="FK" >Falkland Islands<br>
+<option value="FO" >Faroe Islands<br>
+<option value="FJ" >Fiji<br>
+<option value="FI" >Finland<br>
+<option value="FR" >France<br>
+<option value="GF" >French Guiana<br>
+<option value="TF" >French Southern Territories<br>
+<option value="MK" >FYRO Macedonia<br>
+<option value="GA" >Gabon<br>
+<option value="GM" >Gambia<br>
+<option value="GE" >Georgia<br>
+<option value="GS" >Georgia & Sandwich Islands<br>
+<option value="DE" >Germany<br>
+<option value="GH" >Ghana<br>
+<option value="GI" >Gibraltar<br>
+<option value="GR" >Greece<br>
+<option value="GL" >Greenland<br>
+<option value="GD" >Grenada<br>
+<option value="GP" >Guadeloupe<br>
+<option value="GU" >Guam<br>
+<option value="GT" >Guatemala<br>
+<option value="GG" >Guernsey<br>
+<option value="GN" >Guinea<br>
+<option value="GW" >Guinea-Bissau<br>
+<option value="GY" >Guyana<br>
+<option value="HT" >Haiti<br>
+<option value="HM" >Heard Island and McDonald Islands<br>
+<option value="HN" >Honduras<br>
+<option value="HK" >Hong Kong<br>
+<option value="HU" >Hungary<br>
+<option value="IS" >Iceland<br>
+<option value="IN" >India<br>
+<option value="ID" >Indonesia<br>
+<option value="IR" >Iran<br>
+<option value="IQ" >Iraq<br>
+<option value="IE" >Ireland<br>
+<option value="IM" >Isle of Man<br>
+<option value="IL" >Israel<br>
+<option value="IT" >Italy<br>
+<option value="IC" >Ivory Coast<br>
+<option value="JM" >Jamaica<br>
+<option value="JP" >Japan<br>
+<option value="JE" >Jersey<br>
+<option value="JO" >Jordan<br>
+<option value="KZ" >Kazakhstan<br>
+<option value="KE" >Kenya<br>
+<option value="KI" >Kiribati<br>
+<option value="XK" >Kosovo<br>
+<option value="KW" >Kuwait<br>
+<option value="KG" >Kyrgyzstan<br>
+<option value="LA" >Laos<br>
+<option value="LV" >Latvia<br>
+<option value="LB" >Lebanon<br>
+<option value="LS" >Lesotho<br>
+<option value="LR" >Liberia<br>
+<option value="LY" >Libya<br>
+<option value="LI" >Liechtenstein<br>
+<option value="LT" >Lithuania<br>
+<option value="LU" >Luxembourg<br>
+<option value="MO" >Macau<br>
+<option value="MG" >Madagascar<br>
+<option value="MW" >Malawi<br>
+<option value="MY" >Malaysia<br>
+<option value="MV" >Maldives<br>
+<option value="ML" >Mali<br>
+<option value="MT" >Malta<br>
+<option value="MH" >Marshall Islands<br>
+<option value="MQ" >Martinique<br>
+<option value="MR" >Mauritania<br>
+<option value="MU" >Mauritius<br>
+<option value="YT" >Mayotte<br>
+<option value="MX" >Mexico<br>
+<option value="FM" >Micronesia<br>
+<option value="MD" >Moldova<br>
+<option value="MC" >Monaco<br>
+<option value="MN" >Mongolia<br>
+<option value="ME" >Montenegro<br>
+<option value="MS" >Montserrat<br>
+<option value="MA" >Morocco<br>
+<option value="MZ" >Mozambique<br>
+<option value="MM" >Myanmar (Former Burma)<br>
+<option value="NA" >Namibia<br>
+<option value="NR" >Nauru<br>
+<option value="NP" >Nepal<br>
+<option value="NL" >Netherlands<br>
+<option value="AN" >Netherlands Antilles<br>
+<option value="NC" >New Caledonia<br>
+<option value="NZ" >New Zealand<br>
+<option value="NI" >Nicaragua<br>
+<option value="NE" >Niger<br>
+<option value="NG" >Nigeria<br>
+<option value="NU" >Niue<br>
+<option value="NF" >Norfolk Island<br>
+<option value="MP" >Northern Marianas<br>
+<option value="KP" >North Korea<br>
+<option value="NO" >Norway<br>
+<option value="OM" >Oman<br>
+<option value="PK" >Pakistan<br>
+<option value="PW" >Palau<br>
+<option value="PS" >Palestine National Authority<br>
+<option value="PA" >Panama<br>
+<option value="PG" >Papua New Guinea<br>
+<option value="PY" >Paraguay<br>
+<option value="PE" >Peru<br>
+<option value="PH" >Philippines<br>
+<option value="PN" >Pitcairn Islands<br>
+<option value="PL" >Poland<br>
+<option value="PF" >Polynesia<br>
+<option value="PT" >Portugal<br>
+<option value="PR" >Puerto Rico<br>
+<option value="QA" >Qatar<br>
+<option value="RE" >Reunion<br>
+<option value="RO" >Romania<br>
+<option value="RU" >Russian Federation<br>
+<option value="RW" >Rwanda<br>
+<option value="BL" >Saint Barthélemy<br>
+<option value="KN" >Saint Kitts and Nevis<br>
+<option value="LC" >Saint Lucia<br>
+<option value="MF" >Saint Martin (French)<br>
+<option value="VC" >Saint Vincent and the Grenadines<br>
+<option value="WS" >Samoa<br>
+<option value="SM" >San Marino<br>
+<option value="ST" >Sao Tome<br>
+<option value="SA" >Saudi Arabia<br>
+<option value="SN" >Senegal<br>
+<option value="RS" >Serbia<br>
+<option value="YU" >Serbia and Montenegro (obsolete)<br>
+<option value="SC" >Seychelles<br>
+<option value="SL" >Sierra Leone<br>
+<option value="SG" >Singapore<br>
+<option value="SX" >Sint Maarten (Dutch part)<br>
+<option value="SK" >Slovakia<br>
+<option value="SI" >Slovenia<br>
+<option value="SB" >Solomon Islands<br>
+<option value="SO" >Somalia<br>
+<option value="ZA" >South Africa<br>
+<option value="KR" >South Korea<br>
+<option value="SS" >South Sudan<br>
+<option value="ES" >Spain<br>
+<option value="LK" >Sri Lanka<br>
+<option value="SH" >St. Helena<br>
+<option value="PM" >St Pierre And Miquelon<br>
+<option value="SD" >Sudan<br>
+<option value="SR" >Suriname<br>
+<option value="SJ" >Svalbard And Jan Mayen<br>
+<option value="SZ" >Swaziland<br>
+<option value="SE" >Sweden<br>
+<option value="CH" >Switzerland<br>
+<option value="SY" >Syria<br>
+<option value="TJ" >Tadjikistan<br>
+<option value="TW" >Taiwan<br>
+<option value="TZ" >Tanzania<br>
+<option value="TH" >Thailand<br>
+<option value="TL" >Timor-Leste<br>
+<option value="TG" >Togo<br>
+<option value="TK" >Tokelau<br>
+<option value="TO" >Tonga<br>
+<option value="TT" >Trinidad and Tobago<br>
+<option value="TN" >Tunisia<br>
+<option value="TR" >Turkey<br>
+<option value="TM" >Turkmenistan<br>
+<option value="TC" >Turks And Caicos Islands<br>
+<option value="TV" >Tuvalu<br>
+<option value="UG" >Uganda<br>
+<option value="UA" >Ukraine<br>
+<option value="AE" >United Arab Emirates<br>
+<option value="GB" >United Kingdom<br>
+<option value="US" >United States<br>
+<option value="UY" >Uruguay<br>
+<option value="UM" >US Minor Outlying Islands<br>
+<option value="EH" >US-Western Sahara<br>
+<option value="UZ" >Uzbekistan<br>
+<option value="VU" >Vanuatu<br>
+<option value="VA" >Vatican City State<br>
+<option value="VE" >Venezuela<br>
+<option value="VN" >Vietnam<br>
+<option value="VI" >Virgin Islands<br>
+<option value="WF" >Wallis And Futuna Islands<br>
+<option value="YE" >Yemen<br>
+<option value="ZM" >Zambia<br>
+<option value="ZW" >Zimbabwe<br>
+</select>
+<br />(Country)
+</div>
+
+
+</label> 
+<br />-->
+
+<label for="limit_friends"><input id="limit_friends" type="radio" name="limit"   value="friends"> As rated by my friends </input> </label>
+<br />
+
+<br /><input type="button" onClick="document.getElementById('page').value=1;this.form.submit();" value="Show chart &gt;" /> 
+
+
+
+</form></div><div class="clear"> </div><div style="text-align:right;font-size:x-small;padding:10px;border:#888 1px solid; background:#eee; color:#888;">Want to know more about how charts are calculated?  Read the <a href="/wiki/RYM:Charts FAQ" target="blank" title="Click to view documentation" class="wiki_link">charts FAQ</a></div><div class="clear"> </div><div class="clear"> </div><div style="padding:10px;font-size:small;text-align:center;font-weight:bold;background:#eee;border:#888 1px solid;"><a href="javascript:goPage(1);">1 - 100</a> | 101 - 200 | <a href="javascript:goPage(3);">201 - 300</a> | <a href="javascript:goPage(4);">301 - 309</a> </div><div class="clear"> </div><table class="mbgen" style="width:100%"><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">101</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/thorax_wach/die_euch_gehts_ja_noch_viel_zu_gut/"><img  width="150" id="img_l_541300"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0b7af9e2d134c698fae6f4913c4dbfd9/3400809.jpg"  alt="Die Euch geht&#39;s ja noch viel zu gut" title="Die Euch geht&#39;s ja noch viel zu gut" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist127516]"  href="/artist/thorax_wach" class="artist">Thorax-Wach</a> <br /><a title="[Album541300]" href="/release/album/thorax_wach/die_euch_gehts_ja_noch_viel_zu_gut/" class="album">Die Euch geht&#39;s ja noch viel zu gut</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/thorax_wach/die_euch_gehts_ja_noch_viel_zu_gut/">Avg rating: <b>3.65</b> | Ratings: <b>11</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/thorax_wach/die_euch_gehts_ja_noch_viel_zu_gut/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">102</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/geile_tiere/geile_tiere/"><img  width="150" id="img_l_539979"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3ff9addd934964532dc825015e81faa4/1590114.jpg"  alt="Geile Tiere" title="Geile Tiere" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist127223]"  href="/artist/geile_tiere" class="artist">Geile Tiere</a> <br /><a title="[Album539979]" href="/release/album/geile_tiere/geile_tiere/" class="album">Geile Tiere</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre20730]" class="genre" href="/genre/Minimal+Wave/">Minimal Wave</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/geile_tiere/geile_tiere/">Avg rating: <b>3.30</b> | Ratings: <b>22</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/geile_tiere/geile_tiere/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">103</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/fee/notaufnahme/"><img  width="150" id="img_l_173154"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0aa2122b98ce47df81fbc3186f3ac039/1371054.jpg"  alt="Notaufnahme" title="Notaufnahme" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist41107]"  href="/artist/fee" class="artist">Fee</a> <br /><a title="[Album173154]" href="/release/album/fee/notaufnahme/" class="album">Notaufnahme</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre10349]" class="genre" href="/genre/Deutschrock/">Deutschrock</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/fee/notaufnahme/">Avg rating: <b>3.35</b> | Ratings: <b>15</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/fee/notaufnahme/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">104</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/dof/dof/"><img  width="150" id="img_l_150086"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/cb5163cb8d7b20396ad3dea3dd838e58/1321032.jpg"  alt="DÖF" title="DÖF" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist36119]"  href="/artist/dof" class="artist">DÖF</a> <br /><a title="[Album150086]" href="/release/album/dof/dof/" class="album">DÖF</a></span>
+         <span class="mediumg">(1983)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre382]" class="genre" href="/genre/Synthpop/">Synthpop</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/dof/dof/">Avg rating: <b>3.22</b> | Ratings: <b>20</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/dof/dof/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">105</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/mau_mau_f2/kraft/"><img  width="150" id="img_l_431359"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/79d743f9569af223a1b3c347c93ef30e/1501065.jpg"  alt="Kraft" title="Kraft" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist98991]"  href="/artist/mau_mau_f2" class="artist">Mau Mau</a> <br /><a title="[Album431359]" href="/release/album/mau_mau_f2/kraft/" class="album">Kraft</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/mau_mau_f2/kraft/">Avg rating: <b>3.27</b> | Ratings: <b>24</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/mau_mau_f2/kraft/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">106</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/1__futurologischer_congress/schutzt_die_verliebten/"><img  width="150" id="img_l_198314"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/cebd3d30a4cdcc6f44241d48dae0af56/1552565.jpg"  alt="Schützt die Verliebten" title="Schützt die Verliebten" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist46462]"  href="/artist/1__futurologischer_congress" class="artist">1. Futurologischer Congress</a> <br /><a title="[Album198314]" href="/release/album/1__futurologischer_congress/schutzt_die_verliebten/" class="album">Schützt die Verliebten</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/1__futurologischer_congress/schutzt_die_verliebten/">Avg rating: <b>3.12</b> | Ratings: <b>30</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/1__futurologischer_congress/schutzt_die_verliebten/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">107</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/hubert_kah/ich_komme/"><img  width="150" id="img_l_150473"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0fb5a7ade1935d7c770f5a290d92a1a5/1668900.jpg"  alt="Ich komme" title="Ich komme" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist17330]"  href="/artist/hubert_kah" class="artist">Hubert Kah</a> <br /><a title="[Album150473]" href="/release/album/hubert_kah/ich_komme/" class="album">Ich komme</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre382]" class="genre" href="/genre/Synthpop/">Synthpop</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/hubert_kah/ich_komme/">Avg rating: <b>3.20</b> | Ratings: <b>20</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/hubert_kah/ich_komme/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">108</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/andreas_dorau_und_die_bruderschaft_der_kleinen_sorgen/demokratie/"><img  width="150" id="img_l_198338"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ddce1c1466f1f8d9b1e51ff03b7975e0/1313637.jpg"  alt="Demokratie" title="Demokratie" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist23779]"  href="/artist/andreas_dorau" class="artist">Andreas Dorau und die Bruderschaft der kleinen Sorgen</a> <br /><a title="[Album198338]" href="/release/album/andreas_dorau_und_die_bruderschaft_der_kleinen_sorgen/demokratie/" class="album">Demokratie</a></span>
+         <span class="mediumg">(1988)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/andreas_dorau_und_die_bruderschaft_der_kleinen_sorgen/demokratie/">Avg rating: <b>3.23</b> | Ratings: <b>22</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/andreas_dorau_und_die_bruderschaft_der_kleinen_sorgen/demokratie/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">109</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/der_plan/fette_jahre/"><img  width="150" id="img_l_519750"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/9870bf7997110dc1d8ecfe85f23779b0/2039478.jpg"  alt="Fette Jahre" title="Fette Jahre" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist13984]"  href="/artist/der_plan" class="artist">Der Plan</a> <br /><a title="[Album519750]" href="/release/album/der_plan/fette_jahre/" class="album">Fette Jahre</a></span>
+         <span class="mediumg">(1985)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre382]" class="genre" href="/genre/Synthpop/">Synthpop</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/der_plan/fette_jahre/">Avg rating: <b>3.20</b> | Ratings: <b>20</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/der_plan/fette_jahre/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">110</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/siluetes_61/ich_hasse_jeden_der_mich_nicht_mag/"><img  height="150" id="img_l_396196"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/05f55cad9a3dbc2b73bbffa1dd8c870e/2982622.jpg"  alt="Ich hasse jeden der mich nicht mag" title="Ich hasse jeden der mich nicht mag" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist90684]"  href="/artist/siluetes_61" class="artist">Siluetes 61</a> <br /><a title="[Album396196]" href="/release/album/siluetes_61/ich_hasse_jeden_der_mich_nicht_mag/" class="album">Ich hasse jeden der mich nicht mag</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/siluetes_61/ich_hasse_jeden_der_mich_nicht_mag/">Avg rating: <b>3.26</b> | Ratings: <b>18</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/siluetes_61/ich_hasse_jeden_der_mich_nicht_mag/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">111</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/vorgruppe/im_herzen_von_nielsen_2/"><img  width="150" id="img_l_862493"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/817eb1b6c5a955bbcd9735183d4d78d1/1904543.jpg"  alt="Im Herzen von Nielsen 2" title="Im Herzen von Nielsen 2" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist209998]"  href="/artist/vorgruppe" class="artist">Vorgruppe</a> <br /><a title="[Album862493]" href="/release/album/vorgruppe/im_herzen_von_nielsen_2/" class="album">Im Herzen von Nielsen 2</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre129]" class="genre" href="/genre/New+Wave/">New Wave</a>, <a title="[Genre332]" class="genre" href="/genre/Post%2dPunk/">Post-Punk</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/vorgruppe/im_herzen_von_nielsen_2/">Avg rating: <b>3.34</b> | Ratings: <b>19</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/vorgruppe/im_herzen_von_nielsen_2/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">112</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stille_hoffnung/falsch_and_umsonst/"><img  width="150" id="img_l_1373049"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/885f31db3c1fa6062ab9ed61d6f054e9/2198434.jpg"  alt="Falsch &amp; umsonst" title="Falsch &amp; umsonst" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist296676]"  href="/artist/stille_hoffnung" class="artist">Stille Hoffnung</a> <br /><a title="[Album1373049]" href="/release/album/stille_hoffnung/falsch_and_umsonst/" class="album">Falsch &amp; umsonst</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre332]" class="genre" href="/genre/Post%2dPunk/">Post-Punk</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stille_hoffnung/falsch_and_umsonst/">Avg rating: <b>3.62</b> | Ratings: <b>14</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/stille_hoffnung/falsch_and_umsonst/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">113</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/lunapark/gefangene_vogel/"><img  width="150" id="img_l_921404"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/2fe557fdd630023454bcf5896b4b8bff/3102752.jpeg"  alt="Gefangene Vögel" title="Gefangene Vögel" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist226867]"  href="/artist/lunapark" class="artist">Lunapark</a> <br /><a title="[Album921404]" href="/release/album/lunapark/gefangene_vogel/" class="album">Gefangene Vögel</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre129]" class="genre" href="/genre/New+Wave/">New Wave</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/lunapark/gefangene_vogel/">Avg rating: <b>3.45</b> | Ratings: <b>13</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/lunapark/gefangene_vogel/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">114</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/andy_giorbino/lied_an_die_freude/"><img  width="150" id="img_l_662686"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/f08744bf11a50e4bcdcfa6f167920df4/1809270.jpg"  alt="Lied an die Freude" title="Lied an die Freude" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist114121]"  href="/artist/andy_giorbino" class="artist">Andy Giorbino</a> <br /><a title="[Album662686]" href="/release/album/andy_giorbino/lied_an_die_freude/" class="album">Lied an die Freude</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre20942]" class="genre" href="/genre/Minimal+Synth/">Minimal Synth</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre64]" class="genre" href="/genre/Experimental+Rock/">Experimental Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/andy_giorbino/lied_an_die_freude/">Avg rating: <b>3.18</b> | Ratings: <b>20</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/andy_giorbino/lied_an_die_freude/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">115</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/agm/das_ist_heimat/"><img  width="150" id="img_l_943721"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/5c71ce6a63413daeeb167f132cd46dad/5010762.jpg"  alt="Das ist Heimat" title="Das ist Heimat" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist233344]"  href="/artist/agm" class="artist">AGM</a> <br /><a title="[Album943721]" href="/release/album/agm/das_ist_heimat/" class="album">Das ist Heimat</a></span>
+         <span class="mediumg">(1980)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre10349]" class="genre" href="/genre/Deutschrock/">Deutschrock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/agm/das_ist_heimat/">Avg rating: <b>3.48</b> | Ratings: <b>12</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/agm/das_ist_heimat/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">116</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/xao_seffcheque_und_der_rest/ja__nein__vielleicht/"><img  width="150" id="img_l_330902"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e45f632791f520837b7de65a1b1133b0/1416481.jpg"  alt="Ja, Nein, Vielleicht " title="Ja, Nein, Vielleicht " src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist75271]"  href="/artist/xao_seffcheque_und_der_rest" class="artist">Xao Seffcheque und der Rest</a> <br /><a title="[Album330902]" href="/release/album/xao_seffcheque_und_der_rest/ja__nein__vielleicht/" class="album">Ja, Nein, Vielleicht </a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/xao_seffcheque_und_der_rest/ja__nein__vielleicht/">Avg rating: <b>3.18</b> | Ratings: <b>21</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/xao_seffcheque_und_der_rest/ja__nein__vielleicht/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">117</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/the_wirtschaftswunder/tscherwonez/"><img  width="150" id="img_l_198308"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/53c660561108cafa72049fde5567d478/1500794.jpg"  alt="Tscherwonez" title="Tscherwonez" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist40264]"  href="/artist/the_wirtschaftswunder" class="artist">The Wirtschaftswunder</a> <br /><a title="[Album198308]" href="/release/album/the_wirtschaftswunder/tscherwonez/" class="album">Tscherwonez</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/the_wirtschaftswunder/tscherwonez/">Avg rating: <b>3.20</b> | Ratings: <b>20</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/the_wirtschaftswunder/tscherwonez/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">118</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/gabi_delgado/mistress/"><img  width="150" id="img_l_13040"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/012e3ec6ce9c3e7637c543ba6d2234f9/1886199.jpg"  alt="Mistress" title="Mistress" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist3669]"  href="/artist/gabi_delgado" class="artist">Gabi Delgado</a> <br /><a title="[Album13040]" href="/release/album/gabi_delgado/mistress/" class="album">Mistress</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre36]" class="genre" href="/genre/Pop/">Pop</a>, <a title="[Genre129]" class="genre" href="/genre/New+Wave/">New Wave</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/gabi_delgado/mistress/">Avg rating: <b>3.00</b> | Ratings: <b>28</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/gabi_delgado/mistress/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">119</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/felix_kubin/zemsta_plutona/"><img  width="150" id="img_l_4964259"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ae9a05b955e1996f3d7d9e5e976c0314/4990184.jpg"  alt="Zemsta Plutona" title="Zemsta Plutona" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist46269]"  href="/artist/felix_kubin" class="artist">Felix Kubin</a> <br /><a title="[Album4964259]" href="/release/album/felix_kubin/zemsta_plutona/" class="album">Zemsta Plutona</a></span>
+         <span class="mediumg">(2013)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre82]" class="genre" href="/genre/Electronic/">Electronic</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/felix_kubin/zemsta_plutona/">Avg rating: <b>3.05</b> | Ratings: <b>27</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/felix_kubin/zemsta_plutona/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">120</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/monopol/weltweit/"><img  width="150" id="img_l_204543"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3a4dc94060034a97fc025e172b272540/3112883.jpg"  alt="Weltweit" title="Weltweit" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist48035]"  href="/artist/monopol" class="artist">Monopol</a> <br /><a title="[Album204543]" href="/release/album/monopol/weltweit/" class="album">Weltweit</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/monopol/weltweit/">Avg rating: <b>3.35</b> | Ratings: <b>11</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/monopol/weltweit/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">121</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/die_zimmermanner/1001_wege_sex_zu_machen_ohne_daran_spab_zu_haben/"><img  width="150" id="img_l_434838"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/47a445708dbe05f7dd4499904aed613e/1747591.jpg"  alt="1001 Wege Sex zu machen ohne daran Spaß zu haben" title="1001 Wege Sex zu machen ohne daran Spaß zu haben" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist99794]"  href="/artist/die_zimmermanner" class="artist">Die Zimmermänner</a> <br /><a title="[Album434838]" href="/release/album/die_zimmermanner/1001_wege_sex_zu_machen_ohne_daran_spab_zu_haben/" class="album">1001 Wege Sex zu machen ohne daran Spaß zu haben</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/die_zimmermanner/1001_wege_sex_zu_machen_ohne_daran_spab_zu_haben/">Avg rating: <b>3.22</b> | Ratings: <b>16</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/die_zimmermanner/1001_wege_sex_zu_machen_ohne_daran_spab_zu_haben/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">122</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/duotronic_synterror/pech_und_schwefel/"><img  width="150" id="img_l_1057861"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ffe63b64f789ea43177092201a0494dd/2052193.jpg"  alt="Pech und Schwefel" title="Pech und Schwefel" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist250741]"  href="/artist/duotronic_synterror" class="artist">Duotronic Synterror</a> <br /><a title="[Album1057861]" href="/release/album/duotronic_synterror/pech_und_schwefel/" class="album">Pech und Schwefel</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre20942]" class="genre" href="/genre/Minimal+Synth/">Minimal Synth</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/duotronic_synterror/pech_und_schwefel/">Avg rating: <b>3.54</b> | Ratings: <b>11</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/duotronic_synterror/pech_und_schwefel/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">123</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/rheingold/dis_tanz/"><img  width="150" id="img_l_162272"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c805ea55735bd61d1bf4402004e0b0b9/1778871.jpg"  alt="Dis-tanz" title="Dis-tanz" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist38657]"  href="/artist/rheingold" class="artist">Rheingold</a> <br /><a title="[Album162272]" href="/release/album/rheingold/dis_tanz/" class="album">Dis-tanz</a></span>
+         <span class="mediumg">(1984)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre382]" class="genre" href="/genre/Synthpop/">Synthpop</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/rheingold/dis_tanz/">Avg rating: <b>3.08</b> | Ratings: <b>19</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/rheingold/dis_tanz/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">124</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/krysmopompas/heute_schlafen___morgen_aufwachen/"><img  width="150" id="img_l_1818815"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a4f59913cb96d2be97d4aa258c12c402/2421097.jpg"  alt="Heute Schlafen - Morgen Aufwachen" title="Heute Schlafen - Morgen Aufwachen" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist361537]"  href="/artist/krysmopompas" class="artist">Krysmopompas</a> <br /><a title="[Album1818815]" href="/release/album/krysmopompas/heute_schlafen___morgen_aufwachen/" class="album">Heute Schlafen - Morgen Aufwachen</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/krysmopompas/heute_schlafen___morgen_aufwachen/">Avg rating: <b>3.05</b> | Ratings: <b>18</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/krysmopompas/heute_schlafen___morgen_aufwachen/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">125</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/gesundes_volksempfinden/gesundes_volksempfinden/"><img  width="150" id="img_l_755043"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c462c734f8daccd836e8c5ed3139781f/1800169.jpg"  alt="Gesundes Volksempfinden" title="Gesundes Volksempfinden" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist181252]"  href="/artist/gesundes_volksempfinden" class="artist">Gesundes Volksempfinden</a> <br /><a title="[Album755043]" href="/release/album/gesundes_volksempfinden/gesundes_volksempfinden/" class="album">Gesundes Volksempfinden</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/gesundes_volksempfinden/gesundes_volksempfinden/">Avg rating: <b>3.49</b> | Ratings: <b>11</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/gesundes_volksempfinden/gesundes_volksempfinden/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">126</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/trash_groove_girls/arbeit__sport_and_spiel/"><img  width="150" id="img_l_1528427"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/9016c50f2b3aadeb8f851509d6c8b8f0/2273723.jpg"  alt="Arbeit, Sport &amp; Spiel" title="Arbeit, Sport &amp; Spiel" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist318526]"  href="/artist/trash_groove_girls" class="artist">Trash Groove Girls</a> <br /><a title="[Album1528427]" href="/release/album/trash_groove_girls/arbeit__sport_and_spiel/" class="album">Arbeit, Sport &amp; Spiel</a></span>
+         <span class="mediumg">(1986)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/trash_groove_girls/arbeit__sport_and_spiel/">Avg rating: <b>3.24</b> | Ratings: <b>10</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/trash_groove_girls/arbeit__sport_and_spiel/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">127</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/die_haut/schnelles_leben/"><img  width="150" id="img_l_24495"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/5d2fc81b7da1e3c1384a1d3d099ab102/1808822.jpg"  alt="Schnelles Leben" title="Schnelles Leben" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist7108]"  href="/artist/die_haut" class="artist">Die Haut</a> <br /><a title="[Album24495]" href="/release/album/die_haut/schnelles_leben/" class="album">Schnelles Leben</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre332]" class="genre" href="/genre/Post%2dPunk/">Post-Punk</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/die_haut/schnelles_leben/">Avg rating: <b>3.16</b> | Ratings: <b>20</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/die_haut/schnelles_leben/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">128</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/profil_f2/profil/"><img  width="150" id="img_l_1519819"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/f8e8c3bbb717d563c4721062224bab88/2370458.jpg"  alt="Profil" title="Profil" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist317080]"  href="/artist/profil_f2" class="artist">Profil</a> <br /><a title="[Album1519819]" href="/release/album/profil_f2/profil/" class="album">Profil</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre382]" class="genre" href="/genre/Synthpop/">Synthpop</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/profil_f2/profil/">Avg rating: <b>3.20</b> | Ratings: <b>17</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/profil_f2/profil/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">129</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/xmal_deutschland/devils/"><img  width="150" id="img_l_59636"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/b19910007cfbf6123e91d8e6a2e4d66c/5708419.jpg"  alt="Devils" title="Devils" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist16131]"  href="/artist/xmal_deutschland" class="artist">Xmal Deutschland</a> <br /><a title="[Album59636]" href="/release/album/xmal_deutschland/devils/" class="album">Devils</a></span>
+         <span class="mediumg">(1989)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre595]" class="genre" href="/genre/Gothic+Rock/">Gothic Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/xmal_deutschland/devils/">Avg rating: <b>2.77</b> | Ratings: <b>49</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/xmal_deutschland/devils/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">130</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/peter_schilling/fehler_im_system_f2/"><img  width="150" id="img_l_2224295"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/855c4842d3821367d6a1fecee1162e57/3828282.jpg"  alt="Fehler im System" title="Fehler im System" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist15327]"  href="/artist/peter_schilling" class="artist">Peter Schilling</a> <br /><a title="[Album2224295]" href="/release/album/peter_schilling/fehler_im_system_f2/" class="album">Fehler im System</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/peter_schilling/fehler_im_system_f2/">Avg rating: <b>2.91</b> | Ratings: <b>26</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/peter_schilling/fehler_im_system_f2/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">131</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/xao_seffcheque_und_der_rest/sehr_gut_kommt_sehr_gut/"><img  width="150" id="img_l_725379"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d9daf5332b5068fa750f9271ec08bf3a/2097474.jpg"  alt="Sehr gut kommt sehr gut" title="Sehr gut kommt sehr gut" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist75271]"  href="/artist/xao_seffcheque_und_der_rest" class="artist">Xao Seffcheque und der Rest</a> <br /><a title="[Album725379]" href="/release/album/xao_seffcheque_und_der_rest/sehr_gut_kommt_sehr_gut/" class="album">Sehr gut kommt sehr gut</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre147]" class="genre" href="/genre/Musical+Parody/">Musical Parody</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/xao_seffcheque_und_der_rest/sehr_gut_kommt_sehr_gut/">Avg rating: <b>3.42</b> | Ratings: <b>11</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/xao_seffcheque_und_der_rest/sehr_gut_kommt_sehr_gut/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">132</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/sprung_aus_den_wolken/sprung_aus_den_wolken/"><img  width="150" id="img_l_517789"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/10bcd3f6225a92ee9fd4d2dadc4a5f3e/2097521.jpg"  alt="Sprung aus den Wolken" title="Sprung aus den Wolken" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist27337]"  href="/artist/sprung_aus_den_wolken" class="artist">Sprung aus den Wolken</a> <br /><a title="[Album517789]" href="/release/album/sprung_aus_den_wolken/sprung_aus_den_wolken/" class="album">Sprung aus den Wolken</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre336]" class="genre" href="/genre/Industrial/">Industrial</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/sprung_aus_den_wolken/sprung_aus_den_wolken/">Avg rating: <b>2.98</b> | Ratings: <b>28</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/sprung_aus_den_wolken/sprung_aus_den_wolken/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">133</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/carmen_f3/puppe_aus_glas/"><img  width="150" id="img_l_875156"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/53594948333290ebe5b340a5a14522d3/1916784.jpg"  alt="Puppe aus Glas" title="Puppe aus Glas" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist213269]"  href="/artist/carmen_f3" class="artist">Carmen</a> <br /><a title="[Album875156]" href="/release/album/carmen_f3/puppe_aus_glas/" class="album">Puppe aus Glas</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre382]" class="genre" href="/genre/Synthpop/">Synthpop</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/carmen_f3/puppe_aus_glas/">Avg rating: <b>3.52</b> | Ratings: <b>10</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/carmen_f3/puppe_aus_glas/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">134</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/bizarre_leidenschaft/geheimnis/"><img  width="150" id="img_l_1083199"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/bd1d6e281cd6632fb5ade78e424b8402/2056062.jpg"  alt="Geheimnis" title="Geheimnis" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist254561]"  href="/artist/bizarre_leidenschaft" class="artist">Bizarre Leidenschaft</a> <br /><a title="[Album1083199]" href="/release/album/bizarre_leidenschaft/geheimnis/" class="album">Geheimnis</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre20942]" class="genre" href="/genre/Minimal+Synth/">Minimal Synth</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/bizarre_leidenschaft/geheimnis/">Avg rating: <b>3.38</b> | Ratings: <b>12</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/bizarre_leidenschaft/geheimnis/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">135</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/holger_hiller_thomas_fehlmann/wir_bauen_eine_stadt/"><img  width="150" id="img_l_728464"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/62cfc60003dfef0ec7f6fdba7953696c/1773470.jpg"  alt="Wir bauen eine Stadt" title="Wir bauen eine Stadt" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9337]"  href="/artist/holger_hiller" class="artist">Holger Hiller</a> &amp; <a title="[Artist7467]"  href="/artist/thomas_fehlmann" class="artist">Thomas Fehlmann</a> <br /><a title="[Album728464]" href="/release/album/holger_hiller_thomas_fehlmann/wir_bauen_eine_stadt/" class="album">Wir bauen eine Stadt</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre20942]" class="genre" href="/genre/Minimal+Synth/">Minimal Synth</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre64]" class="genre" href="/genre/Experimental+Rock/">Experimental Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/holger_hiller_thomas_fehlmann/wir_bauen_eine_stadt/">Avg rating: <b>3.36</b> | Ratings: <b>15</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/holger_hiller_thomas_fehlmann/wir_bauen_eine_stadt/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">136</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/zaza/zaza/"><img  height="150" id="img_l_188115"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/4018b70c0d6506704cbf935f44263911/3873536.jpg"  alt="ZaZa" title="ZaZa" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist40261]"  href="/artist/zaza" class="artist">ZaZa</a> <br /><a title="[Album188115]" href="/release/album/zaza/zaza/" class="album">ZaZa</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre382]" class="genre" href="/genre/Synthpop/">Synthpop</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/zaza/zaza/">Avg rating: <b>3.32</b> | Ratings: <b>15</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/zaza/zaza/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">137</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/munchener_freiheit/von_anfang_an/"><img  width="150" id="img_l_232938"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c68f8094a7cb90b0ff5b9d7a127f915f/1335063.jpg"  alt="Von Anfang an" title="Von Anfang an" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist33434]"  href="/artist/munchener_freiheit" class="artist">Münchener Freiheit</a> <br /><a title="[Album232938]" href="/release/album/munchener_freiheit/von_anfang_an/" class="album">Von Anfang an</a></span>
+         <span class="mediumg">(1986)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/munchener_freiheit/von_anfang_an/">Avg rating: <b>3.29</b> | Ratings: <b>12</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/munchener_freiheit/von_anfang_an/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">138</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/synthenphall/laut_and_deutlich/"><img  height="150" id="img_l_1054024"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/f01baf48d08d1e3dd4f6cc682a880716/2042674.jpg"  alt="Laut &amp; deutlich" title="Laut &amp; deutlich" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist250151]"  href="/artist/synthenphall" class="artist">Synthenphall</a> <br /><a title="[Album1054024]" href="/release/album/synthenphall/laut_and_deutlich/" class="album">Laut &amp; deutlich</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre20942]" class="genre" href="/genre/Minimal+Synth/">Minimal Synth</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/synthenphall/laut_and_deutlich/">Avg rating: <b>3.22</b> | Ratings: <b>15</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/synthenphall/laut_and_deutlich/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">139</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/gina_x/yinglish_f1/"><img  width="150" id="img_l_382880"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/6f5cd8b834bcceb70ed5a6b046ac03e5/1991153.jpg"  alt="Yinglish" title="Yinglish" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist71922]"  href="/artist/gina_x_performance" class="artist">Gina X</a> <br /><a title="[Album382880]" href="/release/album/gina_x/yinglish_f1/" class="album">Yinglish</a></span>
+         <span class="mediumg">(1984)</span><br /><br /><a title="[Genre382]" class="genre" href="/genre/Synthpop/">Synthpop</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/gina_x/yinglish_f1/">Avg rating: <b>2.95</b> | Ratings: <b>17</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/gina_x/yinglish_f1/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">140</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/spider_murphy_gang/tutti_frutti/"><img  width="150" id="img_l_123491"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3f715dd11e1224535566be8b05052906/2223486.jpg"  alt="Tutti Frutti" title="Tutti Frutti" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist29844]"  href="/artist/spider_murphy_gang" class="artist">Spider Murphy Gang</a> <br /><a title="[Album123491]" href="/release/album/spider_murphy_gang/tutti_frutti/" class="album">Tutti Frutti</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre55]" class="genre" href="/genre/Rock+%26+Roll/">Rock & Roll</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/spider_murphy_gang/tutti_frutti/">Avg rating: <b>3.32</b> | Ratings: <b>12</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/spider_murphy_gang/tutti_frutti/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">141</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/r_e_k_/r_e_k__1/"><img  width="150" id="img_l_1163568"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ab3cce065789cad831592373836d7fe3/3393210.jpg"  alt="R.E.K. 1" title="R.E.K. 1" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist267302]"  href="/artist/r_e_k_" class="artist">R.E.K.</a> <br /><a title="[Album1163568]" href="/release/album/r_e_k_/r_e_k__1/" class="album">R.E.K. 1</a></span>
+         <span class="mediumg">(1983)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre382]" class="genre" href="/genre/Synthpop/">Synthpop</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/r_e_k_/r_e_k__1/">Avg rating: <b>3.80</b> | Ratings: <b>7</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/r_e_k_/r_e_k__1/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">142</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/neuland/neuland/"><img  width="150" id="img_l_2343035"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/bc063eeed187f87cec31346fc0afae8b/3669268.jpeg"  alt="Neuland" title="Neuland" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist455354]"  href="/artist/neuland" class="artist">Neuland</a> <br /><a title="[Album2343035]" href="/release/album/neuland/neuland/" class="album">Neuland</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/neuland/neuland/">Avg rating: <b>3.80</b> | Ratings: <b>7</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/neuland/neuland/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">143</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/the_vogue_f1/a_doll_spits_cubes/"><img  width="150" id="img_l_768271"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/393623c74dac0be3e0a3e147ad92a3f9/2001869.jpg"  alt="A Doll Spits Cubes" title="A Doll Spits Cubes" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist184518]"  href="/artist/the_vogue_f1" class="artist">The Vogue</a> <br /><a title="[Album768271]" href="/release/album/the_vogue_f1/a_doll_spits_cubes/" class="album">A Doll Spits Cubes</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre362]" class="genre" href="/genre/Psychedelic+Pop/">Psychedelic Pop</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/the_vogue_f1/a_doll_spits_cubes/">Avg rating: <b>3.56</b> | Ratings: <b>11</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/the_vogue_f1/a_doll_spits_cubes/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">144</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/westdeutsche_christen/westdeutsche_christen/"><img  width="150" id="img_l_1165237"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0399ed32220acf0f36ae658270d45e8e/4482024.jpg"  alt="Westdeutsche Christen" title="Westdeutsche Christen" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist267564]"  href="/artist/westdeutsche_christen" class="artist">Westdeutsche Christen</a> <br /><a title="[Album1165237]" href="/release/album/westdeutsche_christen/westdeutsche_christen/" class="album">Westdeutsche Christen</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre332]" class="genre" href="/genre/Post%2dPunk/">Post-Punk</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/westdeutsche_christen/westdeutsche_christen/">Avg rating: <b>3.33</b> | Ratings: <b>11</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/westdeutsche_christen/westdeutsche_christen/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">145</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/die_turen/das_herz_war_nihilismus/"><img  width="150" id="img_l_1448840"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e64a0235a21a69c3bdb6e6b215c696d9/2232233.jpg"  alt="Das Herz war Nihilismus" title="Das Herz war Nihilismus" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist254475]"  href="/artist/die_turen" class="artist">Die Türen</a> <br /><a title="[Album1448840]" href="/release/album/die_turen/das_herz_war_nihilismus/" class="album">Das Herz war Nihilismus</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre36]" class="genre" href="/genre/Pop/">Pop</a>, <a title="[Genre402]" class="genre" href="/genre/Electropop/">Electropop</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/die_turen/das_herz_war_nihilismus/">Avg rating: <b>4.20</b> | Ratings: <b>6</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/die_turen/das_herz_war_nihilismus/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">146</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/rotzkotz/lebensfroh_und_farbenfroh/"><img  width="150" id="img_l_907838"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/8449900b75b93b4b22b2c0f45ac90737/4422809.jpg"  alt="Lebensfroh und farbenfroh" title="Lebensfroh und farbenfroh" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist223306]"  href="/artist/rotzkotz" class="artist">Rotzkotz</a> <br /><a title="[Album907838]" href="/release/album/rotzkotz/lebensfroh_und_farbenfroh/" class="album">Lebensfroh und farbenfroh</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre332]" class="genre" href="/genre/Post%2dPunk/">Post-Punk</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/rotzkotz/lebensfroh_und_farbenfroh/">Avg rating: <b>3.81</b> | Ratings: <b>9</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/rotzkotz/lebensfroh_und_farbenfroh/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">147</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/die_turen/popo/"><img  width="150" id="img_l_1082896"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/df16bfd33b9b4431af98632debf46d30/2148694.jpg"  alt="Popo" title="Popo" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist254475]"  href="/artist/die_turen" class="artist">Die Türen</a> <br /><a title="[Album1082896]" href="/release/album/die_turen/popo/" class="album">Popo</a></span>
+         <span class="mediumg">(2007)</span><br /><br /><a title="[Genre36]" class="genre" href="/genre/Pop/">Pop</a>, <a title="[Genre402]" class="genre" href="/genre/Electropop/">Electropop</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/die_turen/popo/">Avg rating: <b>3.54</b> | Ratings: <b>11</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/die_turen/popo/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">148</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/strassenjungs/wir_ham_ne_party/"><img  width="150" id="img_l_319054"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d194452b4b9fed571cb368dac5bbdc2d/1405734.jpg"  alt="Wir ham ne Party" title="Wir ham ne Party" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist72767]"  href="/artist/strassenjungs" class="artist">Strassenjungs</a> <br /><a title="[Album319054]" href="/release/album/strassenjungs/wir_ham_ne_party/" class="album">Wir ham ne Party</a></span>
+         <span class="mediumg">(1979)</span><br /><br /><a title="[Genre10349]" class="genre" href="/genre/Deutschrock/">Deutschrock</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/strassenjungs/wir_ham_ne_party/">Avg rating: <b>3.38</b> | Ratings: <b>10</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/strassenjungs/wir_ham_ne_party/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">149</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/blumchen_blau/wie_die_tiere/"><img  width="150" id="img_l_162487"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/bb9febc188d96f21889d5024a98f6a53/3697006.jpg"  alt="Wie die Tiere" title="Wie die Tiere" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist38699]"  href="/artist/blumchen_blau" class="artist">Blümchen Blau</a> <br /><a title="[Album162487]" href="/release/album/blumchen_blau/wie_die_tiere/" class="album">Wie die Tiere</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/blumchen_blau/wie_die_tiere/">Avg rating: <b>3.44</b> | Ratings: <b>9</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/blumchen_blau/wie_die_tiere/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">150</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stahlnetz/wir_sind_glucklich/"><img  width="150" id="img_l_199187"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/106894f721c79fd60b0b0cdb82d08d57/3503384.jpg"  alt="Wir sind glücklich" title="Wir sind glücklich" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist46688]"  href="/artist/stahlnetz" class="artist">Stahlnetz</a> <br /><a title="[Album199187]" href="/release/album/stahlnetz/wir_sind_glucklich/" class="album">Wir sind glücklich</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stahlnetz/wir_sind_glucklich/">Avg rating: <b>2.94</b> | Ratings: <b>18</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/stahlnetz/wir_sind_glucklich/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">151</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/spider_murphy_gang/spider_murphy_gang_live/"><img  width="150" id="img_l_559653"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/f42e8c763f99cfdf05078774dc681aed/1608503.jpg"  alt="Spider Murphy Gang Live" title="Spider Murphy Gang Live" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist29844]"  href="/artist/spider_murphy_gang" class="artist">Spider Murphy Gang</a> <br /><a title="[Album559653]" href="/release/album/spider_murphy_gang/spider_murphy_gang_live/" class="album">Spider Murphy Gang Live</a></span>
+         <span class="mediumg">(1983)</span><br /><br /><a title="[Genre55]" class="genre" href="/genre/Rock+%26+Roll/">Rock & Roll</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/spider_murphy_gang/spider_murphy_gang_live/">Avg rating: <b>3.67</b> | Ratings: <b>8</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/spider_murphy_gang/spider_murphy_gang_live/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">152</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/die_tanzdiebe_/live/"><img  width="150" id="img_l_746202"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d6080d31ce04c7c971425415bd0ada99/1791023.jpg"  alt="Live" title="Live" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist178989]"  href="/artist/die_tanzdiebe_" class="artist">Die Tanzdiebe!</a> <br /><a title="[Album746202]" href="/release/album/die_tanzdiebe_/live/" class="album">Live</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/die_tanzdiebe_/live/">Avg rating: <b>3.51</b> | Ratings: <b>7</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/die_tanzdiebe_/live/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">153</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/neonbabies/harmlos/"><img  width="150" id="img_l_150483"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d7546125aec1a6368586102e81caa50e/1696170.jpg"  alt="Harmlos" title="Harmlos" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist36203]"  href="/artist/neonbabies" class="artist">Neonbabies</a> <br /><a title="[Album150483]" href="/release/album/neonbabies/harmlos/" class="album">Harmlos</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/neonbabies/harmlos/">Avg rating: <b>3.06</b> | Ratings: <b>18</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/neonbabies/harmlos/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">154</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/1__futurologischer_congress/wer_spricht_/"><img  width="150" id="img_l_198315"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3431d1192f01aa2d3a66edf1bfba1999/1559495.jpg"  alt="Wer spricht?" title="Wer spricht?" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist46462]"  href="/artist/1__futurologischer_congress" class="artist">1. Futurologischer Congress</a> <br /><a title="[Album198315]" href="/release/album/1__futurologischer_congress/wer_spricht_/" class="album">Wer spricht?</a></span>
+         <span class="mediumg">(1983)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/1__futurologischer_congress/wer_spricht_/">Avg rating: <b>3.66</b> | Ratings: <b>11</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/1__futurologischer_congress/wer_spricht_/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">155</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/sternhagel/sternhagel_kommt_/"><img  height="150" id="img_l_1083214"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/73c65f698ca083c9fae60b5d9ed8c5cd/2139914.jpg"  alt="Sternhagel kommt." title="Sternhagel kommt." src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist254565]"  href="/artist/sternhagel" class="artist">Sternhagel</a> <br /><a title="[Album1083214]" href="/release/album/sternhagel/sternhagel_kommt_/" class="album">Sternhagel kommt.</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/sternhagel/sternhagel_kommt_/">Avg rating: <b>3.39</b> | Ratings: <b>8</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/sternhagel/sternhagel_kommt_/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">156</span>
+                  </td>
+                  <td style="width:150px;"></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist321013]"  href="/artist/the_off_band_and_waffelschmiede" class="artist">The Off Band &amp; Waffelschmiede</a> <br /><a title="[Album2868729]" href="/release/album/the_off_band_and_waffelschmiede/all_the_planets/" class="album">All the Planets</a></span>
+         <span class="mediumg">(1986)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre10439]" class="genre" href="/genre/Sound+Collage/">Sound Collage</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/the_off_band_and_waffelschmiede/all_the_planets/">Avg rating: <b>3.47</b> | Ratings: <b>9</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/the_off_band_and_waffelschmiede/all_the_planets/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">157</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/tv_war/marmor__stein___eisen_fliegt/"><img  width="150" id="img_l_1815654"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/49b941e816499a756e399aec6b4825f2/2419333.jpg"  alt="Marmor, Stein + Eisen fliegt" title="Marmor, Stein + Eisen fliegt" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist296712]"  href="/artist/tv_war" class="artist">TV War</a> <br /><a title="[Album1815654]" href="/release/album/tv_war/marmor__stein___eisen_fliegt/" class="album">Marmor, Stein + Eisen fliegt</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre332]" class="genre" href="/genre/Post%2dPunk/">Post-Punk</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/tv_war/marmor__stein___eisen_fliegt/">Avg rating: <b>4.47</b> | Ratings: <b>3</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/tv_war/marmor__stein___eisen_fliegt/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">158</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/witt/eisenherz/"><img  width="150" id="img_l_116731"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/1099862c3254b5376d35da8239283f46/1307689.jpg"  alt="Eisenherz" title="Eisenherz" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist28404]"  href="/artist/joachim_witt" class="artist">Witt</a> <br /><a title="[Album116731]" href="/release/album/witt/eisenherz/" class="album">Eisenherz</a></span>
+         <span class="mediumg">(2002)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/witt/eisenherz/">Avg rating: <b>3.25</b> | Ratings: <b>11</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/witt/eisenherz/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">159</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/haushaltswaren_anlieger_frei/haushaltswaren___anlieger_frei/"><img  width="150" id="img_l_1277979"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/f45a9865103ad6c9dcb65d97f3841c0c/2575545.jpg"  alt="Haushaltswaren / Anlieger Frei" title="Haushaltswaren / Anlieger Frei" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist609113]"  href="/artist/haushaltswaren" class="artist">Haushaltswaren</a> / <a title="[Artist583272]"  href="/artist/anlieger_frei" class="artist">Anlieger Frei</a> <br /><a title="[Album1277979]" href="/release/album/haushaltswaren_anlieger_frei/haushaltswaren___anlieger_frei/" class="album">Haushaltswaren / Anlieger Frei</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre20942]" class="genre" href="/genre/Minimal+Synth/">Minimal Synth</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/haushaltswaren_anlieger_frei/haushaltswaren___anlieger_frei/">Avg rating: <b>3.46</b> | Ratings: <b>9</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/haushaltswaren_anlieger_frei/haushaltswaren___anlieger_frei/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">160</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/mc2/mc2/"><img  height="150" id="img_l_186571"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d48424797684c71f4df41c28aeddb3aa/1590648.jpg"  alt="mc²" title="mc²" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist43846]"  href="/artist/mc2" class="artist">mc²</a> <br /><a title="[Album186571]" href="/release/album/mc2/mc2/" class="album">mc²</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/mc2/mc2/">Avg rating: <b>3.22</b> | Ratings: <b>10</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/mc2/mc2/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">161</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/s_y_p_h_/wieleicht/"><img  width="150" id="img_l_769993"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/2a6c6806d5d77736461d74518b008712/1815100.jpg"  alt="Wieleicht" title="Wieleicht" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist46464]"  href="/artist/s_y_p_h_" class="artist">S.Y.P.H.</a> <br /><a title="[Album769993]" href="/release/album/s_y_p_h_/wieleicht/" class="album">Wieleicht</a></span>
+         <span class="mediumg">(1985)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre382]" class="genre" href="/genre/Synthpop/">Synthpop</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/s_y_p_h_/wieleicht/">Avg rating: <b>3.38</b> | Ratings: <b>7</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/s_y_p_h_/wieleicht/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">162</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/various_artists_f2/wiener_blutrausch/"><img  width="150" id="img_l_768277"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/6ee10131f314696e166632c901315a58/2877018.jpg"  alt="Wiener Blutrausch" title="Wiener Blutrausch" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist5]"  href="/artist/various_artists_f2" class="artist">Various Artists</a> <br /><a title="[Album768277]" href="/release/album/various_artists_f2/wiener_blutrausch/" class="album">Wiener Blutrausch</a></span>
+         <span class="mediumg">(1979)</span><br /><br /><a title="[Genre160]" class="genre" href="/genre/Punk+Rock/">Punk Rock</a>, <a title="[Genre129]" class="genre" href="/genre/New+Wave/">New Wave</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre97]" class="genre" href="/genre/Progressive+Rock/">Progressive Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/various_artists_f2/wiener_blutrausch/">Avg rating: <b>3.06</b> | Ratings: <b>13</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/various_artists_f2/wiener_blutrausch/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">163</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/hans_a_plast/ausradiert/"><img  height="150" id="img_l_202923"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e578608082ee061e9b162e532b05d74c/5014390.jpg"  alt="Ausradiert" title="Ausradiert" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist47651]"  href="/artist/hans_a_plast" class="artist">Hans-a-plast</a> <br /><a title="[Album202923]" href="/release/album/hans_a_plast/ausradiert/" class="album">Ausradiert</a></span>
+         <span class="mediumg">(1983)</span><br /><br /><a title="[Genre332]" class="genre" href="/genre/Post%2dPunk/">Post-Punk</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/hans_a_plast/ausradiert/">Avg rating: <b>2.96</b> | Ratings: <b>16</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/hans_a_plast/ausradiert/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">164</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/erste_weibliche_fleischergesellin_nach_1945/ferien_auf_dem_lande/"><img  width="150" id="img_l_1375797"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/6e3fb60ad3e2a8753fe14d849d249159/2199659.jpg"  alt="Ferien auf dem Lande" title="Ferien auf dem Lande" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist297136]"  href="/artist/erste_weibliche_fleischergesellin_nach_1945" class="artist">Erste weibliche Fleischergesellin nach 1945</a> <br /><a title="[Album1375797]" href="/release/album/erste_weibliche_fleischergesellin_nach_1945/ferien_auf_dem_lande/" class="album">Ferien auf dem Lande</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/erste_weibliche_fleischergesellin_nach_1945/ferien_auf_dem_lande/">Avg rating: <b>3.12</b> | Ratings: <b>12</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/erste_weibliche_fleischergesellin_nach_1945/ferien_auf_dem_lande/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">165</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/die_zimmermanner/goethe/"><img  width="150" id="img_l_1179640"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c898a284c3fb4167a802e9590d76eb19/3846156.jpg"  alt="Goethe" title="Goethe" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist99794]"  href="/artist/die_zimmermanner" class="artist">Die Zimmermänner</a> <br /><a title="[Album1179640]" href="/release/album/die_zimmermanner/goethe/" class="album">Goethe</a></span>
+         <span class="mediumg">(1984)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/die_zimmermanner/goethe/">Avg rating: <b>2.81</b> | Ratings: <b>17</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/die_zimmermanner/goethe/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">166</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/fehlfarben/handbuch_fur_die_welt/"><img  width="150" id="img_l_859025"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c7a5b23c4d9a4a91f23d67764956e14d/1904687.jpg"  alt="Handbuch für die Welt" title="Handbuch für die Welt" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist27653]"  href="/artist/fehlfarben" class="artist">Fehlfarben</a> <br /><a title="[Album859025]" href="/release/album/fehlfarben/handbuch_fur_die_welt/" class="album">Handbuch für die Welt</a></span>
+         <span class="mediumg">(2007)</span><br /><br /><a title="[Genre5]" class="genre" href="/genre/Rock/">Rock</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre103]" class="genre" href="/genre/Indie+Rock/">Indie Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/fehlfarben/handbuch_fur_die_welt/">Avg rating: <b>2.86</b> | Ratings: <b>18</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/fehlfarben/handbuch_fur_die_welt/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">167</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/max_goldt/die_majestatische_ruhe_des_anorganischen_f1/"><img  width="150" id="img_l_3430399"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/5814e1f388826f2a6287e83666157b77/3661491.jpg"  alt="Die majestätische Ruhe des Anorganischen" title="Die majestätische Ruhe des Anorganischen" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist46782]"  href="/artist/max_goldt" class="artist">Max Goldt</a> <br /><a title="[Album3430399]" href="/release/album/max_goldt/die_majestatische_ruhe_des_anorganischen_f1/" class="album">Die majestätische Ruhe des Anorganischen</a></span>
+         <span class="mediumg">(1984)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/max_goldt/die_majestatische_ruhe_des_anorganischen_f1/">Avg rating: <b>3.99</b> | Ratings: <b>8</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/max_goldt/die_majestatische_ruhe_des_anorganischen_f1/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">168</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/palais_schaumburg/parlez_vous_schaumburg_/"><img  width="150" id="img_l_98092"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/877a528b45058984c359712d2d0ad26e/1773486.jpg"  alt="Parlez-vous Schaumburg?" title="Parlez-vous Schaumburg?" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist24176]"  href="/artist/palais_schaumburg" class="artist">Palais Schaumburg</a> <br /><a title="[Album98092]" href="/release/album/palais_schaumburg/parlez_vous_schaumburg_/" class="album">Parlez-vous Schaumburg?</a></span>
+         <span class="mediumg">(1984)</span><br /><br /><a title="[Genre382]" class="genre" href="/genre/Synthpop/">Synthpop</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/palais_schaumburg/parlez_vous_schaumburg_/">Avg rating: <b>2.69</b> | Ratings: <b>23</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/palais_schaumburg/parlez_vous_schaumburg_/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">169</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/andi_arroganti/mono/"><img  width="150" id="img_l_577010"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/da83802e4c37cb3e217ef1994701b884/1625282.jpg"  alt="Mono" title="Mono" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist136513]"  href="/artist/andi_arroganti" class="artist">Andi Arroganti</a> <br /><a title="[Album577010]" href="/release/album/andi_arroganti/mono/" class="album">Mono</a></span>
+         <span class="mediumg">(2003)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/andi_arroganti/mono/">Avg rating: <b>3.13</b> | Ratings: <b>12</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/andi_arroganti/mono/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">170</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/mythen_in_tuten/die_neue_kollektion/"><img  width="150" id="img_l_388829"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/95876b834330dfe7ebdaafb9c3a021c8/2694419.jpg"  alt="Die neue Kollektion" title="Die neue Kollektion" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist88957]"  href="/artist/mythen_in_tuten" class="artist">Mythen in Tüten</a> <br /><a title="[Album388829]" href="/release/album/mythen_in_tuten/die_neue_kollektion/" class="album">Die neue Kollektion</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/mythen_in_tuten/die_neue_kollektion/">Avg rating: <b>3.05</b> | Ratings: <b>11</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/mythen_in_tuten/die_neue_kollektion/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">171</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/neonbabies/1983/"><img  width="150" id="img_l_150484"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/5fe7af3fa328716a99eb33d42cb11a28/1596790.jpg"  alt="1983" title="1983" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist36203]"  href="/artist/neonbabies" class="artist">Neonbabies</a> <br /><a title="[Album150484]" href="/release/album/neonbabies/1983/" class="album">1983</a></span>
+         <span class="mediumg">(1983)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/neonbabies/1983/">Avg rating: <b>3.17</b> | Ratings: <b>11</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/neonbabies/1983/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">172</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/blasse_ekg__deu__roter_stern_belgrad/massa/"><img  width="150" id="img_l_3149146"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/2baa2dabb48fa70c22c2f34dbf992214/4987752.jpg"  alt="Massa" title="Massa" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist297326]"  href="/artist/blasse" class="artist">Blässe</a> / <a title="[Artist638935]"  href="/artist/ekg__deu_" class="artist">EKG [DEU]</a> / <a title="[Artist325815]"  href="/artist/roter_stern_belgrad" class="artist">Roter Stern Belgrad</a> <br /><a title="[Album3149146]" href="/release/album/blasse_ekg__deu__roter_stern_belgrad/massa/" class="album">Massa</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre332]" class="genre" href="/genre/Post%2dPunk/">Post-Punk</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/blasse_ekg__deu__roter_stern_belgrad/massa/">Avg rating: <b>3.82</b> | Ratings: <b>5</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/blasse_ekg__deu__roter_stern_belgrad/massa/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">173</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/various_artists_f2/non_dom/"><img  width="150" id="img_l_3886542"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d3ef5c95e28e6e6bd270b2ac08848a4f/4093311.jpg"  alt="Non Dom" title="Non Dom" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist5]"  href="/artist/various_artists_f2" class="artist">Various Artists</a> <br /><a title="[Album3886542]" href="/release/album/various_artists_f2/non_dom/" class="album">Non Dom</a></span>
+         <span class="mediumg">(1980)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/various_artists_f2/non_dom/">Avg rating: <b>3.86</b> | Ratings: <b>3</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/various_artists_f2/non_dom/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">174</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/joachim_witt/marchenblau/"><img  width="150" id="img_l_116735"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ca2219be5de0ea83060af36056908a29/1333199.jpg"  alt="Märchenblau" title="Märchenblau" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist28404]"  href="/artist/joachim_witt" class="artist">Joachim Witt</a> <br /><a title="[Album116735]" href="/release/album/joachim_witt/marchenblau/" class="album">Märchenblau</a></span>
+         <span class="mediumg">(1983)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/joachim_witt/marchenblau/">Avg rating: <b>2.91</b> | Ratings: <b>11</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/joachim_witt/marchenblau/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">175</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/lost_gringos/endstation_eldorado/"><img  height="150" id="img_l_54557"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3619b8301ae390907d01bd1e5ff8e83c/2339527.jpg"  alt="Endstation Eldorado" title="Endstation Eldorado" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist15081]"  href="/artist/lost_gringos" class="artist">Lost Gringos</a> <br /><a title="[Album54557]" href="/release/album/lost_gringos/endstation_eldorado/" class="album">Endstation Eldorado</a></span>
+         <span class="mediumg">(1983)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/lost_gringos/endstation_eldorado/">Avg rating: <b>2.98</b> | Ratings: <b>12</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/lost_gringos/endstation_eldorado/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">176</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/originalton/mein_leben_ist_ein_werbespot/"><img  width="150" id="img_l_1083143"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/300d2538515948639aa0707aa2cf72a1/2096810.jpg"  alt="Mein Leben ist ein Werbespot" title="Mein Leben ist ein Werbespot" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist254546]"  href="/artist/originalton" class="artist">Originalton</a> <br /><a title="[Album1083143]" href="/release/album/originalton/mein_leben_ist_ein_werbespot/" class="album">Mein Leben ist ein Werbespot</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre20942]" class="genre" href="/genre/Minimal+Synth/">Minimal Synth</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/originalton/mein_leben_ist_ein_werbespot/">Avg rating: <b>3.11</b> | Ratings: <b>10</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/originalton/mein_leben_ist_ein_werbespot/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">177</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/luul/luul/"><img  width="150" id="img_l_345485"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e93c7c16db9432e2cac0686c41ac85a5/1702848.jpg"  alt="Lüül" title="Lüül" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist52130]"  href="/artist/luul" class="artist">Lüül</a> <br /><a title="[Album345485]" href="/release/album/luul/luul/" class="album">Lüül</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre10349]" class="genre" href="/genre/Deutschrock/">Deutschrock</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/luul/luul/">Avg rating: <b>2.79</b> | Ratings: <b>17</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/luul/luul/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">178</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/ostro_430/weiber_wie_wir/"><img  width="150" id="img_l_334159"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0b01d6c1f801dcf631aeaa7172acaebf/4000135.jpg"  alt="Weiber wie wir" title="Weiber wie wir" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist75933]"  href="/artist/ostro_430" class="artist">Östro 430</a> <br /><a title="[Album334159]" href="/release/album/ostro_430/weiber_wie_wir/" class="album">Weiber wie wir</a></span>
+         <span class="mediumg">(1983)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/ostro_430/weiber_wie_wir/">Avg rating: <b>3.43</b> | Ratings: <b>6</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/ostro_430/weiber_wie_wir/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">179</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/markus/kugelblitze_und_raketen/"><img  width="150" id="img_l_150487"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e5be04fd42a4e2244316dafee56559ca/1764460.jpg"  alt="Kugelblitze und Raketen" title="Kugelblitze und Raketen" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist35162]"  href="/artist/markus" class="artist">Markus</a> <br /><a title="[Album150487]" href="/release/album/markus/kugelblitze_und_raketen/" class="album">Kugelblitze und Raketen</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/markus/kugelblitze_und_raketen/">Avg rating: <b>2.83</b> | Ratings: <b>13</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/markus/kugelblitze_und_raketen/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">180</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/siluetes_61/siluetes_61/"><img  width="150" id="img_l_396194"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/6f8bc19d1cf4bf58b6fd2d9ddd1e108c/1472168.jpg"  alt="Siluetes 61" title="Siluetes 61" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist90684]"  href="/artist/siluetes_61" class="artist">Siluetes 61</a> <br /><a title="[Album396194]" href="/release/album/siluetes_61/siluetes_61/" class="album">Siluetes 61</a></span>
+         <span class="mediumg">(1980)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/siluetes_61/siluetes_61/">Avg rating: <b>3.17</b> | Ratings: <b>11</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/siluetes_61/siluetes_61/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">181</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/recht_herzlich/hab_mut_zu_deinen_lusten/"><img  width="150" id="img_l_1163559"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/da61c84f7f980efac0596585e23c1bf7/2420314.jpg"  alt="Hab Mut zu deinen Lüsten" title="Hab Mut zu deinen Lüsten" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist254860]"  href="/artist/recht_herzlich" class="artist">Recht Herzlich</a> <br /><a title="[Album1163559]" href="/release/album/recht_herzlich/hab_mut_zu_deinen_lusten/" class="album">Hab Mut zu deinen Lüsten</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre382]" class="genre" href="/genre/Synthpop/">Synthpop</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/recht_herzlich/hab_mut_zu_deinen_lusten/">Avg rating: <b>4.13</b> | Ratings: <b>4</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/recht_herzlich/hab_mut_zu_deinen_lusten/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">182</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/lilli_berlin/sub_und_erbarmungslos/"><img  width="150" id="img_l_393564"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/170b0f0c24c105a2dafb6adfaecbad44/5007540.jpg"  alt="Süß und erbarmungslos" title="Süß und erbarmungslos" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist66149]"  href="/artist/lilli_berlin" class="artist">Lilli Berlin</a> <br /><a title="[Album393564]" href="/release/album/lilli_berlin/sub_und_erbarmungslos/" class="album">Süß und erbarmungslos</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/lilli_berlin/sub_und_erbarmungslos/">Avg rating: <b>3.42</b> | Ratings: <b>8</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/lilli_berlin/sub_und_erbarmungslos/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">183</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/malaria__die_hausfrauen/new_york_berlin/"><img  width="150" id="img_l_2075011"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/12a96ffb0abd732fe202497fdcbae48f/2552422.jpg"  alt="New-York Berlin" title="New-York Berlin" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist4207]"  href="/artist/malaria_" class="artist">Malaria!</a> / <a title="[Artist400191]"  href="/artist/die_hausfrauen" class="artist">Die Hausfrauen</a> <br /><a title="[Album2075011]" href="/release/album/malaria__die_hausfrauen/new_york_berlin/" class="album">New-York Berlin</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre520]" class="genre" href="/genre/No+Wave/">No Wave</a>, <a title="[Genre332]" class="genre" href="/genre/Post%2dPunk/">Post-Punk</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/malaria__die_hausfrauen/new_york_berlin/">Avg rating: <b>3.79</b> | Ratings: <b>7</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/malaria__die_hausfrauen/new_york_berlin/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">184</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/p1_e/second_offender/"><img  width="150" id="img_l_721743"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/733fee18e71fdc9283af55c2a2a1f1b0/1765952.jpg"  alt="Second Offender" title="Second Offender" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist171933]"  href="/artist/p1_e" class="artist">P1/E</a> <br /><a title="[Album721743]" href="/release/album/p1_e/second_offender/" class="album">Second Offender</a></span>
+         <span class="mediumg">(2005)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre20942]" class="genre" href="/genre/Minimal+Synth/">Minimal Synth</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/p1_e/second_offender/">Avg rating: <b>3.45</b> | Ratings: <b>7</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/p1_e/second_offender/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">185</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/les_morts_vont_bien/les_morts_vont_bien/"><img  width="150" id="img_l_4379112"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/4080398bdabdc4f7cebd87ca075d5fe6/4673882.jpg"  alt="Les morts vont bien" title="Les morts vont bien" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist897154]"  href="/artist/les_morts_vont_bien" class="artist">Les Morts Vont Bien</a> <br /><a title="[Album4379112]" href="/release/album/les_morts_vont_bien/les_morts_vont_bien/" class="album">Les morts vont bien</a></span>
+         <span class="mediumg">(2012)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/les_morts_vont_bien/les_morts_vont_bien/">Avg rating: <b>3.43</b> | Ratings: <b>7</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/les_morts_vont_bien/les_morts_vont_bien/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">186</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/nichts/aus_dem_jenseits/"><img  width="150" id="img_l_199213"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/abea177bfe917885952666ca754fabc3/5676317.jpg"  alt="Aus dem Jenseits" title="Aus dem Jenseits" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist46695]"  href="/artist/nichts" class="artist">Nichts</a> <br /><a title="[Album199213]" href="/release/album/nichts/aus_dem_jenseits/" class="album">Aus dem Jenseits</a></span>
+         <span class="mediumg">(1983)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/nichts/aus_dem_jenseits/">Avg rating: <b>2.91</b> | Ratings: <b>10</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/nichts/aus_dem_jenseits/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">187</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/neue_heimat/die_harte/"><img  width="150" id="img_l_199202"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/db04e8f34d4fbfe3e8f26452a2d1b34a/1877258.jpg"  alt="Die Härte" title="Die Härte" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist46691]"  href="/artist/neue_heimat" class="artist">Neue Heimat</a> <br /><a title="[Album199202]" href="/release/album/neue_heimat/die_harte/" class="album">Die Härte</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/neue_heimat/die_harte/">Avg rating: <b>3.39</b> | Ratings: <b>5</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/neue_heimat/die_harte/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">188</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/schatten_unter_eis/1984/"><img  width="150" id="img_l_786705"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/b8a963fbd01e745744e3337125f8362f/3510944.jpg"  alt="1984" title="1984" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist189362]"  href="/artist/schatten_unter_eis" class="artist">Schatten unter Eis</a> <br /><a title="[Album786705]" href="/release/album/schatten_unter_eis/1984/" class="album">1984</a></span>
+         <span class="mediumg">(2005)</span><br /><br /><a title="[Genre20942]" class="genre" href="/genre/Minimal+Synth/">Minimal Synth</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/schatten_unter_eis/1984/">Avg rating: <b>3.06</b> | Ratings: <b>9</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/schatten_unter_eis/1984/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">189</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/phosphor_f1/frisch_und_fruchtig/"><img  width="150" id="img_l_944465"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/58d1fa10e27d5899feab96b2dafb58a4/1986917.jpg"  alt="Frisch und Fruchtig" title="Frisch und Fruchtig" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist233634]"  href="/artist/phosphor_f1" class="artist">Phosphor</a> <br /><a title="[Album944465]" href="/release/album/phosphor_f1/frisch_und_fruchtig/" class="album">Frisch und Fruchtig</a></span>
+         <span class="mediumg">(1980)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/phosphor_f1/frisch_und_fruchtig/">Avg rating: <b>3.67</b> | Ratings: <b>5</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/phosphor_f1/frisch_und_fruchtig/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">190</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/die_heteros/die_romantik_ist_tot/"><img  width="150" id="img_l_875251"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/fef464979080186403842f44c65fcdf3/1916843.jpg"  alt="Die Romantik ist tot" title="Die Romantik ist tot" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist213293]"  href="/artist/die_heteros" class="artist">Die Heteros</a> <br /><a title="[Album875251]" href="/release/album/die_heteros/die_romantik_ist_tot/" class="album">Die Romantik ist tot</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/die_heteros/die_romantik_ist_tot/">Avg rating: <b>3.86</b> | Ratings: <b>5</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/die_heteros/die_romantik_ist_tot/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">191</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/mona_mur/mona_mur_f1/"><img  width="150" id="img_l_1371605"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/7479760ba122641b725d7e6a85e921a4/2232915.jpg"  alt="Mona Mur" title="Mona Mur" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist91275]"  href="/artist/mona_mur" class="artist">Mona Mur</a> <br /><a title="[Album1371605]" href="/release/album/mona_mur/mona_mur_f1/" class="album">Mona Mur</a></span>
+         <span class="mediumg">(1988)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/mona_mur/mona_mur_f1/">Avg rating: <b>3.16</b> | Ratings: <b>8</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/mona_mur/mona_mur_f1/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">192</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/udo_lindenberg/phonix/"><img  width="150" id="img_l_180696"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a95e04c27fe4a435d1ec0ff1dbb78cb5/4940562.jpg"  alt="Phönix" title="Phönix" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist13855]"  href="/artist/udo_lindenberg" class="artist">Udo Lindenberg</a> <br /><a title="[Album180696]" href="/release/album/udo_lindenberg/phonix/" class="album">Phönix</a></span>
+         <span class="mediumg">(1986)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre630]" class="genre" href="/genre/Pop+Rock/">Pop Rock</a>, <a title="[Genre36]" class="genre" href="/genre/Pop/">Pop</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/udo_lindenberg/phonix/">Avg rating: <b>3.04</b> | Ratings: <b>10</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/udo_lindenberg/phonix/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">193</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/tank_of_danzig/not_trendy/"><img  width="150" id="img_l_638311"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/9c57e6e71d089a6b9c18dca8d61e679a/1844238.jpg"  alt="Not Trendy" title="Not Trendy" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist114796]"  href="/artist/tank_of_danzig" class="artist">Tank of Danzig</a> <br /><a title="[Album638311]" href="/release/album/tank_of_danzig/not_trendy/" class="album">Not Trendy</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/tank_of_danzig/not_trendy/">Avg rating: <b>2.75</b> | Ratings: <b>12</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/tank_of_danzig/not_trendy/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">194</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/hermanns_orgie/die_moderne_welt_und_andere_disharmonien/"><img  width="150" id="img_l_885241"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/dc6b656ecd4fc9745599af176dd83643/1926906.jpg"  alt="Die moderne Welt und andere Disharmonien " title="Die moderne Welt und andere Disharmonien " src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist216421]"  href="/artist/hermanns_orgie" class="artist">Hermann&#39;s Orgie</a> <br /><a title="[Album885241]" href="/release/album/hermanns_orgie/die_moderne_welt_und_andere_disharmonien/" class="album">Die moderne Welt und andere Disharmonien </a></span>
+         <span class="mediumg">(1980)</span><br /><br /><a title="[Genre160]" class="genre" href="/genre/Punk+Rock/">Punk Rock</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/hermanns_orgie/die_moderne_welt_und_andere_disharmonien/">Avg rating: <b>3.65</b> | Ratings: <b>5</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/hermanns_orgie/die_moderne_welt_und_andere_disharmonien/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">195</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/marionetz/jetzt_knallts/"><img  width="150" id="img_l_915902"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/01aa772bb4e993aa9469ef1f10e6587b/4432441.jpg"  alt="Jetzt Knallt&#39;s" title="Jetzt Knallt&#39;s" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist225505]"  href="/artist/marionetz" class="artist">Marionetz</a> <br /><a title="[Album915902]" href="/release/album/marionetz/jetzt_knallts/" class="album">Jetzt Knallt&#39;s</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre631]" class="genre" href="/genre/Power+Pop/">Power Pop</a>, <a title="[Genre31424]" class="genre" href="/genre/Deutschpunk/">Deutschpunk</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/marionetz/jetzt_knallts/">Avg rating: <b>3.38</b> | Ratings: <b>7</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/marionetz/jetzt_knallts/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">196</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stricher/stricher/"><img  width="150" id="img_l_2113800"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/32a37a26155479ed0943156ee4602783/4078511.jpg"  alt="Stricher" title="Stricher" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist280109]"  href="/artist/stricher" class="artist">Stricher</a> <br /><a title="[Album2113800]" href="/release/album/stricher/stricher/" class="album">Stricher</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stricher/stricher/">Avg rating: <b>3.50</b> | Ratings: <b>5</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/stricher/stricher/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">197</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/toto_lotto/ohne_gewahr/"><img  height="150" id="img_l_1344059"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e506b44830a0e9dbe61c12ec68891eab/2674849.jpg"  alt="Ohne Gewähr" title="Ohne Gewähr" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist292479]"  href="/artist/toto_lotto" class="artist">Toto Lotto</a> <br /><a title="[Album1344059]" href="/release/album/toto_lotto/ohne_gewahr/" class="album">Ohne Gewähr</a></span>
+         <span class="mediumg">(1981)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre332]" class="genre" href="/genre/Post%2dPunk/">Post-Punk</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/toto_lotto/ohne_gewahr/">Avg rating: <b>3.60</b> | Ratings: <b>5</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/toto_lotto/ohne_gewahr/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">198</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/der_plan/die_peitsche_des_lebens/"><img  height="150" id="img_l_519751"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/8ef205513a7e96b1d2f0970a63768d87/1572021.jpg"  alt="Die Peitsche des Lebens" title="Die Peitsche des Lebens" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist13984]"  href="/artist/der_plan" class="artist">Der Plan</a> <br /><a title="[Album519751]" href="/release/album/der_plan/die_peitsche_des_lebens/" class="album">Die Peitsche des Lebens</a></span>
+         <span class="mediumg">(1991)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/der_plan/die_peitsche_des_lebens/">Avg rating: <b>3.04</b> | Ratings: <b>7</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/der_plan/die_peitsche_des_lebens/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">199</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/seltsame_zustande/seltsame_zustande/"><img  width="150" id="img_l_2650126"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/dfad8561942da8689ed7d8d23c98c90f/2887740.jpg"  alt="Seltsame Zustände" title="Seltsame Zustände" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist529282]"  href="/artist/seltsame_zustande" class="artist">Seltsame Zustände</a> <br /><a title="[Album2650126]" href="/release/album/seltsame_zustande/seltsame_zustande/" class="album">Seltsame Zustände</a></span>
+         <span class="mediumg">(1984)</span><br /><br /><a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>, <a title="[Genre332]" class="genre" href="/genre/Post%2dPunk/">Post-Punk</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/seltsame_zustande/seltsame_zustande/">Avg rating: <b>3.39</b> | Ratings: <b>5</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/seltsame_zustande/seltsame_zustande/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">200</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/kon_g_nial/keine_zeit_puls_der_stadt/"><img  width="150" id="img_l_1825587"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/619f9b592d10326af3a65bf46ffd573a/2431850.jpg"  alt="Keine Zeit/Puls der Stadt" title="Keine Zeit/Puls der Stadt" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist362621]"  href="/artist/kon_g_nial" class="artist">Kon-G-nial</a> <br /><a title="[Album1825587]" href="/release/album/kon_g_nial/keine_zeit_puls_der_stadt/" class="album">Keine Zeit/Puls der Stadt</a></span>
+         <span class="mediumg">(1982)</span><br /><br /><a title="[Genre20942]" class="genre" href="/genre/Minimal+Synth/">Minimal Synth</a>, <a title="[Genre20730]" class="genre" href="/genre/Minimal+Wave/">Minimal Wave</a>, <a title="[Genre382]" class="genre" href="/genre/Synthpop/">Synthpop</a>, <a title="[Genre10170]" class="genre" href="/genre/Neue+Deutsche+Welle/">Neue Deutsche Welle</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/kon_g_nial/keine_zeit_puls_der_stadt/">Avg rating: <b>3.07</b> | Ratings: <b>7</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/kon_g_nial/keine_zeit_puls_der_stadt/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr style="background:white;"><td></td><td colspan=2>
+<!-- Running 52 for 34 -->
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7116019216064530";
+/* Charts: bottom */
+google_ad_slot = "6276780850";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr></table><div class="clear"> </div><div style="padding:10px;font-size:small;text-align:center;font-weight:bold;background:#eee;border:#888 1px solid;"><a href="javascript:goPage(1);">1 - 100</a> | 101 - 200 | <a href="javascript:goPage(3);">201 - 300</a> | <a href="javascript:goPage(4);">301 - 309</a> </div><div class="clear"> </div>
+     <script type="text/javascript">
+      var delayLoadImgCount = 0
+      $('.delayloadimg').appear(function() { delayLoadImgCount++ ; $(this).attr('src', $(this).attr('data-delayloadurl')); } , { extendheight:400 } );
+     </script>
+  
+
+<!-- ~~~~~~~~ end content ~~~~~~~~~~~~~~~ -->
+<div id="myModal" class="reveal-modal">
+  <div id="modal_content">
+  </div>
+     <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<!--trick--><div style="clear:both;"></div>
+</div>
+<div id="navbottom">
+    <ul>
+      <li><a href="/listen/all">RYM Artists</a></li>
+      <li><a href="/wiki/RYM:FAQ">FAQ</a></li>
+      <li><a href="/tos">Terms of Service</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/suggestions">Website Feedback</a></li>
+      <li><a href="/help/">Help</a></li>
+   </ul>
+  
+   <script> function areAdsBlocked() { return ($('#ad_1').length == 0) } 
+   function politeAdRequest() {
+      var xx = '<div class=abpmessage>RYM relies on advertising income to support the site.  Please consider adding an exception to adblock for rateyourmusic.com, or <a href=/subscribe>subscribing</a> to help with bandwidth/server costs.</div>' 
+      $('#content').prepend(xx)
+   }
+
+   </script>
+ 
+      <script>if(areAdsBlocked()) { politeAdRequest() }</script>
+   
+
+<table><tr><td style="width:100%;text-align:center;"><address>&copy; 2000 - 2015 Sonemic, Inc. &nbsp; &nbsp; &nbsp; </td></tr></table> 
+
+</div>
+</div>		
+</script>
+</body>
+</html>
+ 
+ 

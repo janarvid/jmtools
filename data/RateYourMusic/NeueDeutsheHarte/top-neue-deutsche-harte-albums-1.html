@@ -1,0 +1,2333 @@
+ 
+
+   <!DOCTYPE html>
+
+<html class="theme_">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Custom chart - Rate Your Music</title> 
+
+   <link rel="stylesheet" href="https://eedcaf578e7d885badc9-0c1519f9f8b9246bced82ab9b996aa5e.ssl.cf1.rackcdn.com/min25.css" type="text/css"/>
+   <link rel="shortcut icon" href="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/favicon.ico" type="image/x-icon"/>
+    <style type="text/css">
+         h4 { font-weight:bold; }
+
+         span.contributors a {
+            text-decoration:none;
+            font-size:0.9em !important;
+            color:#333  !important;
+         }
+         span.contributors span.userd {
+            text-decoration:none;
+            font-size:0.9em !important;
+            color:#999  !important;            
+         }
+#wiki_content_text {
+padding-left: 2em !important;
+padding-right: 2em !important;
+padding-bottom: 25px !important;
+width:auto !important;
+box-sizing: content-box;
+}
+
+      </style>
+   
+      <meta name="apple-mobile-web-app-capable" content="yes" />   
+  
+   <meta name="description" content="Rate Your Music is an online community of people who love music.  Catalog, rate, tag, and review your music.  List and review the concerts you've attended, and track upcoming shows.   When you rate your music, the site's music/social recommender can recommend similar music and users with similar music taste. " />
+   <meta name="keywords" content="rate your music, rate music, rate albums, music catalog, music catalogue, social software, album reviews, music lists, community, music recommendations, concert listings, record labels, venues, shows" /><script type="text/javascript" src="/web_ads/advertisement.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="/images/rym.min.4.js"></script>
+<script type="text/javascript">rym.session.init(0, '0', '');</script>
+
+<script type="text/javascript">
+
+/* google analytics */ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-59057-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+
+<body>
+<div id="wrapper">
+
+
+	<div id="navtop"><div class="mobile_header_btn" onClick="$('#navlist').fadeToggle(100);">rym <i class="fa fa-caret-down"></i></div><ul id="navlist">
+		<li><a style="padding-top:3px;padding-bottom:4px;" title="Front Page"  href="/" >
+         <span class="hide-for-small"><img id="rstar" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/rstar.gif" alt="" /><span id="logotext">rym</span></span>
+         <span class="show-for-small">front page</span>
+         </a></a></li>
+		<li><a title="Find Music"   href="/find/" >find</a></li>
+		<li><a title="Read and make lists"  href="/lists/" >lists</a></li>
+		<li><a title="View top charts by year, location, genre and more!"  href="/customchart" >charts</a></li>
+
+		<li><a title="Message Boards and Member Directory"    href="/community/" >community</a></li>
+
+		<li><a  href="/account/login"  >log in / sign up</a></li>		
+	</ul>
+
+
+  <div class="helplink"><a href="/help">help</a></div>
+
+  <div class="main_searchbar">
+   <form id="mainsearch" action="/search">
+      <input type="hidden" name="searchtype" id="searchtype" value="a" />
+      <input tabindex="1" name="searchterm" 
+           value=""
+            style="background:none;border:none;outline:none;width:110px;padding:3px;" 
+            placeholder="Search...">
+      <div tabindex="3" id="mainsearch_submit" onKeyDown="if (event.keyCode == 13 || event.keyCode == 20) { $('#mainsearch')[0].submit();}"  onClick="$('#mainsearch')[0].submit();" style="cursor:pointer;float:right;color:#777;font-size: 0.8em;line-height: 22px;margin-left:3px;padding-left:8px;padding-right:5px;background:#E6E6E6">
+         ▶
+      </div>
+      <div tabindex="2" class="search_options_frame" onMouseOver="$('#search_options').show()" onMouseOut="$('#search_options').hide();"
+      onFocus="$('#search_options').show()" onBlur="$('#search_options').hide();" onKeyDown="cycleSearchType(event);">
+         <span id="searchtype_selected">Artists</span> ▾
+
+         <div id="search_options" class="search_options" >
+            <div class="search_option_header">Music</div>
+               <div onClick="selectSearchType('a');" id="searchtype_a" class="searchtype_option current">Artists</div>
+               <div onClick="selectSearchType('l');" id="searchtype_l" class="searchtype_option">All releases</div>
+               <div onClick="selectSearchType('y');" id="searchtype_y" class="searchtype_option">V/A releases</div>
+               <div onClick="selectSearchType('b');" id="searchtype_b" class="searchtype_option">Label</div>
+               <div onClick="selectSearchType('j');" id="searchtype_j" class="searchtype_option">Catalog No.</div>
+               <div onClick="selectSearchType('r');" id="searchtype_r" class="searchtype_option">Classical work</div>
+               <div onClick="selectSearchType('v');" id="searchtype_v" class="searchtype_option">Review</div>
+               <div onClick="selectSearchType('g');" id="searchtype_g" class="searchtype_option">Genre</div>
+
+            <div class="search_option_header">Film</div>
+
+               <div onClick="selectSearchType('F');" id="searchtype_F" class="searchtype_option">Film title</div>
+               <div onClick="selectSearchType('A');" id="searchtype_A" class="searchtype_option">Film cast/crew</div>
+            
+            <div class="search_option_header">Site</div>
+
+               <div onClick="selectSearchType('u');" id="searchtype_u" class="searchtype_option">User</div>
+               <div onClick="selectSearchType('p');" id="searchtype_p" class="searchtype_option">Boards</div>
+               <div onClick="selectSearchType('s');" id="searchtype_s" class="searchtype_option">List</div>
+
+         </div>
+      </div>
+   </form>
+  </div>
+  <script>
+      function cycleSearchType(event) {
+
+         var searchTypes = new Array('a', 'l', 'y', 'b', 'j', 'r', 'v', 'g', 'F', 'A', 'u', 'p', 's');
+         var len = searchTypes.length;
+         var currentVal = $('#searchtype').val();
+         var currentIndex = searchTypes.indexOf(currentVal);
+         var nextIndex = currentIndex+1;
+         var prevIndex = currentIndex-1;
+         if ( nextIndex == len ) {
+            nextIndex = 0;
+         }
+         if ( prevIndex < 0 ) {
+            prevIndex = len-1;
+         }
+
+         var nextType = searchTypes[nextIndex];
+         var prevType = searchTypes[prevIndex];
+
+
+         switch (event.keyCode) {
+            case 40: 
+               selectSearchType(nextType);
+               event.preventDefault();
+            break;
+
+            case 38:
+               selectSearchType(prevType);
+               event.preventDefault();
+            break;
+
+            case 13:
+               $('#mainsearch')[0].submit();
+               event.preventDefault();
+            break;
+            default: 
+               
+            break;
+         }
+
+        
+         return false;
+
+      }
+      function selectSearchType(type) {
+         $('#searchtype').val(type);
+         $('#searchtype_selected').text($('#searchtype_' + type).text());
+         $('#search_options').hide();
+      }
+      selectSearchType('a')
+  </script>
+
+
+</div>
+
+<!-- trick --><div style="clear:both;"></div>
+
+
+ 
+ <!-- ~~~~~~~~ begin content! ~~~~~~~~~~~~~~~ -->
+ <div id="content" style="border-top:none;"><script type="text/javascript" src="https://aa51943acdd0baa94a6e-d133dbbbd17c5adb5c698e6074ced43d.ssl.cf1.rackcdn.com/jquery-appear-b1.js"></script><div id="breadcrumb"><ul> <li class="lnk"><a href="/charts/">Charts <b>&gt;</b></a></li><li class="current">Custom chart</li></ul></div>
+<!-- Running 60 for 4 -->
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7116019216064530";
+/* Charts: top 720 */
+google_ad_slot = "9966460452";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+
+    <script type="text/javascript">
+      function goPage(page)
+      {
+        document.getElementById('page').value = page;
+        document.getElementById('chartForm').submit();
+      }
+    </script>
+    
+    
+    <div id="searchsuggestions" style="visibility:hidden;position:absolute;" ></div>
+  <script type="text/javascript" src="https://aa51943acdd0baa94a6e-d133dbbbd17c5adb5c698e6074ced43d.ssl.cf1.rackcdn.com/basereq-min.js"></script>
+    <script type="text/javascript" src="/sourced/autosuggest.js?pre=descriptor&type=h&context=p"></script>
+<script type="text/javascript" src="/sourced/autosuggest.js?pre=country"></script>
+
+    <style type="text/css">
+ 
+a.genre { font-weight:bold; } 
+a.gray { color: gray; } 
+div.genrea { padding:5px; margin: 5px; background: #cfc; border:#282 2px solid; } 
+div.genred { padding:5px; margin: 5px;  background: #ddd; border:#666 2px solid; color:#555; } 
+
+</style>
+    <div style="background:#eee;font-size:small;margin:10px;padding:10px;"><form id="chartForm">
+<input type="hidden" id="page" name="page" value="1" />
+
+<select name="chart_type">
+ <option selected  value="top">Top</option>
+ <option  value="esoteric">Esoteric</option>
+ <option  value="bottom">Bottom</option>
+</select>
+<select name="type">
+ <option selected  value="album" >albums</option>
+ <option   value="ep">EPs</option>
+ <option   value="single">singles</option>
+ <option   value="mixtape">mixtapes</option>
+ <option   value="djmix">DJ mixes</option>
+ <option   value="comp">compilations</option>
+ <option   value="video">videos</option>
+ <option   value="unauth">bootlegs</option>
+ <option   value="everything">everything</option>
+</select>
+
+  from <select name="year"/>
+ <option value="alltime">all-time</option>
+ <option  value="2010s">2010s</option>
+ <option  value="2000s">2000s</option>
+ <option  value="1990s">1990s</option>
+ <option  value="1980s">1980s</option>
+ <option  value="1970s">1970s</option>
+ <option  value="1960s">1960s</option>
+ <option  value="1950s">1950s</option>
+ <option  value="1940s">1940s</option>
+ <option  value="1930s">1930s</option>
+ <option  value="1920s">1920s</option>
+ <option  value="1910s">1910s</option>
+ <option  value="1900s">1900s</option>
+ 
+ <option  value="2015">2015</option><option  value="2014">2014</option><option  value="2013">2013</option><option  value="2012">2012</option><option  value="2011">2011</option><option  value="2010">2010</option><option  value="2009">2009</option><option  value="2008">2008</option><option  value="2007">2007</option><option  value="2006">2006</option><option  value="2005">2005</option><option  value="2004">2004</option><option  value="2003">2003</option><option  value="2002">2002</option><option  value="2001">2001</option><option  value="2000">2000</option><option  value="1999">1999</option><option  value="1998">1998</option><option  value="1997">1997</option><option  value="1996">1996</option><option  value="1995">1995</option><option  value="1994">1994</option><option  value="1993">1993</option><option  value="1992">1992</option><option  value="1991">1991</option><option  value="1990">1990</option><option  value="1989">1989</option><option  value="1988">1988</option><option  value="1987">1987</option><option  value="1986">1986</option><option  value="1985">1985</option><option  value="1984">1984</option><option  value="1983">1983</option><option  value="1982">1982</option><option  value="1981">1981</option><option  value="1980">1980</option><option  value="1979">1979</option><option  value="1978">1978</option><option  value="1977">1977</option><option  value="1976">1976</option><option  value="1975">1975</option><option  value="1974">1974</option><option  value="1973">1973</option><option  value="1972">1972</option><option  value="1971">1971</option><option  value="1970">1970</option><option  value="1969">1969</option><option  value="1968">1968</option><option  value="1967">1967</option><option  value="1966">1966</option><option  value="1965">1965</option><option  value="1964">1964</option><option  value="1963">1963</option><option  value="1962">1962</option><option  value="1961">1961</option><option  value="1960">1960</option><option  value="1959">1959</option><option  value="1958">1958</option><option  value="1957">1957</option><option  value="1956">1956</option><option  value="1955">1955</option><option  value="1954">1954</option><option  value="1953">1953</option><option  value="1952">1952</option><option  value="1951">1951</option><option  value="1950">1950</option><option  value="1949">1949</option><option  value="1948">1948</option><option  value="1947">1947</option><option  value="1946">1946</option><option  value="1945">1945</option><option  value="1944">1944</option><option  value="1943">1943</option><option  value="1942">1942</option><option  value="1941">1941</option><option  value="1940">1940</option><option  value="1939">1939</option><option  value="1938">1938</option><option  value="1937">1937</option><option  value="1936">1936</option><option  value="1935">1935</option><option  value="1934">1934</option><option  value="1933">1933</option><option  value="1932">1932</option><option  value="1931">1931</option><option  value="1930">1930</option><option  value="1929">1929</option><option  value="1928">1928</option><option  value="1927">1927</option><option  value="1926">1926</option><option  value="1925">1925</option><option  value="1924">1924</option><option  value="1923">1923</option><option  value="1922">1922</option><option  value="1921">1921</option><option  value="1920">1920</option><option  value="1919">1919</option><option  value="1918">1918</option><option  value="1917">1917</option><option  value="1916">1916</option><option  value="1915">1915</option><option  value="1914">1914</option><option  value="1913">1913</option><option  value="1912">1912</option><option  value="1911">1911</option><option  value="1910">1910</option><option  value="1909">1909</option><option  value="1908">1908</option><option  value="1907">1907</option><option  value="1906">1906</option><option  value="1905">1905</option><option  value="1904">1904</option><option  value="1903">1903</option><option  value="1902">1902</option><option  value="1901">1901</option><option  value="1900">1900</option>
+</select>
+<br /><br />
+
+<select name="genre_include">
+ <option value="1">Only include genres:</option>
+ <option value="0" >Include all genres except:</option>
+</select> | 
+<input type="hidden" name="include_child_genres" id="include_child_genres" value="1" />
+<input type="text" size="40" name="genres" id="genres" value="neue deutsche härte" onFocus="descriptorattachSuggest(this.id);" /> | <label for="include_child_genres_chk"><input type="checkbox" checked="checked" id="include_child_genres_chk" name="include_child_genres_chk" value="1" onChange="$('#include_child_genres').val($(this).is(':checked')?1:0)"/> + sub-genres</label>
+
+<br />
+<br />
+
+
+<select id="include" name="include">
+  <option value="both" selected="selected">Include</option>
+  <option value="only" >Show exclusively</option>
+<br />
+</select>
+|     
+<label for="include_archival">
+<input type="checkbox"  id="include_archival" name="include_archival" value="t" /> archival
+</label>
+<label for="include_live">
+<input type="checkbox"  id="include_live" name="include_live" value="t" /> live
+</label>
+<br /><br />
+<label for="limit_origin_country">
+Limit to artists who were born in (or are currently located in) the following countries:
+<input name=origin_countries id="origin_countries" value="" onFocus="countryattachSuggest(this.id)"  size="15">
+</label>
+<br />
+
+
+<br />
+<br />
+
+
+<label for="limit_none"><input type="radio" name="limit" checked="checked" value="none"> As rated by all RYM users </input> </label>
+<br />
+<label for="limit_country">
+<input type="radio" name="limit"   value="country">
+As rated by members in the following countries: 
+<input name=countries id="countries" onFocus="countryattachSuggest(this.id)"  value="" size="15">
+</label>
+<br />
+<!-- 
+<label for="limit_city">
+<input type="radio" name="limit"   value="country">
+As rated by members within  
+<input type="numeric" size="3" name="km"> km of 
+<div style="float:left;width:8em;font-size:x-small;">
+<input type="text" style="width:100%;" name="city" id="city"/>
+<br />(City)</div> 
+<div style="float:left;width:15em;font-size:x-small;">
+<input type="text" style="width:100%;" name="region" id="region"/>
+<br />(Region/State/Province)</div> 
+<div style="float:left;width:40em;font-size:x-small;">
+ <select name="country" id="country"><option value=""> 
+<option value="AF" >Afghanistan<br>
+<option value="AL" >Albania<br>
+<option value="DZ" >Algeria<br>
+<option value="AS" >American Samoa<br>
+<option value="AD" >Andorra<br>
+<option value="AO" >Angola<br>
+<option value="AI" >Anguilla<br>
+<option value="AQ" >Antarctica<br>
+<option value="AG" >Antigua and Barbuda<br>
+<option value="AR" >Argentina<br>
+<option value="AM" >Armenia<br>
+<option value="AW" >Aruba<br>
+<option value="AU" >Australia<br>
+<option value="AT" >Austria<br>
+<option value="AZ" >Azerbaijan<br>
+<option value="BS" >Bahamas<br>
+<option value="BH" >Bahrain<br>
+<option value="BD" >Bangladesh<br>
+<option value="BB" >Barbados<br>
+<option value="BY" >Belarus<br>
+<option value="BE" >Belgium<br>
+<option value="BZ" >Belize<br>
+<option value="BJ" >Benin<br>
+<option value="BM" >Bermuda<br>
+<option value="BT" >Bhutan<br>
+<option value="BO" >Bolivia<br>
+<option value="BQ" >Bonaire, Sint Eustatius, and Saba<br>
+<option value="BA" >Bosnia-Herzegovina<br>
+<option value="BW" >Botswana<br>
+<option value="BV" >Bouvet Island<br>
+<option value="BR" >Brazil<br>
+<option value="IO" >British Indian Ocean Territory<br>
+<option value="VG" >British Virgin Islands<br>
+<option value="BN" >Brunei Darussalam<br>
+<option value="BG" >Bulgaria<br>
+<option value="BF" >Burkina Faso<br>
+<option value="BU" >Burma<br>
+<option value="BI" >Burundi<br>
+<option value="KH" >Cambodia<br>
+<option value="CM" >Cameroon<br>
+<option value="CA" >Canada<br>
+<option value="CI" >Canary Islands<br>
+<option value="CV" >Cape Verde<br>
+<option value="KY" >Cayman Islands<br>
+<option value="CF" >Central African Republic<br>
+<option value="TD" >Chad<br>
+<option value="CL" >Chile<br>
+<option value="CN" >China<br>
+<option value="CX" >Christmas Island<br>
+<option value="CC" >Cocos Island<br>
+<option value="CO" >Colombia<br>
+<option value="KM" >Comoros<br>
+<option value="CG" >Congo<br>
+<option value="CK" >Cook Islands<br>
+<option value="CR" >Costa Rica<br>
+<option value="HR" >Croatia<br>
+<option value="CU" >Cuba<br>
+<option value="CW" >Curaçao<br>
+<option value="CY" >Cyprus<br>
+<option value="CS" >Czechoslovakia (Former)<br>
+<option value="CZ" >Czech Republic<br>
+<option value="CD" >Democratic Republic of Congo<br>
+<option value="DK" >Denmark<br>
+<option value="DJ" >Djibouti<br>
+<option value="DM" >Dominica<br>
+<option value="DO" >Dominican Republic<br>
+<option value="TP" >East Timor<br>
+<option value="EC" >Ecuador<br>
+<option value="EG" >Egypt<br>
+<option value="SV" >El Salvador<br>
+<option value="GQ" >Equatorial Guinea<br>
+<option value="ER" >Eritrea<br>
+<option value="EE" >Estonia<br>
+<option value="ET" >Ethiopia<br>
+<option value="FK" >Falkland Islands<br>
+<option value="FO" >Faroe Islands<br>
+<option value="FJ" >Fiji<br>
+<option value="FI" >Finland<br>
+<option value="FR" >France<br>
+<option value="GF" >French Guiana<br>
+<option value="TF" >French Southern Territories<br>
+<option value="MK" >FYRO Macedonia<br>
+<option value="GA" >Gabon<br>
+<option value="GM" >Gambia<br>
+<option value="GE" >Georgia<br>
+<option value="GS" >Georgia & Sandwich Islands<br>
+<option value="DE" >Germany<br>
+<option value="GH" >Ghana<br>
+<option value="GI" >Gibraltar<br>
+<option value="GR" >Greece<br>
+<option value="GL" >Greenland<br>
+<option value="GD" >Grenada<br>
+<option value="GP" >Guadeloupe<br>
+<option value="GU" >Guam<br>
+<option value="GT" >Guatemala<br>
+<option value="GG" >Guernsey<br>
+<option value="GN" >Guinea<br>
+<option value="GW" >Guinea-Bissau<br>
+<option value="GY" >Guyana<br>
+<option value="HT" >Haiti<br>
+<option value="HM" >Heard Island and McDonald Islands<br>
+<option value="HN" >Honduras<br>
+<option value="HK" >Hong Kong<br>
+<option value="HU" >Hungary<br>
+<option value="IS" >Iceland<br>
+<option value="IN" >India<br>
+<option value="ID" >Indonesia<br>
+<option value="IR" >Iran<br>
+<option value="IQ" >Iraq<br>
+<option value="IE" >Ireland<br>
+<option value="IM" >Isle of Man<br>
+<option value="IL" >Israel<br>
+<option value="IT" >Italy<br>
+<option value="IC" >Ivory Coast<br>
+<option value="JM" >Jamaica<br>
+<option value="JP" >Japan<br>
+<option value="JE" >Jersey<br>
+<option value="JO" >Jordan<br>
+<option value="KZ" >Kazakhstan<br>
+<option value="KE" >Kenya<br>
+<option value="KI" >Kiribati<br>
+<option value="XK" >Kosovo<br>
+<option value="KW" >Kuwait<br>
+<option value="KG" >Kyrgyzstan<br>
+<option value="LA" >Laos<br>
+<option value="LV" >Latvia<br>
+<option value="LB" >Lebanon<br>
+<option value="LS" >Lesotho<br>
+<option value="LR" >Liberia<br>
+<option value="LY" >Libya<br>
+<option value="LI" >Liechtenstein<br>
+<option value="LT" >Lithuania<br>
+<option value="LU" >Luxembourg<br>
+<option value="MO" >Macau<br>
+<option value="MG" >Madagascar<br>
+<option value="MW" >Malawi<br>
+<option value="MY" >Malaysia<br>
+<option value="MV" >Maldives<br>
+<option value="ML" >Mali<br>
+<option value="MT" >Malta<br>
+<option value="MH" >Marshall Islands<br>
+<option value="MQ" >Martinique<br>
+<option value="MR" >Mauritania<br>
+<option value="MU" >Mauritius<br>
+<option value="YT" >Mayotte<br>
+<option value="MX" >Mexico<br>
+<option value="FM" >Micronesia<br>
+<option value="MD" >Moldova<br>
+<option value="MC" >Monaco<br>
+<option value="MN" >Mongolia<br>
+<option value="ME" >Montenegro<br>
+<option value="MS" >Montserrat<br>
+<option value="MA" >Morocco<br>
+<option value="MZ" >Mozambique<br>
+<option value="MM" >Myanmar (Former Burma)<br>
+<option value="NA" >Namibia<br>
+<option value="NR" >Nauru<br>
+<option value="NP" >Nepal<br>
+<option value="NL" >Netherlands<br>
+<option value="AN" >Netherlands Antilles<br>
+<option value="NC" >New Caledonia<br>
+<option value="NZ" >New Zealand<br>
+<option value="NI" >Nicaragua<br>
+<option value="NE" >Niger<br>
+<option value="NG" >Nigeria<br>
+<option value="NU" >Niue<br>
+<option value="NF" >Norfolk Island<br>
+<option value="MP" >Northern Marianas<br>
+<option value="KP" >North Korea<br>
+<option value="NO" >Norway<br>
+<option value="OM" >Oman<br>
+<option value="PK" >Pakistan<br>
+<option value="PW" >Palau<br>
+<option value="PS" >Palestine National Authority<br>
+<option value="PA" >Panama<br>
+<option value="PG" >Papua New Guinea<br>
+<option value="PY" >Paraguay<br>
+<option value="PE" >Peru<br>
+<option value="PH" >Philippines<br>
+<option value="PN" >Pitcairn Islands<br>
+<option value="PL" >Poland<br>
+<option value="PF" >Polynesia<br>
+<option value="PT" >Portugal<br>
+<option value="PR" >Puerto Rico<br>
+<option value="QA" >Qatar<br>
+<option value="RE" >Reunion<br>
+<option value="RO" >Romania<br>
+<option value="RU" >Russian Federation<br>
+<option value="RW" >Rwanda<br>
+<option value="BL" >Saint Barthélemy<br>
+<option value="KN" >Saint Kitts and Nevis<br>
+<option value="LC" >Saint Lucia<br>
+<option value="MF" >Saint Martin (French)<br>
+<option value="VC" >Saint Vincent and the Grenadines<br>
+<option value="WS" >Samoa<br>
+<option value="SM" >San Marino<br>
+<option value="ST" >Sao Tome<br>
+<option value="SA" >Saudi Arabia<br>
+<option value="SN" >Senegal<br>
+<option value="RS" >Serbia<br>
+<option value="YU" >Serbia and Montenegro (obsolete)<br>
+<option value="SC" >Seychelles<br>
+<option value="SL" >Sierra Leone<br>
+<option value="SG" >Singapore<br>
+<option value="SX" >Sint Maarten (Dutch part)<br>
+<option value="SK" >Slovakia<br>
+<option value="SI" >Slovenia<br>
+<option value="SB" >Solomon Islands<br>
+<option value="SO" >Somalia<br>
+<option value="ZA" >South Africa<br>
+<option value="KR" >South Korea<br>
+<option value="SS" >South Sudan<br>
+<option value="ES" >Spain<br>
+<option value="LK" >Sri Lanka<br>
+<option value="SH" >St. Helena<br>
+<option value="PM" >St Pierre And Miquelon<br>
+<option value="SD" >Sudan<br>
+<option value="SR" >Suriname<br>
+<option value="SJ" >Svalbard And Jan Mayen<br>
+<option value="SZ" >Swaziland<br>
+<option value="SE" >Sweden<br>
+<option value="CH" >Switzerland<br>
+<option value="SY" >Syria<br>
+<option value="TJ" >Tadjikistan<br>
+<option value="TW" >Taiwan<br>
+<option value="TZ" >Tanzania<br>
+<option value="TH" >Thailand<br>
+<option value="TL" >Timor-Leste<br>
+<option value="TG" >Togo<br>
+<option value="TK" >Tokelau<br>
+<option value="TO" >Tonga<br>
+<option value="TT" >Trinidad and Tobago<br>
+<option value="TN" >Tunisia<br>
+<option value="TR" >Turkey<br>
+<option value="TM" >Turkmenistan<br>
+<option value="TC" >Turks And Caicos Islands<br>
+<option value="TV" >Tuvalu<br>
+<option value="UG" >Uganda<br>
+<option value="UA" >Ukraine<br>
+<option value="AE" >United Arab Emirates<br>
+<option value="GB" >United Kingdom<br>
+<option value="US" >United States<br>
+<option value="UY" >Uruguay<br>
+<option value="UM" >US Minor Outlying Islands<br>
+<option value="EH" >US-Western Sahara<br>
+<option value="UZ" >Uzbekistan<br>
+<option value="VU" >Vanuatu<br>
+<option value="VA" >Vatican City State<br>
+<option value="VE" >Venezuela<br>
+<option value="VN" >Vietnam<br>
+<option value="VI" >Virgin Islands<br>
+<option value="WF" >Wallis And Futuna Islands<br>
+<option value="YE" >Yemen<br>
+<option value="ZM" >Zambia<br>
+<option value="ZW" >Zimbabwe<br>
+</select>
+<br />(Country)
+</div>
+
+
+</label> 
+<br />-->
+
+<label for="limit_friends"><input id="limit_friends" type="radio" name="limit"   value="friends"> As rated by my friends </input> </label>
+<br />
+
+<br /><input type="button" onClick="document.getElementById('page').value=1;this.form.submit();" value="Show chart &gt;" /> 
+
+
+
+</form></div><div class="clear"> </div><div style="text-align:right;font-size:x-small;padding:10px;border:#888 1px solid; background:#eee; color:#888;">Want to know more about how charts are calculated?  Read the <a href="/wiki/RYM:Charts FAQ" target="blank" title="Click to view documentation" class="wiki_link">charts FAQ</a></div><div class="clear"> </div><div class="clear"> </div><div style="padding:10px;font-size:small;text-align:center;font-weight:bold;background:#eee;border:#888 1px solid;">1 - 100 | <a href="javascript:goPage(2);">101 - 114</a> </div><div class="clear"> </div><table class="mbgen" style="width:100%"><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/rammstein/mutter/"><img  width="150" id="img_l_2871"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/6b524ec1a4ced6275859d3a9866d4863/3105438.jpg"  alt="Mutter" title="Mutter" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist605]"  href="/artist/rammstein" class="artist">Rammstein</a> <br /><a title="[Album2871]" href="/release/album/rammstein/mutter/" class="album">Mutter</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/rammstein/mutter/">Avg rating: <b>3.67</b> | Ratings: <b>3,796</b> | Reviews (total): <b>138</b></a> | <a href="/release/album/rammstein/mutter/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">2</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/rammstein/sehnsucht/"><img  width="150" id="img_l_1901"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ab690a7eaf1ee8fddf1af0bdf0962523/2667823.jpg"  alt="Sehnsucht" title="Sehnsucht" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist605]"  href="/artist/rammstein" class="artist">Rammstein</a> <br /><a title="[Album1901]" href="/release/album/rammstein/sehnsucht/" class="album">Sehnsucht</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/rammstein/sehnsucht/">Avg rating: <b>3.49</b> | Ratings: <b>2,991</b> | Reviews (total): <b>108</b></a> | <a href="/release/album/rammstein/sehnsucht/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">3</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/rammstein/reise__reise_f1/"><img  width="150" id="img_l_172952"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0b7df3165cf5808ee4bb7d21fb810ed0/2109328.jpg"  alt="Reise, Reise" title="Reise, Reise" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist605]"  href="/artist/rammstein" class="artist">Rammstein</a> <br /><a title="[Album172952]" href="/release/album/rammstein/reise__reise_f1/" class="album">Reise, Reise</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/rammstein/reise__reise_f1/">Avg rating: <b>3.43</b> | Ratings: <b>2,829</b> | Reviews (total): <b>88</b></a> | <a href="/release/album/rammstein/reise__reise_f1/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">4</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/rammstein/herzeleid/"><img  width="150" id="img_l_3915"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/de85bb66b6751d9b29df65855db1d776/2476944.jpg"  alt="Herzeleid" title="Herzeleid" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist605]"  href="/artist/rammstein" class="artist">Rammstein</a> <br /><a title="[Album3915]" href="/release/album/rammstein/herzeleid/" class="album">Herzeleid</a></span>
+         <span class="mediumg">(1995)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/rammstein/herzeleid/">Avg rating: <b>3.45</b> | Ratings: <b>2,255</b> | Reviews (total): <b>83</b></a> | <a href="/release/album/rammstein/herzeleid/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">5</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/eisbrecher/antikorper/"><img  width="150" id="img_l_680287"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/b0418b136334872a27dadac321a64449/1722269.jpg"  alt="Antikörper" title="Antikörper" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist77650]"  href="/artist/eisbrecher" class="artist">Eisbrecher</a> <br /><a title="[Album680287]" href="/release/album/eisbrecher/antikorper/" class="album">Antikörper</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/eisbrecher/antikorper/">Avg rating: <b>3.60</b> | Ratings: <b>111</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/eisbrecher/antikorper/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">6</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/eisbrecher/eisbrecher/"><img  width="150" id="img_l_341140"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a122be172cd9adb77ebcf3fa58f04bb8/1705620.jpg"  alt="Eisbrecher" title="Eisbrecher" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist77650]"  href="/artist/eisbrecher" class="artist">Eisbrecher</a> <br /><a title="[Album341140]" href="/release/album/eisbrecher/eisbrecher/" class="album">Eisbrecher</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/eisbrecher/eisbrecher/">Avg rating: <b>3.51</b> | Ratings: <b>103</b> | Reviews (total): <b>4</b></a> | <a href="/release/album/eisbrecher/eisbrecher/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">7</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/turmion_katilot/hoitovirhe/"><img  width="150" id="img_l_184801"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/1decf0cc344d57c5ad9ffa6c9e478771/5214352.jpg"  alt="Hoitovirhe" title="Hoitovirhe" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist43482]"  href="/artist/turmion_katilot" class="artist">Turmion Kätilöt</a> <br /><a title="[Album184801]" href="/release/album/turmion_katilot/hoitovirhe/" class="album">Hoitovirhe</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/turmion_katilot/hoitovirhe/">Avg rating: <b>3.36</b> | Ratings: <b>177</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/turmion_katilot/hoitovirhe/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">8</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/megaherz/herzwerk_ii/"><img  width="150" id="img_l_53359"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/8d6cd9e235b6cd2dc50ceedb5d604682/4602453.jpg"  alt="Herzwerk II" title="Herzwerk II" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9975]"  href="/artist/megaherz" class="artist">Megaherz</a> <br /><a title="[Album53359]" href="/release/album/megaherz/herzwerk_ii/" class="album">Herzwerk II</a></span>
+         <span class="mediumg">(2002)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/megaherz/herzwerk_ii/">Avg rating: <b>3.48</b> | Ratings: <b>90</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/megaherz/herzwerk_ii/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">9</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/oomph_/glaubeliebetod/"><img  width="150" id="img_l_546750"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0fdcb9eb8ce7ea86f677e4ace54a6246/1596134.jpg"  alt="GlaubeLiebeTod" title="GlaubeLiebeTod" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2264]"  href="/artist/oomph_" class="artist">Oomph!</a> <br /><a title="[Album546750]" href="/release/album/oomph_/glaubeliebetod/" class="album">GlaubeLiebeTod</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/oomph_/glaubeliebetod/">Avg rating: <b>3.33</b> | Ratings: <b>160</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/oomph_/glaubeliebetod/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">10</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/asp/weltunter/"><img  width="150" id="img_l_365857"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/df011228ccbf245ddb95683f0d99b4a5/1446605.jpg"  alt="Weltunter" title="Weltunter" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist83308]"  href="/artist/asp" class="artist">ASP</a> <br /><a title="[Album365857]" href="/release/album/asp/weltunter/" class="album">Weltunter</a></span>
+         <span class="mediumg">(2003)</span><br /><br /><a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/asp/weltunter/">Avg rating: <b>3.58</b> | Ratings: <b>55</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/asp/weltunter/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">11</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/asp/requiembryo_f1/"><img  width="150" id="img_l_836313"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/01a246268978be3bf619b3cea3fa25d2/1879549.jpg"  alt="Requiembryo" title="Requiembryo" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist83308]"  href="/artist/asp" class="artist">ASP</a> <br /><a title="[Album836313]" href="/release/album/asp/requiembryo_f1/" class="album">Requiembryo</a></span>
+         <span class="mediumg">(2007)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/asp/requiembryo_f1/">Avg rating: <b>3.64</b> | Ratings: <b>46</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/asp/requiembryo_f1/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">12</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/eisbrecher/eiszeit/"><img  width="150" id="img_l_2750264"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/f18096651b6c3108edfc8eda9e7fd7c6/3048817.jpg"  alt="Eiszeit" title="Eiszeit" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist77650]"  href="/artist/eisbrecher" class="artist">Eisbrecher</a> <br /><a title="[Album2750264]" href="/release/album/eisbrecher/eiszeit/" class="album">Eiszeit</a></span>
+         <span class="mediumg">(2010)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/eisbrecher/eiszeit/">Avg rating: <b>3.44</b> | Ratings: <b>84</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/eisbrecher/eiszeit/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">13</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/die_krupps/ii__the_final_option/"><img  width="150" id="img_l_89144"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0136700003c653b683cedddeec83b8b4/2993654.jpg"  alt="II: The Final Option" title="II: The Final Option" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9241]"  href="/artist/die_krupps" class="artist">Die Krupps</a> <br /><a title="[Album89144]" href="/release/album/die_krupps/ii__the_final_option/" class="album">II: The Final Option</a></span>
+         <span class="mediumg">(1993)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/die_krupps/ii__the_final_option/">Avg rating: <b>3.40</b> | Ratings: <b>115</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/die_krupps/ii__the_final_option/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">14</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/knorkator/das_nachste_album_aller_zeiten/"><img  width="150" id="img_l_775544"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/bc86e0b592a679d893b47c98869c7799/1823096.jpg"  alt="Das nächste Album aller Zeiten" title="Das nächste Album aller Zeiten" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist26331]"  href="/artist/knorkator" class="artist">Knorkator</a> <br /><a title="[Album775544]" href="/release/album/knorkator/das_nachste_album_aller_zeiten/" class="album">Das nächste Album aller Zeiten</a></span>
+         <span class="mediumg">(2007)</span><br /><br /><a title="[Genre181]" class="genre" href="/genre/Comedy+Rock/">Comedy Rock</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/knorkator/das_nachste_album_aller_zeiten/">Avg rating: <b>3.65</b> | Ratings: <b>47</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/knorkator/das_nachste_album_aller_zeiten/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">15</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/rammstein/liebe_ist_fur_alle_da/"><img  width="150" id="img_l_2479677"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/b517046715dac86482ca9feb7f90bd20/2810142.jpg"  alt="Liebe ist für alle da" title="Liebe ist für alle da" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist605]"  href="/artist/rammstein" class="artist">Rammstein</a> <br /><a title="[Album2479677]" href="/release/album/rammstein/liebe_ist_fur_alle_da/" class="album">Liebe ist für alle da</a></span>
+         <span class="mediumg">(2009)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/rammstein/liebe_ist_fur_alle_da/">Avg rating: <b>3.15</b> | Ratings: <b>1,357</b> | Reviews (total): <b>65</b></a> | <a href="/release/album/rammstein/liebe_ist_fur_alle_da/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">16</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/oomph_/plastik/"><img  width="150" id="img_l_7741"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/6f728af8ae6d959cf3d45b7f6d211116/1292281.jpg"  alt="Plastik" title="Plastik" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2264]"  href="/artist/oomph_" class="artist">Oomph!</a> <br /><a title="[Album7741]" href="/release/album/oomph_/plastik/" class="album">Plastik</a></span>
+         <span class="mediumg">(1999)</span><br /><br /><a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/oomph_/plastik/">Avg rating: <b>3.34</b> | Ratings: <b>130</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/oomph_/plastik/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">17</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/oomph_/defekt/"><img  width="150" id="img_l_7737"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c17720408032027091d02390568d318c/2894285.jpg"  alt="Defekt" title="Defekt" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2264]"  href="/artist/oomph_" class="artist">Oomph!</a> <br /><a title="[Album7737]" href="/release/album/oomph_/defekt/" class="album">Defekt</a></span>
+         <span class="mediumg">(1995)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/oomph_/defekt/">Avg rating: <b>3.31</b> | Ratings: <b>112</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/oomph_/defekt/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">18</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/unheilig/das_2__gebot/"><img  width="150" id="img_l_510923"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/abb2dbc50bb59f57f5b8c549496b67d9/2675050.jpg"  alt="Das 2. Gebot" title="Das 2. Gebot" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist22041]"  href="/artist/unheilig" class="artist">Unheilig</a> <br /><a title="[Album510923]" href="/release/album/unheilig/das_2__gebot/" class="album">Das 2. Gebot</a></span>
+         <span class="mediumg">(2003)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre595]" class="genre" href="/genre/Gothic+Rock/">Gothic Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/unheilig/das_2__gebot/">Avg rating: <b>3.65</b> | Ratings: <b>40</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/unheilig/das_2__gebot/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">19</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/oomph_/oomph_/"><img  width="150" id="img_l_7734"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/653ba83b8cc8d24eecab7a52dfab1626/3183973.jpg"  alt="Oomph!" title="Oomph!" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2264]"  href="/artist/oomph_" class="artist">Oomph!</a> <br /><a title="[Album7734]" href="/release/album/oomph_/oomph_/" class="album">Oomph!</a></span>
+         <span class="mediumg">(1992)</span><br /><br /><a title="[Genre337]" class="genre" href="/genre/EBM/">EBM</a>, <a title="[Genre20757]" class="genre" href="/genre/Electro%2dIndustrial/">Electro-Industrial</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/oomph_/oomph_/">Avg rating: <b>3.34</b> | Ratings: <b>105</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/oomph_/oomph_/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">20</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/oomph_/unrein/"><img  width="150" id="img_l_7740"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e458f98d3d9084cb68a47865597dbe9d/2895165.jpg"  alt="Unrein" title="Unrein" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2264]"  href="/artist/oomph_" class="artist">Oomph!</a> <br /><a title="[Album7740]" href="/release/album/oomph_/unrein/" class="album">Unrein</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/oomph_/unrein/">Avg rating: <b>3.35</b> | Ratings: <b>125</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/oomph_/unrein/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">21</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/rammstein/rosenrot/"><img  width="150" id="img_l_349196"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/fe5405ec262f714a9edce0c9e98d0413/3347293.jpg"  alt="Rosenrot" title="Rosenrot" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist605]"  href="/artist/rammstein" class="artist">Rammstein</a> <br /><a title="[Album349196]" href="/release/album/rammstein/rosenrot/" class="album">Rosenrot</a></span>
+         <span class="mediumg">(2005)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/rammstein/rosenrot/">Avg rating: <b>3.11</b> | Ratings: <b>2,026</b> | Reviews (total): <b>67</b></a> | <a href="/release/album/rammstein/rosenrot/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">22</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/eisbrecher/sunde/"><img  width="150" id="img_l_1696390"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/40027de719508a206e579a1ef7716b3d/2355741.jpg"  alt="Sünde" title="Sünde" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist77650]"  href="/artist/eisbrecher" class="artist">Eisbrecher</a> <br /><a title="[Album1696390]" href="/release/album/eisbrecher/sunde/" class="album">Sünde</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/eisbrecher/sunde/">Avg rating: <b>3.35</b> | Ratings: <b>88</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/eisbrecher/sunde/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">23</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/oomph_/wahrheit_oder_pflicht/"><img  width="150" id="img_l_122133"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/b6e46d72e3a58d593201483d03e49934/2241207.jpg"  alt="Wahrheit oder Pflicht" title="Wahrheit oder Pflicht" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2264]"  href="/artist/oomph_" class="artist">Oomph!</a> <br /><a title="[Album122133]" href="/release/album/oomph_/wahrheit_oder_pflicht/" class="album">Wahrheit oder Pflicht</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/oomph_/wahrheit_oder_pflicht/">Avg rating: <b>3.21</b> | Ratings: <b>210</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/oomph_/wahrheit_oder_pflicht/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">24</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/oomph_/ego/"><img  width="150" id="img_l_7733"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a6e7239e7709b57307c231289cc4197d/4501589.jpg"  alt="Ego" title="Ego" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2264]"  href="/artist/oomph_" class="artist">Oomph!</a> <br /><a title="[Album7733]" href="/release/album/oomph_/ego/" class="album">Ego</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/oomph_/ego/">Avg rating: <b>3.22</b> | Ratings: <b>159</b> | Reviews (total): <b>8</b></a> | <a href="/release/album/oomph_/ego/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">25</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/oomph_/monster/"><img  width="150" id="img_l_1726779"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/dce8de5d0dd8e563923e660aaad2326b/2372814.jpg"  alt="Monster" title="Monster" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2264]"  href="/artist/oomph_" class="artist">Oomph!</a> <br /><a title="[Album1726779]" href="/release/album/oomph_/monster/" class="album">Monster</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/oomph_/monster/">Avg rating: <b>3.26</b> | Ratings: <b>135</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/oomph_/monster/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">26</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/megaherz/kopfschuss/"><img  width="150" id="img_l_34544"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/00f32113b5d61da3e94f9011ba6ed389/5057467.jpg"  alt="Kopfschuss" title="Kopfschuss" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9975]"  href="/artist/megaherz" class="artist">Megaherz</a> <br /><a title="[Album34544]" href="/release/album/megaherz/kopfschuss/" class="album">Kopfschuss</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/megaherz/kopfschuss/">Avg rating: <b>3.40</b> | Ratings: <b>58</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/megaherz/kopfschuss/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">27</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/die_krupps/paradise_now/"><img  width="150" id="img_l_106807"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/8fcd8da91a77318976c14c6064c5ddd9/1289895.jpg"  alt="Paradise Now" title="Paradise Now" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9241]"  href="/artist/die_krupps" class="artist">Die Krupps</a> <br /><a title="[Album106807]" href="/release/album/die_krupps/paradise_now/" class="album">Paradise Now</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/die_krupps/paradise_now/">Avg rating: <b>3.30</b> | Ratings: <b>102</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/die_krupps/paradise_now/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">28</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/unheilig/zelluloid/"><img  width="150" id="img_l_328182"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0abe4a1fada7346befaa27d759e4742c/1531539.jpg"  alt="Zelluloid" title="Zelluloid" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist22041]"  href="/artist/unheilig" class="artist">Unheilig</a> <br /><a title="[Album328182]" href="/release/album/unheilig/zelluloid/" class="album">Zelluloid</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre595]" class="genre" href="/genre/Gothic+Rock/">Gothic Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/unheilig/zelluloid/">Avg rating: <b>3.49</b> | Ratings: <b>42</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/unheilig/zelluloid/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">29</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/asp/aus_der_tiefe/"><img  height="150" id="img_l_377010"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/4b9f787c651d32eda12ff988adf2d985/1663537.jpg"  alt="Aus der Tiefe" title="Aus der Tiefe" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist83308]"  href="/artist/asp" class="artist">ASP</a> <br /><a title="[Album377010]" href="/release/album/asp/aus_der_tiefe/" class="album">Aus der Tiefe</a></span>
+         <span class="mediumg">(2005)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/asp/aus_der_tiefe/">Avg rating: <b>3.47</b> | Ratings: <b>41</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/asp/aus_der_tiefe/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">30</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/oomph_/sperm/"><img  width="150" id="img_l_7735"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/499dd2445fcd377166f0175beab6c457/1292277.jpg"  alt="Sperm" title="Sperm" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2264]"  href="/artist/oomph_" class="artist">Oomph!</a> <br /><a title="[Album7735]" href="/release/album/oomph_/sperm/" class="album">Sperm</a></span>
+         <span class="mediumg">(1994)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/oomph_/sperm/">Avg rating: <b>3.18</b> | Ratings: <b>117</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/oomph_/sperm/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">31</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/megaherz/himmelfahrt/"><img  width="150" id="img_l_34545"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/49e151887fa9b1c70e3160e9f89fbcbf/1400520.jpg"  alt="Himmelfahrt" title="Himmelfahrt" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9975]"  href="/artist/megaherz" class="artist">Megaherz</a> <br /><a title="[Album34545]" href="/release/album/megaherz/himmelfahrt/" class="album">Himmelfahrt</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/megaherz/himmelfahrt/">Avg rating: <b>3.35</b> | Ratings: <b>57</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/megaherz/himmelfahrt/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">32</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/die_krupps/i/"><img  width="150" id="img_l_89146"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/bbf8dbf30d24f4df19d1c94d52b0cc10/2993652.jpg"  alt="I" title="I" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9241]"  href="/artist/die_krupps" class="artist">Die Krupps</a> <br /><a title="[Album89146]" href="/release/album/die_krupps/i/" class="album">I</a></span>
+         <span class="mediumg">(1992)</span><br /><br /><a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>, <a title="[Genre20757]" class="genre" href="/genre/Electro%2dIndustrial/">Electro-Industrial</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/die_krupps/i/">Avg rating: <b>3.27</b> | Ratings: <b>73</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/die_krupps/i/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">33</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/oomph_/wunschkind/"><img  width="150" id="img_l_7738"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/20b33bb80d9d31e15d0171038164be4d/1292275.jpg"  alt="Wunschkind" title="Wunschkind" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2264]"  href="/artist/oomph_" class="artist">Oomph!</a> <br /><a title="[Album7738]" href="/release/album/oomph_/wunschkind/" class="album">Wunschkind</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/oomph_/wunschkind/">Avg rating: <b>3.20</b> | Ratings: <b>83</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/oomph_/wunschkind/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">34</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/unheilig/puppenspiel/"><img  width="150" id="img_l_1411654"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/b927ab34f1e374e4d3cc88f23ad87172/2214737.jpg"  alt="Puppenspiel" title="Puppenspiel" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist22041]"  href="/artist/unheilig" class="artist">Unheilig</a> <br /><a title="[Album1411654]" href="/release/album/unheilig/puppenspiel/" class="album">Puppenspiel</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre595]" class="genre" href="/genre/Gothic+Rock/">Gothic Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/unheilig/puppenspiel/">Avg rating: <b>3.24</b> | Ratings: <b>48</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/unheilig/puppenspiel/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">35</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/eisbrecher/die_holle_muss_warten/"><img  width="150" id="img_l_3793154"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/859e983140401f768fa20faf1aed96b0/4053359.jpg"  alt="Die Hölle muss warten" title="Die Hölle muss warten" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist77650]"  href="/artist/eisbrecher" class="artist">Eisbrecher</a> <br /><a title="[Album3793154]" href="/release/album/eisbrecher/die_holle_muss_warten/" class="album">Die Hölle muss warten</a></span>
+         <span class="mediumg">(2012)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/eisbrecher/die_holle_muss_warten/">Avg rating: <b>3.15</b> | Ratings: <b>68</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/eisbrecher/die_holle_muss_warten/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">36</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/unheilig/moderne_zeiten/"><img  width="150" id="img_l_470983"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d51e7cbd4c143a529717ae14f8d795f0/1531542.jpg"  alt="Moderne Zeiten" title="Moderne Zeiten" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist22041]"  href="/artist/unheilig" class="artist">Unheilig</a> <br /><a title="[Album470983]" href="/release/album/unheilig/moderne_zeiten/" class="album">Moderne Zeiten</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre336]" class="genre" href="/genre/Industrial/">Industrial</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/unheilig/moderne_zeiten/">Avg rating: <b>3.37</b> | Ratings: <b>42</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/unheilig/moderne_zeiten/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">37</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/asp/duett/"><img  width="150" id="img_l_512344"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0cf7c0ee3b87c8de57791deb2a2db844/2348308.jpg"  alt="Duett" title="Duett" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist83308]"  href="/artist/asp" class="artist">ASP</a> <br /><a title="[Album512344]" href="/release/album/asp/duett/" class="album">Duett</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/asp/duett/">Avg rating: <b>3.62</b> | Ratings: <b>28</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/asp/duett/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">38</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/subway_to_sally/mitgift/"><img  width="150" id="img_l_5163135"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e09173d38d58ac1d599feb65fb2ccef5/5159691.jpg"  alt="Mitgift" title="Mitgift" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist3227]"  href="/artist/subway_to_sally" class="artist">Subway to Sally</a> <br /><a title="[Album5163135]" href="/release/album/subway_to_sally/mitgift/" class="album">Mitgift</a></span>
+         <span class="mediumg">(2014)</span><br /><br /><a title="[Genre27606]" class="genre" href="/genre/Medieval+Folk+Metal/">Medieval Folk Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/subway_to_sally/mitgift/">Avg rating: <b>3.21</b> | Ratings: <b>36</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/subway_to_sally/mitgift/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">39</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/megaherz/5/"><img  width="150" id="img_l_239252"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c117ef4b5ac7e69dbabd92230855882e/1792381.jpg"  alt="5" title="5" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9975]"  href="/artist/megaherz" class="artist">Megaherz</a> <br /><a title="[Album239252]" href="/release/album/megaherz/5/" class="album">5</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/megaherz/5/">Avg rating: <b>3.25</b> | Ratings: <b>43</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/megaherz/5/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">40</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/tanzwut/labyrinth_der_sinne/"><img  height="150" id="img_l_80466"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ccf095e3c892ce7bae4df8b8e09f03f1/5465693.jpg"  alt="Labyrinth der Sinne" title="Labyrinth der Sinne" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist18175]"  href="/artist/tanzwut" class="artist">Tanzwut</a> <br /><a title="[Album80466]" href="/release/album/tanzwut/labyrinth_der_sinne/" class="album">Labyrinth der Sinne</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/tanzwut/labyrinth_der_sinne/">Avg rating: <b>3.06</b> | Ratings: <b>58</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/tanzwut/labyrinth_der_sinne/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">41</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/joachim_witt/bayreuth_3/"><img  width="150" id="img_l_500380"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/7a313a6a97eeae25d46bc3938af0bf23/2039959.jpg"  alt="Bayreuth 3" title="Bayreuth 3" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist28404]"  href="/artist/joachim_witt" class="artist">Joachim Witt</a> <br /><a title="[Album500380]" href="/release/album/joachim_witt/bayreuth_3/" class="album">Bayreuth 3</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/joachim_witt/bayreuth_3/">Avg rating: <b>3.52</b> | Ratings: <b>25</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/joachim_witt/bayreuth_3/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">42</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/der_bote/kalt_/"><img  width="150" id="img_l_450949"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/831a7078c68eccc788e00cf1f4699452/2562160.jpg"  alt="Kalt!" title="Kalt!" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist104353]"  href="/artist/der_bote" class="artist">Der Bote</a> <br /><a title="[Album450949]" href="/release/album/der_bote/kalt_/" class="album">Kalt!</a></span>
+         <span class="mediumg">(2005)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/der_bote/kalt_/">Avg rating: <b>3.19</b> | Ratings: <b>21</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/der_bote/kalt_/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">43</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/unheilig/grosse_freiheit/"><img  width="150" id="img_l_2682662"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a4e1bbf5dbef72c332180cd6e775bea4/2966768.jpg"  alt="Grosse Freiheit" title="Grosse Freiheit" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist22041]"  href="/artist/unheilig" class="artist">Unheilig</a> <br /><a title="[Album2682662]" href="/release/album/unheilig/grosse_freiheit/" class="album">Grosse Freiheit</a></span>
+         <span class="mediumg">(2010)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/unheilig/grosse_freiheit/">Avg rating: <b>2.87</b> | Ratings: <b>85</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/unheilig/grosse_freiheit/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">44</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/tanzwut/ihr_wolltet_spass/"><img  width="150" id="img_l_78324"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/fa60bc28ce08cdf1b27850406a1698a9/1493903.jpg"  alt="Ihr wolltet Spass" title="Ihr wolltet Spass" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist18175]"  href="/artist/tanzwut" class="artist">Tanzwut</a> <br /><a title="[Album78324]" href="/release/album/tanzwut/ihr_wolltet_spass/" class="album">Ihr wolltet Spass</a></span>
+         <span class="mediumg">(2003)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/tanzwut/ihr_wolltet_spass/">Avg rating: <b>3.04</b> | Ratings: <b>45</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/tanzwut/ihr_wolltet_spass/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">45</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/unheilig/phosphor/"><img  width="150" id="img_l_87820"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/b5e453a9aac669d7681e9dc500d97375/1786169.jpg"  alt="Phosphor" title="Phosphor" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist22041]"  href="/artist/unheilig" class="artist">Unheilig</a> <br /><a title="[Album87820]" href="/release/album/unheilig/phosphor/" class="album">Phosphor</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre595]" class="genre" href="/genre/Gothic+Rock/">Gothic Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/unheilig/phosphor/">Avg rating: <b>3.13</b> | Ratings: <b>39</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/unheilig/phosphor/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">46</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/asp/zaubererbruder__der_krabat_liederzyklus/"><img  width="150" id="img_l_1654177"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/5d3d1b9dd2ea2b77f5497fe4919d83af/2348734.jpg"  alt="Zaubererbruder: der Krabat-Liederzyklus" title="Zaubererbruder: der Krabat-Liederzyklus" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist83308]"  href="/artist/asp" class="artist">ASP</a> <br /><a title="[Album1654177]" href="/release/album/asp/zaubererbruder__der_krabat_liederzyklus/" class="album">Zaubererbruder: der Krabat-Liederzyklus</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre27606]" class="genre" href="/genre/Medieval+Folk+Metal/">Medieval Folk Metal</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/asp/zaubererbruder__der_krabat_liederzyklus/">Avg rating: <b>3.40</b> | Ratings: <b>29</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/asp/zaubererbruder__der_krabat_liederzyklus/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">47</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/unheilig/frohes_fest/"><img  width="150" id="img_l_838603"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/fa8a11fcbb7c6a4518f3e9a5f12ec726/1881883.jpg"  alt="Frohes Fest" title="Frohes Fest" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist22041]"  href="/artist/unheilig" class="artist">Unheilig</a> <br /><a title="[Album838603]" href="/release/album/unheilig/frohes_fest/" class="album">Frohes Fest</a></span>
+         <span class="mediumg">(2002)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre595]" class="genre" href="/genre/Gothic+Rock/">Gothic Rock</a>, <a title="[Genre597]" class="genre" href="/genre/Christmas+Music/">Christmas Music</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/unheilig/frohes_fest/">Avg rating: <b>3.31</b> | Ratings: <b>25</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/unheilig/frohes_fest/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">48</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/atrocity_feat__das_ich/die_liebe/"><img  width="150" id="img_l_84416"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/964c11cfe3a83048354fc647e3f4739e/2464910.jpg"  alt="Die Liebe" title="Die Liebe" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><span class="credited_name">Atrocity feat. Das Ich<div class="credited_list"><div class="credited_list_inner"><a title="[Artist11441]"  href="/artist/atrocity" class="artist">Atrocity</a><br /><a title="[Artist3787]"  href="/artist/das_ich" class="artist">Das Ich</a></div></div></span> <br /><a title="[Album84416]" href="/release/album/atrocity_feat__das_ich/die_liebe/" class="album">Die Liebe</a></span>
+         <span class="mediumg">(1995)</span><br /><br /><a title="[Genre138]" class="genre" href="/genre/Death+Metal/">Death Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/atrocity_feat__das_ich/die_liebe/">Avg rating: <b>2.85</b> | Ratings: <b>57</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/atrocity_feat__das_ich/die_liebe/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">49</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/megaherz/wer_bist_du/"><img  width="150" id="img_l_53358"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/84094a88c66527fc14a28a13f3ce3141/5057463.jpg"  alt="Wer bist du" title="Wer bist du" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9975]"  href="/artist/megaherz" class="artist">Megaherz</a> <br /><a title="[Album53358]" href="/release/album/megaherz/wer_bist_du/" class="album">Wer bist du</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/megaherz/wer_bist_du/">Avg rating: <b>2.94</b> | Ratings: <b>50</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/megaherz/wer_bist_du/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">50</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/asp/hast_du_mich_vermisst_/"><img  width="150" id="img_l_512345"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/8fd97dffd7b925826860355cd45c1786/2348305.jpg"  alt="Hast du mich vermisst?" title="Hast du mich vermisst?" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist83308]"  href="/artist/asp" class="artist">ASP</a> <br /><a title="[Album512345]" href="/release/album/asp/hast_du_mich_vermisst_/" class="album">Hast du mich vermisst?</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/asp/hast_du_mich_vermisst_/">Avg rating: <b>3.09</b> | Ratings: <b>35</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/asp/hast_du_mich_vermisst_/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">51</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/oomph_/des_wahnsinns_fette_beute/"><img  width="150" id="img_l_3796172"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a79164e6b9d275f0569ffa04ba32c123/4150587.jpg"  alt="Des Wahnsinns fette Beute" title="Des Wahnsinns fette Beute" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2264]"  href="/artist/oomph_" class="artist">Oomph!</a> <br /><a title="[Album3796172]" href="/release/album/oomph_/des_wahnsinns_fette_beute/" class="album">Des Wahnsinns fette Beute</a></span>
+         <span class="mediumg">(2012)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/oomph_/des_wahnsinns_fette_beute/">Avg rating: <b>2.90</b> | Ratings: <b>67</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/oomph_/des_wahnsinns_fette_beute/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">52</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/schweisser/heiland/"><img  height="150" id="img_l_345461"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/2f07981326cf5422f6e963a70b357c57/1429693.jpg"  alt="Heiland" title="Heiland" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist78612]"  href="/artist/schweisser" class="artist">Schweisser</a> <br /><a title="[Album345461]" href="/release/album/schweisser/heiland/" class="album">Heiland</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/schweisser/heiland/">Avg rating: <b>3.85</b> | Ratings: <b>11</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/schweisser/heiland/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">53</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stahlhammer/feind_hort_mit/"><img  width="150" id="img_l_107595"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/4089efab98fc2a8be00d3e23b90cbe06/1471003.jpg"  alt="Feind hört mit" title="Feind hört mit" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist26333]"  href="/artist/stahlhammer" class="artist">Stahlhammer</a> <br /><a title="[Album107595]" href="/release/album/stahlhammer/feind_hort_mit/" class="album">Feind hört mit</a></span>
+         <span class="mediumg">(1999)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stahlhammer/feind_hort_mit/">Avg rating: <b>3.17</b> | Ratings: <b>25</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/stahlhammer/feind_hort_mit/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">54</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/tanzwut/schattenreiter/"><img  width="150" id="img_l_557429"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/54ba67b33f929bd6629924776581af88/1606531.jpg"  alt="Schattenreiter" title="Schattenreiter" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist18175]"  href="/artist/tanzwut" class="artist">Tanzwut</a> <br /><a title="[Album557429]" href="/release/album/tanzwut/schattenreiter/" class="album">Schattenreiter</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/tanzwut/schattenreiter/">Avg rating: <b>3.23</b> | Ratings: <b>29</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/tanzwut/schattenreiter/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">55</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/eisbrecher/schock/"><img  width="150" id="img_l_6000036"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/15e551917960e99d261bc2ea6a7e06c8/5480225.jpg"  alt="Schock" title="Schock" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist77650]"  href="/artist/eisbrecher" class="artist">Eisbrecher</a> <br /><a title="[Album6000036]" href="/release/album/eisbrecher/schock/" class="album">Schock</a></span>
+         <span class="mediumg">(2015)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/eisbrecher/schock/">Avg rating: <b>3.02</b> | Ratings: <b>38</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/eisbrecher/schock/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">56</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/asp/fremd/"><img  width="150" id="img_l_3713682"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/b3b11e8d0da73f2396d83f562303e054/3930488.jpg"  alt="Fremd" title="Fremd" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist83308]"  href="/artist/asp" class="artist">ASP</a> <br /><a title="[Album3713682]" href="/release/album/asp/fremd/" class="album">Fremd</a></span>
+         <span class="mediumg">(2011)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/asp/fremd/">Avg rating: <b>3.41</b> | Ratings: <b>24</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/asp/fremd/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">57</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/megaherz/gotterdammerung/"><img  width="150" id="img_l_3846412"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/6d1f3083c40c1740749dfb08b8670184/4251141.jpg"  alt="Götterdämmerung" title="Götterdämmerung" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9975]"  href="/artist/megaherz" class="artist">Megaherz</a> <br /><a title="[Album3846412]" href="/release/album/megaherz/gotterdammerung/" class="album">Götterdämmerung</a></span>
+         <span class="mediumg">(2012)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/megaherz/gotterdammerung/">Avg rating: <b>3.00</b> | Ratings: <b>32</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/megaherz/gotterdammerung/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">58</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/joachim_witt/bayreuth_eins/"><img  width="150" id="img_l_116729"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/bb892b2898df6a29dbf646401ba9545e/2432126.jpg"  alt="Bayreuth eins" title="Bayreuth eins" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist28404]"  href="/artist/joachim_witt" class="artist">Joachim Witt</a> <br /><a title="[Album116729]" href="/release/album/joachim_witt/bayreuth_eins/" class="album">Bayreuth eins</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/joachim_witt/bayreuth_eins/">Avg rating: <b>3.02</b> | Ratings: <b>28</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/joachim_witt/bayreuth_eins/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">59</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/asp/akoasma_–_horror_vacui_live/"><img  width="150" id="img_l_1875835"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/4b3720390514811401463661c492823e/2450274.jpg"  alt="Akoasma – Horror Vacui Live" title="Akoasma – Horror Vacui Live" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist83308]"  href="/artist/asp" class="artist">ASP</a> <br /><a title="[Album1875835]" href="/release/album/asp/akoasma_–_horror_vacui_live/" class="album">Akoasma – Horror Vacui Live</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/asp/akoasma_–_horror_vacui_live/">Avg rating: <b>4.44</b> | Ratings: <b>10</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/asp/akoasma_–_horror_vacui_live/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">60</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/weissglut/etwas_kommt_in_deine_welt/"><img  width="150" id="img_l_441671"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/8a5319e0ae86f1f7cdc9a7095910878c/1509604.jpg"  alt="Etwas kommt in Deine Welt" title="Etwas kommt in Deine Welt" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist100820]"  href="/artist/weissglut" class="artist">Weissglut</a> <br /><a title="[Album441671]" href="/release/album/weissglut/etwas_kommt_in_deine_welt/" class="album">Etwas kommt in Deine Welt</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/weissglut/etwas_kommt_in_deine_welt/">Avg rating: <b>3.80</b> | Ratings: <b>13</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/weissglut/etwas_kommt_in_deine_welt/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">61</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/megaherz/heuchler/"><img  width="150" id="img_l_1705418"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/118ecae0be0ea0e2dbb9f6068e54735c/2360496.jpg"  alt="Heuchler" title="Heuchler" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9975]"  href="/artist/megaherz" class="artist">Megaherz</a> <br /><a title="[Album1705418]" href="/release/album/megaherz/heuchler/" class="album">Heuchler</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/megaherz/heuchler/">Avg rating: <b>2.78</b> | Ratings: <b>34</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/megaherz/heuchler/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">62</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stahlmann/stahlmann/"><img  width="150" id="img_l_3108446"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/5ef40696c0bea391823682237f633feb/3328367.jpg"  alt="Stahlmann" title="Stahlmann" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist553810]"  href="/artist/stahlmann" class="artist">Stahlmann</a> <br /><a title="[Album3108446]" href="/release/album/stahlmann/stahlmann/" class="album">Stahlmann</a></span>
+         <span class="mediumg">(2010)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stahlmann/stahlmann/">Avg rating: <b>3.23</b> | Ratings: <b>14</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/stahlmann/stahlmann/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">63</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/_die__/still/"><img  width="150" id="img_l_2606530"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/82fa3303bba1aeac06635503daa4e87b/2848419.jpg"  alt="Still" title="Still" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist364327]"  href="/artist/_die__" class="artist">[die!]</a> <br /><a title="[Album2606530]" href="/release/album/_die__/still/" class="album">Still</a></span>
+         <span class="mediumg">(2009)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/_die__/still/">Avg rating: <b>3.34</b> | Ratings: <b>10</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/_die__/still/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">64</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/_die__/stigmata/"><img  width="150" id="img_l_1837245"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/b0ebd5430c3ff5826679c776a6706db1/2453455.jpg"  alt="Stigmata" title="Stigmata" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist364327]"  href="/artist/_die__" class="artist">[die!]</a> <br /><a title="[Album1837245]" href="/release/album/_die__/stigmata/" class="album">Stigmata</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/_die__/stigmata/">Avg rating: <b>3.70</b> | Ratings: <b>7</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/_die__/stigmata/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">65</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/uebermutter/unheil_/"><img  width="150" id="img_l_1412142"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/857c11fcf7b99c5786f4f4159ff17a29/2214926.jpg"  alt="Unheil!" title="Unheil!" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist301612]"  href="/artist/uebermutter" class="artist">Üebermutter</a> <br /><a title="[Album1412142]" href="/release/album/uebermutter/unheil_/" class="album">Unheil!</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/uebermutter/unheil_/">Avg rating: <b>2.81</b> | Ratings: <b>10</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/uebermutter/unheil_/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">66</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stahlmann/quecksilber/"><img  width="150" id="img_l_3733623"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/be0cdc29bd0c9de6660079b73d636427/3998303.jpg"  alt="Quecksilber" title="Quecksilber" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist553810]"  href="/artist/stahlmann" class="artist">Stahlmann</a> <br /><a title="[Album3733623]" href="/release/album/stahlmann/quecksilber/" class="album">Quecksilber</a></span>
+         <span class="mediumg">(2012)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stahlmann/quecksilber/">Avg rating: <b>2.93</b> | Ratings: <b>18</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/stahlmann/quecksilber/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">67</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/megaherz/zombieland/"><img  width="150" id="img_l_5499921"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c786cebda593c739f81e34e419db2389/5462182.jpg"  alt="Zombieland" title="Zombieland" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9975]"  href="/artist/megaherz" class="artist">Megaherz</a> <br /><a title="[Album5499921]" href="/release/album/megaherz/zombieland/" class="album">Zombieland</a></span>
+         <span class="mediumg">(2014)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/megaherz/zombieland/">Avg rating: <b>2.80</b> | Ratings: <b>20</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/megaherz/zombieland/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">68</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/think_about_mutation/highlife/"><img  width="150" id="img_l_464773"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/9806485b918748236097ea31a3ec7c93/1527097.jpg"  alt="Highlife" title="Highlife" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist91004]"  href="/artist/think_about_mutation" class="artist">Think About Mutation</a> <br /><a title="[Album464773]" href="/release/album/think_about_mutation/highlife/" class="album">Highlife</a></span>
+         <span class="mediumg">(1999)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/think_about_mutation/highlife/">Avg rating: <b>3.35</b> | Ratings: <b>12</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/think_about_mutation/highlife/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">69</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/joachim_witt/bayreuth_zwei/"><img  width="150" id="img_l_116728"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/258ca410cd879ab7aa137e1ce9219833/1247070.jpg"  alt="Bayreuth zwei" title="Bayreuth zwei" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist28404]"  href="/artist/joachim_witt" class="artist">Joachim Witt</a> <br /><a title="[Album116728]" href="/release/album/joachim_witt/bayreuth_zwei/" class="album">Bayreuth zwei</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre10349]" class="genre" href="/genre/Deutschrock/">Deutschrock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/joachim_witt/bayreuth_zwei/">Avg rating: <b>3.33</b> | Ratings: <b>16</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/joachim_witt/bayreuth_zwei/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">70</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/weissglut/zeichen/"><img  width="150" id="img_l_438946"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/cd2bff6c057b1c4e5e724f0dd188a746/1507193.jpg"  alt="Zeichen" title="Zeichen" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist100820]"  href="/artist/weissglut" class="artist">Weissglut</a> <br /><a title="[Album438946]" href="/release/album/weissglut/zeichen/" class="album">Zeichen</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/weissglut/zeichen/">Avg rating: <b>3.22</b> | Ratings: <b>16</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/weissglut/zeichen/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">71</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/schweisser/willkommen_im_club/"><img  width="150" id="img_l_345460"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/98441afa1eb542b273154a5dc9457fa6/1429692.jpg"  alt="Willkommen im Club" title="Willkommen im Club" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist78612]"  href="/artist/schweisser" class="artist">Schweisser</a> <br /><a title="[Album345460]" href="/release/album/schweisser/willkommen_im_club/" class="album">Willkommen im Club</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/schweisser/willkommen_im_club/">Avg rating: <b>3.36</b> | Ratings: <b>12</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/schweisser/willkommen_im_club/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">72</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/megaherz/herzwerk/"><img  width="150" id="img_l_646270"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a6a1e5bc07b279822b80e13d45bd5ac6/1687915.jpg"  alt="Herzwerk" title="Herzwerk" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9975]"  href="/artist/megaherz" class="artist">Megaherz</a> <br /><a title="[Album646270]" href="/release/album/megaherz/herzwerk/" class="album">Herzwerk</a></span>
+         <span class="mediumg">(1995)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/megaherz/herzwerk/">Avg rating: <b>2.54</b> | Ratings: <b>24</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/megaherz/herzwerk/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">73</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/knorkator/es_werde_nicht/"><img  width="150" id="img_l_3669531"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ff626f308beddb072f570911cd03261d/3887734.jpg"  alt="Es Werde Nicht" title="Es Werde Nicht" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist26331]"  href="/artist/knorkator" class="artist">Knorkator</a> <br /><a title="[Album3669531]" href="/release/album/knorkator/es_werde_nicht/" class="album">Es Werde Nicht</a></span>
+         <span class="mediumg">(2011)</span><br /><br /><a title="[Genre181]" class="genre" href="/genre/Comedy+Rock/">Comedy Rock</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/knorkator/es_werde_nicht/">Avg rating: <b>2.85</b> | Ratings: <b>21</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/knorkator/es_werde_nicht/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">74</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/think_about_mutation/motorrazor/"><img  width="150" id="img_l_464661"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ea161ce78bb729afc6258a0a1551f86b/1527009.jpg"  alt="Motorrazor" title="Motorrazor" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist91004]"  href="/artist/think_about_mutation" class="artist">Think About Mutation</a> <br /><a title="[Album464661]" href="/release/album/think_about_mutation/motorrazor/" class="album">Motorrazor</a></span>
+         <span class="mediumg">(1993)</span><br /><br /><a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/think_about_mutation/motorrazor/">Avg rating: <b>3.00</b> | Ratings: <b>16</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/think_about_mutation/motorrazor/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">75</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/asp/maskenhaft/"><img  width="150" id="img_l_4380321"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d588d09ba134e19d9c4701ba5b553e1f/4817050.jpg"  alt="Maskenhaft" title="Maskenhaft" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist83308]"  href="/artist/asp" class="artist">ASP</a> <br /><a title="[Album4380321]" href="/release/album/asp/maskenhaft/" class="album">Maskenhaft</a></span>
+         <span class="mediumg">(2013)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/asp/maskenhaft/">Avg rating: <b>3.28</b> | Ratings: <b>9</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/asp/maskenhaft/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">76</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/eisheilig/imperium/"><img  width="150" id="img_l_2436008"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3cdfd57f5c32cea66c5126c939222b09/2735593.jpg"  alt="Imperium" title="Imperium" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist27480]"  href="/artist/eisheilig" class="artist">Eisheilig</a> <br /><a title="[Album2436008]" href="/release/album/eisheilig/imperium/" class="album">Imperium</a></span>
+         <span class="mediumg">(2009)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/eisheilig/imperium/">Avg rating: <b>2.98</b> | Ratings: <b>11</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/eisheilig/imperium/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">77</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/schlafes_bruder/heute_war_gott_nicht_hier/"><img  width="150" id="img_l_4479809"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a3bfe1381161ff170dc9372ad9323a0a/4705464.jpg"  alt="Heute war Gott nicht hier" title="Heute war Gott nicht hier" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist915511]"  href="/artist/schlafes_bruder" class="artist">Schlafes Bruder</a> <br /><a title="[Album4479809]" href="/release/album/schlafes_bruder/heute_war_gott_nicht_hier/" class="album">Heute war Gott nicht hier</a></span>
+         <span class="mediumg">(2013)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/schlafes_bruder/heute_war_gott_nicht_hier/">Avg rating: <b>3.06</b> | Ratings: <b>10</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/schlafes_bruder/heute_war_gott_nicht_hier/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">78</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/terminal_choice/ubermacht/"><img  width="150" id="img_l_2702324"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/4381a994ef4141ddb44ed10a1f68a7c8/2938430.jpg"  alt="Übermacht" title="Übermacht" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist14497]"  href="/artist/terminal_choice" class="artist">Terminal Choice</a> <br /><a title="[Album2702324]" href="/release/album/terminal_choice/ubermacht/" class="album">Übermacht</a></span>
+         <span class="mediumg">(2010)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/terminal_choice/ubermacht/">Avg rating: <b>2.64</b> | Ratings: <b>16</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/terminal_choice/ubermacht/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">79</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/megaherz/eins_i_one/"><img  width="150" id="img_l_1283726"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/6eb3e087332454609fca131150de40bf/2154670.jpg"  alt="Eins I One" title="Eins I One" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9975]"  href="/artist/megaherz" class="artist">Megaherz</a> <br /><a title="[Album1283726]" href="/release/album/megaherz/eins_i_one/" class="album">Eins I One</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/megaherz/eins_i_one/">Avg rating: <b>3.01</b> | Ratings: <b>8</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/megaherz/eins_i_one/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">80</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stahlmann/adamant/"><img  width="150" id="img_l_4480807"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/19205e7a5e855cb339a674af9580fe16/4704672.jpg"  alt="Adamant" title="Adamant" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist553810]"  href="/artist/stahlmann" class="artist">Stahlmann</a> <br /><a title="[Album4480807]" href="/release/album/stahlmann/adamant/" class="album">Adamant</a></span>
+         <span class="mediumg">(2013)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stahlmann/adamant/">Avg rating: <b>3.42</b> | Ratings: <b>8</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/stahlmann/adamant/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">81</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/fleischmann/das_treibhaus/"><img  width="150" id="img_l_689089"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/daba746bc54a7fd31b406c2c42aabab7/1732014.jpg"  alt="Das Treibhaus" title="Das Treibhaus" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist154213]"  href="/artist/fleischmann" class="artist">Fleischmann</a> <br /><a title="[Album689089]" href="/release/album/fleischmann/das_treibhaus/" class="album">Das Treibhaus</a></span>
+         <span class="mediumg">(1994)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/fleischmann/das_treibhaus/">Avg rating: <b>3.20</b> | Ratings: <b>6</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/fleischmann/das_treibhaus/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">82</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/eisenherz/fluch_der_zeit/"><img  width="150" id="img_l_4432027"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/bb3b70d061fc6c588df2bfcc877a9701/4664702.jpg"  alt="Fluch der Zeit" title="Fluch der Zeit" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist196014]"  href="/artist/eisenherz" class="artist">Eisenherz</a> <br /><a title="[Album4432027]" href="/release/album/eisenherz/fluch_der_zeit/" class="album">Fluch der Zeit</a></span>
+         <span class="mediumg">(2013)</span><br /><br /><a title="[Genre10022]" class="genre" href="/genre/Symphonic+Metal/">Symphonic Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/eisenherz/fluch_der_zeit/">Avg rating: <b>3.10</b> | Ratings: <b>7</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/eisenherz/fluch_der_zeit/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">83</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/eisenherz/eisenherz/"><img  width="150" id="img_l_811598"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d6a722bfacb7496991a028b83998dc49/1854267.jpg"  alt="Eisenherz" title="Eisenherz" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist196014]"  href="/artist/eisenherz" class="artist">Eisenherz</a> <br /><a title="[Album811598]" href="/release/album/eisenherz/eisenherz/" class="album">Eisenherz</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/eisenherz/eisenherz/">Avg rating: <b>3.17</b> | Ratings: <b>7</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/eisenherz/eisenherz/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">84</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/drecksau/brecher/"><img  width="150" id="img_l_108406"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0abe4f44064f996b9a63dc6b50c57f84/1996664.jpg"  alt="Brecher" title="Brecher" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist26503]"  href="/artist/drecksau" class="artist">Drecksau</a> <br /><a title="[Album108406]" href="/release/album/drecksau/brecher/" class="album">Brecher</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre139]" class="genre" href="/genre/Doom+Metal/">Doom Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/drecksau/brecher/">Avg rating: <b>3.91</b> | Ratings: <b>5</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/drecksau/brecher/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">85</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/nik_page/sinmachine/"><img  width="150" id="img_l_1714357"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/35387d9e64f4c674525f3785c0a69ca6/2365442.jpg"  alt="Sinmachine" title="Sinmachine" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist335079]"  href="/artist/nik_page" class="artist">Nik Page</a> <br /><a title="[Album1714357]" href="/release/album/nik_page/sinmachine/" class="album">Sinmachine</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/nik_page/sinmachine/">Avg rating: <b>3.36</b> | Ratings: <b>9</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/nik_page/sinmachine/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">86</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/joachim_witt/pop/"><img  width="150" id="img_l_116742"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a7ad894e58a6fbf1e95b06d919ad1ba7/1307683.jpg"  alt="Pop" title="Pop" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist28404]"  href="/artist/joachim_witt" class="artist">Joachim Witt</a> <br /><a title="[Album116742]" href="/release/album/joachim_witt/pop/" class="album">Pop</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/joachim_witt/pop/">Avg rating: <b>3.37</b> | Ratings: <b>9</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/joachim_witt/pop/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">87</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/ost_front/olympia/"><img  width="150" id="img_l_5189113"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/19e13fec8b6ec40cb65778e8b4d7529b/5095607.jpg"  alt="Olympia" title="Olympia" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist850203]"  href="/artist/ost_front" class="artist">Ost+Front</a> <br /><a title="[Album5189113]" href="/release/album/ost_front/olympia/" class="album">Olympia</a></span>
+         <span class="mediumg">(2014)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/ost_front/olympia/">Avg rating: <b>2.73</b> | Ratings: <b>8</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/ost_front/olympia/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">88</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/leichenwetter/legende/"><img  width="150" id="img_l_3132096"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/2dedf2c1edd1d8de7d170c2c486d7c79/3351693.jpg"  alt="Legende" title="Legende" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist291319]"  href="/artist/leichenwetter" class="artist">Leichenwetter</a> <br /><a title="[Album3132096]" href="/release/album/leichenwetter/legende/" class="album">Legende</a></span>
+         <span class="mediumg">(2010)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre212]" class="genre" href="/genre/Gothic+Metal/">Gothic Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/leichenwetter/legende/">Avg rating: <b>3.02</b> | Ratings: <b>6</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/leichenwetter/legende/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">89</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/ost_front/ave_maria/"><img  width="150" id="img_l_4140648"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/cefeee678e0bbd0e5df9da8909726ca1/4338785.jpg"  alt="Ave Maria" title="Ave Maria" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist850203]"  href="/artist/ost_front" class="artist">Ost+Front</a> <br /><a title="[Album4140648]" href="/release/album/ost_front/ave_maria/" class="album">Ave Maria</a></span>
+         <span class="mediumg">(2012)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/ost_front/ave_maria/">Avg rating: <b>2.47</b> | Ratings: <b>8</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/ost_front/ave_maria/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">90</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/_die__/manche_bluten_ewig/"><img  width="150" id="img_l_1882147"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c75a5fd4690467d8a08bd7a7b0a58fbb/2453435.jpg"  alt="Manche bluten ewig" title="Manche bluten ewig" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist364327]"  href="/artist/_die__" class="artist">[die!]</a> <br /><a title="[Album1882147]" href="/release/album/_die__/manche_bluten_ewig/" class="album">Manche bluten ewig</a></span>
+         <span class="mediumg">(2005)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/_die__/manche_bluten_ewig/">Avg rating: <b>2.53</b> | Ratings: <b>7</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/_die__/manche_bluten_ewig/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">91</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/richthofen/seelenwalzer/"><img  width="150" id="img_l_692569"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/748a4f077971fe843c3227f604f6b69c/1735692.jpg"  alt="Seelenwalzer" title="Seelenwalzer" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist164885]"  href="/artist/richthofen" class="artist">Richthofen</a> <br /><a title="[Album692569]" href="/release/album/richthofen/seelenwalzer/" class="album">Seelenwalzer</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/richthofen/seelenwalzer/">Avg rating: <b>3.69</b> | Ratings: <b>8</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/richthofen/seelenwalzer/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">92</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/richthofen/helden_der_zeit/"><img  width="150" id="img_l_692575"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c42563ba80833fda64a258a1c163ff1b/1735701.jpg"  alt="Helden der Zeit" title="Helden der Zeit" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist164885]"  href="/artist/richthofen" class="artist">Richthofen</a> <br /><a title="[Album692575]" href="/release/album/richthofen/helden_der_zeit/" class="album">Helden der Zeit</a></span>
+         <span class="mediumg">(1999)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/richthofen/helden_der_zeit/">Avg rating: <b>3.25</b> | Ratings: <b>7</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/richthofen/helden_der_zeit/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">93</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/silber/hier_und_jetzt/"><img  height="150" id="img_l_1331047"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/27bc9c6d0052c1def00bd0170cbfc0f3/2177990.jpg"  alt="Hier und Jetzt" title="Hier und Jetzt" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist100723]"  href="/artist/silber" class="artist">Silber</a> <br /><a title="[Album1331047]" href="/release/album/silber/hier_und_jetzt/" class="album">Hier und Jetzt</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/silber/hier_und_jetzt/">Avg rating: <b>3.77</b> | Ratings: <b>4</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/silber/hier_und_jetzt/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">94</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stoneman/goldmarie/"><img  width="150" id="img_l_5473433"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/7929ed25e25a56ca577e9d94730dc4c3/5223931.jpg"  alt="Goldmarie" title="Goldmarie" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist164855]"  href="/artist/stoneman" class="artist">Stoneman</a> <br /><a title="[Album5473433]" href="/release/album/stoneman/goldmarie/" class="album">Goldmarie</a></span>
+         <span class="mediumg">(2014)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stoneman/goldmarie/">Avg rating: <b>3.59</b> | Ratings: <b>5</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/stoneman/goldmarie/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">95</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stahlhammer/wiener_blut/"><img  width="150" id="img_l_110528"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a0be1d4973d633f9fcb2eceaa379dbea/1242260.jpg"  alt="Wiener Blut" title="Wiener Blut" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist26333]"  href="/artist/stahlhammer" class="artist">Stahlhammer</a> <br /><a title="[Album110528]" href="/release/album/stahlhammer/wiener_blut/" class="album">Wiener Blut</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stahlhammer/wiener_blut/">Avg rating: <b>3.39</b> | Ratings: <b>5</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/stahlhammer/wiener_blut/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">96</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/b_o_s_c_h_/einsam/"><img  width="150" id="img_l_3331308"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e66292649056790f404ea0ca7f2d4e50/3561093.jpg"  alt="Einsam" title="Einsam" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist676428]"  href="/artist/b_o_s_c_h_" class="artist">b.o.s.c.h.</a> <br /><a title="[Album3331308]" href="/release/album/b_o_s_c_h_/einsam/" class="album">Einsam</a></span>
+         <span class="mediumg">(2010)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/b_o_s_c_h_/einsam/">Avg rating: <b>3.75</b> | Ratings: <b>2</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/b_o_s_c_h_/einsam/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">97</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/b_o_s_c_h_/apparat/"><img  width="150" id="img_l_4579628"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/eefc67315b733f66022827a599006fc1/4790987.jpg"  alt="Apparat" title="Apparat" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist676428]"  href="/artist/b_o_s_c_h_" class="artist">b.o.s.c.h.</a> <br /><a title="[Album4579628]" href="/release/album/b_o_s_c_h_/apparat/" class="album">Apparat</a></span>
+         <span class="mediumg">(2013)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/b_o_s_c_h_/apparat/">Avg rating: <b>2.63</b> | Ratings: <b>4</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/b_o_s_c_h_/apparat/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">98</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/nik_page/rocketqueen/"><img  width="150" id="img_l_2703599"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/9418e4cb9afed15e34daae41594c32ea/2936885.jpg"  alt="Rocketqueen" title="Rocketqueen" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist335079]"  href="/artist/nik_page" class="artist">Nik Page</a> <br /><a title="[Album2703599]" href="/release/album/nik_page/rocketqueen/" class="album">Rocketqueen</a></span>
+         <span class="mediumg">(2009)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre427]" class="genre" href="/genre/Industrial+Rock/">Industrial Rock</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/nik_page/rocketqueen/">Avg rating: <b>3.43</b> | Ratings: <b>4</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/nik_page/rocketqueen/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">99</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stahlhammer/killerinstinkt/"><img  height="150" id="img_l_110527"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d5d2a0c9ec33896219d166436014253f/1242259.jpg"  alt="Killerinstinkt" title="Killerinstinkt" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist26333]"  href="/artist/stahlhammer" class="artist">Stahlhammer</a> <br /><a title="[Album110527]" href="/release/album/stahlhammer/killerinstinkt/" class="album">Killerinstinkt</a></span>
+         <span class="mediumg">(1995)</span><br /><br /><a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stahlhammer/killerinstinkt/">Avg rating: <b>2.62</b> | Ratings: <b>5</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/stahlhammer/killerinstinkt/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">100</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/drecksau/kaltekammer/"><img  width="150" id="img_l_113564"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/45f89bcd9c309d9a3c8f833f9ddead49/3247422.jpg"  alt="Kältekammer" title="Kältekammer" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist26503]"  href="/artist/drecksau" class="artist">Drecksau</a> <br /><a title="[Album113564]" href="/release/album/drecksau/kaltekammer/" class="album">Kältekammer</a></span>
+         <span class="mediumg">(2003)</span><br /><br /><a title="[Genre139]" class="genre" href="/genre/Doom+Metal/">Doom Metal</a>, <a title="[Genre21227]" class="genre" href="/genre/Neue+Deutsche+H%c3%a4rte/">Neue Deutsche Härte</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/drecksau/kaltekammer/">Avg rating: <b>3.00</b> | Ratings: <b>3</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/drecksau/kaltekammer/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr style="background:white;"><td></td><td colspan=2>
+<!-- Running 129 for 34 -->
+<script language="javascript"><!--
+document.write('<scr'+'ipt language="javascript1.1" src="https://adserver.adtechus.com/addyn/3.0/9926.1/3568178/0/2473/ADTECH;loc=100;target=_blank;key=key1+key2+key3+key4;grp=[group];misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="https://adserver.adtechus.com/adlink/3.0/9926.1/3568178/0/2473/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" target="_blank"><img src="https://adserver.adtechus.com/adserv/3.0/9926.1/3568178/0/2473/ADTECH;loc=300;key=key1+key2+key3+key4;grp=[group]" border="0" width="970" height="90"></a></noscript></td></tr></table><div class="clear"> </div><div style="padding:10px;font-size:small;text-align:center;font-weight:bold;background:#eee;border:#888 1px solid;">1 - 100 | <a href="javascript:goPage(2);">101 - 114</a> </div><div class="clear"> </div>
+     <script type="text/javascript">
+      var delayLoadImgCount = 0
+      $('.delayloadimg').appear(function() { delayLoadImgCount++ ; $(this).attr('src', $(this).attr('data-delayloadurl')); } , { extendheight:400 } );
+     </script>
+  
+
+<!-- ~~~~~~~~ end content ~~~~~~~~~~~~~~~ -->
+<div id="myModal" class="reveal-modal">
+  <div id="modal_content">
+  </div>
+     <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<!--trick--><div style="clear:both;"></div>
+</div>
+<div id="navbottom">
+    <ul>
+      <li><a href="/listen/all">RYM Artists</a></li>
+      <li><a href="/wiki/RYM:FAQ">FAQ</a></li>
+      <li><a href="/tos">Terms of Service</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/suggestions">Website Feedback</a></li>
+      <li><a href="/help/">Help</a></li>
+   </ul>
+  
+   <script> function areAdsBlocked() { return ($('#ad_1').length == 0) } 
+   function politeAdRequest() {
+      var xx = '<div class=abpmessage>RYM relies on advertising income to support the site.  Please consider adding an exception to adblock for rateyourmusic.com, or <a href=/subscribe>subscribing</a> to help with bandwidth/server costs.</div>' 
+      $('#content').prepend(xx)
+   }
+
+   </script>
+ 
+      <script>if(areAdsBlocked()) { politeAdRequest() }</script>
+   
+
+<table><tr><td style="width:100%;text-align:center;"><address>&copy; 2000 - 2015 Sonemic, Inc. &nbsp; &nbsp; &nbsp; </td></tr></table> 
+
+</div>
+</div>		
+</script>
+</body>
+</html>
+ 
+ 

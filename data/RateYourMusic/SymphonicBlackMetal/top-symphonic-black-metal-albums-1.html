@@ -1,0 +1,2340 @@
+ 
+
+   <!DOCTYPE html>
+
+<html class="theme_">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Custom chart - Rate Your Music</title> 
+
+   <link rel="stylesheet" href="https://eedcaf578e7d885badc9-0c1519f9f8b9246bced82ab9b996aa5e.ssl.cf1.rackcdn.com/min25.css" type="text/css"/>
+   <link rel="shortcut icon" href="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/favicon.ico" type="image/x-icon"/>
+    <style type="text/css">
+         h4 { font-weight:bold; }
+
+         span.contributors a {
+            text-decoration:none;
+            font-size:0.9em !important;
+            color:#333  !important;
+         }
+         span.contributors span.userd {
+            text-decoration:none;
+            font-size:0.9em !important;
+            color:#999  !important;            
+         }
+#wiki_content_text {
+padding-left: 2em !important;
+padding-right: 2em !important;
+padding-bottom: 25px !important;
+width:auto !important;
+box-sizing: content-box;
+}
+
+      </style>
+   
+      <meta name="apple-mobile-web-app-capable" content="yes" />   
+  
+   <meta name="description" content="Rate Your Music is an online community of people who love music.  Catalog, rate, tag, and review your music.  List and review the concerts you've attended, and track upcoming shows.   When you rate your music, the site's music/social recommender can recommend similar music and users with similar music taste. " />
+   <meta name="keywords" content="rate your music, rate music, rate albums, music catalog, music catalogue, social software, album reviews, music lists, community, music recommendations, concert listings, record labels, venues, shows" /><script type="text/javascript" src="/web_ads/advertisement.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="/images/rym.min.4.js"></script>
+<script type="text/javascript">rym.session.init(0, '0', '');</script>
+
+<script type="text/javascript">
+
+/* google analytics */ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-59057-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+
+<body>
+<div id="wrapper">
+
+
+	<div id="navtop"><div class="mobile_header_btn" onClick="$('#navlist').fadeToggle(100);">rym <i class="fa fa-caret-down"></i></div><ul id="navlist">
+		<li><a style="padding-top:3px;padding-bottom:4px;" title="Front Page"  href="/" >
+         <span class="hide-for-small"><img id="rstar" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/rstar.gif" alt="" /><span id="logotext">rym</span></span>
+         <span class="show-for-small">front page</span>
+         </a></a></li>
+		<li><a title="Find Music"   href="/find/" >find</a></li>
+		<li><a title="Read and make lists"  href="/lists/" >lists</a></li>
+		<li><a title="View top charts by year, location, genre and more!"  href="/customchart" >charts</a></li>
+
+		<li><a title="Message Boards and Member Directory"    href="/community/" >community</a></li>
+
+		<li><a  href="/account/login"  >log in / sign up</a></li>		
+	</ul>
+
+
+  <div class="helplink"><a href="/help">help</a></div>
+
+  <div class="main_searchbar">
+   <form id="mainsearch" action="/search">
+      <input type="hidden" name="searchtype" id="searchtype" value="a" />
+      <input tabindex="1" name="searchterm" 
+           value=""
+            style="background:none;border:none;outline:none;width:110px;padding:3px;" 
+            placeholder="Search...">
+      <div tabindex="3" id="mainsearch_submit" onKeyDown="if (event.keyCode == 13 || event.keyCode == 20) { $('#mainsearch')[0].submit();}"  onClick="$('#mainsearch')[0].submit();" style="cursor:pointer;float:right;color:#777;font-size: 0.8em;line-height: 22px;margin-left:3px;padding-left:8px;padding-right:5px;background:#E6E6E6">
+         ▶
+      </div>
+      <div tabindex="2" class="search_options_frame" onMouseOver="$('#search_options').show()" onMouseOut="$('#search_options').hide();"
+      onFocus="$('#search_options').show()" onBlur="$('#search_options').hide();" onKeyDown="cycleSearchType(event);">
+         <span id="searchtype_selected">Artists</span> ▾
+
+         <div id="search_options" class="search_options" >
+            <div class="search_option_header">Music</div>
+               <div onClick="selectSearchType('a');" id="searchtype_a" class="searchtype_option current">Artists</div>
+               <div onClick="selectSearchType('l');" id="searchtype_l" class="searchtype_option">All releases</div>
+               <div onClick="selectSearchType('y');" id="searchtype_y" class="searchtype_option">V/A releases</div>
+               <div onClick="selectSearchType('b');" id="searchtype_b" class="searchtype_option">Label</div>
+               <div onClick="selectSearchType('j');" id="searchtype_j" class="searchtype_option">Catalog No.</div>
+               <div onClick="selectSearchType('r');" id="searchtype_r" class="searchtype_option">Classical work</div>
+               <div onClick="selectSearchType('v');" id="searchtype_v" class="searchtype_option">Review</div>
+               <div onClick="selectSearchType('g');" id="searchtype_g" class="searchtype_option">Genre</div>
+
+            <div class="search_option_header">Film</div>
+
+               <div onClick="selectSearchType('F');" id="searchtype_F" class="searchtype_option">Film title</div>
+               <div onClick="selectSearchType('A');" id="searchtype_A" class="searchtype_option">Film cast/crew</div>
+            
+            <div class="search_option_header">Site</div>
+
+               <div onClick="selectSearchType('u');" id="searchtype_u" class="searchtype_option">User</div>
+               <div onClick="selectSearchType('p');" id="searchtype_p" class="searchtype_option">Boards</div>
+               <div onClick="selectSearchType('s');" id="searchtype_s" class="searchtype_option">List</div>
+
+         </div>
+      </div>
+   </form>
+  </div>
+  <script>
+      function cycleSearchType(event) {
+
+         var searchTypes = new Array('a', 'l', 'y', 'b', 'j', 'r', 'v', 'g', 'F', 'A', 'u', 'p', 's');
+         var len = searchTypes.length;
+         var currentVal = $('#searchtype').val();
+         var currentIndex = searchTypes.indexOf(currentVal);
+         var nextIndex = currentIndex+1;
+         var prevIndex = currentIndex-1;
+         if ( nextIndex == len ) {
+            nextIndex = 0;
+         }
+         if ( prevIndex < 0 ) {
+            prevIndex = len-1;
+         }
+
+         var nextType = searchTypes[nextIndex];
+         var prevType = searchTypes[prevIndex];
+
+
+         switch (event.keyCode) {
+            case 40: 
+               selectSearchType(nextType);
+               event.preventDefault();
+            break;
+
+            case 38:
+               selectSearchType(prevType);
+               event.preventDefault();
+            break;
+
+            case 13:
+               $('#mainsearch')[0].submit();
+               event.preventDefault();
+            break;
+            default: 
+               
+            break;
+         }
+
+        
+         return false;
+
+      }
+      function selectSearchType(type) {
+         $('#searchtype').val(type);
+         $('#searchtype_selected').text($('#searchtype_' + type).text());
+         $('#search_options').hide();
+      }
+      selectSearchType('a')
+  </script>
+
+
+</div>
+
+<!-- trick --><div style="clear:both;"></div>
+
+
+ 
+ <!-- ~~~~~~~~ begin content! ~~~~~~~~~~~~~~~ -->
+ <div id="content" style="border-top:none;"><script type="text/javascript" src="https://aa51943acdd0baa94a6e-d133dbbbd17c5adb5c698e6074ced43d.ssl.cf1.rackcdn.com/jquery-appear-b1.js"></script><div id="breadcrumb"><ul> <li class="lnk"><a href="/charts/">Charts <b>&gt;</b></a></li><li class="current">Custom chart</li></ul></div>
+<!-- Running 60 for 4 -->
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7116019216064530";
+/* Charts: top 720 */
+google_ad_slot = "9966460452";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> 
+
+    <script type="text/javascript">
+      function goPage(page)
+      {
+        document.getElementById('page').value = page;
+        document.getElementById('chartForm').submit();
+      }
+    </script>
+    
+    
+    <div id="searchsuggestions" style="visibility:hidden;position:absolute;" ></div>
+  <script type="text/javascript" src="https://aa51943acdd0baa94a6e-d133dbbbd17c5adb5c698e6074ced43d.ssl.cf1.rackcdn.com/basereq-min.js"></script>
+    <script type="text/javascript" src="/sourced/autosuggest.js?pre=descriptor&type=h&context=p"></script>
+<script type="text/javascript" src="/sourced/autosuggest.js?pre=country"></script>
+
+    <style type="text/css">
+ 
+a.genre { font-weight:bold; } 
+a.gray { color: gray; } 
+div.genrea { padding:5px; margin: 5px; background: #cfc; border:#282 2px solid; } 
+div.genred { padding:5px; margin: 5px;  background: #ddd; border:#666 2px solid; color:#555; } 
+
+</style>
+    <div style="background:#eee;font-size:small;margin:10px;padding:10px;"><form id="chartForm">
+<input type="hidden" id="page" name="page" value="1" />
+
+<select name="chart_type">
+ <option selected  value="top">Top</option>
+ <option  value="esoteric">Esoteric</option>
+ <option  value="bottom">Bottom</option>
+</select>
+<select name="type">
+ <option selected  value="album" >albums</option>
+ <option   value="ep">EPs</option>
+ <option   value="single">singles</option>
+ <option   value="mixtape">mixtapes</option>
+ <option   value="djmix">DJ mixes</option>
+ <option   value="comp">compilations</option>
+ <option   value="video">videos</option>
+ <option   value="unauth">bootlegs</option>
+ <option   value="everything">everything</option>
+</select>
+
+  from <select name="year"/>
+ <option value="alltime">all-time</option>
+ <option  value="2010s">2010s</option>
+ <option  value="2000s">2000s</option>
+ <option  value="1990s">1990s</option>
+ <option  value="1980s">1980s</option>
+ <option  value="1970s">1970s</option>
+ <option  value="1960s">1960s</option>
+ <option  value="1950s">1950s</option>
+ <option  value="1940s">1940s</option>
+ <option  value="1930s">1930s</option>
+ <option  value="1920s">1920s</option>
+ <option  value="1910s">1910s</option>
+ <option  value="1900s">1900s</option>
+ 
+ <option  value="2015">2015</option><option  value="2014">2014</option><option  value="2013">2013</option><option  value="2012">2012</option><option  value="2011">2011</option><option  value="2010">2010</option><option  value="2009">2009</option><option  value="2008">2008</option><option  value="2007">2007</option><option  value="2006">2006</option><option  value="2005">2005</option><option  value="2004">2004</option><option  value="2003">2003</option><option  value="2002">2002</option><option  value="2001">2001</option><option  value="2000">2000</option><option  value="1999">1999</option><option  value="1998">1998</option><option  value="1997">1997</option><option  value="1996">1996</option><option  value="1995">1995</option><option  value="1994">1994</option><option  value="1993">1993</option><option  value="1992">1992</option><option  value="1991">1991</option><option  value="1990">1990</option><option  value="1989">1989</option><option  value="1988">1988</option><option  value="1987">1987</option><option  value="1986">1986</option><option  value="1985">1985</option><option  value="1984">1984</option><option  value="1983">1983</option><option  value="1982">1982</option><option  value="1981">1981</option><option  value="1980">1980</option><option  value="1979">1979</option><option  value="1978">1978</option><option  value="1977">1977</option><option  value="1976">1976</option><option  value="1975">1975</option><option  value="1974">1974</option><option  value="1973">1973</option><option  value="1972">1972</option><option  value="1971">1971</option><option  value="1970">1970</option><option  value="1969">1969</option><option  value="1968">1968</option><option  value="1967">1967</option><option  value="1966">1966</option><option  value="1965">1965</option><option  value="1964">1964</option><option  value="1963">1963</option><option  value="1962">1962</option><option  value="1961">1961</option><option  value="1960">1960</option><option  value="1959">1959</option><option  value="1958">1958</option><option  value="1957">1957</option><option  value="1956">1956</option><option  value="1955">1955</option><option  value="1954">1954</option><option  value="1953">1953</option><option  value="1952">1952</option><option  value="1951">1951</option><option  value="1950">1950</option><option  value="1949">1949</option><option  value="1948">1948</option><option  value="1947">1947</option><option  value="1946">1946</option><option  value="1945">1945</option><option  value="1944">1944</option><option  value="1943">1943</option><option  value="1942">1942</option><option  value="1941">1941</option><option  value="1940">1940</option><option  value="1939">1939</option><option  value="1938">1938</option><option  value="1937">1937</option><option  value="1936">1936</option><option  value="1935">1935</option><option  value="1934">1934</option><option  value="1933">1933</option><option  value="1932">1932</option><option  value="1931">1931</option><option  value="1930">1930</option><option  value="1929">1929</option><option  value="1928">1928</option><option  value="1927">1927</option><option  value="1926">1926</option><option  value="1925">1925</option><option  value="1924">1924</option><option  value="1923">1923</option><option  value="1922">1922</option><option  value="1921">1921</option><option  value="1920">1920</option><option  value="1919">1919</option><option  value="1918">1918</option><option  value="1917">1917</option><option  value="1916">1916</option><option  value="1915">1915</option><option  value="1914">1914</option><option  value="1913">1913</option><option  value="1912">1912</option><option  value="1911">1911</option><option  value="1910">1910</option><option  value="1909">1909</option><option  value="1908">1908</option><option  value="1907">1907</option><option  value="1906">1906</option><option  value="1905">1905</option><option  value="1904">1904</option><option  value="1903">1903</option><option  value="1902">1902</option><option  value="1901">1901</option><option  value="1900">1900</option>
+</select>
+<br /><br />
+
+<select name="genre_include">
+ <option value="1">Only include genres:</option>
+ <option value="0" >Include all genres except:</option>
+</select> | 
+<input type="hidden" name="include_child_genres" id="include_child_genres" value="1" />
+<input type="text" size="40" name="genres" id="genres" value="symphonic black metal" onFocus="descriptorattachSuggest(this.id);" /> | <label for="include_child_genres_chk"><input type="checkbox" checked="checked" id="include_child_genres_chk" name="include_child_genres_chk" value="1" onChange="$('#include_child_genres').val($(this).is(':checked')?1:0)"/> + sub-genres</label>
+
+<br />
+<br />
+
+
+<select id="include" name="include">
+  <option value="both" selected="selected">Include</option>
+  <option value="only" >Show exclusively</option>
+<br />
+</select>
+|     
+<label for="include_archival">
+<input type="checkbox"  id="include_archival" name="include_archival" value="t" /> archival
+</label>
+<label for="include_live">
+<input type="checkbox"  id="include_live" name="include_live" value="t" /> live
+</label>
+<br /><br />
+<label for="limit_origin_country">
+Limit to artists who were born in (or are currently located in) the following countries:
+<input name=origin_countries id="origin_countries" value="" onFocus="countryattachSuggest(this.id)"  size="15">
+</label>
+<br />
+
+
+<br />
+<br />
+
+
+<label for="limit_none"><input type="radio" name="limit" checked="checked" value="none"> As rated by all RYM users </input> </label>
+<br />
+<label for="limit_country">
+<input type="radio" name="limit"   value="country">
+As rated by members in the following countries: 
+<input name=countries id="countries" onFocus="countryattachSuggest(this.id)"  value="" size="15">
+</label>
+<br />
+<!-- 
+<label for="limit_city">
+<input type="radio" name="limit"   value="country">
+As rated by members within  
+<input type="numeric" size="3" name="km"> km of 
+<div style="float:left;width:8em;font-size:x-small;">
+<input type="text" style="width:100%;" name="city" id="city"/>
+<br />(City)</div> 
+<div style="float:left;width:15em;font-size:x-small;">
+<input type="text" style="width:100%;" name="region" id="region"/>
+<br />(Region/State/Province)</div> 
+<div style="float:left;width:40em;font-size:x-small;">
+ <select name="country" id="country"><option value=""> 
+<option value="AF" >Afghanistan<br>
+<option value="AL" >Albania<br>
+<option value="DZ" >Algeria<br>
+<option value="AS" >American Samoa<br>
+<option value="AD" >Andorra<br>
+<option value="AO" >Angola<br>
+<option value="AI" >Anguilla<br>
+<option value="AQ" >Antarctica<br>
+<option value="AG" >Antigua and Barbuda<br>
+<option value="AR" >Argentina<br>
+<option value="AM" >Armenia<br>
+<option value="AW" >Aruba<br>
+<option value="AU" >Australia<br>
+<option value="AT" >Austria<br>
+<option value="AZ" >Azerbaijan<br>
+<option value="BS" >Bahamas<br>
+<option value="BH" >Bahrain<br>
+<option value="BD" >Bangladesh<br>
+<option value="BB" >Barbados<br>
+<option value="BY" >Belarus<br>
+<option value="BE" >Belgium<br>
+<option value="BZ" >Belize<br>
+<option value="BJ" >Benin<br>
+<option value="BM" >Bermuda<br>
+<option value="BT" >Bhutan<br>
+<option value="BO" >Bolivia<br>
+<option value="BQ" >Bonaire, Sint Eustatius, and Saba<br>
+<option value="BA" >Bosnia-Herzegovina<br>
+<option value="BW" >Botswana<br>
+<option value="BV" >Bouvet Island<br>
+<option value="BR" >Brazil<br>
+<option value="IO" >British Indian Ocean Territory<br>
+<option value="VG" >British Virgin Islands<br>
+<option value="BN" >Brunei Darussalam<br>
+<option value="BG" >Bulgaria<br>
+<option value="BF" >Burkina Faso<br>
+<option value="BU" >Burma<br>
+<option value="BI" >Burundi<br>
+<option value="KH" >Cambodia<br>
+<option value="CM" >Cameroon<br>
+<option value="CA" >Canada<br>
+<option value="CI" >Canary Islands<br>
+<option value="CV" >Cape Verde<br>
+<option value="KY" >Cayman Islands<br>
+<option value="CF" >Central African Republic<br>
+<option value="TD" >Chad<br>
+<option value="CL" >Chile<br>
+<option value="CN" >China<br>
+<option value="CX" >Christmas Island<br>
+<option value="CC" >Cocos Island<br>
+<option value="CO" >Colombia<br>
+<option value="KM" >Comoros<br>
+<option value="CG" >Congo<br>
+<option value="CK" >Cook Islands<br>
+<option value="CR" >Costa Rica<br>
+<option value="HR" >Croatia<br>
+<option value="CU" >Cuba<br>
+<option value="CW" >Curaçao<br>
+<option value="CY" >Cyprus<br>
+<option value="CS" >Czechoslovakia (Former)<br>
+<option value="CZ" >Czech Republic<br>
+<option value="CD" >Democratic Republic of Congo<br>
+<option value="DK" >Denmark<br>
+<option value="DJ" >Djibouti<br>
+<option value="DM" >Dominica<br>
+<option value="DO" >Dominican Republic<br>
+<option value="TP" >East Timor<br>
+<option value="EC" >Ecuador<br>
+<option value="EG" >Egypt<br>
+<option value="SV" >El Salvador<br>
+<option value="GQ" >Equatorial Guinea<br>
+<option value="ER" >Eritrea<br>
+<option value="EE" >Estonia<br>
+<option value="ET" >Ethiopia<br>
+<option value="FK" >Falkland Islands<br>
+<option value="FO" >Faroe Islands<br>
+<option value="FJ" >Fiji<br>
+<option value="FI" >Finland<br>
+<option value="FR" >France<br>
+<option value="GF" >French Guiana<br>
+<option value="TF" >French Southern Territories<br>
+<option value="MK" >FYRO Macedonia<br>
+<option value="GA" >Gabon<br>
+<option value="GM" >Gambia<br>
+<option value="GE" >Georgia<br>
+<option value="GS" >Georgia & Sandwich Islands<br>
+<option value="DE" >Germany<br>
+<option value="GH" >Ghana<br>
+<option value="GI" >Gibraltar<br>
+<option value="GR" >Greece<br>
+<option value="GL" >Greenland<br>
+<option value="GD" >Grenada<br>
+<option value="GP" >Guadeloupe<br>
+<option value="GU" >Guam<br>
+<option value="GT" >Guatemala<br>
+<option value="GG" >Guernsey<br>
+<option value="GN" >Guinea<br>
+<option value="GW" >Guinea-Bissau<br>
+<option value="GY" >Guyana<br>
+<option value="HT" >Haiti<br>
+<option value="HM" >Heard Island and McDonald Islands<br>
+<option value="HN" >Honduras<br>
+<option value="HK" >Hong Kong<br>
+<option value="HU" >Hungary<br>
+<option value="IS" >Iceland<br>
+<option value="IN" >India<br>
+<option value="ID" >Indonesia<br>
+<option value="IR" >Iran<br>
+<option value="IQ" >Iraq<br>
+<option value="IE" >Ireland<br>
+<option value="IM" >Isle of Man<br>
+<option value="IL" >Israel<br>
+<option value="IT" >Italy<br>
+<option value="IC" >Ivory Coast<br>
+<option value="JM" >Jamaica<br>
+<option value="JP" >Japan<br>
+<option value="JE" >Jersey<br>
+<option value="JO" >Jordan<br>
+<option value="KZ" >Kazakhstan<br>
+<option value="KE" >Kenya<br>
+<option value="KI" >Kiribati<br>
+<option value="XK" >Kosovo<br>
+<option value="KW" >Kuwait<br>
+<option value="KG" >Kyrgyzstan<br>
+<option value="LA" >Laos<br>
+<option value="LV" >Latvia<br>
+<option value="LB" >Lebanon<br>
+<option value="LS" >Lesotho<br>
+<option value="LR" >Liberia<br>
+<option value="LY" >Libya<br>
+<option value="LI" >Liechtenstein<br>
+<option value="LT" >Lithuania<br>
+<option value="LU" >Luxembourg<br>
+<option value="MO" >Macau<br>
+<option value="MG" >Madagascar<br>
+<option value="MW" >Malawi<br>
+<option value="MY" >Malaysia<br>
+<option value="MV" >Maldives<br>
+<option value="ML" >Mali<br>
+<option value="MT" >Malta<br>
+<option value="MH" >Marshall Islands<br>
+<option value="MQ" >Martinique<br>
+<option value="MR" >Mauritania<br>
+<option value="MU" >Mauritius<br>
+<option value="YT" >Mayotte<br>
+<option value="MX" >Mexico<br>
+<option value="FM" >Micronesia<br>
+<option value="MD" >Moldova<br>
+<option value="MC" >Monaco<br>
+<option value="MN" >Mongolia<br>
+<option value="ME" >Montenegro<br>
+<option value="MS" >Montserrat<br>
+<option value="MA" >Morocco<br>
+<option value="MZ" >Mozambique<br>
+<option value="MM" >Myanmar (Former Burma)<br>
+<option value="NA" >Namibia<br>
+<option value="NR" >Nauru<br>
+<option value="NP" >Nepal<br>
+<option value="NL" >Netherlands<br>
+<option value="AN" >Netherlands Antilles<br>
+<option value="NC" >New Caledonia<br>
+<option value="NZ" >New Zealand<br>
+<option value="NI" >Nicaragua<br>
+<option value="NE" >Niger<br>
+<option value="NG" >Nigeria<br>
+<option value="NU" >Niue<br>
+<option value="NF" >Norfolk Island<br>
+<option value="MP" >Northern Marianas<br>
+<option value="KP" >North Korea<br>
+<option value="NO" >Norway<br>
+<option value="OM" >Oman<br>
+<option value="PK" >Pakistan<br>
+<option value="PW" >Palau<br>
+<option value="PS" >Palestine National Authority<br>
+<option value="PA" >Panama<br>
+<option value="PG" >Papua New Guinea<br>
+<option value="PY" >Paraguay<br>
+<option value="PE" >Peru<br>
+<option value="PH" >Philippines<br>
+<option value="PN" >Pitcairn Islands<br>
+<option value="PL" >Poland<br>
+<option value="PF" >Polynesia<br>
+<option value="PT" >Portugal<br>
+<option value="PR" >Puerto Rico<br>
+<option value="QA" >Qatar<br>
+<option value="RE" >Reunion<br>
+<option value="RO" >Romania<br>
+<option value="RU" >Russian Federation<br>
+<option value="RW" >Rwanda<br>
+<option value="BL" >Saint Barthélemy<br>
+<option value="KN" >Saint Kitts and Nevis<br>
+<option value="LC" >Saint Lucia<br>
+<option value="MF" >Saint Martin (French)<br>
+<option value="VC" >Saint Vincent and the Grenadines<br>
+<option value="WS" >Samoa<br>
+<option value="SM" >San Marino<br>
+<option value="ST" >Sao Tome<br>
+<option value="SA" >Saudi Arabia<br>
+<option value="SN" >Senegal<br>
+<option value="RS" >Serbia<br>
+<option value="YU" >Serbia and Montenegro (obsolete)<br>
+<option value="SC" >Seychelles<br>
+<option value="SL" >Sierra Leone<br>
+<option value="SG" >Singapore<br>
+<option value="SX" >Sint Maarten (Dutch part)<br>
+<option value="SK" >Slovakia<br>
+<option value="SI" >Slovenia<br>
+<option value="SB" >Solomon Islands<br>
+<option value="SO" >Somalia<br>
+<option value="ZA" >South Africa<br>
+<option value="KR" >South Korea<br>
+<option value="SS" >South Sudan<br>
+<option value="ES" >Spain<br>
+<option value="LK" >Sri Lanka<br>
+<option value="SH" >St. Helena<br>
+<option value="PM" >St Pierre And Miquelon<br>
+<option value="SD" >Sudan<br>
+<option value="SR" >Suriname<br>
+<option value="SJ" >Svalbard And Jan Mayen<br>
+<option value="SZ" >Swaziland<br>
+<option value="SE" >Sweden<br>
+<option value="CH" >Switzerland<br>
+<option value="SY" >Syria<br>
+<option value="TJ" >Tadjikistan<br>
+<option value="TW" >Taiwan<br>
+<option value="TZ" >Tanzania<br>
+<option value="TH" >Thailand<br>
+<option value="TL" >Timor-Leste<br>
+<option value="TG" >Togo<br>
+<option value="TK" >Tokelau<br>
+<option value="TO" >Tonga<br>
+<option value="TT" >Trinidad and Tobago<br>
+<option value="TN" >Tunisia<br>
+<option value="TR" >Turkey<br>
+<option value="TM" >Turkmenistan<br>
+<option value="TC" >Turks And Caicos Islands<br>
+<option value="TV" >Tuvalu<br>
+<option value="UG" >Uganda<br>
+<option value="UA" >Ukraine<br>
+<option value="AE" >United Arab Emirates<br>
+<option value="GB" >United Kingdom<br>
+<option value="US" >United States<br>
+<option value="UY" >Uruguay<br>
+<option value="UM" >US Minor Outlying Islands<br>
+<option value="EH" >US-Western Sahara<br>
+<option value="UZ" >Uzbekistan<br>
+<option value="VU" >Vanuatu<br>
+<option value="VA" >Vatican City State<br>
+<option value="VE" >Venezuela<br>
+<option value="VN" >Vietnam<br>
+<option value="VI" >Virgin Islands<br>
+<option value="WF" >Wallis And Futuna Islands<br>
+<option value="YE" >Yemen<br>
+<option value="ZM" >Zambia<br>
+<option value="ZW" >Zimbabwe<br>
+</select>
+<br />(Country)
+</div>
+
+
+</label> 
+<br />-->
+
+<label for="limit_friends"><input id="limit_friends" type="radio" name="limit"   value="friends"> As rated by my friends </input> </label>
+<br />
+
+<br /><input type="button" onClick="document.getElementById('page').value=1;this.form.submit();" value="Show chart &gt;" /> 
+
+
+
+</form></div><div class="clear"> </div><div style="text-align:right;font-size:x-small;padding:10px;border:#888 1px solid; background:#eee; color:#888;">Want to know more about how charts are calculated?  Read the <a href="/wiki/RYM:Charts FAQ" target="blank" title="Click to view documentation" class="wiki_link">charts FAQ</a></div><div class="clear"> </div><div class="clear"> </div><div style="padding:10px;font-size:small;text-align:center;font-weight:bold;background:#eee;border:#888 1px solid;">1 - 100 | <a href="javascript:goPage(2);">101 - 200</a> | <a href="javascript:goPage(3);">201 - 300</a> | <a href="javascript:goPage(4);">301 - 400</a> | <a href="javascript:goPage(5);">401 - 500</a> | <a href="javascript:goPage(6);">501 - 600</a> | <a href="javascript:goPage(7);">601 - 700</a> | <a href="javascript:goPage(8);">701 - 798</a> </div><div class="clear"> </div><table class="mbgen" style="width:100%"><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">1</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/emperor/anthems_to_the_welkin_at_dusk/"><img  width="150" id="img_l_4194"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/6867eb5d5118df2fd5a78f37ee48aaf4/2608804.jpg"  alt="Anthems to the Welkin at Dusk" title="Anthems to the Welkin at Dusk" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1300]"  href="/artist/emperor" class="artist">Emperor</a> <br /><a title="[Album4194]" href="/release/album/emperor/anthems_to_the_welkin_at_dusk/" class="album">Anthems to the Welkin at Dusk</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/emperor/anthems_to_the_welkin_at_dusk/">Avg rating: <b>3.93</b> | Ratings: <b>3,325</b> | Reviews (total): <b>143</b></a> | <a href="/release/album/emperor/anthems_to_the_welkin_at_dusk/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">2</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/emperor/in_the_nightside_eclipse/"><img  width="150" id="img_l_4193"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/00120a61fdf5d273f58f73427f219a97/1855504.jpg"  alt="In the Nightside Eclipse" title="In the Nightside Eclipse" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1300]"  href="/artist/emperor" class="artist">Emperor</a> <br /><a title="[Album4193]" href="/release/album/emperor/in_the_nightside_eclipse/" class="album">In the Nightside Eclipse</a></span>
+         <span class="mediumg">(1994)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/emperor/in_the_nightside_eclipse/">Avg rating: <b>3.93</b> | Ratings: <b>3,770</b> | Reviews (total): <b>158</b></a> | <a href="/release/album/emperor/in_the_nightside_eclipse/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">3</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/summoning/stronghold/"><img  height="150" id="img_l_22244"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d31887d5fdc4c885dd559d95377923f1/1982146.jpg"  alt="Stronghold" title="Stronghold" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1565]"  href="/artist/summoning" class="artist">Summoning</a> <br /><a title="[Album22244]" href="/release/album/summoning/stronghold/" class="album">Stronghold</a></span>
+         <span class="mediumg">(1999)</span><br /><br /><a title="[Genre20943]" class="genre" href="/genre/Atmospheric+Black+Metal/">Atmospheric Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/summoning/stronghold/">Avg rating: <b>3.81</b> | Ratings: <b>1,457</b> | Reviews (total): <b>44</b></a> | <a href="/release/album/summoning/stronghold/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">4</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/summoning/let_mortal_heroes_sing_your_fame/"><img  width="150" id="img_l_22245"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/9ea19d114ef4561303b0ef1c04908445/3587976.png"  alt="Let Mortal Heroes Sing Your Fame" title="Let Mortal Heroes Sing Your Fame" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1565]"  href="/artist/summoning" class="artist">Summoning</a> <br /><a title="[Album22245]" href="/release/album/summoning/let_mortal_heroes_sing_your_fame/" class="album">Let Mortal Heroes Sing Your Fame</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre20943]" class="genre" href="/genre/Atmospheric+Black+Metal/">Atmospheric Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/summoning/let_mortal_heroes_sing_your_fame/">Avg rating: <b>3.75</b> | Ratings: <b>989</b> | Reviews (total): <b>24</b></a> | <a href="/release/album/summoning/let_mortal_heroes_sing_your_fame/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">5</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/diabolical_masquerade/nightwork/"><img  width="150" id="img_l_16948"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/fcadf015f37f3947d2da55b9990a784b/4753515.jpg"  alt="Nightwork" title="Nightwork" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist4980]"  href="/artist/diabolical_masquerade" class="artist">Diabolical Masquerade</a> <br /><a title="[Album16948]" href="/release/album/diabolical_masquerade/nightwork/" class="album">Nightwork</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/diabolical_masquerade/nightwork/">Avg rating: <b>3.73</b> | Ratings: <b>638</b> | Reviews (total): <b>24</b></a> | <a href="/release/album/diabolical_masquerade/nightwork/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">6</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/summoning/dol_guldur/"><img  width="150" id="img_l_17468"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/bbc891e61cab89de0f4edacfc984aa34/1982148.jpg"  alt="Dol Guldur" title="Dol Guldur" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1565]"  href="/artist/summoning" class="artist">Summoning</a> <br /><a title="[Album17468]" href="/release/album/summoning/dol_guldur/" class="album">Dol Guldur</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre20943]" class="genre" href="/genre/Atmospheric+Black+Metal/">Atmospheric Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/summoning/dol_guldur/">Avg rating: <b>3.70</b> | Ratings: <b>1,029</b> | Reviews (total): <b>30</b></a> | <a href="/release/album/summoning/dol_guldur/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">7</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/summoning/oath_bound/"><img  width="150" id="img_l_512300"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/6af6278ef838eda2a97620e6739425e7/1572703.jpg"  alt="Oath Bound" title="Oath Bound" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1565]"  href="/artist/summoning" class="artist">Summoning</a> <br /><a title="[Album512300]" href="/release/album/summoning/oath_bound/" class="album">Oath Bound</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre20943]" class="genre" href="/genre/Atmospheric+Black+Metal/">Atmospheric Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/summoning/oath_bound/">Avg rating: <b>3.69</b> | Ratings: <b>1,052</b> | Reviews (total): <b>30</b></a> | <a href="/release/album/summoning/oath_bound/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">8</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/samael/passage/"><img  width="150" id="img_l_13988"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3750354696117f0d6f9daa5e21e0fff9/1718804.jpg"  alt="Passage" title="Passage" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist4041]"  href="/artist/samael" class="artist">Samael</a> <br /><a title="[Album13988]" href="/release/album/samael/passage/" class="album">Passage</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/samael/passage/">Avg rating: <b>3.68</b> | Ratings: <b>931</b> | Reviews (total): <b>30</b></a> | <a href="/release/album/samael/passage/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">9</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/emperor/prometheus__the_discipline_of_fire_and_demise/"><img  width="150" id="img_l_4197"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/11878dfc9f34a577c87fdbef078ff585/1968336.jpg"  alt="Prometheus: The Discipline of Fire &amp; Demise" title="Prometheus: The Discipline of Fire &amp; Demise" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1300]"  href="/artist/emperor" class="artist">Emperor</a> <br /><a title="[Album4197]" href="/release/album/emperor/prometheus__the_discipline_of_fire_and_demise/" class="album">Prometheus: The Discipline of Fire &amp; Demise</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre95]" class="genre" href="/genre/Progressive+Metal/">Progressive Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/emperor/prometheus__the_discipline_of_fire_and_demise/">Avg rating: <b>3.64</b> | Ratings: <b>1,661</b> | Reviews (total): <b>65</b></a> | <a href="/release/album/emperor/prometheus__the_discipline_of_fire_and_demise/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">10</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/dimmu_borgir/enthrone_darkness_triumphant/"><img  width="150" id="img_l_8237"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/5aa73b78f64dba7575499ab34ddfb515/2789360.jpg"  alt="Enthrone Darkness Triumphant" title="Enthrone Darkness Triumphant" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist372]"  href="/artist/dimmu_borgir" class="artist">Dimmu Borgir</a> <br /><a title="[Album8237]" href="/release/album/dimmu_borgir/enthrone_darkness_triumphant/" class="album">Enthrone Darkness Triumphant</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/dimmu_borgir/enthrone_darkness_triumphant/">Avg rating: <b>3.61</b> | Ratings: <b>1,777</b> | Reviews (total): <b>75</b></a> | <a href="/release/album/dimmu_borgir/enthrone_darkness_triumphant/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">11</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/emperor/ix_equilibrium/"><img  width="150" id="img_l_4195"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ce65fee77252a00e73f3c6a3e4ccb5dc/1237977.jpg"  alt="IX Equilibrium" title="IX Equilibrium" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1300]"  href="/artist/emperor" class="artist">Emperor</a> <br /><a title="[Album4195]" href="/release/album/emperor/ix_equilibrium/" class="album">IX Equilibrium</a></span>
+         <span class="mediumg">(1999)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/emperor/ix_equilibrium/">Avg rating: <b>3.59</b> | Ratings: <b>1,608</b> | Reviews (total): <b>47</b></a> | <a href="/release/album/emperor/ix_equilibrium/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">12</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/cradle_of_filth/dusk____and_her_embrace/"><img  width="150" id="img_l_1378"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0ed2b1e9dfd3f2f083d5b1e1a65cabc1/1222483.jpg"  alt="Dusk... and Her Embrace" title="Dusk... and Her Embrace" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist371]"  href="/artist/cradle_of_filth" class="artist">Cradle of Filth</a> <br /><a title="[Album1378]" href="/release/album/cradle_of_filth/dusk____and_her_embrace/" class="album">Dusk... and Her Embrace</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/cradle_of_filth/dusk____and_her_embrace/">Avg rating: <b>3.57</b> | Ratings: <b>1,631</b> | Reviews (total): <b>84</b></a> | <a href="/release/album/cradle_of_filth/dusk____and_her_embrace/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">13</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/arcturus/aspera_hiems_symfonia/"><img  width="150" id="img_l_8123"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/49124df5796b5f053d3eaf4aab6fcb3f/2634874.jpg"  alt="Aspera Hiems Symfonia" title="Aspera Hiems Symfonia" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2341]"  href="/artist/arcturus" class="artist">Arcturus</a> <br /><a title="[Album8123]" href="/release/album/arcturus/aspera_hiems_symfonia/" class="album">Aspera Hiems Symfonia</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/arcturus/aspera_hiems_symfonia/">Avg rating: <b>3.60</b> | Ratings: <b>1,097</b> | Reviews (total): <b>33</b></a> | <a href="/release/album/arcturus/aspera_hiems_symfonia/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">14</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/aquilus/griseus/"><img  width="150" id="img_l_3793496"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/50027d2a656e764e2316795c5fafa0ad/4005384.jpg"  alt="Griseus" title="Griseus" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist415536]"  href="/artist/aquilus" class="artist">Aquilus</a> <br /><a title="[Album3793496]" href="/release/album/aquilus/griseus/" class="album">Griseus</a></span>
+         <span class="mediumg">(2011)</span><br /><br /><a title="[Genre20943]" class="genre" href="/genre/Atmospheric+Black+Metal/">Atmospheric Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre201]" class="genre" href="/genre/Modern+Classical/">Modern Classical</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/aquilus/griseus/">Avg rating: <b>3.66</b> | Ratings: <b>250</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/aquilus/griseus/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">15</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/summoning/old_mornings_dawn/"><img  width="150" id="img_l_4337896"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/9bc8fca90a030d7b0c00230f88fb3126/4536256.jpg"  alt="Old Mornings Dawn" title="Old Mornings Dawn" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1565]"  href="/artist/summoning" class="artist">Summoning</a> <br /><a title="[Album4337896]" href="/release/album/summoning/old_mornings_dawn/" class="album">Old Mornings Dawn</a></span>
+         <span class="mediumg">(2013)</span><br /><br /><a title="[Genre20943]" class="genre" href="/genre/Atmospheric+Black+Metal/">Atmospheric Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/summoning/old_mornings_dawn/">Avg rating: <b>3.59</b> | Ratings: <b>783</b> | Reviews (total): <b>36</b></a> | <a href="/release/album/summoning/old_mornings_dawn/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">16</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/limbonic_art/in_abhorrence_dementia/"><img  width="150" id="img_l_10206"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/17fc747a77f29c3f472cb681783f9de1/4357590.jpg"  alt="In Abhorrence Dementia" title="In Abhorrence Dementia" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2855]"  href="/artist/limbonic_art" class="artist">Limbonic Art</a> <br /><a title="[Album10206]" href="/release/album/limbonic_art/in_abhorrence_dementia/" class="album">In Abhorrence Dementia</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/limbonic_art/in_abhorrence_dementia/">Avg rating: <b>3.61</b> | Ratings: <b>442</b> | Reviews (total): <b>11</b></a> | <a href="/release/album/limbonic_art/in_abhorrence_dementia/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">17</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/shade_empire/sinthetic/"><img  height="150" id="img_l_150523"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/89f983eb113ffabbfc3c37dee13cac9e/1334499.jpg"  alt="Sinthetic" title="Sinthetic" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist36217]"  href="/artist/shade_empire" class="artist">Shade Empire</a> <br /><a title="[Album150523]" href="/release/album/shade_empire/sinthetic/" class="album">Sinthetic</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/shade_empire/sinthetic/">Avg rating: <b>3.62</b> | Ratings: <b>231</b> | Reviews (total): <b>8</b></a> | <a href="/release/album/shade_empire/sinthetic/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">18</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/masters_hammer/jilemnicky_okultista_f1/"><img  width="150" id="img_l_890435"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/5bff68646f370f5e62c56a28fd781155/1932023.jpg"  alt="Jilemnický okultista" title="Jilemnický okultista" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist31522]"  href="/artist/masters_hammer" class="artist">Master&#39;s Hammer</a> <br /><a title="[Album890435]" href="/release/album/masters_hammer/jilemnicky_okultista_f1/" class="album">Jilemnický okultista</a></span>
+         <span class="mediumg">(1992)</span><br /><br /><a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/masters_hammer/jilemnicky_okultista_f1/">Avg rating: <b>3.62</b> | Ratings: <b>264</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/masters_hammer/jilemnicky_okultista_f1/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">19</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/cradle_of_filth/cruelty_and_the_beast/"><img  width="150" id="img_l_1380"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/9ea2dc717be1e5d359c36c84177d6757/1222484.jpg"  alt="Cruelty and the Beast" title="Cruelty and the Beast" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist371]"  href="/artist/cradle_of_filth" class="artist">Cradle of Filth</a> <br /><a title="[Album1380]" href="/release/album/cradle_of_filth/cruelty_and_the_beast/" class="album">Cruelty and the Beast</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre212]" class="genre" href="/genre/Gothic+Metal/">Gothic Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/cradle_of_filth/cruelty_and_the_beast/">Avg rating: <b>3.53</b> | Ratings: <b>1,471</b> | Reviews (total): <b>60</b></a> | <a href="/release/album/cradle_of_filth/cruelty_and_the_beast/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">20</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/covenant_f1/nexus_polaris_f1/"><img  width="150" id="img_l_699229"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0272987cd6249d86b4104c5f0f6909e4/4148538.jpg"  alt="Nexus Polaris" title="Nexus Polaris" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist82397]"  href="/artist/covenant_f1" class="artist">Covenant</a> <br /><a title="[Album699229]" href="/release/album/covenant_f1/nexus_polaris_f1/" class="album">Nexus Polaris</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/covenant_f1/nexus_polaris_f1/">Avg rating: <b>3.60</b> | Ratings: <b>465</b> | Reviews (total): <b>12</b></a> | <a href="/release/album/covenant_f1/nexus_polaris_f1/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">21</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/limbonic_art/moon_in_the_scorpio/"><img  width="150" id="img_l_10205"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/b4cbab7ca3057820271455b4dfa5b5aa/1270711.jpg"  alt="Moon in the Scorpio" title="Moon in the Scorpio" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2855]"  href="/artist/limbonic_art" class="artist">Limbonic Art</a> <br /><a title="[Album10205]" href="/release/album/limbonic_art/moon_in_the_scorpio/" class="album">Moon in the Scorpio</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/limbonic_art/moon_in_the_scorpio/">Avg rating: <b>3.56</b> | Ratings: <b>535</b> | Reviews (total): <b>17</b></a> | <a href="/release/album/limbonic_art/moon_in_the_scorpio/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">22</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/necromantia/scarlet_evil_witching_black/"><img  width="150" id="img_l_151070"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/44439045c7ae78cfe6441fcc12be985c/1272087.jpg"  alt="Scarlet Evil Witching Black" title="Scarlet Evil Witching Black" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist14707]"  href="/artist/necromantia" class="artist">Necromantia</a> <br /><a title="[Album151070]" href="/release/album/necromantia/scarlet_evil_witching_black/" class="album">Scarlet Evil Witching Black</a></span>
+         <span class="mediumg">(1995)</span><br /><br /><a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/necromantia/scarlet_evil_witching_black/">Avg rating: <b>3.57</b> | Ratings: <b>292</b> | Reviews (total): <b>10</b></a> | <a href="/release/album/necromantia/scarlet_evil_witching_black/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">23</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/shade_empire/omega_arcane/"><img  width="150" id="img_l_4424613"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e3218649d248040569a265a96490ec07/4702261.jpg"  alt="Omega Arcane" title="Omega Arcane" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist36217]"  href="/artist/shade_empire" class="artist">Shade Empire</a> <br /><a title="[Album4424613]" href="/release/album/shade_empire/omega_arcane/" class="album">Omega Arcane</a></span>
+         <span class="mediumg">(2013)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre433]" class="genre" href="/genre/Melodic+Death+Metal/">Melodic Death Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/shade_empire/omega_arcane/">Avg rating: <b>3.56</b> | Ratings: <b>329</b> | Reviews (total): <b>16</b></a> | <a href="/release/album/shade_empire/omega_arcane/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">24</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/sigh/hangmans_hymn/"><img  width="150" id="img_l_542639"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/1b6d03209b0618e411d26833ee4a654e/1830831.jpg"  alt="Hangman&#39;s Hymn" title="Hangman&#39;s Hymn" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2077]"  href="/artist/sigh" class="artist">Sigh</a> <br /><a title="[Album542639]" href="/release/album/sigh/hangmans_hymn/" class="album">Hangman&#39;s Hymn</a></span>
+         <span class="mediumg">(2007)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/sigh/hangmans_hymn/">Avg rating: <b>3.51</b> | Ratings: <b>817</b> | Reviews (total): <b>44</b></a> | <a href="/release/album/sigh/hangmans_hymn/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">25</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/dimmu_borgir/puritanical_euphoric_misanthropia/"><img  width="150" id="img_l_8240"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/82f4de31b7a995cc1fe0d63f8b2ddbf9/2705197.jpg"  alt="Puritanical Euphoric Misanthropia" title="Puritanical Euphoric Misanthropia" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist372]"  href="/artist/dimmu_borgir" class="artist">Dimmu Borgir</a> <br /><a title="[Album8240]" href="/release/album/dimmu_borgir/puritanical_euphoric_misanthropia/" class="album">Puritanical Euphoric Misanthropia</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/dimmu_borgir/puritanical_euphoric_misanthropia/">Avg rating: <b>3.47</b> | Ratings: <b>1,670</b> | Reviews (total): <b>83</b></a> | <a href="/release/album/dimmu_borgir/puritanical_euphoric_misanthropia/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">26</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/eldrig/everlasting_war_divinity/"><img  width="150" id="img_l_1144410"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/9583c63233fd6ab8631a756f265e88a9/2242254.jpg"  alt="Everlasting War Divinity" title="Everlasting War Divinity" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist199535]"  href="/artist/eldrig" class="artist">Eldrig</a> <br /><a title="[Album1144410]" href="/release/album/eldrig/everlasting_war_divinity/" class="album">Everlasting War Divinity</a></span>
+         <span class="mediumg">(2007)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/eldrig/everlasting_war_divinity/">Avg rating: <b>3.62</b> | Ratings: <b>71</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/eldrig/everlasting_war_divinity/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">27</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/lux_occulta/my_guardian_anger/"><img  width="150" id="img_l_86283"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c289ade8781f71a98bcc392c21b853af/1287158.jpg"  alt="My Guardian Anger" title="My Guardian Anger" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist16297]"  href="/artist/lux_occulta" class="artist">Lux Occulta</a> <br /><a title="[Album86283]" href="/release/album/lux_occulta/my_guardian_anger/" class="album">My Guardian Anger</a></span>
+         <span class="mediumg">(1999)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/lux_occulta/my_guardian_anger/">Avg rating: <b>3.59</b> | Ratings: <b>152</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/lux_occulta/my_guardian_anger/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">28</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/anorexia_nervosa/drudenhaus/"><img  width="150" id="img_l_112130"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d58af76cfb1abac1896f696eeea3f0ed/1243703.jpg"  alt="Drudenhaus" title="Drudenhaus" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist7604]"  href="/artist/anorexia_nervosa" class="artist">Anorexia Nervosa</a> <br /><a title="[Album112130]" href="/release/album/anorexia_nervosa/drudenhaus/" class="album">Drudenhaus</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/anorexia_nervosa/drudenhaus/">Avg rating: <b>3.53</b> | Ratings: <b>265</b> | Reviews (total): <b>12</b></a> | <a href="/release/album/anorexia_nervosa/drudenhaus/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">29</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/cradle_of_filth/midian/"><img  width="150" id="img_l_3809"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/8cb55b6b14633ecc30578bbec386a3d4/1222485.jpg"  alt="Midian" title="Midian" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist371]"  href="/artist/cradle_of_filth" class="artist">Cradle of Filth</a> <br /><a title="[Album3809]" href="/release/album/cradle_of_filth/midian/" class="album">Midian</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre212]" class="genre" href="/genre/Gothic+Metal/">Gothic Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/cradle_of_filth/midian/">Avg rating: <b>3.44</b> | Ratings: <b>1,444</b> | Reviews (total): <b>65</b></a> | <a href="/release/album/cradle_of_filth/midian/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">30</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/axamenta/ever_arch_i_tech_ture/"><img  width="150" id="img_l_595646"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/5f1498948847793407565082d7126c02/2504302.jpg"  alt="Ever-Arch-I-Tech-Ture" title="Ever-Arch-I-Tech-Ture" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist45633]"  href="/artist/axamenta" class="artist">Axamenta</a> <br /><a title="[Album595646]" href="/release/album/axamenta/ever_arch_i_tech_ture/" class="album">Ever-Arch-I-Tech-Ture</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre95]" class="genre" href="/genre/Progressive+Metal/">Progressive Metal</a>, <a title="[Genre433]" class="genre" href="/genre/Melodic+Death+Metal/">Melodic Death Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/axamenta/ever_arch_i_tech_ture/">Avg rating: <b>3.59</b> | Ratings: <b>148</b> | Reviews (total): <b>4</b></a> | <a href="/release/album/axamenta/ever_arch_i_tech_ture/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">31</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stormlord/mare_nostrum/"><img  width="150" id="img_l_1562365"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/9f5f7ad809bdbd016c91a52238f372a2/2287347.jpg"  alt="Mare Nostrum" title="Mare Nostrum" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist8464]"  href="/artist/stormlord" class="artist">Stormlord</a> <br /><a title="[Album1562365]" href="/release/album/stormlord/mare_nostrum/" class="album">Mare Nostrum</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stormlord/mare_nostrum/">Avg rating: <b>3.56</b> | Ratings: <b>185</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/stormlord/mare_nostrum/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">32</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/odium/the_sad_realm_of_the_stars/"><img  width="150" id="img_l_87881"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/4d40b5babd70e1d69af9768e5359e5d4/1538891.jpg"  alt="The Sad Realm of the Stars" title="The Sad Realm of the Stars" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist22053]"  href="/artist/odium" class="artist">Odium</a> <br /><a title="[Album87881]" href="/release/album/odium/the_sad_realm_of_the_stars/" class="album">The Sad Realm of the Stars</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/odium/the_sad_realm_of_the_stars/">Avg rating: <b>3.62</b> | Ratings: <b>111</b> | Reviews (total): <b>4</b></a> | <a href="/release/album/odium/the_sad_realm_of_the_stars/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">33</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/mirrorthrone/gangrene/"><img  width="150" id="img_l_1462945"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/7fc825ab71525ddf8f912b545da7f457/2266386.jpg"  alt="Gangrene" title="Gangrene" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist26016]"  href="/artist/mirrorthrone" class="artist">Mirrorthrone</a> <br /><a title="[Album1462945]" href="/release/album/mirrorthrone/gangrene/" class="album">Gangrene</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/mirrorthrone/gangrene/">Avg rating: <b>3.47</b> | Ratings: <b>255</b> | Reviews (total): <b>18</b></a> | <a href="/release/album/mirrorthrone/gangrene/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">34</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/dimmu_borgir/stormblast/"><img  width="150" id="img_l_8235"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/23d3fdc3fffc3186aa16be464fd4db99/1470989.jpg"  alt="Stormblåst" title="Stormblåst" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist372]"  href="/artist/dimmu_borgir" class="artist">Dimmu Borgir</a> <br /><a title="[Album8235]" href="/release/album/dimmu_borgir/stormblast/" class="album">Stormblåst</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/dimmu_borgir/stormblast/">Avg rating: <b>3.45</b> | Ratings: <b>1,138</b> | Reviews (total): <b>48</b></a> | <a href="/release/album/dimmu_borgir/stormblast/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">35</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/chthonic/takasago_army/"><img  width="150" id="img_l_3411891"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d4c17ecc863c65757709c6aeaf6bd3f4/3778641.jpg"  alt="Takasago Army" title="Takasago Army" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist156672]"  href="/artist/chthonic" class="artist">Chthonic</a> <br /><a title="[Album3411891]" href="/release/album/chthonic/takasago_army/" class="album">Takasago Army</a></span>
+         <span class="mediumg">(2011)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/chthonic/takasago_army/">Avg rating: <b>3.54</b> | Ratings: <b>226</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/chthonic/takasago_army/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">36</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/obtained_enslavement/witchcraft/"><img  width="150" id="img_l_135358"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/06e4e7b9352d19f3960444594689f3f1/2255361.jpg"  alt="Witchcraft" title="Witchcraft" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist31253]"  href="/artist/obtained_enslavement" class="artist">Obtained Enslavement</a> <br /><a title="[Album135358]" href="/release/album/obtained_enslavement/witchcraft/" class="album">Witchcraft</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/obtained_enslavement/witchcraft/">Avg rating: <b>3.50</b> | Ratings: <b>198</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/obtained_enslavement/witchcraft/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">37</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/carach_angren/death_came_through_a_phantom_ship/"><img  width="150" id="img_l_2309427"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/2961a0b2514443a027d11604e7eef55f/4229304.jpg"  alt="Death Came Through a Phantom Ship" title="Death Came Through a Phantom Ship" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist306079]"  href="/artist/carach_angren" class="artist">Carach Angren</a> <br /><a title="[Album2309427]" href="/release/album/carach_angren/death_came_through_a_phantom_ship/" class="album">Death Came Through a Phantom Ship</a></span>
+         <span class="mediumg">(2010)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/carach_angren/death_came_through_a_phantom_ship/">Avg rating: <b>3.49</b> | Ratings: <b>310</b> | Reviews (total): <b>20</b></a> | <a href="/release/album/carach_angren/death_came_through_a_phantom_ship/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">38</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/graveworm/scourge_of_malice/"><img  width="150" id="img_l_43383"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/5c8740d2b68231ad4f4c8046b013ad7f/2141014.jpg"  alt="Scourge of Malice" title="Scourge of Malice" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist12162]"  href="/artist/graveworm" class="artist">Graveworm</a> <br /><a title="[Album43383]" href="/release/album/graveworm/scourge_of_malice/" class="album">Scourge of Malice</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/graveworm/scourge_of_malice/">Avg rating: <b>3.51</b> | Ratings: <b>205</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/graveworm/scourge_of_malice/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">39</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/carach_angren/lammendam/"><img  width="150" id="img_l_1444672"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ce97791e8e7d1e3e487befaf0882e473/2465615.jpg"  alt="Lammendam" title="Lammendam" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist306079]"  href="/artist/carach_angren" class="artist">Carach Angren</a> <br /><a title="[Album1444672]" href="/release/album/carach_angren/lammendam/" class="album">Lammendam</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/carach_angren/lammendam/">Avg rating: <b>3.50</b> | Ratings: <b>227</b> | Reviews (total): <b>10</b></a> | <a href="/release/album/carach_angren/lammendam/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">40</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/graveworm/engraved_in_black/"><img  width="150" id="img_l_66529"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/4939594bdbc5b769b340044181eba398/1989909.jpg"  alt="Engraved in Black" title="Engraved in Black" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist12162]"  href="/artist/graveworm" class="artist">Graveworm</a> <br /><a title="[Album66529]" href="/release/album/graveworm/engraved_in_black/" class="album">Engraved in Black</a></span>
+         <span class="mediumg">(2003)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/graveworm/engraved_in_black/">Avg rating: <b>3.45</b> | Ratings: <b>300</b> | Reviews (total): <b>12</b></a> | <a href="/release/album/graveworm/engraved_in_black/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">41</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/morgul/the_horror_grandeur/"><img  width="150" id="img_l_155778"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3bcf786a43a6217208f97a997350ab7b/1304340.jpg"  alt="The Horror Grandeur" title="The Horror Grandeur" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist12088]"  href="/artist/morgul" class="artist">Morgul</a> <br /><a title="[Album155778]" href="/release/album/morgul/the_horror_grandeur/" class="album">The Horror Grandeur</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/morgul/the_horror_grandeur/">Avg rating: <b>3.58</b> | Ratings: <b>97</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/morgul/the_horror_grandeur/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">42</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/sorgsvart/vikingtid_og_anarki/"><img  width="150" id="img_l_1510193"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/06de75cec7331160d36ca682019a31fc/2261795.jpg"  alt="Vikingtid og AnArki" title="Vikingtid og AnArki" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist152260]"  href="/artist/sorgsvart" class="artist">SorgSvart</a> <br /><a title="[Album1510193]" href="/release/album/sorgsvart/vikingtid_og_anarki/" class="album">Vikingtid og AnArki</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>, <a title="[Genre515]" class="genre" href="/genre/Viking+Metal/">Viking Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/sorgsvart/vikingtid_og_anarki/">Avg rating: <b>3.78</b> | Ratings: <b>56</b> | Reviews (total): <b>4</b></a> | <a href="/release/album/sorgsvart/vikingtid_og_anarki/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">43</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/saturnian/dimensions/"><img  width="150" id="img_l_4066934"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/1e435ae30bf159788e84830cc2de238d/4282286.jpg"  alt="Dimensions" title="Dimensions" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist835766]"  href="/artist/saturnian" class="artist">Saturnian</a> <br /><a title="[Album4066934]" href="/release/album/saturnian/dimensions/" class="album">Dimensions</a></span>
+         <span class="mediumg">(2012)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/saturnian/dimensions/">Avg rating: <b>3.58</b> | Ratings: <b>90</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/saturnian/dimensions/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">44</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/mirrorthrone/carriers_of_dust/"><img  width="150" id="img_l_482250"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/dcc3fa8b9f5b0d3d93cb1e95ee715385/1540521.jpg"  alt="Carriers of Dust" title="Carriers of Dust" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist26016]"  href="/artist/mirrorthrone" class="artist">Mirrorthrone</a> <br /><a title="[Album482250]" href="/release/album/mirrorthrone/carriers_of_dust/" class="album">Carriers of Dust</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/mirrorthrone/carriers_of_dust/">Avg rating: <b>3.41</b> | Ratings: <b>318</b> | Reviews (total): <b>17</b></a> | <a href="/release/album/mirrorthrone/carriers_of_dust/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">45</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/dimmu_borgir/death_cult_armageddon/"><img  height="150" id="img_l_68482"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ea374330f1222c68f88b31903a930770/4889525.jpg"  alt="Death Cult Armageddon" title="Death Cult Armageddon" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist372]"  href="/artist/dimmu_borgir" class="artist">Dimmu Borgir</a> <br /><a title="[Album68482]" href="/release/album/dimmu_borgir/death_cult_armageddon/" class="album">Death Cult Armageddon</a></span>
+         <span class="mediumg">(2003)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/dimmu_borgir/death_cult_armageddon/">Avg rating: <b>3.37</b> | Ratings: <b>1,706</b> | Reviews (total): <b>74</b></a> | <a href="/release/album/dimmu_borgir/death_cult_armageddon/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">46</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/dimmu_borgir/spiritual_black_dimensions/"><img  width="150" id="img_l_1383"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/87a0c6fd13247b6d8d8c26806fdd2e00/5052947.jpg"  alt="Spiritual Black Dimensions" title="Spiritual Black Dimensions" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist372]"  href="/artist/dimmu_borgir" class="artist">Dimmu Borgir</a> <br /><a title="[Album1383]" href="/release/album/dimmu_borgir/spiritual_black_dimensions/" class="album">Spiritual Black Dimensions</a></span>
+         <span class="mediumg">(1999)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/dimmu_borgir/spiritual_black_dimensions/">Avg rating: <b>3.39</b> | Ratings: <b>1,105</b> | Reviews (total): <b>32</b></a> | <a href="/release/album/dimmu_borgir/spiritual_black_dimensions/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">47</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/old_mans_child/ill_natured_spiritual_invasion/"><img  width="150" id="img_l_22233"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/9a19776c56b65d2f0258fdf6eea3a018/2990511.jpg"  alt="Ill-Natured Spiritual Invasion" title="Ill-Natured Spiritual Invasion" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2255]"  href="/artist/old_mans_child" class="artist">Old Man&#39;s Child</a> <br /><a title="[Album22233]" href="/release/album/old_mans_child/ill_natured_spiritual_invasion/" class="album">Ill-Natured Spiritual Invasion</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/old_mans_child/ill_natured_spiritual_invasion/">Avg rating: <b>3.44</b> | Ratings: <b>278</b> | Reviews (total): <b>11</b></a> | <a href="/release/album/old_mans_child/ill_natured_spiritual_invasion/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">48</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/opera_ix/the_black_opera__symphoniae_mysteriorum_in_laudem_tenebrarum_f1/"><img  width="150" id="img_l_22267"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/375f59741c1e2895fd8f96944bca8982/2026623.jpg"  alt="The Black Opera: Symphoniae Mysteriorum in Laudem Tenebrarum" title="The Black Opera: Symphoniae Mysteriorum in Laudem Tenebrarum" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist6546]"  href="/artist/opera_ix" class="artist">Opera IX</a> <br /><a title="[Album22267]" href="/release/album/opera_ix/the_black_opera__symphoniae_mysteriorum_in_laudem_tenebrarum_f1/" class="album">The Black Opera: Symphoniae Mysteriorum in Laudem Tenebrarum</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre212]" class="genre" href="/genre/Gothic+Metal/">Gothic Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/opera_ix/the_black_opera__symphoniae_mysteriorum_in_laudem_tenebrarum_f1/">Avg rating: <b>3.49</b> | Ratings: <b>176</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/opera_ix/the_black_opera__symphoniae_mysteriorum_in_laudem_tenebrarum_f1/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">49</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/the_kovenant/nexus_polaris/"><img  width="150" id="img_l_1129651"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/8ea90aa5c5ec0fa41ab31596f42e6c03/2179516.jpg"  alt="Nexus Polaris" title="Nexus Polaris" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2365]"  href="/artist/the_kovenant" class="artist">The Kovenant</a> <br /><a title="[Album1129651]" href="/release/album/the_kovenant/nexus_polaris/" class="album">Nexus Polaris</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/the_kovenant/nexus_polaris/">Avg rating: <b>3.51</b> | Ratings: <b>129</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/the_kovenant/nexus_polaris/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">50</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/apotheosis/farthest_from_the_sun/"><img  width="150" id="img_l_132107"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/143194d3dbf0a4684a87a1a356af8426/2638583.jpg"  alt="Farthest From the Sun" title="Farthest From the Sun" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist31987]"  href="/artist/apotheosis" class="artist">Apotheosis</a> <br /><a title="[Album132107]" href="/release/album/apotheosis/farthest_from_the_sun/" class="album">Farthest From the Sun</a></span>
+         <span class="mediumg">(2002)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre95]" class="genre" href="/genre/Progressive+Metal/">Progressive Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/apotheosis/farthest_from_the_sun/">Avg rating: <b>3.44</b> | Ratings: <b>168</b> | Reviews (total): <b>16</b></a> | <a href="/release/album/apotheosis/farthest_from_the_sun/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">51</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/order_of_the_ebon_hand/the_mystic_path_to_the_netherworld/"><img  width="150" id="img_l_715697"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/29cdb5ef3b3991c4c8e035bf3d1c31a8/2268722.jpg"  alt="The Mystic Path to the Netherworld" title="The Mystic Path to the Netherworld" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist58695]"  href="/artist/order_of_the_ebon_hand" class="artist">Order of the Ebon Hand</a> <br /><a title="[Album715697]" href="/release/album/order_of_the_ebon_hand/the_mystic_path_to_the_netherworld/" class="album">The Mystic Path to the Netherworld</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/order_of_the_ebon_hand/the_mystic_path_to_the_netherworld/">Avg rating: <b>3.67</b> | Ratings: <b>56</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/order_of_the_ebon_hand/the_mystic_path_to_the_netherworld/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">52</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/obtained_enslavement/soulblight/"><img  height="150" id="img_l_155734"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/fdcd97951e87d5ff25641d42b9b61a20/1275112.jpg"  alt="Soulblight" title="Soulblight" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist31253]"  href="/artist/obtained_enslavement" class="artist">Obtained Enslavement</a> <br /><a title="[Album155734]" href="/release/album/obtained_enslavement/soulblight/" class="album">Soulblight</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/obtained_enslavement/soulblight/">Avg rating: <b>3.51</b> | Ratings: <b>120</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/obtained_enslavement/soulblight/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">53</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/bal_sagoth/starfire_burning_upon_the_ice_veiled_throne_of_ultima_thule/"><img  width="150" id="img_l_26991"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/38808120797300a360926a7bfc23987e/1717479.jpg"  alt="Starfire Burning Upon the Ice-Veiled Throne of Ultima Thule" title="Starfire Burning Upon the Ice-Veiled Throne of Ultima Thule" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist7732]"  href="/artist/bal_sagoth" class="artist">Bal-Sagoth</a> <br /><a title="[Album26991]" href="/release/album/bal_sagoth/starfire_burning_upon_the_ice_veiled_throne_of_ultima_thule/" class="album">Starfire Burning Upon the Ice-Veiled Throne of Ultima Thule</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10022]" class="genre" href="/genre/Symphonic+Metal/">Symphonic Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/bal_sagoth/starfire_burning_upon_the_ice_veiled_throne_of_ultima_thule/">Avg rating: <b>3.38</b> | Ratings: <b>357</b> | Reviews (total): <b>11</b></a> | <a href="/release/album/bal_sagoth/starfire_burning_upon_the_ice_veiled_throne_of_ultima_thule/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">54</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/anorexia_nervosa/new_obscurantis_order/"><img  width="150" id="img_l_26469"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/7f86e1636b1e6456d7e79305cdea77d2/1243704.jpg"  alt="New Obscurantis Order" title="New Obscurantis Order" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist7604]"  href="/artist/anorexia_nervosa" class="artist">Anorexia Nervosa</a> <br /><a title="[Album26469]" href="/release/album/anorexia_nervosa/new_obscurantis_order/" class="album">New Obscurantis Order</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/anorexia_nervosa/new_obscurantis_order/">Avg rating: <b>3.38</b> | Ratings: <b>311</b> | Reviews (total): <b>12</b></a> | <a href="/release/album/anorexia_nervosa/new_obscurantis_order/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">55</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/fanisk/insularum/"><img  width="150" id="img_l_3980054"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/4685b8b68d2074018a36ac14ef358cbc/4514719.jpg"  alt="Insularum" title="Insularum" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist190115]"  href="/artist/fanisk" class="artist">Fanisk</a> <br /><a title="[Album3980054]" href="/release/album/fanisk/insularum/" class="album">Insularum</a></span>
+         <span class="mediumg">(2013)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/fanisk/insularum/">Avg rating: <b>3.41</b> | Ratings: <b>127</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/fanisk/insularum/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">56</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/vesania_f1/distractive_killusions/"><img  width="150" id="img_l_1040196"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/1cbb692546eda3a553392c3f26a529dd/2054282.jpg"  alt="Distractive Killusions" title="Distractive Killusions" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist70953]"  href="/artist/vesania_f1" class="artist">Vesania</a> <br /><a title="[Album1040196]" href="/release/album/vesania_f1/distractive_killusions/" class="album">Distractive Killusions</a></span>
+         <span class="mediumg">(2007)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/vesania_f1/distractive_killusions/">Avg rating: <b>3.44</b> | Ratings: <b>180</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/vesania_f1/distractive_killusions/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">57</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/dismal_euphony/autumn_leaves___the_rebellion_of_tides/"><img  width="150" id="img_l_19747"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/20f20e6c5bb1eb1ebc4cd20e200efb63/4191358.jpg"  alt="Autumn Leaves - The Rebellion of Tides" title="Autumn Leaves - The Rebellion of Tides" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist5878]"  href="/artist/dismal_euphony" class="artist">Dismal Euphony</a> <br /><a title="[Album19747]" href="/release/album/dismal_euphony/autumn_leaves___the_rebellion_of_tides/" class="album">Autumn Leaves - The Rebellion of Tides</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre212]" class="genre" href="/genre/Gothic+Metal/">Gothic Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/dismal_euphony/autumn_leaves___the_rebellion_of_tides/">Avg rating: <b>3.54</b> | Ratings: <b>89</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/dismal_euphony/autumn_leaves___the_rebellion_of_tides/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">58</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/anorexia_nervosa/redemption_process/"><img  width="150" id="img_l_191722"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/303a0aecd361cea0030cf7d1b2fd164f/1339680.jpg"  alt="Redemption Process" title="Redemption Process" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist7604]"  href="/artist/anorexia_nervosa" class="artist">Anorexia Nervosa</a> <br /><a title="[Album191722]" href="/release/album/anorexia_nervosa/redemption_process/" class="album">Redemption Process</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/anorexia_nervosa/redemption_process/">Avg rating: <b>3.39</b> | Ratings: <b>268</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/anorexia_nervosa/redemption_process/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">59</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/thyrane/the_spirit_of_rebellion/"><img  height="150" id="img_l_33780"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/bc83077da1017a76d088d4219fd54c9c/1296258.jpg"  alt="The Spirit of Rebellion" title="The Spirit of Rebellion" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9762]"  href="/artist/thyrane" class="artist">Thyrane</a> <br /><a title="[Album33780]" href="/release/album/thyrane/the_spirit_of_rebellion/" class="album">The Spirit of Rebellion</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/thyrane/the_spirit_of_rebellion/">Avg rating: <b>3.57</b> | Ratings: <b>71</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/thyrane/the_spirit_of_rebellion/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">60</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/troll/drep_de_kristne/"><img  width="150" id="img_l_70444"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/cadf00972271f971e33f1eb9306baed7/1647689.jpg"  alt="Drep de kristne" title="Drep de kristne" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist14669]"  href="/artist/troll" class="artist">Troll</a> <br /><a title="[Album70444]" href="/release/album/troll/drep_de_kristne/" class="album">Drep de kristne</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/troll/drep_de_kristne/">Avg rating: <b>3.41</b> | Ratings: <b>142</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/troll/drep_de_kristne/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">61</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/enslavement_of_beauty/megalomania/"><img  width="150" id="img_l_55207"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/409c2c05c80d335f8cb844606e9f48c4/2977097.png"  alt="Megalomania" title="Megalomania" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist15258]"  href="/artist/enslavement_of_beauty" class="artist">Enslavement of Beauty</a> <br /><a title="[Album55207]" href="/release/album/enslavement_of_beauty/megalomania/" class="album">Megalomania</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/enslavement_of_beauty/megalomania/">Avg rating: <b>3.51</b> | Ratings: <b>87</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/enslavement_of_beauty/megalomania/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">62</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/profanum/profanum_aeternum__eminence_of_satanic_imperial_art/"><img  width="150" id="img_l_9479"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/1f9e34fec907f2628763e72ed1d22aa8/1501191.jpg"  alt="Profanum Aeternum: Eminence of Satanic Imperial Art" title="Profanum Aeternum: Eminence of Satanic Imperial Art" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2653]"  href="/artist/profanum" class="artist">Profanum</a> <br /><a title="[Album9479]" href="/release/album/profanum/profanum_aeternum__eminence_of_satanic_imperial_art/" class="album">Profanum Aeternum: Eminence of Satanic Imperial Art</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/profanum/profanum_aeternum__eminence_of_satanic_imperial_art/">Avg rating: <b>3.48</b> | Ratings: <b>110</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/profanum/profanum_aeternum__eminence_of_satanic_imperial_art/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">63</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/graveworm/as_the_angels_reach_the_beauty/"><img  height="150" id="img_l_43381"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/28cd82a93cb3c67545ecc618aaa9d621/1873489.jpg"  alt="As the Angels Reach the Beauty" title="As the Angels Reach the Beauty" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist12162]"  href="/artist/graveworm" class="artist">Graveworm</a> <br /><a title="[Album43381]" href="/release/album/graveworm/as_the_angels_reach_the_beauty/" class="album">As the Angels Reach the Beauty</a></span>
+         <span class="mediumg">(1999)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/graveworm/as_the_angels_reach_the_beauty/">Avg rating: <b>3.40</b> | Ratings: <b>176</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/graveworm/as_the_angels_reach_the_beauty/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">64</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/sigh/scenes_from_hell/"><img  width="150" id="img_l_1422618"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/1cc618ec26be85ca0f2be4b6e4b887e4/2790803.jpg"  alt="Scenes From Hell" title="Scenes From Hell" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2077]"  href="/artist/sigh" class="artist">Sigh</a> <br /><a title="[Album1422618]" href="/release/album/sigh/scenes_from_hell/" class="album">Scenes From Hell</a></span>
+         <span class="mediumg">(2010)</span><br /><br /><a title="[Genre10094]" class="genre" href="/genre/Avant%2dGarde+Metal/">Avant-Garde Metal</a>, <a title="[Genre10022]" class="genre" href="/genre/Symphonic+Metal/">Symphonic Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/sigh/scenes_from_hell/">Avg rating: <b>3.31</b> | Ratings: <b>665</b> | Reviews (total): <b>51</b></a> | <a href="/release/album/sigh/scenes_from_hell/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">65</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/antestor/the_forsaken/"><img  width="150" id="img_l_229503"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/9ae3883eec21d7e5ca8b180c243d0b1f/2165780.jpg"  alt="The Forsaken" title="The Forsaken" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist18540]"  href="/artist/antestor" class="artist">Antestor</a> <br /><a title="[Album229503]" href="/release/album/antestor/the_forsaken/" class="album">The Forsaken</a></span>
+         <span class="mediumg">(2005)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/antestor/the_forsaken/">Avg rating: <b>3.39</b> | Ratings: <b>174</b> | Reviews (total): <b>14</b></a> | <a href="/release/album/antestor/the_forsaken/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">66</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/___and_oceans/the_dynamic_gallery_of_thoughts/"><img  width="150" id="img_l_8233"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/922f712b5de7bfa52b6ddaf50b685e26/2601672.jpg"  alt="The Dynamic Gallery of Thoughts" title="The Dynamic Gallery of Thoughts" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2377]"  href="/artist/___and_oceans" class="artist">...And Oceans</a> <br /><a title="[Album8233]" href="/release/album/___and_oceans/the_dynamic_gallery_of_thoughts/" class="album">The Dynamic Gallery of Thoughts</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/___and_oceans/the_dynamic_gallery_of_thoughts/">Avg rating: <b>3.37</b> | Ratings: <b>218</b> | Reviews (total): <b>8</b></a> | <a href="/release/album/___and_oceans/the_dynamic_gallery_of_thoughts/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">67</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/illnath/cast_into_fields_of_evil_pleasure/"><img  width="150" id="img_l_122783"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/8227f9c28a27880fb83b2fcbf6fd8c65/2427292.jpg"  alt="Cast Into Fields of Evil Pleasure" title="Cast Into Fields of Evil Pleasure" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist29676]"  href="/artist/illnath" class="artist">Illnath</a> <br /><a title="[Album122783]" href="/release/album/illnath/cast_into_fields_of_evil_pleasure/" class="album">Cast Into Fields of Evil Pleasure</a></span>
+         <span class="mediumg">(2003)</span><br /><br /><a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/illnath/cast_into_fields_of_evil_pleasure/">Avg rating: <b>3.47</b> | Ratings: <b>113</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/illnath/cast_into_fields_of_evil_pleasure/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">68</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/hidden_in_the_fog/damokles/"><img  width="150" id="img_l_682940"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a9e14d3d360e100b12e2553933ed4d7a/2507987.jpg"  alt="Damokles" title="Damokles" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist162693]"  href="/artist/hidden_in_the_fog" class="artist">Hidden in the Fog</a> <br /><a title="[Album682940]" href="/release/album/hidden_in_the_fog/damokles/" class="album">Damokles</a></span>
+         <span class="mediumg">(2005)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre95]" class="genre" href="/genre/Progressive+Metal/">Progressive Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/hidden_in_the_fog/damokles/">Avg rating: <b>3.61</b> | Ratings: <b>43</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/hidden_in_the_fog/damokles/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">69</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/carach_angren/where_the_corpses_sink_forever/"><img  width="150" id="img_l_3893649"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/318fb6cf10b60ec720b8cfbb902dcd24/4229281.jpg"  alt="Where the Corpses Sink Forever" title="Where the Corpses Sink Forever" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist306079]"  href="/artist/carach_angren" class="artist">Carach Angren</a> <br /><a title="[Album3893649]" href="/release/album/carach_angren/where_the_corpses_sink_forever/" class="album">Where the Corpses Sink Forever</a></span>
+         <span class="mediumg">(2012)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/carach_angren/where_the_corpses_sink_forever/">Avg rating: <b>3.34</b> | Ratings: <b>253</b> | Reviews (total): <b>19</b></a> | <a href="/release/album/carach_angren/where_the_corpses_sink_forever/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">70</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/___and_oceans/a_m__g_o_d_/"><img  width="150" id="img_l_23042"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0e574a75e07d1ce7bc4d6035ec30ea54/2582701.jpg"  alt="A.M. G.O.D." title="A.M. G.O.D." src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2377]"  href="/artist/___and_oceans" class="artist">...And Oceans</a> <br /><a title="[Album23042]" href="/release/album/___and_oceans/a_m__g_o_d_/" class="album">A.M. G.O.D.</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre32404]" class="genre" href="/genre/Cyber+Metal/">Cyber Metal</a>, <a title="[Genre438]" class="genre" href="/genre/Industrial+Metal/">Industrial Metal</a>, <a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/___and_oceans/a_m__g_o_d_/">Avg rating: <b>3.34</b> | Ratings: <b>302</b> | Reviews (total): <b>15</b></a> | <a href="/release/album/___and_oceans/a_m__g_o_d_/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">71</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/eldrig/mysterion/"><img  width="150" id="img_l_1319884"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/65a56d602fbb5a6de1b60b5f40215ca9/2388709.jpg"  alt="Mysterion" title="Mysterion" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist199535]"  href="/artist/eldrig" class="artist">Eldrig</a> <br /><a title="[Album1319884]" href="/release/album/eldrig/mysterion/" class="album">Mysterion</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/eldrig/mysterion/">Avg rating: <b>3.57</b> | Ratings: <b>52</b> | Reviews (total): <b>5</b></a> | <a href="/release/album/eldrig/mysterion/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">72</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/opera_ix/sacro_culto/"><img  width="150" id="img_l_22266"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/26b704e6d30634294e0b4456f10f5c95/1275736.jpg"  alt="Sacro Culto" title="Sacro Culto" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist6546]"  href="/artist/opera_ix" class="artist">Opera IX</a> <br /><a title="[Album22266]" href="/release/album/opera_ix/sacro_culto/" class="album">Sacro Culto</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/opera_ix/sacro_culto/">Avg rating: <b>3.49</b> | Ratings: <b>103</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/opera_ix/sacro_culto/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">73</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/obsidian_gate/the_nightspectral_voyage/"><img  width="150" id="img_l_22274"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/1f39f77cc0f227a645d9f59207bbfc23/1616991.jpg"  alt="The Nightspectral Voyage" title="The Nightspectral Voyage" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist6548]"  href="/artist/obsidian_gate" class="artist">Obsidian Gate</a> <br /><a title="[Album22274]" href="/release/album/obsidian_gate/the_nightspectral_voyage/" class="album">The Nightspectral Voyage</a></span>
+         <span class="mediumg">(1999)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/obsidian_gate/the_nightspectral_voyage/">Avg rating: <b>3.53</b> | Ratings: <b>68</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/obsidian_gate/the_nightspectral_voyage/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">74</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/agathodaimon/chapter_iii/"><img  width="150" id="img_l_27750"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c9a4f396bb4b378ce825e6f7f2513a2e/1461056.jpg"  alt="Chapter III" title="Chapter III" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist330]"  href="/artist/agathodaimon" class="artist">Agathodaimon</a> <br /><a title="[Album27750]" href="/release/album/agathodaimon/chapter_iii/" class="album">Chapter III</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/agathodaimon/chapter_iii/">Avg rating: <b>3.41</b> | Ratings: <b>148</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/agathodaimon/chapter_iii/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">75</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/ancient_wisdom/___and_the_physical_shape_of_light_bled/"><img  width="150" id="img_l_22419"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/e553ad27a2efa9c2e809ea3e5ea9b175/2345325.jpg"  alt="...And the Physical Shape of Light Bled" title="...And the Physical Shape of Light Bled" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist6581]"  href="/artist/ancient_wisdom" class="artist">Ancient Wisdom</a> <br /><a title="[Album22419]" href="/release/album/ancient_wisdom/___and_the_physical_shape_of_light_bled/" class="album">...And the Physical Shape of Light Bled</a></span>
+         <span class="mediumg">(2000)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre139]" class="genre" href="/genre/Doom+Metal/">Doom Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/ancient_wisdom/___and_the_physical_shape_of_light_bled/">Avg rating: <b>3.45</b> | Ratings: <b>74</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/ancient_wisdom/___and_the_physical_shape_of_light_bled/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">76</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/stormlord/at_the_gates_of_utopia/"><img  width="150" id="img_l_29509"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a1331305bf913314f811b0b2ac7de73c/1277230.jpg"  alt="At the Gates of Utopia" title="At the Gates of Utopia" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist8464]"  href="/artist/stormlord" class="artist">Stormlord</a> <br /><a title="[Album29509]" href="/release/album/stormlord/at_the_gates_of_utopia/" class="album">At the Gates of Utopia</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/stormlord/at_the_gates_of_utopia/">Avg rating: <b>3.41</b> | Ratings: <b>131</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/stormlord/at_the_gates_of_utopia/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">77</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/covenant_f1/in_times_before_the_light/"><img  width="150" id="img_l_12306"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/19eb82ca13ba7a21a0e51ba37c46c745/1284436.jpg"  alt="In Times Before the Light" title="In Times Before the Light" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist82397]"  href="/artist/covenant_f1" class="artist">Covenant</a> <br /><a title="[Album12306]" href="/release/album/covenant_f1/in_times_before_the_light/" class="album">In Times Before the Light</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/covenant_f1/in_times_before_the_light/">Avg rating: <b>3.37</b> | Ratings: <b>188</b> | Reviews (total): <b>4</b></a> | <a href="/release/album/covenant_f1/in_times_before_the_light/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">78</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/hecate_enthroned/the_slaughter_of_innocence__a_requiem_for_the_mighty/"><img  height="150" id="img_l_97172"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/72d49bb03762502180eb599889f497c8/1501320.jpg"  alt="The Slaughter of Innocence, a Requiem for the Mighty" title="The Slaughter of Innocence, a Requiem for the Mighty" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist23956]"  href="/artist/hecate_enthroned" class="artist">Hecate Enthroned</a> <br /><a title="[Album97172]" href="/release/album/hecate_enthroned/the_slaughter_of_innocence__a_requiem_for_the_mighty/" class="album">The Slaughter of Innocence, a Requiem for the Mighty</a></span>
+         <span class="mediumg">(1997)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/hecate_enthroned/the_slaughter_of_innocence__a_requiem_for_the_mighty/">Avg rating: <b>3.39</b> | Ratings: <b>125</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/hecate_enthroned/the_slaughter_of_innocence__a_requiem_for_the_mighty/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">79</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/bal_sagoth/battle_magic/"><img  width="150" id="img_l_26992"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a08d6a2883d3447860e1dee92a2666b8/1246124.jpg"  alt="Battle Magic" title="Battle Magic" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist7732]"  href="/artist/bal_sagoth" class="artist">Bal-Sagoth</a> <br /><a title="[Album26992]" href="/release/album/bal_sagoth/battle_magic/" class="album">Battle Magic</a></span>
+         <span class="mediumg">(1998)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10022]" class="genre" href="/genre/Symphonic+Metal/">Symphonic Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/bal_sagoth/battle_magic/">Avg rating: <b>3.29</b> | Ratings: <b>347</b> | Reviews (total): <b>8</b></a> | <a href="/release/album/bal_sagoth/battle_magic/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">80</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/bal_sagoth/the_power_cosmic/"><img  height="150" id="img_l_26993"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/936f6716030cca3318bb97ccb6ea45d9/1211366.jpg"  alt="The Power Cosmic" title="The Power Cosmic" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist7732]"  href="/artist/bal_sagoth" class="artist">Bal-Sagoth</a> <br /><a title="[Album26993]" href="/release/album/bal_sagoth/the_power_cosmic/" class="album">The Power Cosmic</a></span>
+         <span class="mediumg">(1999)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10022]" class="genre" href="/genre/Symphonic+Metal/">Symphonic Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/bal_sagoth/the_power_cosmic/">Avg rating: <b>3.30</b> | Ratings: <b>363</b> | Reviews (total): <b>17</b></a> | <a href="/release/album/bal_sagoth/the_power_cosmic/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">81</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/morgul/sketch_of_supposed_murderer/"><img  width="150" id="img_l_43171"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/38338d1feb9c8f41fbc6df7a0860e6e1/1304341.jpg"  alt="Sketch of Supposed Murderer" title="Sketch of Supposed Murderer" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist12088]"  href="/artist/morgul" class="artist">Morgul</a> <br /><a title="[Album43171]" href="/release/album/morgul/sketch_of_supposed_murderer/" class="album">Sketch of Supposed Murderer</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/morgul/sketch_of_supposed_murderer/">Avg rating: <b>3.45</b> | Ratings: <b>80</b> | Reviews (total): <b>0</b></a> | <a href="/release/album/morgul/sketch_of_supposed_murderer/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">82</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/alghazanth/vinum_intus/"><img  width="150" id="img_l_3205711"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/a34c020020914f8bd5057199ca57815a/3476571.jpg"  alt="Vinum Intus" title="Vinum Intus" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist9753]"  href="/artist/alghazanth" class="artist">Alghazanth</a> <br /><a title="[Album3205711]" href="/release/album/alghazanth/vinum_intus/" class="album">Vinum Intus</a></span>
+         <span class="mediumg">(2011)</span><br /><br /><a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/alghazanth/vinum_intus/">Avg rating: <b>3.44</b> | Ratings: <b>114</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/alghazanth/vinum_intus/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">83</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/ancient_wisdom/cometh_doom__cometh_death/"><img  width="150" id="img_l_142965"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/716b699b08a6f64136bae03a3e92c0ec/4037599.jpg"  alt="Cometh Doom, Cometh Death" title="Cometh Doom, Cometh Death" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist6581]"  href="/artist/ancient_wisdom" class="artist">Ancient Wisdom</a> <br /><a title="[Album142965]" href="/release/album/ancient_wisdom/cometh_doom__cometh_death/" class="album">Cometh Doom, Cometh Death</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/ancient_wisdom/cometh_doom__cometh_death/">Avg rating: <b>3.44</b> | Ratings: <b>70</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/ancient_wisdom/cometh_doom__cometh_death/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">84</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/bal_sagoth/atlantis_ascendant/"><img  width="150" id="img_l_26994"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/998deca35c681e3e25b5498ea4380075/2589746.jpg"  alt="Atlantis Ascendant" title="Atlantis Ascendant" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist7732]"  href="/artist/bal_sagoth" class="artist">Bal-Sagoth</a> <br /><a title="[Album26994]" href="/release/album/bal_sagoth/atlantis_ascendant/" class="album">Atlantis Ascendant</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/bal_sagoth/atlantis_ascendant/">Avg rating: <b>3.29</b> | Ratings: <b>302</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/bal_sagoth/atlantis_ascendant/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">85</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/chthonic/seediq_bale/"><img  width="150" id="img_l_654637"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/dda0ec6016965f62f5d1276989f4d66f/1695973.jpg"  alt="Seediq Bale" title="Seediq Bale" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist156672]"  href="/artist/chthonic" class="artist">Chthonic</a> <br /><a title="[Album654637]" href="/release/album/chthonic/seediq_bale/" class="album">Seediq Bale</a></span>
+         <span class="mediumg">(2005)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/chthonic/seediq_bale/">Avg rating: <b>3.35</b> | Ratings: <b>207</b> | Reviews (total): <b>7</b></a> | <a href="/release/album/chthonic/seediq_bale/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">86</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/enslavement_of_beauty/mere_contemplations/"><img  width="150" id="img_l_989876"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/87ed21f216a7ef2efb7e596d7b6af6db/2444917.jpg"  alt="Mere Contemplations" title="Mere Contemplations" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist15258]"  href="/artist/enslavement_of_beauty" class="artist">Enslavement of Beauty</a> <br /><a title="[Album989876]" href="/release/album/enslavement_of_beauty/mere_contemplations/" class="album">Mere Contemplations</a></span>
+         <span class="mediumg">(2007)</span><br /><br /><a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/enslavement_of_beauty/mere_contemplations/">Avg rating: <b>3.52</b> | Ratings: <b>49</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/enslavement_of_beauty/mere_contemplations/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">87</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/chthonic/mirror_of_retribution/"><img  width="150" id="img_l_1825210"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d6573f4d86484abc7155f5edc5090d03/2691399.jpg"  alt="Mirror of Retribution" title="Mirror of Retribution" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist156672]"  href="/artist/chthonic" class="artist">Chthonic</a> <br /><a title="[Album1825210]" href="/release/album/chthonic/mirror_of_retribution/" class="album">Mirror of Retribution</a></span>
+         <span class="mediumg">(2009)</span><br /><br /><a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/chthonic/mirror_of_retribution/">Avg rating: <b>3.34</b> | Ratings: <b>160</b> | Reviews (total): <b>6</b></a> | <a href="/release/album/chthonic/mirror_of_retribution/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">88</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/pantheon_i/worlds_i_create/"><img  width="150" id="img_l_1914875"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c4ae9fad5355ea66cbe1b15c2b15dd20/2709311.jpg"  alt="Worlds I Create" title="Worlds I Create" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist26939]"  href="/artist/pantheon_i" class="artist">Pantheon I</a> <br /><a title="[Album1914875]" href="/release/album/pantheon_i/worlds_i_create/" class="album">Worlds I Create</a></span>
+         <span class="mediumg">(2009)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/pantheon_i/worlds_i_create/">Avg rating: <b>3.44</b> | Ratings: <b>75</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/pantheon_i/worlds_i_create/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">89</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/lemuria_f1/chanson_de_la_croisade/"><img  width="150" id="img_l_3244873"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/edbd42af133d015fd7f8543ad73e23a1/3465261.jpg"  alt="Chanson de la Croisade" title="Chanson de la Croisade" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist120121]"  href="/artist/lemuria_f1" class="artist">Lemuria</a> <br /><a title="[Album3244873]" href="/release/album/lemuria_f1/chanson_de_la_croisade/" class="album">Chanson de la Croisade</a></span>
+         <span class="mediumg">(2010)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/lemuria_f1/chanson_de_la_croisade/">Avg rating: <b>3.66</b> | Ratings: <b>31</b> | Reviews (total): <b>1</b></a> | <a href="/release/album/lemuria_f1/chanson_de_la_croisade/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">90</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/bal_sagoth/the_chthonic_chronicles/"><img  width="150" id="img_l_482245"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/08110b909c50673de5179a5d40b8f755/1570478.jpg"  alt="The Chthonic Chronicles" title="The Chthonic Chronicles" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist7732]"  href="/artist/bal_sagoth" class="artist">Bal-Sagoth</a> <br /><a title="[Album482245]" href="/release/album/bal_sagoth/the_chthonic_chronicles/" class="album">The Chthonic Chronicles</a></span>
+         <span class="mediumg">(2006)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/bal_sagoth/the_chthonic_chronicles/">Avg rating: <b>3.25</b> | Ratings: <b>332</b> | Reviews (total): <b>10</b></a> | <a href="/release/album/bal_sagoth/the_chthonic_chronicles/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">91</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/___and_oceans/the_symmetry_of_i___the_circle_of_o/"><img  width="150" id="img_l_704327"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3c82285c5b8df8e2caf0eee6aee6faa0/2345366.jpg"  alt="The Symmetry of I - The Circle of O" title="The Symmetry of I - The Circle of O" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2377]"  href="/artist/___and_oceans" class="artist">...And Oceans</a> <br /><a title="[Album704327]" href="/release/album/___and_oceans/the_symmetry_of_i___the_circle_of_o/" class="album">The Symmetry of I - The Circle of O</a></span>
+         <span class="mediumg">(1999)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/___and_oceans/the_symmetry_of_i___the_circle_of_o/">Avg rating: <b>3.27</b> | Ratings: <b>208</b> | Reviews (total): <b>8</b></a> | <a href="/release/album/___and_oceans/the_symmetry_of_i___the_circle_of_o/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">92</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/shylmagoghnar/emergence/"><img  width="150" id="img_l_5289120"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/44e3abea1b844e9de58ebaddd50ad173/5145045.jpg"  alt="Emergence" title="Emergence" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist1013308]"  href="/artist/shylmagoghnar" class="artist">Shylmagoghnar</a> <br /><a title="[Album5289120]" href="/release/album/shylmagoghnar/emergence/" class="album">Emergence</a></span>
+         <span class="mediumg">(2014)</span><br /><br /><a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/shylmagoghnar/emergence/">Avg rating: <b>3.50</b> | Ratings: <b>48</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/shylmagoghnar/emergence/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">93</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/abigail_williams/in_the_shadow_of_a_thousand_suns/"><img  height="150" id="img_l_1393809"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/042b4ff27b71d6cc5a07743ee15c753c/4194183.jpg"  alt="In the Shadow of a Thousand Suns" title="In the Shadow of a Thousand Suns" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist110414]"  href="/artist/abigail_williams" class="artist">Abigail Williams</a> <br /><a title="[Album1393809]" href="/release/album/abigail_williams/in_the_shadow_of_a_thousand_suns/" class="album">In the Shadow of a Thousand Suns</a></span>
+         <span class="mediumg">(2008)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/abigail_williams/in_the_shadow_of_a_thousand_suns/">Avg rating: <b>3.22</b> | Ratings: <b>365</b> | Reviews (total): <b>32</b></a> | <a href="/release/album/abigail_williams/in_the_shadow_of_a_thousand_suns/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">94</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/taranis_f4/kingdom/"><img  width="150" id="img_l_3806563"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/1c880356287733a5eb697f3a346ed6ab/4017695.jpg"  alt="Kingdom" title="Kingdom" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist406493]"  href="/artist/taranis_f4" class="artist">Taranis</a> <br /><a title="[Album3806563]" href="/release/album/taranis_f4/kingdom/" class="album">Kingdom</a></span>
+         <span class="mediumg">(2012)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre95]" class="genre" href="/genre/Progressive+Metal/">Progressive Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/taranis_f4/kingdom/">Avg rating: <b>3.30</b> | Ratings: <b>125</b> | Reviews (total): <b>9</b></a> | <a href="/release/album/taranis_f4/kingdom/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">95</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/profanum/musaeum_esotericum/"><img  width="150" id="img_l_9480"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/c300b50407ad8140ed3be7298ef697ab/2041688.jpg"  alt="Musaeum Esotericum" title="Musaeum Esotericum" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist2653]"  href="/artist/profanum" class="artist">Profanum</a> <br /><a title="[Album9480]" href="/release/album/profanum/musaeum_esotericum/" class="album">Musaeum Esotericum</a></span>
+         <span class="mediumg">(2001)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/profanum/musaeum_esotericum/">Avg rating: <b>3.37</b> | Ratings: <b>83</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/profanum/musaeum_esotericum/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">96</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/in_lingua_mortua/bellowing_sea___racked_by_tempest/"><img  height="150" id="img_l_674291"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/1453437ffbf3fc25438090ed527ee4ca/2683725.jpg"  alt="Bellowing Sea - Racked by Tempest" title="Bellowing Sea - Racked by Tempest" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist160802]"  href="/artist/in_lingua_mortua" class="artist">In lingua mortua</a> <br /><a title="[Album674291]" href="/release/album/in_lingua_mortua/bellowing_sea___racked_by_tempest/" class="album">Bellowing Sea - Racked by Tempest</a></span>
+         <span class="mediumg">(2007)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/in_lingua_mortua/bellowing_sea___racked_by_tempest/">Avg rating: <b>3.39</b> | Ratings: <b>72</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/in_lingua_mortua/bellowing_sea___racked_by_tempest/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">97</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/hellveto/in_arms_of_kurpian_phantom/"><img  height="150" id="img_l_379713"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/3e2b7d80357e04459dfcd698dcbf7615/1626996.jpg"  alt="In Arms of Kurpian Phantom" title="In Arms of Kurpian Phantom" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist86770]"  href="/artist/hellveto" class="artist">Hellveto</a> <br /><a title="[Album379713]" href="/release/album/hellveto/in_arms_of_kurpian_phantom/" class="album">In Arms of Kurpian Phantom</a></span>
+         <span class="mediumg">(2004)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre30076]" class="genre" href="/genre/Pagan+Black+Metal/">Pagan Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/hellveto/in_arms_of_kurpian_phantom/">Avg rating: <b>3.56</b> | Ratings: <b>42</b> | Reviews (total): <b>2</b></a> | <a href="/release/album/hellveto/in_arms_of_kurpian_phantom/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">98</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/dimmu_borgir/stormblast_f9/"><img  width="150" id="img_l_393088"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/ab989e79b2e01104f35b4bb17f27eeb7/2705206.jpg"  alt="Stormblåst" title="Stormblåst" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist372]"  href="/artist/dimmu_borgir" class="artist">Dimmu Borgir</a> <br /><a title="[Album393088]" href="/release/album/dimmu_borgir/stormblast_f9/" class="album">Stormblåst</a></span>
+         <span class="mediumg">(2005)</span><br /><br /><a title="[Genre10111]" class="genre" href="/genre/Melodic+Black+Metal/">Melodic Black Metal</a>, <a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>, <a title="[Genre189]" class="genre" href="/genre/Black+Metal/">Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/dimmu_borgir/stormblast_f9/">Avg rating: <b>3.20</b> | Ratings: <b>591</b> | Reviews (total): <b>37</b></a> | <a href="/release/album/dimmu_borgir/stormblast_f9/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">99</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/dismal_euphony/soria_moria_slott/"><img  width="150" id="img_l_59356"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/0ba3472f2a0813e015cd892be1d87618/2582876.jpg"  alt="Soria Moria Slott" title="Soria Moria Slott" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist5878]"  href="/artist/dismal_euphony" class="artist">Dismal Euphony</a> <br /><a title="[Album59356]" href="/release/album/dismal_euphony/soria_moria_slott/" class="album">Soria Moria Slott</a></span>
+         <span class="mediumg">(1996)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/dismal_euphony/soria_moria_slott/">Avg rating: <b>3.36</b> | Ratings: <b>84</b> | Reviews (total): <b>3</b></a> | <a href="/release/album/dismal_euphony/soria_moria_slott/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr>
+                  <td style="text-align:center;width:10em;">
+                     <span class="ooookiig">100</span>
+                  </td>
+                  <td style="width:150px;"><a href="/release/album/dragonlord/black_wings_of_destiny/"><img  width="150" id="img_l_406702"  class="delayloadimg"   data-delayloadurl="//eu.rymimg.com/lk/s/l/d6674a3c03aeb47be510cd05584c11bc/1481400.jpg"  alt="Black Wings of Destiny" title="Black Wings of Destiny" src="https://8c30d0904e8b39d0d903-000092c797254b10c6f28a1f9486b488.ssl.cf1.rackcdn.com/images/blank.png" /></a></td>
+                  <td style="padding:0;margin:0;">
+<div style="padding:15px;padding-left:30px;">
+<span style="font-size:x-large;"><a title="[Artist15054]"  href="/artist/dragonlord" class="artist">Dragonlord</a> <br /><a title="[Album406702]" href="/release/album/dragonlord/black_wings_of_destiny/" class="album">Black Wings of Destiny</a></span>
+         <span class="mediumg">(2005)</span><br /><br /><a title="[Genre192]" class="genre" href="/genre/Symphonic+Black+Metal/">Symphonic Black Metal</a>
+</div>
+<div style="padding:0.6em;padding-left:30px;background:#ddf;color:#888;">
+  
+   
+<a style="text-decoration:none;color:#555;" href="/release/album/dragonlord/black_wings_of_destiny/">Avg rating: <b>3.27</b> | Ratings: <b>160</b> | Reviews (total): <b>8</b></a> | <a href="/release/album/dragonlord/black_wings_of_destiny/buy/" style="text-decoration:none;color:#080;font-weight:bold;">Buy this release</a></div>
+
+
+</td>
+              </tr><tr style="background:white;"><td></td><td colspan=2>
+<!-- Running 52 for 34 -->
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7116019216064530";
+/* Charts: bottom */
+google_ad_slot = "6276780850";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr></table><div class="clear"> </div><div style="padding:10px;font-size:small;text-align:center;font-weight:bold;background:#eee;border:#888 1px solid;">1 - 100 | <a href="javascript:goPage(2);">101 - 200</a> | <a href="javascript:goPage(3);">201 - 300</a> | <a href="javascript:goPage(4);">301 - 400</a> | <a href="javascript:goPage(5);">401 - 500</a> | <a href="javascript:goPage(6);">501 - 600</a> | <a href="javascript:goPage(7);">601 - 700</a> | <a href="javascript:goPage(8);">701 - 798</a> </div><div class="clear"> </div>
+     <script type="text/javascript">
+      var delayLoadImgCount = 0
+      $('.delayloadimg').appear(function() { delayLoadImgCount++ ; $(this).attr('src', $(this).attr('data-delayloadurl')); } , { extendheight:400 } );
+     </script>
+  
+
+<!-- ~~~~~~~~ end content ~~~~~~~~~~~~~~~ -->
+<div id="myModal" class="reveal-modal">
+  <div id="modal_content">
+  </div>
+     <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<!--trick--><div style="clear:both;"></div>
+</div>
+<div id="navbottom">
+    <ul>
+      <li><a href="/listen/all">RYM Artists</a></li>
+      <li><a href="/wiki/RYM:FAQ">FAQ</a></li>
+      <li><a href="/tos">Terms of Service</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/suggestions">Website Feedback</a></li>
+      <li><a href="/help/">Help</a></li>
+   </ul>
+  
+   <script> function areAdsBlocked() { return ($('#ad_1').length == 0) } 
+   function politeAdRequest() {
+      var xx = '<div class=abpmessage>RYM relies on advertising income to support the site.  Please consider adding an exception to adblock for rateyourmusic.com, or <a href=/subscribe>subscribing</a> to help with bandwidth/server costs.</div>' 
+      $('#content').prepend(xx)
+   }
+
+   </script>
+ 
+      <script>if(areAdsBlocked()) { politeAdRequest() }</script>
+   
+
+<table><tr><td style="width:100%;text-align:center;"><address>&copy; 2000 - 2015 Sonemic, Inc. &nbsp; &nbsp; &nbsp; </td></tr></table> 
+
+</div>
+</div>		
+</script>
+</body>
+</html>
+ 
+ 
