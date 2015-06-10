@@ -14,8 +14,11 @@ class TopProgAlbum implements Serializable
 	String artist
 	Integer year
 	String title
-	String genre
-	String qwr
+	//String genre
+	List<String> genres
+	Float qwr
+	Integer nofRatings
+	Float avgRating
 	Integer rank
 	String cover
 	String albumUrl
@@ -30,7 +33,11 @@ class TopProgAlbum implements Serializable
 		if (artistPath) {
 			this.artistPathLastModified = artistPath.lastModified()
 		}
-	}
+	}
+	
+	String getGenre() {
+		return (genres) ? genres[0] : null
+	} 
 	private static Collection<String> fieldNames
 	private static Collection<String> getFieldNames() {
 		if (fieldNames == null) {

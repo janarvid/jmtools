@@ -7,11 +7,20 @@ import java.net.URL;
 
 @CompileStatic
 public abstract class AbstractDownloader {
-	public File directory = File.createTempFile("data", "");
+	private File directory = File.createTempFile("data", "");
 	
 	public AbstractDownloader() {
 		directory.delete()
 		assert directory.mkdir()
+	}
+	
+	void setDirectory(File dir) {
+		if ( ! dir.exists()) assert dir.mkdir()
+		directory = dir
+	}
+	
+	public File getDirectory() {
+		return directory
 	}
 	
 	void download(URL url, File file) {

@@ -2,6 +2,7 @@ package jmtools
 
 import griffon.core.GriffonApplication
 import griffon.transform.Threading
+import groovy.transform.CompileStatic;
 
 import java.awt.Desktop
 import java.awt.event.MouseEvent
@@ -18,6 +19,7 @@ import org.veggeberg.jmtools.domain.Artist
 
 class CollectionManagerController extends AbstractJMToolsController {
 	// these will be injected by Griffon
+	final static String ALL_GENRES = "-- All --"
 	CollectionManagerModel model
 	CollectionManagerView view
 	GriffonApplication app
@@ -29,6 +31,7 @@ class CollectionManagerController extends AbstractJMToolsController {
 
 	void mvcGroupInit(Map args) {
 		app.log.info("Into mvcGroupInit($args)")
+		populateGenresCB();
 		populateArtistTable() // Calling populateArtistTable crashed
 	}
 
@@ -53,10 +56,19 @@ class CollectionManagerController extends AbstractJMToolsController {
 		//		model.artistTable.selectionModel.addListSelectionListener(artistSelect)
 	}
 
+	@CompileStatic	
+	void populateGenresCB() {
+		final genres = progArchivesService.getAllGenres()
+		model.genres.addAll(ALL_GENRES);
+		model.genres.addAll(genres);
+		model.selectedGenre = ALL_GENRES
+	}
+
 	void populateArtistTable() {
 		app.log.info("populateArtistTable()")
 		model.artists.clear()
-		final topAlbums = progArchivesService.getTopAlbumsWithPath(numOfUniqArtists)
+		final genres = (model.selectedGenre in [ALL_GENRES,null]) ? null : [model.selectedGenre]
+		final topAlbums = progArchivesService.getTopAlbumsWithPath(numOfUniqArtists, genres)
 		final missingArtistsAndAlbums = progArchivesService.getMissingArtistsAndAlbums(topAlbums)
 		model.artists.addAll(missingArtistsAndAlbums)
 		//		for (artist in missingArtistsAndAlbums) {
@@ -82,6 +94,14 @@ class CollectionManagerController extends AbstractJMToolsController {
 		}
 		app.event(Global.EVENT_CHANGE_SELECTED_ARTIST, [artist.name])
 	} as ListSelectionListener
+
+	@Threading(Threading.Policy.INSIDE_UITHREAD_SYNC)
+	def selectGenre = {
+		println "Into selectGenre()"
+//		refresingArtistTable = true
+//		populateArtistTable()
+//		refresingArtistTable = false
+	}
 
 	def albumSelect = { ListSelectionEvent evt = null ->
 		if (refresingArtistTable) return

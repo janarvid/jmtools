@@ -91,11 +91,31 @@ class ProgArchivesService {
 		return ret
 	}
 	
+	Set<String> getAllGenres() {
+		final genres = new TreeSet<String>();
+		final albums = getTopAlbums();
+		albums*.genres.each { List<String> list -> genres.addAll(list) }
+		println "${genres.size()} unique genres"
+		return genres
+	}
+	
 	private static String toTopAlbumKey(TopProgAlbum a) {
 		return "${a.artist}-${a.year}-${a.title}".toString()
 	}
 	
-	List<TopProgAlbum> getTopAlbumsWithPath(Integer maxUniqArtists=null) {
+	private boolean containsAny(List<?> list1, List<?> list2) {
+		boolean found = false;
+		for (v in list1) {
+			if (list2.contains(v)) {
+				found = true
+				break
+			}
+		}
+		return found
+	}
+	
+	List<TopProgAlbum> getTopAlbumsWithPath(Integer maxUniqArtists=null, List<String> genresArg=null) {
+		app.log.info("Into getTopAlbumsWithPath($maxUniqArtists, $genresArg)")
 		final uniqueArtists = new HashSet()
 		List<TopProgAlbum> ret = []
 		albumMatchersByArtistDir = [:]
@@ -103,6 +123,9 @@ class ProgArchivesService {
 		for (topAlbum in getTopAlbums()) {
 //			println "topAlbum.artist = ${topAlbum.artist}"
 //			if ( !(topAlbum.artist =~ /T.empano/)) continue
+			final genres = topAlbum.genres
+			if (genresArg && (!containsAny(genresArg, genres))) continue
+			
 			if (maxUniqArtists && uniqueArtists.size() >= maxUniqArtists) {
 				if ( ! uniqueArtists.contains(topAlbum.artist) ) {
 					continue

@@ -161,7 +161,7 @@ class TopProgCollectionBuilder extends AbstractCollectionBuilder
 		
 		maxNoOfAlbums = 12
 		storageFolders = []
-		storageFolders << new StorageFolder(name: "TopProg1", sizeLimit: 500L*GB)
+		storageFolders << new StorageFolder(name: "TopProg1", sizeLimit: 5L*GB)
 		//storageFolders << new StorageFolder(name: "TopProg2", sizeLimit: 58L*GB)
 		//sizeLimit = null
 		
@@ -254,7 +254,7 @@ class TopProgCollectionBuilder extends AbstractCollectionBuilder
 		missingArtists.keySet().each { println it }
 		//println "sizeSoFar=${sizeSoFar/1024/1024/1024} GB"
 		println "${albumDirs.size()} albums"
-		//dirSizeByArtist.each { k,v -> println "$k=${v/1024/1024}MB" } 
+		//dirSizeByArtist.each { k,v -> println "$k=${v/1024/1024}MB" }
 	}
 
 	@CompileStatic(TypeCheckingMode.SKIP)

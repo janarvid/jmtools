@@ -13,6 +13,8 @@ class CollectionManagerModel extends AbstractGriffonModel {
 	EventList<Artist> artists = new BasicEventList()
 	EventList<Album> albums = new BasicEventList()
 	@Bindable Artist currentArtist
+	EventList<String> genres = new BasicEventList()
+	@Bindable String selectedGenre
 	@Bindable Album currentAlbum
 	@Bindable currentArtistDir
 	

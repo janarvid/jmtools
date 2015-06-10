@@ -55,6 +55,11 @@ panel = panel(layout: new BorderLayout()) {
 			}
 			panel(constraints: BorderLayout.SOUTH, layout: new FlowLayout(FlowLayout.LEFT)) {
 				button(text: "Refresh Artists", actionPerformed: controller.refreshArtistTable)
+				label("Genres:")
+				comboBox(id:'genreCB', model: eventComboBoxModel(source: model.genres),
+					actionPerformed: controller.selectGenre,
+					selectedItem: bind(target:model, targetProperty:'selectedGenre')
+				)
 				label("Current artist:")
 				textField(text: bind(sourceProperty: 'currentArtist', source:model,
 					converter: { it.name}), editable:false, columns: 20)

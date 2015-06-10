@@ -37,6 +37,9 @@ class TopRymReader {
 			if (k == "genre") {
 				map.get('genres', []) << v
 			}
+			else if (k == "artist") {
+				map.get('artist', []) << v
+			}
 			else {
 				map[k.toString()] = v
 			}
@@ -45,14 +48,17 @@ class TopRymReader {
 		}
 //		println "map = ${map}"
 		TopProgAlbum data = new TopProgAlbum()	
-		data.artist = map.artist;
+		data.artist = map.artist.join(' & ');
 		data.title = map.album;
-		data.year = map.mediumg.substring(1, 5).toInteger()
-		data.genre = map.genres[0]
-		data.qwr = extractField(trString, "^.*Avg rating:").toFloat()
+		final syear = map.mediumg
+		if (syear.length() > 2) 
+			data.year = map.mediumg.substring(1, 5).toInteger()
+		data.genres = map.genres
+		data.avgRating = extractField(trString, "^.*Avg rating:").toFloat()
+		data.qwr = data.avgRating
 		data.artistUrl = map.artistUrl
 		data.albumUrl = map.albumUrl
-		//data.nofRatings = extractField(trString, "^.*Ratings:").replaceAll(',','').toFloat()
+		data.nofRatings = extractField(trString, "^.*Ratings:").replaceAll(',','').toFloat()
 		//data.nofReviews = extractField(trString, "^.*Reviews.*:").replaceAll(',','').toFloat()
 //		println "data = $data"
 		return data
@@ -69,22 +75,20 @@ class TopRymReader {
 	{
 		//println "url = $url"
 		SAXParser parser = new SAXParser()
-		
-		// UTF-8 is encoded in the file and it's wrong.  Just ignore the char set and it will default to ISO-8859-1
-		parser.setFeature("http://cyberneko.org/html/features/scanner/ignore-specified-charset", true)
-		
 		def html = new XmlSlurper(parser).parse(url)
 		def table = findDataTable(html);
 		//println table.TR[0];
 		def header;
 		def albums = []
-		for (i in 0..table.TR.size()-1) {
-			def tr = table.TR[i]
-//			println "tr = $tr"
-			final data = getData(header, tr)
-			if (data == null) break
-			albums << data;
-//			if (i > 3) break
+		if (table) {
+			for (i in 0..table.TR.size()-1) {
+				def tr = table.TR[i]
+//				println "tr = $tr"
+				final data = getData(header, tr)
+				if (data == null) break
+				albums << data;
+//				if (i > 3) break
+			}
 		}
 		return albums
 	}
@@ -96,13 +100,30 @@ class TopRymReader {
 		for (url in urls) {
 			ret.addAll(getAlbums(url))
 		}
+		println "${ret.size()} albums before deduplication"
+		ret = deduplicate(ret)
+		
+		// Calculate qwr
+		int totalNofRatings = 0
+		int sumRatings = 0
+		for (album in ret) {
+			totalNofRatings += album.nofRatings
+			sumRatings += album.avgRating
+		}
+		final totalAvgRating = (double)sumRatings/(double)ret.size()
+		println "totalAvgRating = $totalAvgRating"
+		println "totalNofRatings = $totalNofRatings"
+		final weights = ret.collect { TopProgAlbum it ->
+			final r = it.avgRating/totalAvgRating/0.9
+			Math.log10(it.nofRatings)*it.avgRating*r/Math.log10(totalNofRatings) 
+		}
+		ret.eachWithIndex { TopProgAlbum it, int i ->
+			it.qwr = weights[i]
+		}
 		
 		// Sort albums and change the rank
 		ret = ret.sort { TopProgAlbum a, TopProgAlbum b -> b.qwr <=> a.qwr }
-		for (i in 0..<ret.size()) {
-			ret[i].rank = i+1
-			//if (i>10) break
-		}
+		ret.eachWithIndex { TopProgAlbum it, int i -> it.rank = i+1 }
 		
 		return ret
 	}
@@ -114,23 +135,45 @@ class TopRymReader {
 		if (! dir.exists()) {
 			dir = new File("../${dir}")
 		}
-		dir.eachFile { File file ->
-			if (file.name.startsWith("top-rym-albums-")) {
+		dir.eachFileRecurse { File file ->
+			if (file.name.endsWith(".html")) {
 				urls << file.toString()
 			}
 		}
-		return getAlbums(urls)
+		def albums = getAlbums(urls)
+//		albums = albums.findAll { TopProgAlbum it ->
+//			it.nofRatings >= 25 /*&& it.qwr.toFloat() >= 3.5f*/ }.toList()
+		return albums
 	}
-
+	
+	static List<TopProgAlbum> deduplicate(List<TopProgAlbum> albums) {
+		final ret = albums.groupBy { TopProgAlbum it -> 
+			it.artist + " " + it.title
+		}
+		.collect { name, List<TopProgAlbum> list ->
+			int vmax=0, imax=0
+			list*.nofRatings.eachWithIndex { int n, int i ->
+				if (n > vmax) {
+					vmax = n
+					imax = i
+				}
+			}
+			return list[imax]
+		}
+		println "${ret.size()} albums after deduplication"
+		return ret
+	}
+	
+	@CompileStatic(TypeCheckingMode.SKIP)
 	static main(args) {
 		final reader = new TopRymReader()
 		def albums = reader.getAlbums()
-		for (album in albums) {
-			println album
-		}
-		final genres = albums*.genre.unique().sort()
-		println genres
+		for (album in albums.subList(0, 100)) { println album }
+		println "${albums.size()} albums"
+		final genres = new TreeSet();
+		albums*.genres.each { genres.addAll(it) }
 		println "${genres.size()} unique genres"
+		//genres.each { println it }
 		final artists = albums*.artist.unique().sort()
 		println "${artists.size()} unique artists"
 	}

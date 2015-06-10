@@ -179,10 +179,12 @@ class WorkAreaController extends AbstractJMToolsController {
 				final wda = model.workDirAlbums[selRow]
 				println "wda=$wda"
 				final fromFile = new File("${model.workDirPath}/${wda.name}")
-				final toFile = new File("${model.workDirPath}/${wda.albumDir}")
-				assert fromFile.renameTo(toFile)
-				app.event(Global.EVENT_APPEND_MESSAGE_LOG, ["Renamed '$fromFile' --> '${toFile}'.\n"])
-				nren++
+				if (fromFile.isDirectory()) {
+					final toFile = new File("${model.workDirPath}/${wda.albumDir}")
+					assert fromFile.renameTo(toFile)
+					app.event(Global.EVENT_APPEND_MESSAGE_LOG, ["Renamed '$fromFile' --> '${toFile}'.\n"])
+					nren++
+				}
 			}
 			app.event(Global.EVENT_REFRESH_WORK_DIRS)
 			app.event(Global.EVENT_PROGRESS_BAR_ACTIVATE, ["${nren} entries renamed."])
@@ -193,26 +195,28 @@ class WorkAreaController extends AbstractJMToolsController {
 	}
 	
 	def albumSelect = { ListSelectionEvent evt = null ->
-		final selRows = getSelectedRows(view.workDirAlbumTable)
-		println "selRows = ${selRows}"
-		if (selRows.size() > 0) {
-			final selRow = model.workDirAlbums[selRows[0]]
-			println "selRow = ${selRow}"
-			if (selRow) {
-				final selAlbums = getSelectedRows(view.albumTable)
-				if (selAlbums.size() > 0) {
-					Album album = model.collectionManagerModel.albums[selAlbums[0]]
-					setAlbumDir(album)
-				}
-				final albumPath = new File("${model.workDirPath}${File.separator}${selRow.name}")
-				if (albumPath.isDirectory()) {
-					model.tags.clear()
-					taggerService.fillAlbumTags(albumPath, model.tags)
-					model.tags.each {
-						println it
+		try {
+			final selRows = getSelectedRows(view.workDirAlbumTable)
+			println "selRows = ${selRows}"
+			if (selRows.size() > 0) {
+				final selRow = model.workDirAlbums[selRows[0]]
+				println "selRow = ${selRow}"
+				if (selRow) {
+					final selAlbums = getSelectedRows(view.albumTable)
+					if (selAlbums.size() > 0) {
+						Album album = model.collectionManagerModel.albums[selAlbums[0]]
+						setAlbumDir(album)
+					}
+					final albumPath = new File("${model.workDirPath}${File.separator}${selRow.name}")
+					if (albumPath.isDirectory()) {
+						model.tags.clear()
+						taggerService.fillAlbumTags(albumPath, model.tags)
+						model.tags.each { println it }
 					}
 				}
 			}
+		} catch (Exception e) {
+			e.printStackTrace()
 		}
 	} as ListSelectionListener
 
