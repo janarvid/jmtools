@@ -74,8 +74,8 @@ class ProgArchivesService {
 		app.log.info("Into getTopAlbums()")
 		final cache = getTopAlbumsCache()
 		if (cache.size() == 0) {
-//			final reader = new TopProgAlbumsReader()
-			final reader = new TopRymReader()
+			final reader = new TopProgAlbumsReader()
+//			final reader = new TopRymReader()
 			app.log.info("Reading all top prog albums...")
 			final albums = reader.getAlbums()
 			app.log.info("${albums.size()} top prog albums read.")

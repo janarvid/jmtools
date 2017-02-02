@@ -156,12 +156,12 @@ class TopProgCollectionBuilder extends AbstractCollectionBuilder
 		includeArtists = [
 			//'Clepsydra',
 			//'Shakary',
-			'Hail Spirit Noir',
+			//'Hail Spirit Noir',
 		].collect { String it -> it.toLowerCase() }
 		
-		maxNoOfAlbums = 12
+		//maxNoOfAlbums = 12
 		storageFolders = []
-		storageFolders << new StorageFolder(name: "TopProg1", sizeLimit: 5L*GB)
+		storageFolders << new StorageFolder(name: "TopProg1", sizeLimit: 127L*GB)
 		//storageFolders << new StorageFolder(name: "TopProg2", sizeLimit: 58L*GB)
 		//sizeLimit = null
 		
@@ -241,7 +241,8 @@ class TopProgCollectionBuilder extends AbstractCollectionBuilder
 	}
 	
 	boolean formatIsSupported(String fileName) {
-		fileName.contains(FileFormat.MP3.name().toLowerCase())
+		//fileName.contains(FileFormat.MP3.name().toLowerCase())
+		true
 	}
 	
 	@CompileStatic(TypeCheckingMode.SKIP)
@@ -249,8 +250,8 @@ class TopProgCollectionBuilder extends AbstractCollectionBuilder
 		int n=0
 		println(albumDirs.each { n++; println "${n}. ${it}"})
 		println "${missingAlbums.size()} missing albums:"
-		missingAlbums.reverse().each { //          println "${it.no}. ${it.artist}-${it.year}-${it.title}-${it.rating}-${it.nof_ratings}-${it.rank}";
-			println "${it.no}. ${it.artist}-${it.year}-${it.title}-${it.rating}-${it.nof_ratings}-${it.rank}" }
+		//missingAlbums.reverse().each { //          println "${it.no}. ${it.artist}-${it.year}-${it.title}-${it.rating}-${it.nof_ratings}-${it.rank}";
+			//println "${it.no}. ${it.artist}-${it.year}-${it.title}-${it.rating}-${it.nof_ratings}-${it.rank}" }
 		missingArtists.keySet().each { println it }
 		//println "sizeSoFar=${sizeSoFar/1024/1024/1024} GB"
 		println "${albumDirs.size()} albums"

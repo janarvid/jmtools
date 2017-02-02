@@ -14,7 +14,9 @@ class TopProgAlbumsReader
 		def tables = html.'**'.findAll{it.name() == 'TABLE'}
 		def table = null
 		for (t in tables) {
-			if (t.TR.size() > 30) {
+			final int noTRs = t.TR.size()
+			//println "noTRs=${noTRs}, table = $t"
+			if (noTRs > 8) {
 				table = t
 				break;
 			}
@@ -60,13 +62,13 @@ class TopProgAlbumsReader
 				indq += 6
 				def indGen = text.indexOf("generateQuickRatingStarbox")
 				//assert (indGen > 0)
-				data.qwr = text.substring(indq, indGen-1).trim()
+				data.qwr = text.substring(indq, indGen-1).trim().toFloat()
 				//println "qwr = '${data.qwr}'"
 				break;
 			case "genre(recordtype)":
 				//println it.text()
 				def genre = it.STRONG.toString()
-				data.genre = genre
+				data.genres = [genre]
 				def indComma = it.toString().indexOf(',')
 				def year = Integer.valueOf(it.toString().substring(indComma+1).trim());
 				data.year = year					
@@ -116,9 +118,10 @@ class TopProgAlbumsReader
 		return albums
 	}
 	
+	@CompileStatic(TypeCheckingMode.SKIP)
 	List<TopProgAlbum> getAlbums(List<String> urls)
 	{
-		final List<TopProgAlbum> ret = []
+		List<TopProgAlbum> ret = []
 		for (url in urls) {
 			ret.addAll(getAlbums(url))
 		}

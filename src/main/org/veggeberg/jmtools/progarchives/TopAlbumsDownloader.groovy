@@ -1,5 +1,11 @@
 package org.veggeberg.jmtools.progarchives
 
+import org.apache.tools.ant.taskdefs.Get.DownloadProgress;
+
+import groovy.transform.CompileStatic;
+import groovy.transform.TypeCheckingMode;
+
+@CompileStatic
 class TopAlbumsDownloader 
 {
 	final static String URL_PREFIX = "http://www.progarchives.com/top-prog-albums.asp"
@@ -14,7 +20,7 @@ class TopAlbumsDownloader
 		URLConnection urlConn = url.openConnection()
 		println urlConn.getHeaderFields()
 		final length = urlConn.getContentLengthLong()
-		urlConn.getInputStream().re
+		//urlConn.getInputStream().re
 		final content = urlConn.getContent()
 		println content.getClass()
 		*/
@@ -27,12 +33,31 @@ class TopAlbumsDownloader
 		}
 		println operation
 	}
+	
+	void downloadAllYears(List<Integer> years) {
+		for (year in years) {
+			final s = "${URL_PREFIX}?syears=${year}&smaxresults=250&sminratings=0".toString()
+			download(new URL(s), new File("$DIR/top-prog-albums-${year}.html"))
+		}
+	}
+	
+	void generateWgetScript(List<Integer> years) {
+		File file = File.createTempFile("fsdf", ".tmp")
+		file.withWriter { Writer wr ->
+			for (year in 1968..2016) {
+				final s = "wget '${URL_PREFIX}?syears=${year}&smaxresults=250&sminratings=0' -O $DIR/top-prog-albums-${year}.html"
+				wr.write(s + "\n")
+				//println s
+			}
+		}
+		println "Script '$file' created."
+	}
 
+	@CompileStatic(TypeCheckingMode.SKIP)
 	static main(args) {
 		final tal = new TopAlbumsDownloader()
-		for (year in 1968..2015) {
-			final s = "${URL_PREFIX}?syears=${year}&smaxresults=250"  
-			tal.download(new URL(s), new File("$DIR/top-prog-albums-${year}.html"))
-		}
+		List<Integer> years = (1968..2016).collect { it }
+//		tal.downloadAllYears(years)
+		tal.generateWgetScript(years)
 	}
 }
